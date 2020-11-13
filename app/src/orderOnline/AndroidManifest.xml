@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -10,10 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name="com.atlas.orianofood.activity.MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name="com.atlas.orianofood.activity.SplashActivity"
             android:theme="@style/NoActionBarAppTheme">
@@ -25,13 +22,32 @@
         </activity>
         <activity
             android:name="com.atlas.orianofood.activity.LoginActivity"
-            android:theme="@style/NoActionBarAppTheme"></activity>
+            android:theme="@style/NoActionBarAppTheme" />
         <activity
             android:name="com.atlas.orianofood.activity.RegisterActivity"
-            android:theme="@style/NoActionBarAppTheme"></activity>
+            android:theme="@style/NoActionBarAppTheme" />
         <activity
             android:name="com.atlas.orianofood.activity.HomeActivity"
-            android:theme="@style/NoActionBarAppTheme"></activity>
+            android:theme="@style/NoActionBarAppTheme" />
+        <activity
+            android:name="com.atlas.orianofood.activity.CategoryActivity"
+            android:theme="@style/NoActionBarAppTheme" />
+        <activity
+            android:name="com.atlas.orianofood.activity.ProductCategoryActivity"
+            android:theme="@style/NoActionBarAppTheme" />
+        <activity
+            android:name="com.atlas.orianofood.activity.ProductActivity"
+            android:theme="@style/NoActionBarAppTheme" />
+        <activity
+            android:name="com.atlas.orianofood.activity.CartActivity"
+            android:theme="@style/NoActionBarAppTheme" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/admob_app_id" />
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
     </application>
 
 </manifest>

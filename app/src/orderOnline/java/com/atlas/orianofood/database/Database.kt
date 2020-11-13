@@ -15,7 +15,7 @@ class Database(context: Context) : SQLiteAssetHelper(context, DB_NAME, null, DB_
     }
 
     fun getCarts(): List<Order> {
-        val db: SQLiteDatabase = readableDatabase
+        val db: SQLiteDatabase = writableDatabase
         val q = SQLiteQueryBuilder()
         val select_column = arrayOf<String>(
             "ProductId", "ProductName", "Quantity", "Price", "Discount"

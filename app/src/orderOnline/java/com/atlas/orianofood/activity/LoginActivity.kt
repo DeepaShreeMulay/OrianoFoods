@@ -21,11 +21,11 @@ class LoginActivity : AppCompatActivity() {
         val database: FirebaseDatabase = FirebaseDatabase.getInstance()
         val userTable: DatabaseReference = database.getReference("User")
 
-        progressBar.visibility = View.INVISIBLE
+        progressBar.visibility = View.GONE
 
         btn_signIn.setOnClickListener {
 
-            setLayoutVisibility(View.VISIBLE, View.INVISIBLE)
+            setLayoutVisibility(View.VISIBLE, View.GONE)
 
             val valueEventListener = object : ValueEventListener {
                 override fun onCancelled(databaseError: DatabaseError) {
@@ -35,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     //Get User Information
 
-                    setLayoutVisibility(View.INVISIBLE, View.VISIBLE)
+                    setLayoutVisibility(View.GONE, View.VISIBLE)
 
                     if (dataSnapshot.child(et_phone_number.text.toString()).exists()) {
 
