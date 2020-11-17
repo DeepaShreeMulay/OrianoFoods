@@ -3,6 +3,7 @@ package com.atlas.orianofood.activity
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -117,5 +118,12 @@ class CartActivity : AppCompatActivity() {
 
     fun Any.toast(context: Context, duration: Int = Toast.LENGTH_SHORT): Toast {
         return Toast.makeText(context, this.toString(), duration).apply { show() }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this@CartActivity, HomeActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }

@@ -204,6 +204,9 @@ class ProductCategoryActivity : AppCompatActivity(),
             drawer_layout.closeDrawer(GravityCompat.START)
         } else {
             super.onBackPressed()
+            val intent = Intent(this@ProductCategoryActivity, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 

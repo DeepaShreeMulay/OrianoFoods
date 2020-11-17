@@ -198,6 +198,9 @@ class CategoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
             drawer_layout.closeDrawer(GravityCompat.START)
         } else {
             super.onBackPressed()
+            val intent = Intent(this@CategoryActivity, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 

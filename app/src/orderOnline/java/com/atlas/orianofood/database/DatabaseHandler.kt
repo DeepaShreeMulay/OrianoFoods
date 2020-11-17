@@ -25,7 +25,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DB_NAME, nul
         // TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         //creating table with fields
         val CREATE_CONTACTS_TABLE = ("CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "("
-                + KEY_ID + " TEXT PRIMARY KEY," + KEY_NAME + " TEXT," + KEY_QUANTITY + " TEXT,"
+                + KEY_ID + " TEXT," + KEY_NAME + " TEXT," + KEY_QUANTITY + " TEXT,"
                 + KEY_PRICE + " TEXT," + KEY_DISCOUNT + " TEXT" + ")")
         db?.execSQL(CREATE_CONTACTS_TABLE)
     }
@@ -54,7 +54,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DB_NAME, nul
     fun createTable() {
         val db: SQLiteDatabase = this.writableDatabase
         val CREATE_CONTACTS_TABLE = ("CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "("
-                + KEY_ID + " TEXT PRIMARY KEY," + KEY_NAME + " TEXT," + KEY_QUANTITY + " TEXT,"
+                + KEY_ID + " TEXT," + KEY_NAME + " TEXT," + KEY_QUANTITY + " TEXT,"
                 + KEY_PRICE + " TEXT," + KEY_DISCOUNT + " TEXT" + ")")
         db.execSQL(CREATE_CONTACTS_TABLE)
     }
@@ -62,7 +62,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DB_NAME, nul
     fun addToCart(order: Order) {
         val db: SQLiteDatabase = this.writableDatabase
         val query = String.format(
-            "INSERT INTO OrderDetail(ProductId, ProductName,Quantity,Price,Discount)VALUES('%S','%S','%S','%S','%S');",
+            "INSERT INTO OrderDetail(ProductId,ProductName,Quantity,Price,Discount)VALUES('%s','%s','%s','%s','%s');",
             order.productId, order.productName, order.quantity, order.price, order.discount
         )
 
@@ -107,28 +107,6 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DB_NAME, nul
         return empList
     }*/
 
-    fun getcartItem(order: Order) {
-        val dbr = this.readableDatabase
-        val dbw = this.writableDatabase
-        val selectQuery = ("SELECT  * FROM " + TABLE_NAME + " WHERE "
-                + KEY_NAME + " = '" + order.productName + "'")
-        Log.d("CHeck Item", selectQuery)
-        val c = dbr.rawQuery(selectQuery, null)
-        if (c.moveToFirst()) {
-            val qty = Integer.parseInt(c.getString(c.getColumnIndex(KEY_QUANTITY))) +
-                    Integer.parseInt(order.quantity)
-
-            val updateQuery = ("UPDATE " + TABLE_NAME + " SET " + KEY_QUANTITY + " = "
-                    + (qty).toString() + " WHERE "
-                    + KEY_NAME + " = '" + order.productName + "'")
-
-            val c1 = dbw.rawQuery(updateQuery, null)
-        } else {
-            addToCart(order)
-
-        }
-    }
-
     fun getCarts(): List<Order> {
         val db: SQLiteDatabase = this.writableDatabase
         val q = SQLiteQueryBuilder()
@@ -156,6 +134,60 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DB_NAME, nul
         }
 
         return result
+    }
+
+    fun getCartItem(order: Order) {
+        val db: SQLiteDatabase = this.writableDatabase
+        val q = SQLiteQueryBuilder()
+        val select_column = arrayOf<String>(
+            "ProductId", "ProductName", "Quantity", "Price", "Discount"
+        )
+        val table = "OrderDetail"
+        q.tables = table
+        val cursor: Cursor = q.query(
+            db,
+            select_column, /*"$KEY_NAME ='${order.productName}'"*/
+            null,
+            null,
+            null,
+            null,
+            null
+        )
+
+        val result = ArrayList<Order>()
+        Log.e("CheckItems", cursor.count.toString())
+
+        if (cursor.moveToFirst()) {
+            do {
+                Log.e("CheckItems", cursor.getString(cursor.getColumnIndex("ProductName")))
+                Log.e("CheckItems", order.productName)
+                if (cursor.getString(cursor.getColumnIndex("ProductName")).toString().capitalize()
+                        .equals(order.productName.capitalize())
+                ) {
+                    result.add(
+                        Order(
+                            cursor.getString(cursor.getColumnIndex("ProductId")),
+                            cursor.getString(cursor.getColumnIndex("ProductName")),
+                            cursor.getString(cursor.getColumnIndex("Quantity")).toInt()
+                                .plus(order.quantity.toInt()).toString(),
+                            cursor.getString(cursor.getColumnIndex("Price")).toDouble()
+                                .plus(order.price.toDouble()).toString(),
+                            cursor.getString(cursor.getColumnIndex("Discount"))
+                        )
+                    )
+                }
+            } while (cursor.moveToNext())
+        }
+
+        if (result.isEmpty()) {
+            addToCart(order)
+        } else {
+            val updateQuery = String.format(
+                "UPDATE $TABLE_NAME SET $KEY_QUANTITY = '${result[0].quantity}' WHERE $KEY_NAME = '${order.productName}'",
+                null
+            )
+            db.execSQL(updateQuery)
+        }
     }
 
     //method to update data

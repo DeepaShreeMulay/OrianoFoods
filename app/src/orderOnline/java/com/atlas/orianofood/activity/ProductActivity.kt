@@ -1,6 +1,7 @@
 package com.atlas.orianofood.activity
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -32,6 +33,11 @@ class ProductActivity : AppCompatActivity() {
 
         loadDetailProduct(productId)
         saveToCart()
+        go_to_cart.setOnClickListener {
+            val intent = Intent(this, CartActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun loadDetailProduct(productId: String) {
@@ -68,7 +74,7 @@ class ProductActivity : AppCompatActivity() {
             // Database(this)
             DatabaseHandler(this).createTable()
             DatabaseHandler(this)
-                .getcartItem(
+                .getCartItem(
                     Order(
                         productId,
                         product.name!!,
@@ -84,6 +90,13 @@ class ProductActivity : AppCompatActivity() {
 
     fun Any.toast(context: Context, duration: Int = Toast.LENGTH_SHORT): Toast {
         return Toast.makeText(context, this.toString(), duration).apply { show() }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this@ProductActivity, HomeActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
 }
