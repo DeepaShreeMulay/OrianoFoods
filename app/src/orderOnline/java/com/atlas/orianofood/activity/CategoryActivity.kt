@@ -65,6 +65,7 @@ class CategoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         fab.setOnClickListener {
             val intent = Intent(this, CartActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         val toggle = ActionBarDrawerToggle(
@@ -144,6 +145,7 @@ class CategoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                             productViewHolder1.getRef(position).key
                         )
                         startActivity(intent)
+                        finish()
                     }
                 }
                 holder.setitemClickListener(itemClickListener)
@@ -182,6 +184,7 @@ class CategoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                             Intent(this@CategoryActivity, ProductCategoryActivity::class.java)
                         intent.putExtra(CATEGORY_EXTRA, viewHolder1.getRef(position).key)
                         startActivity(intent)
+                        finish()
                     }
                 }
                 holder.setitemClickListener(itemClickListener)

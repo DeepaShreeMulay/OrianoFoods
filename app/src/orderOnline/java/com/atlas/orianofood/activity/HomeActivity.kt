@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.atlas.orianofood.R
 import com.atlas.orianofood.adapter.MenuViewHolder
 import com.atlas.orianofood.adapter.ProductViewHolder
+import com.atlas.orianofood.database.DatabaseHandler
 import com.atlas.orianofood.interfaces.ItemClickListener
 import com.atlas.orianofood.model.Category
 import com.atlas.orianofood.model.Menu
@@ -58,6 +59,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         addDataToFirebaseDBProductCategory()
 
         //firebase init
+        val databaseHandler: DatabaseHandler = DatabaseHandler(this)
         database = FirebaseDatabase.getInstance()
         menu = database.getReference(MENU_EXTRA)
         productdatabase = FirebaseDatabase.getInstance()
@@ -65,6 +67,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         fab.setOnClickListener {
             val intent = Intent(this, CartActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         val toggle = ActionBarDrawerToggle(
@@ -539,6 +542,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             productViewHolder.getRef(position).key
                         )
                         startActivity(intent)
+                        finish()
                     }
                 }
                 holder.setitemClickListener(itemClickListener)
@@ -578,6 +582,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                         //intent.putExtra(CATEGORY_EXTRA, viewHolder.getRef(position).key)
                         intent.putExtra(CATEGORY_EXTRA, holder.categoryName.text)
                         startActivity(intent)
+                        finish()
                     }
                 }
                 holder.setitemClickListener(itemClickListener)

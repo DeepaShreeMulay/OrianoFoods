@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.atlas.orianofood.R
 import com.atlas.orianofood.adapter.CartAdapter
-import com.atlas.orianofood.database.Database
+import com.atlas.orianofood.database.DatabaseHandler
 import com.atlas.orianofood.model.Order
 import com.atlas.orianofood.model.Request
 import com.atlas.orianofood.utils.Common
@@ -46,7 +46,13 @@ class CartActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun loadListProduct() {
-        carts = Database(this).getCarts()
+        /* val databaseHandler: DatabaseHandler= DatabaseHandler(this)
+         //calling the viewEmployee method of DatabaseHandler class to read the records
+         val emp: List<EmpModelClass> = databaseHandler.viewEmployee()*/
+
+        DatabaseHandler(this).createTable()
+        carts = DatabaseHandler(this).getCarts()
+        //carts = Database(this).getCarts()
         adapter = CartAdapter(this, carts)
         val manager = LinearLayoutManager(this)
         recyclerview_cart.layoutManager = manager
@@ -98,7 +104,9 @@ class CartActivity : AppCompatActivity() {
             requestRef.child(requestKey.toString()).setValue(request)
 
             //delete cart
-            Database(this).cleanCart()
+            //Database(this).cleanCart()
+            DatabaseHandler(this).createTable()
+            DatabaseHandler(this).cleanCart()
             "Your confirmation is successful.".toast(this)
             finish()
         }
