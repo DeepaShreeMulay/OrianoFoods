@@ -3,7 +3,6 @@ package com.atlas.orianofood.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -18,17 +17,17 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.atlas.orianofood.R
 import com.atlas.orianofood.adapter.MenuViewHolder
+import com.atlas.orianofood.adapter.OffersViewHolder
 import com.atlas.orianofood.adapter.ProductViewHolder
 import com.atlas.orianofood.database.DatabaseHandler
 import com.atlas.orianofood.interfaces.ItemClickListener
 import com.atlas.orianofood.model.Category
 import com.atlas.orianofood.model.Menu
+import com.atlas.orianofood.model.Offer
 import com.atlas.orianofood.model.ProductCategory
 import com.atlas.orianofood.utils.*
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.MobileAds
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
@@ -36,24 +35,29 @@ import kotlinx.android.synthetic.orderOnline.activity_home.*
 import kotlinx.android.synthetic.orderOnline.app_bar_home.*
 import kotlinx.android.synthetic.orderOnline.content_home.*
 import kotlinx.android.synthetic.orderOnline.nav_header_home.view.*
-
+import java.text.NumberFormat
+import java.util.*
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var database: FirebaseDatabase
-    lateinit var productdatabase: FirebaseDatabase
     lateinit var menu: DatabaseReference
-    lateinit var products: DatabaseReference
+    lateinit var offer: DatabaseReference
+    lateinit var topSelling: DatabaseReference
+    lateinit var topRated: DatabaseReference
     lateinit var viewHolder: FirebaseRecyclerAdapter<Menu, MenuViewHolder>
-    lateinit var productViewHolder: FirebaseRecyclerAdapter<ProductCategory, ProductViewHolder>
+    lateinit var topRatedViewHolder: FirebaseRecyclerAdapter<ProductCategory, ProductViewHolder>
+    lateinit var topSellingViewHolder: FirebaseRecyclerAdapter<ProductCategory, ProductViewHolder>
+    lateinit var offersViewHolder: FirebaseRecyclerAdapter<Offer, OffersViewHolder>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        toolbar.title = "Menu"
+        toolbar.title = ""
         setSupportActionBar(toolbar)
 
+        addDataToFirebaseDBAds()
         addDataToFirebaseDBMenu()
         addDataToFirebaseDBCategory()
         addDataToFirebaseDBProductCategory()
@@ -62,8 +66,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val databaseHandler: DatabaseHandler = DatabaseHandler(this)
         database = FirebaseDatabase.getInstance()
         menu = database.getReference(MENU_EXTRA)
-        productdatabase = FirebaseDatabase.getInstance()
-        products = productdatabase.getReference(PRODUCT_CATEGORY_EXTRA)
+        offer = database.getReference(OFFERS_EXTRA)
+        topSelling = database.getReference(PRODUCT_CATEGORY_EXTRA)
+        topRated = database.getReference(PRODUCT_CATEGORY_EXTRA)
         fab.setOnClickListener {
             val intent = Intent(this, CartActivity::class.java)
             startActivity(intent)
@@ -86,10 +91,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val view: View = nav_view.getHeaderView(0)
         view.userLogged.text = Common.currentUser!!.name
 
-
-        // Initialize the Mobile Ads SDK
-        MobileAds.initialize(this) { Log.e("AdMob", "Successful") }
-
         val manager = GridLayoutManager(this, 2)
         recyclerview.layoutManager = manager
         recyclerview.setHasFixedSize(true)
@@ -100,11 +101,15 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         topSellingRecyclerview.setHasFixedSize(true)
         loadTopSellingItems()
 
-        val adRequest1: AdRequest = AdRequest.Builder().build()
-        adView1.loadAd(adRequest1)
-        val adRequest2: AdRequest = AdRequest.Builder().build()
-        adView2.loadAd(adRequest2)
+        val adsManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        adRecyclerView.layoutManager = adsManager
+        adRecyclerView.setHasFixedSize(true)
+        loadOffers()
 
+        val topRatingManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        topRatingRecyclerview.layoutManager = topRatingManager
+        topRatingRecyclerview.setHasFixedSize(true)
+        loadTopRatingItems()
     }
 
     private fun addDataToFirebaseDBProductCategory() {
@@ -284,7 +289,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         productCategoryTable.addValueEventListener(valueEventListener)
     }
-
     private fun addDataToFirebaseDBCategory() {
         val database: FirebaseDatabase = FirebaseDatabase.getInstance()
         val categoryTable: DatabaseReference = database.getReference(CATEGORY_EXTRA)
@@ -446,7 +450,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         categoryTable.addValueEventListener(valueEventListener)
     }
-
     private fun addDataToFirebaseDBMenu() {
         val database: FirebaseDatabase = FirebaseDatabase.getInstance()
         val menuTable: DatabaseReference = database.getReference(MENU_EXTRA)
@@ -502,17 +505,55 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         menuTable.addValueEventListener(valueEventListener)
     }
 
-    private fun loadTopSellingItems() {
-        val productQuery = products.orderByKey()
-        val productsOption = FirebaseRecyclerOptions.Builder<ProductCategory>()
-            .setQuery(products, ProductCategory::class.java).build()
+    private fun addDataToFirebaseDBAds() {
+        val database: FirebaseDatabase = FirebaseDatabase.getInstance()
+        val menuTable: DatabaseReference = database.getReference("Offers")
 
-        productViewHolder = object : FirebaseRecyclerAdapter<ProductCategory, ProductViewHolder>(
+        val valueEventListener = object : ValueEventListener {
+            override fun onCancelled(databaseError: DatabaseError) {
+
+            }
+
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                //Get User Information
+
+
+                if (dataSnapshot.hasChildren()) {
+                } else {
+
+                    menuTable.child("Ad1").setValue(
+
+                        Offer(
+                            "Ad1",
+                            "https://orianofood.online/wp-content/uploads/2020/09/ad1-1.jpg"
+                        )
+                    )
+
+                    menuTable.child("Ad2").setValue(
+                        Offer(
+                            "Ad2",
+                            "https://orianofood.online/wp-content/uploads/2020/09/ad2-1.jpg"
+                        )
+                    )
+
+                }
+
+            }
+        }
+        menuTable.addValueEventListener(valueEventListener)
+    }
+
+    private fun loadTopSellingItems() {
+        val productQuery = topSelling.orderByKey()
+        val productsOption = FirebaseRecyclerOptions.Builder<ProductCategory>()
+            .setQuery(topSelling, ProductCategory::class.java).build()
+
+        topSellingViewHolder = object : FirebaseRecyclerAdapter<ProductCategory, ProductViewHolder>(
             productsOption
         ) {
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
                 val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.product_category_card_view, parent, false)
+                    .inflate(R.layout.top_product_cardview_item, parent, false)
 
                 val name = view.findViewById<TextView>(R.id.productName)
                 val img = view.findViewById<ImageView>(R.id.productImage)
@@ -525,8 +566,12 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 position: Int,
                 model: ProductCategory
             ) {
+
+                val locale = Locale("en", "IN")
+                val nf = NumberFormat.getCurrencyInstance(locale)
+
                 holder.name.text = model.name
-                holder.rate.text = "${model.rate}/dish"
+                holder.rate.text = "${nf.format(model.rate?.toDouble())}"
 
                 Picasso.get()
                     .load(model.image)
@@ -539,7 +584,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                         val intent = Intent(this@HomeActivity, ProductActivity::class.java)
                         intent.putExtra(
                             PRODUCT_CATEGORY_EXTRA,
-                            productViewHolder.getRef(position).key
+                            topSellingViewHolder.getRef(position).key
                         )
                         startActivity(intent)
                         finish()
@@ -548,7 +593,106 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 holder.setitemClickListener(itemClickListener)
             }
         }
-        topSellingRecyclerview.adapter = productViewHolder
+        topSellingRecyclerview.adapter = topSellingViewHolder
+    }
+
+    private fun loadTopRatingItems() {
+        val productQuery = topRated.orderByKey()
+        val productsOption = FirebaseRecyclerOptions.Builder<ProductCategory>()
+            .setQuery(topRated, ProductCategory::class.java).build()
+
+        topRatedViewHolder = object : FirebaseRecyclerAdapter<ProductCategory, ProductViewHolder>(
+            productsOption
+        ) {
+            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
+                val view = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.top_product_cardview_item, parent, false)
+
+                val name = view.findViewById<TextView>(R.id.productName)
+                val img = view.findViewById<ImageView>(R.id.productImage)
+                val rate = view.findViewById<TextView>(R.id.productRate)
+                return ProductViewHolder(view, img, name, rate)
+            }
+
+            override fun onBindViewHolder(
+                holder: ProductViewHolder,
+                position: Int,
+                model: ProductCategory
+            ) {
+
+                val locale = Locale("en", "IN")
+                val nf = NumberFormat.getCurrencyInstance(locale)
+
+                holder.name.text = model.name
+                holder.rate.text = "${nf.format(model.rate?.toDouble())}"
+
+                Picasso.get()
+                    .load(model.image)
+                    .placeholder(R.mipmap.bg_home)
+                    .error(R.mipmap.bg_home)
+                    .into(holder.img)
+
+                val itemClickListener = object : ItemClickListener {
+                    override fun onClick(view: View, position: Int, isLongClick: Boolean) {
+                        val intent = Intent(this@HomeActivity, ProductActivity::class.java)
+                        intent.putExtra(
+                            PRODUCT_CATEGORY_EXTRA,
+                            topRatedViewHolder.getRef(position).key
+                        )
+                        startActivity(intent)
+                        finish()
+                    }
+                }
+                holder.setitemClickListener(itemClickListener)
+            }
+        }
+        topRatingRecyclerview.adapter = topRatedViewHolder
+    }
+
+    private fun loadOffers() {
+        val offerQuery = offer.orderByKey()
+        val offerOption = FirebaseRecyclerOptions.Builder<Offer>()
+            .setQuery(offer, Offer::class.java).build()
+
+        offersViewHolder = object : FirebaseRecyclerAdapter<Offer, OffersViewHolder>(
+            offerOption
+        ) {
+            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OffersViewHolder {
+                val view = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.offer_card_view, parent, false)
+
+                val img = view.findViewById<ImageView>(R.id.adView)
+                return OffersViewHolder(view, img)
+            }
+
+            override fun onBindViewHolder(
+                holder: OffersViewHolder,
+                position: Int,
+                model: Offer
+            ) {
+
+                Picasso.get()
+                    .load(model.image)
+                    .placeholder(R.mipmap.bg_home)
+                    .error(R.mipmap.bg_home)
+                    .into(holder.img)
+
+                /*val itemClickListener = object : ItemClickListener {
+                    override fun onClick(view: View, position: Int, isLongClick: Boolean) {
+                        val intent = Intent(this@HomeActivity, ProductActivity::class.java)
+                        intent.putExtra(
+                            PRODUCT_CATEGORY_EXTRA,
+                            offersViewHolder.getRef(position).key
+                        )
+                        startActivity(intent)
+                        finish()
+                    }
+                }
+                holder.setitemClickListener(itemClickListener)*/
+            }
+        }
+        adRecyclerView.adapter = offersViewHolder
+        adRecyclerView.smoothScrollToPosition(offersViewHolder.itemCount)
     }
 
     private fun loadMenuItems() {
@@ -559,7 +703,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         viewHolder = object : FirebaseRecyclerAdapter<Menu, MenuViewHolder>(menuOption) {
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
                 val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.category_card_view, parent, false)
+                    .inflate(R.layout.category_cardview_item, parent, false)
 
                 val name = view.findViewById<TextView>(R.id.categoryName)
                 val img = view.findViewById<ImageView>(R.id.categoryImage)
@@ -639,27 +783,38 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onResume() {
         super.onResume()
+        loadMenuItems()
         loadTopSellingItems()
+        loadTopRatingItems()
+        loadOffers()
         viewHolder.startListening()
-        productViewHolder.startListening()
+        topRatedViewHolder.startListening()
+        topSellingViewHolder.startListening()
+        offersViewHolder.startListening()
     }
 
     override fun onPause() {
         super.onPause()
         viewHolder.stopListening()
-        productViewHolder.stopListening()
+        topSellingViewHolder.stopListening()
+        topRatedViewHolder.stopListening()
+        offersViewHolder.stopListening()
     }
 
     override fun onStart() {
         super.onStart()
         viewHolder.startListening()
-        productViewHolder.startListening()
+        topRatedViewHolder.startListening()
+        topSellingViewHolder.startListening()
+        offersViewHolder.startListening()
     }
 
     override fun onStop() {
         super.onStop()
         viewHolder.stopListening()
-        productViewHolder.stopListening()
+        topRatedViewHolder.stopListening()
+        topSellingViewHolder.stopListening()
+        offersViewHolder.stopListening()
     }
 
     fun Any.toast(context: Context, duration: Int = Toast.LENGTH_SHORT): Toast {

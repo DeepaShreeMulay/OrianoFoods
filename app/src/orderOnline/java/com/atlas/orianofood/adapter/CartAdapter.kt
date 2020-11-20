@@ -38,7 +38,7 @@ class CartAdapter(private val context: Context, private val orders: List<Order>)
         val price = (Integer.parseInt(orders[position].price)) *
                 (Integer.parseInt(orders[position].quantity))
 
-        val locale = Locale("en", "US")
+        val locale = Locale("en", "IN")
         val nf = NumberFormat.getCurrencyInstance(locale)
 
         holder.cartProductPrice.text = nf.format(price)

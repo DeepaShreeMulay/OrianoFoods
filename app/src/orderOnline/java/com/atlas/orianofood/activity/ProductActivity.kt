@@ -13,6 +13,8 @@ import com.atlas.orianofood.utils.PRODUCT_CATEGORY_EXTRA
 import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.orderOnline.activity_product_detail.*
+import java.text.NumberFormat
+import java.util.*
 
 class ProductActivity : AppCompatActivity() {
 
@@ -59,7 +61,11 @@ class ProductActivity : AppCompatActivity() {
                 collapsing.title = product.name
 
                 product_name.text = product.name
-                product_price.text = product.rate
+
+                val locale = Locale("en", "IN")
+                val nf = NumberFormat.getCurrencyInstance(locale)
+
+                product_price.text = nf.format(product.rate?.toDouble())
                 product_description.text =
                     "Descriptive writing may not be your strongest suit but we are confident that we’ll be able to help you write description of sweets and other food products that will make your reader’s mouth water. Our product description writers are highly skilled in painting a picture through words which is exactly what you will need to make your food products stand out among the crowd. With our help, you’ll be able to grab the attention of your readers and have them talk about your product in no time."
 

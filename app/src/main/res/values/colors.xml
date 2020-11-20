@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--<color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorPrimary">#ffbd2f</color>
+    <color name="colorPrimaryDark">#FFEE55</color>
+    <color name="colorPrimaryDark">#FFAE4B</color>
     <color name="colorAccent">#03DAC5</color>-->
     <color name="orianoColor">#ebba39</color>
 
-    <color name="colorPrimary">#FFC107</color>
-    <color name="colorPrimaryDark">#FFA000</color>
+    <color name="colorPrimary">#FFA505</color>
+    <color name="colorPrimaryDark">#FFAE4B</color>
     <color name="colorAccent">#607D8B</color>
 
     <color name="primary">#FFC107</color>
@@ -18,4 +20,5 @@
     <color name="icons">#212121</color>
     <color name="divider">#BDBDBD</color>
     <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
 </resources>

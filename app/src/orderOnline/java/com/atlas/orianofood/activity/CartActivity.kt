@@ -31,7 +31,7 @@ class CartActivity : AppCompatActivity() {
     lateinit var adapter: CartAdapter
     lateinit var carts: List<Order>
     var total = 0
-    val locale = Locale("en", "US")
+    val locale = Locale("en", "IN")
     val nf = NumberFormat.getCurrencyInstance(locale)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,7 +66,7 @@ class CartActivity : AppCompatActivity() {
             total += (Integer.parseInt(order.price)) * (Integer.parseInt(order.quantity))
         }
 
-        total_cart_price.text = nf.format(total)
+        total_cart_price.text = nf.format(total.toDouble())
 
         btn_buy.setOnClickListener {
             if (carts.isEmpty())
@@ -80,7 +80,7 @@ class CartActivity : AppCompatActivity() {
         val dialog = Dialog(this)
         dialog.setTitle("Checkout")
         dialog.setContentView(R.layout.dialog_request)
-        dialog.findViewById<TextView>(R.id.confirm_cart_price).text = nf.format(total)
+        dialog.findViewById<TextView>(R.id.confirm_cart_price).text = nf.format(total.toDouble())
         dialog.findViewById<TextView>(R.id.txt_confirm_order_name).text = Common.currentUser!!.name
         dialog.findViewById<TextView>(R.id.txt_confirm_order_phone).text =
             Common.currentUser!!.phone

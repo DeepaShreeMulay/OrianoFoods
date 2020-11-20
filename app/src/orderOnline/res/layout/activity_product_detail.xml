@@ -110,18 +110,13 @@
                         android:orientation="horizontal"
                         android:padding="12dp">
 
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:src="@drawable/ic_rupee" />
 
                         <TextView
                             android:id="@+id/product_price"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="8"
-                            android:text="1,000"
+                            android:text=" $ 1,000"
                             android:textColor="@color/colorAccent"
                             android:textSize="18sp" />
 
