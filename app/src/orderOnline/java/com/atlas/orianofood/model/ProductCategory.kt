@@ -7,7 +7,9 @@ class ProductCategory() {
     var child: String? = null
     var parent: String? = null
     var grandparent: String? = null
+    var sellingprice: String? = null
     var rate: String? = null
+    var isSale: String? = null
     var offer: String? = null
 
     constructor(
@@ -16,7 +18,9 @@ class ProductCategory() {
         child: String,
         parent: String,
         grandparent: String,
+        sellingprice: String,
         rate: String,
+        isSale: String,
         offer: String
     ) : this() {
         this.name = name
@@ -24,7 +28,9 @@ class ProductCategory() {
         this.child = child
         this.parent = parent
         this.grandparent = grandparent
+        this.sellingprice = sellingprice
         this.rate = rate
+        this.isSale = isSale
         this.offer = offer
     }
 
@@ -34,6 +40,7 @@ class ProductCategory() {
         child: String,
         parent: String,
         grandparent: String,
+        sellingprice: String,
         rate: String
     ) : this() {
         this.name = name
@@ -41,6 +48,7 @@ class ProductCategory() {
         this.child = child
         this.parent = parent
         this.grandparent = grandparent
+        this.sellingprice = sellingprice
         this.rate = rate
     }
 }

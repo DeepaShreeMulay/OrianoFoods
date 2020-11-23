@@ -9,78 +9,93 @@
     android:background="@color/colorPrimary"
     android:foregroundGravity="center_horizontal"
     app:cardCornerRadius="5dp">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
 
         <ImageView
-            android:id="@+id/productImage"
-            android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@mipmap/bg_home" />
+            android:id="@+id/sale_tag"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_sale_tag"
+            android:visibility="gone" />
 
-        <TextView
-            android:id="@+id/productName"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="#90000000"
-            android:maxLines="2"
-            android:padding="4dp"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/llContent"
-            app:layout_constraintEnd_toEndOf="@+id/productImage"
-            app:layout_constraintStart_toStartOf="@+id/productImage"
-            tools:text="PIZZA 01" />
+            android:layout_weight="9">
 
-        <LinearLayout
-            android:id="@+id/llContent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="1"
-            app:layout_constraintBottom_toBottomOf="@+id/productImage"
-            app:layout_constraintEnd_toEndOf="parent">
+            <ImageView
+                android:id="@+id/productImage"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@mipmap/bg_home" />
 
             <TextView
-                android:id="@+id/txtPriceProductCart"
+                android:id="@+id/productName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-
+                android:layout_gravity="center_horizontal"
                 android:background="#90000000"
-                android:gravity="center_horizontal"
-                android:padding="2dp"
+                android:maxLines="2"
+                android:padding="4dp"
                 android:textAlignment="center"
                 android:textColor="@android:color/white"
-                android:textSize="14sp"
-                tools:text="100" />
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/llContent"
+                app:layout_constraintEnd_toEndOf="@+id/productImage"
+                app:layout_constraintStart_toStartOf="@+id/productImage"
+                tools:text="PIZZA 01" />
 
-            <TextView
-                android:id="@+id/productRate"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:id="@+id/llContent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:background="#90000000"
-                android:gravity="center_horizontal"
-                android:padding="2dp"
-                android:textAlignment="center"
-                android:textColor="@android:color/white"
-                android:textSize="14sp"
-                tools:text="0" />
-        </LinearLayout>
+                android:orientation="horizontal"
+                android:weightSum="1"
+                app:layout_constraintBottom_toBottomOf="@+id/productImage"
+                app:layout_constraintEnd_toEndOf="parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/productRate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="#90000000"
+                    android:gravity="center_horizontal"
+                    android:padding="2dp"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    tools:text="0" />
+
+                <TextView
+                    android:id="@+id/productSellingprice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="#90000000"
+                    android:gravity="center_horizontal"
+                    android:padding="2dp"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    tools:text="100" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </androidx.cardview.widget.CardView>

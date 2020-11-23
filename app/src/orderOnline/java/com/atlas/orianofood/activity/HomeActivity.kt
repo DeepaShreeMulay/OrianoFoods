@@ -2,16 +2,19 @@ package com.atlas.orianofood.activity
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Paint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -133,6 +136,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             "Starter",
                             "Indian",
                             "140",
+                            "150",
+                            "yes",
                             TOP_SELLING
                         )
                     )
@@ -143,7 +148,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             PRODUCT_EXTRA,
                             "Starter",
                             "Indian",
-                            "50"
+                            "50",
+                            "60"
                         )
                     )
                     productCategoryTable.child("Onion rings").setValue(
@@ -154,6 +160,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             "Starter",
                             "Indian",
                             "70",
+                            "80",
+                            "yes",
                             TOP_SELLING
                         )
                     )
@@ -165,7 +173,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             PRODUCT_EXTRA,
                             "Indian Breads",
                             "Indian",
-                            "45"
+                            "45",
+                            "50"
                         )
                     )
                     productCategoryTable.child("Naan").setValue(
@@ -175,7 +184,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             PRODUCT_EXTRA,
                             "Indian Breads",
                             "Indian",
-                            "45"
+                            "45",
+                            "50"
                         )
                     )
                     productCategoryTable.child("Wheat Roti").setValue(
@@ -185,6 +195,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             PRODUCT_EXTRA,
                             "Indian Breads",
                             "Indian",
+                            "20",
                             "20"
                         )
                     )
@@ -196,6 +207,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             "Vegetable",
                             "Indian",
                             "180",
+                            "190",
+                            "yes",
                             TOP_SELLING
                         )
                     )
@@ -206,7 +219,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             PRODUCT_EXTRA,
                             "Vegetable",
                             "Indian",
-                            "160"
+                            "160",
+                            "175"
                         )
                     )
                     productCategoryTable.child("Paneer Angara").setValue(
@@ -217,6 +231,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             "Vegetable",
                             "Indian",
                             "170",
+                            "180",
+                            "yes",
                             TOP_SELLING
                         )
                     )
@@ -228,6 +244,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             "Pizza",
                             "Italian",
                             "270",
+                            "280",
+                            "yes",
                             TOP_SELLING
                         )
                     )
@@ -238,7 +256,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             PRODUCT_EXTRA,
                             "Pizza",
                             "Italian",
-                            "250"
+                            "250",
+                            "260"
                         )
                     )
                     productCategoryTable.child("Penne").setValue(
@@ -249,6 +268,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             "Pasta",
                             "Italian",
                             "285",
+                            "300",
+                            "yes",
                             TOP_SELLING
                         )
                     )
@@ -259,7 +280,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             PRODUCT_EXTRA,
                             "Pasta",
                             "Italian",
-                            "295"
+                            "295",
+                            "300"
                         )
                     )
                     productCategoryTable.child("Bosco").setValue(
@@ -269,7 +291,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             PRODUCT_EXTRA,
                             "Salad",
                             "Italian",
-                            "160"
+                            "160",
+                            "170"
                         )
                     )
                     productCategoryTable.child("Greek Salad").setValue(
@@ -280,6 +303,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             "Salad",
                             "Italian",
                             "140",
+                            "180",
+                            "yes",
                             TOP_SELLING
                         )
                     )
@@ -399,51 +424,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             "Italian"
                         )
                     )
-                    /*category = Category(
-                        "Salad",
-                        "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/06/italian-cuisine-47-1440x600.jpg"
-                    )
-                    categoryTable.child("Italian").setValue(category)
-                    category = Category(
-                        "Shahi Paneer",
-                        "https://www.secondrecipe.com/wp-content/uploads/2020/07/paneer-tikka-masala.jpg"
-                    )
-                    categoryTable.child("Vegetables").setValue(category)
-                    category = Category(
-                        "Pizza",
-                        "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/06/italian-cuisine-47-1440x600.jpg"
-                    )
-                    categoryTable.child("Italian").setValue(category)
-                    category = Category(
-                        "Margarita Pizza",
-                        "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/06/italian-cuisine-47-1440x600.jpg"
-                    )
-                    categoryTable.child("Pizza").setValue(category)
-                    category = Category(
-                        "Pesto Pizza",
-                        "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/06/italian-cuisine-47-1440x600.jpg"
-                    )
-                    categoryTable.child("Pizza").setValue(category)
-                    category = Category(
-                        "Penne",
-                        "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/06/italian-cuisine-47-1440x600.jpg"
-                    )
-                    categoryTable.child("Pasta").setValue(category)
-                    category = Category(
-                        "Fusilli",
-                        "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/06/italian-cuisine-47-1440x600.jpg"
-                    )
-                    categoryTable.child("Pasta").setValue(category)
-                    category = Category(
-                        "Bosco",
-                        "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/06/italian-cuisine-47-1440x600.jpg"
-                    )
-                    categoryTable.child("Salad").setValue(category)
-                    category = Category(
-                        "Greek Salad",
-                        "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/06/italian-cuisine-47-1440x600.jpg"
-                    )
-                    categoryTable.child("Salad").setValue(category)*/
                 }
 
             }
@@ -504,7 +484,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         menuTable.addValueEventListener(valueEventListener)
     }
-
     private fun addDataToFirebaseDBAds() {
         val database: FirebaseDatabase = FirebaseDatabase.getInstance()
         val menuTable: DatabaseReference = database.getReference("Offers")
@@ -522,7 +501,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 } else {
 
                     menuTable.child("Ad1").setValue(
-
                         Offer(
                             "Ad1",
                             "https://orianofood.online/wp-content/uploads/2020/09/ad1-1.jpg"
@@ -544,9 +522,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun loadTopSellingItems() {
-        val productQuery = topSelling.orderByKey()
+        val productQuery = topSelling.orderByChild("offer").equalTo("Top Selling")
         val productsOption = FirebaseRecyclerOptions.Builder<ProductCategory>()
-            .setQuery(topSelling, ProductCategory::class.java).build()
+            .setQuery(productQuery, ProductCategory::class.java).build()
 
         topSellingViewHolder = object : FirebaseRecyclerAdapter<ProductCategory, ProductViewHolder>(
             productsOption
@@ -558,7 +536,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val name = view.findViewById<TextView>(R.id.productName)
                 val img = view.findViewById<ImageView>(R.id.productImage)
                 val rate = view.findViewById<TextView>(R.id.productRate)
-                return ProductViewHolder(view, img, name, rate)
+                val sellingPrice = view.findViewById<TextView>(R.id.productSellingprice)
+                val saleTag = view.findViewById<ImageView>(R.id.sale_tag)
+                val layout = view.findViewById<ConstraintLayout>(R.id.constraintLayout)
+                return ProductViewHolder(view, img, name, rate, sellingPrice, saleTag, layout)
             }
 
             override fun onBindViewHolder(
@@ -571,7 +552,21 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val nf = NumberFormat.getCurrencyInstance(locale)
 
                 holder.name.text = model.name
+
+                holder.rate.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
                 holder.rate.text = "${nf.format(model.rate?.toDouble())}"
+                holder.sellingPrice.text = "${nf.format(model.sellingprice?.toDouble())}"
+
+                if (model.isSale != null && model.isSale.equals("yes")) {
+                    holder.saleTag.visibility = View.VISIBLE
+                } else {
+                    val lp: LinearLayout.LayoutParams =
+                        LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT
+                        )
+                    holder.layout.layoutParams = lp
+                }
 
                 Picasso.get()
                     .load(model.image)
@@ -595,7 +590,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         topSellingRecyclerview.adapter = topSellingViewHolder
     }
-
     private fun loadTopRatingItems() {
         val productQuery = topRated.orderByKey()
         val productsOption = FirebaseRecyclerOptions.Builder<ProductCategory>()
@@ -611,7 +605,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val name = view.findViewById<TextView>(R.id.productName)
                 val img = view.findViewById<ImageView>(R.id.productImage)
                 val rate = view.findViewById<TextView>(R.id.productRate)
-                return ProductViewHolder(view, img, name, rate)
+                val sellingPrice = view.findViewById<TextView>(R.id.productSellingprice)
+                val saleTag = view.findViewById<ImageView>(R.id.sale_tag)
+                val layout = view.findViewById<ConstraintLayout>(R.id.constraintLayout)
+                return ProductViewHolder(view, img, name, rate, sellingPrice, saleTag, layout)
             }
 
             override fun onBindViewHolder(
@@ -624,7 +621,21 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val nf = NumberFormat.getCurrencyInstance(locale)
 
                 holder.name.text = model.name
+
+                holder.rate.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
                 holder.rate.text = "${nf.format(model.rate?.toDouble())}"
+                holder.sellingPrice.text = "${nf.format(model.sellingprice?.toDouble())}"
+
+                if (model.isSale != null && model.isSale.equals("yes")) {
+                    holder.saleTag.visibility = View.VISIBLE
+                } else {
+                    val lp: LinearLayout.LayoutParams =
+                        LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT
+                        )
+                    holder.layout.layoutParams = lp
+                }
 
                 Picasso.get()
                     .load(model.image)
@@ -648,7 +659,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         topRatingRecyclerview.adapter = topRatedViewHolder
     }
-
     private fun loadOffers() {
         val offerQuery = offer.orderByKey()
         val offerOption = FirebaseRecyclerOptions.Builder<Offer>()
@@ -694,7 +704,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         adRecyclerView.adapter = offersViewHolder
         adRecyclerView.smoothScrollToPosition(offersViewHolder.itemCount)
     }
-
     private fun loadMenuItems() {
         val menuQuery = menu.orderByKey()
         val menuOption = FirebaseRecyclerOptions.Builder<Menu>()
@@ -767,6 +776,12 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             R.id.nav_cart -> {
                 // Handle the camera action
+            }
+            R.id.nav_gallery -> {
+                // Handle the camera action
+                val intent = Intent(this@HomeActivity, GalleryActivity::class.java)
+                startActivity(intent)
+                finish()
             }
             R.id.nav_orders -> {
                 // Handle the camera action

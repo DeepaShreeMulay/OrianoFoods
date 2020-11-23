@@ -2,16 +2,19 @@ package com.atlas.orianofood.activity
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Paint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -115,9 +118,9 @@ class CategoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
 
     private fun loadTopSellingItems() {
-        val productQuery = topSelling.orderByKey()
+        val productQuery = topSelling.orderByChild("offer").equalTo("Top Selling")
         val productsOption = FirebaseRecyclerOptions.Builder<ProductCategory>()
-            .setQuery(topSelling, ProductCategory::class.java).build()
+            .setQuery(productQuery, ProductCategory::class.java).build()
 
         topSellingViewHolder1 =
             object : FirebaseRecyclerAdapter<ProductCategory, ProductViewHolder>(
@@ -133,7 +136,10 @@ class CategoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                     val name = view.findViewById<TextView>(R.id.productName)
                     val img = view.findViewById<ImageView>(R.id.productImage)
                     val rate = view.findViewById<TextView>(R.id.productRate)
-                    return ProductViewHolder(view, img, name, rate)
+                    val sellingPrice = view.findViewById<TextView>(R.id.productSellingprice)
+                    val saleTag = view.findViewById<ImageView>(R.id.sale_tag)
+                    val layout = view.findViewById<ConstraintLayout>(R.id.constraintLayout)
+                    return ProductViewHolder(view, img, name, rate, sellingPrice, saleTag, layout)
                 }
 
                 override fun onBindViewHolder(
@@ -146,7 +152,21 @@ class CategoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                     val nf = NumberFormat.getCurrencyInstance(locale)
 
                     holder.name.text = model.name
+
+                    holder.rate.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
                     holder.rate.text = "${nf.format(model.rate?.toDouble())}"
+                    holder.sellingPrice.text = "${nf.format(model.sellingprice?.toDouble())}"
+
+                    if (model.isSale != null && model.isSale.equals("yes")) {
+                        holder.saleTag.visibility = View.VISIBLE
+                    } else {
+                        val lp: LinearLayout.LayoutParams =
+                            LinearLayout.LayoutParams(
+                                LinearLayout.LayoutParams.MATCH_PARENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT
+                            )
+                        holder.layout.layoutParams = lp
+                    }
 
                     Picasso.get()
                         .load(model.image)
@@ -186,7 +206,10 @@ class CategoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                 val name = view.findViewById<TextView>(R.id.productName)
                 val img = view.findViewById<ImageView>(R.id.productImage)
                 val rate = view.findViewById<TextView>(R.id.productRate)
-                return ProductViewHolder(view, img, name, rate)
+                val sellingPrice = view.findViewById<TextView>(R.id.productSellingprice)
+                val saleTag = view.findViewById<ImageView>(R.id.sale_tag)
+                val layout = view.findViewById<ConstraintLayout>(R.id.constraintLayout)
+                return ProductViewHolder(view, img, name, rate, sellingPrice, saleTag, layout)
             }
 
             override fun onBindViewHolder(
@@ -199,7 +222,21 @@ class CategoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                 val nf = NumberFormat.getCurrencyInstance(locale)
 
                 holder.name.text = model.name
+
+                holder.rate.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
                 holder.rate.text = "${nf.format(model.rate?.toDouble())}"
+                holder.sellingPrice.text = "${nf.format(model.sellingprice?.toDouble())}"
+
+                if (model.isSale != null && model.isSale.equals("yes")) {
+                    holder.saleTag.visibility = View.VISIBLE
+                } else {
+                    val lp: LinearLayout.LayoutParams =
+                        LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT
+                        )
+                    holder.layout.layoutParams = lp
+                }
 
                 Picasso.get()
                     .load(model.image)
