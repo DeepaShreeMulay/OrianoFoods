@@ -14,16 +14,12 @@
         <activity
             android:name="com.atlas.orianofood.activity.GalleryActivity"
             android:label="@string/title_activity_gallery"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
-            android:name="com.atlas.orianofood.activity.MainActivity"
-            android:label="@string/title_activity_main" /> <!-- Include the AdActivity configChanges and theme. -->
-        <activity
-            android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:theme="@android:style/Theme.Translucent" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name="com.atlas.orianofood.activity.SplashActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,29 +29,33 @@
         </activity>
         <activity
             android:name="com.atlas.orianofood.activity.LoginActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme" />
         <activity
             android:name="com.atlas.orianofood.activity.RegisterActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme" />
         <activity
             android:name="com.atlas.orianofood.activity.HomeActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme" />
         <activity
             android:name="com.atlas.orianofood.activity.CategoryActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme" />
         <activity
             android:name="com.atlas.orianofood.activity.ProductCategoryActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme" />
         <activity
             android:name="com.atlas.orianofood.activity.ProductActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme" />
         <activity
             android:name="com.atlas.orianofood.activity.CartActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme" />
 
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/admob_app_id" />
     </application>
 
 </manifest>
