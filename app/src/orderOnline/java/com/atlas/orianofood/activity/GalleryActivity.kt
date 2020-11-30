@@ -3,11 +3,14 @@ package com.atlas.orianofood.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import androidx.viewpager.widget.ViewPager
@@ -16,17 +19,23 @@ import com.atlas.orianofood.activity.ui.main.SectionsPagerAdapter
 import com.atlas.orianofood.adapter.GalleryViewHolder
 import com.atlas.orianofood.interfaces.ItemClickListener
 import com.atlas.orianofood.model.Gallery
+import com.atlas.orianofood.utils.Common
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.orderOnline.activity_home.*
+import kotlinx.android.synthetic.orderOnline.app_bar_home.*
 import kotlinx.android.synthetic.orderOnline.content_home.*
+import kotlinx.android.synthetic.orderOnline.nav_header_home.view.*
 
 
-class GalleryActivity : AppCompatActivity() {
+class GalleryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var database: FirebaseDatabase
     lateinit var menu: DatabaseReference
     lateinit var viewHolder: FirebaseRecyclerAdapter<Gallery, GalleryViewHolder>
@@ -49,6 +58,27 @@ class GalleryActivity : AppCompatActivity() {
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
+        }
+
+        val toggle = ActionBarDrawerToggle(
+            this,
+            drawer_layout,
+            toolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
+        )
+        drawer_layout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        nav_view.setNavigationItemSelectedListener(this)
+
+        //user name
+        val view: View = nav_view.getHeaderView(0)
+        if (Common.currentUser != null) {
+            view.userLogged.text = Common.currentUser!!.name
+        } else {
+            view.userLogged.text = FirebaseAuth.getInstance().currentUser?.phoneNumber
+                ?: FirebaseAuth.getInstance().currentUser?.email
         }
 
         val manager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
@@ -76,7 +106,7 @@ class GalleryActivity : AppCompatActivity() {
                     menuTable.child("Indian").setValue(
                         com.atlas.orianofood.model.Gallery(
                             "Indian",
-                            "https://www.secondrecipe.com/wp-content/uploads/2020/07/paneer-tikka-masala.jpg",
+                            "https://orianofood.online/wp-content/uploads/2020/09/crespelle-primavera-370x370.jpeg",
                             "Food"
                         )
                     )
@@ -84,7 +114,7 @@ class GalleryActivity : AppCompatActivity() {
                     menuTable.child("Italian").setValue(
                         com.atlas.orianofood.model.Gallery(
                             "Italian",
-                            "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/06/italian-cuisine-47-1440x600.jpg",
+                            "https://orianofood.online/wp-content/uploads/2020/09/TORTELLINI-ZARBA-370x370.jpg",
                             "Event"
                         )
                     )
@@ -92,7 +122,7 @@ class GalleryActivity : AppCompatActivity() {
                     menuTable.child("Deserts").setValue(
                         com.atlas.orianofood.model.Gallery(
                             "Deserts",
-                            null,
+                            "https://orianofood.online/wp-content/uploads/2020/09/olive_Cheesecakes-f005ffb-150x150.jpg",
                             "Food"
                         )
                     )
@@ -100,7 +130,39 @@ class GalleryActivity : AppCompatActivity() {
                     menuTable.child("Drinks").setValue(
                         com.atlas.orianofood.model.Gallery(
                             "Drinks",
-                            null,
+                            "https://orianofood.online/wp-content/uploads/2020/08/Beer-1-300x300.jpg",
+                            "Ambiance"
+                        )
+                    )
+
+                    menuTable.child("Indian1").setValue(
+                        com.atlas.orianofood.model.Gallery(
+                            "Indian1",
+                            "https://orianofood.online/wp-content/uploads/2020/09/crespelle-primavera-150x150.jpeg",
+                            "Food"
+                        )
+                    )
+
+                    menuTable.child("Italian1").setValue(
+                        com.atlas.orianofood.model.Gallery(
+                            "Italian1",
+                            "https://orianofood.online/wp-content/uploads/2020/08/FreshSalads-1-300x300.jpg",
+                            "Event"
+                        )
+                    )
+
+                    menuTable.child("Deserts1").setValue(
+                        com.atlas.orianofood.model.Gallery(
+                            "Deserts1",
+                            "https://orianofood.online/wp-content/uploads/2020/09/FRESH-FRUIT-AND-CREAM-CAKE-370x370.jpg",
+                            "Food"
+                        )
+                    )
+
+                    menuTable.child("Drinks1").setValue(
+                        com.atlas.orianofood.model.Gallery(
+                            "Drinks1",
+                            "https://www.budgetbytes.com/wp-content/uploads/2010/09/Homemade-Naan-stack-1.jpg",
                             "Ambiance"
                         )
                     )
@@ -120,7 +182,7 @@ class GalleryActivity : AppCompatActivity() {
         viewHolder = object : FirebaseRecyclerAdapter<Gallery, GalleryViewHolder>(menuOption) {
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GalleryViewHolder {
                 val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.category_cardview_item, parent, false)
+                    .inflate(R.layout.staggered_cardview_item, parent, false)
 
                 val name = view.findViewById<TextView>(R.id.categoryName)
                 val img = view.findViewById<ImageView>(R.id.categoryImage)
@@ -136,8 +198,8 @@ class GalleryActivity : AppCompatActivity() {
 
                 Picasso.get()
                     .load(model.image)
-                    .placeholder(R.mipmap.bg_home)
-                    .error(R.mipmap.bg_home)
+                    .placeholder(R.drawable.ic_menu_gallery)
+                    .error(R.drawable.ic_menu_gallery)
                     .into(holder.categoryImg)
 
                 val itemClickListener = object : ItemClickListener {
@@ -157,14 +219,14 @@ class GalleryActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        /*if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
-        } else {*/
-        super.onBackPressed()
-        val intent = Intent(this@GalleryActivity, HomeActivity::class.java)
-        startActivity(intent)
-        finish()
-        // }
+        } else {
+            super.onBackPressed()
+            val intent = Intent(this@GalleryActivity, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     override fun onResume() {
@@ -186,5 +248,37 @@ class GalleryActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         viewHolder.stopListening()
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        // Handle navigation view item clicks here.
+        when (item.itemId) {
+            R.id.nav_home -> {
+                // Handle the camera action
+                val intent = Intent(this@GalleryActivity, HomeActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.nav_menu -> {
+                // Handle the camera action
+            }
+            R.id.nav_cart -> {
+                // Handle the camera action
+            }
+            R.id.nav_gallery -> {
+                // Handle the camera action
+
+            }
+            R.id.nav_orders -> {
+                // Handle the camera action
+            }
+            R.id.nav_log_out -> {
+                // Handle the camera action
+            }
+
+        }
+
+        drawer_layout.closeDrawer(GravityCompat.START)
+        return true
     }
 }

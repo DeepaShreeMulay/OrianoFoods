@@ -65,6 +65,7 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-core:18.0.0'
     implementation 'com.google.firebase:firebase-database-ktx:19.5.1'
+    implementation 'com.firebaseui:firebase-ui-auth:6.2.0'
     implementation 'com.firebaseui:firebase-ui-database:4.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'me.zhanghai.android.materialratingbar:library:1.4.0'

@@ -17,6 +17,7 @@ import com.atlas.orianofood.database.DatabaseHandler
 import com.atlas.orianofood.model.Order
 import com.atlas.orianofood.model.Request
 import com.atlas.orianofood.utils.Common
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.orderOnline.activity_cart.*
@@ -81,9 +82,19 @@ class CartActivity : AppCompatActivity() {
         dialog.setTitle("Checkout")
         dialog.setContentView(R.layout.dialog_request)
         dialog.findViewById<TextView>(R.id.confirm_cart_price).text = nf.format(total.toDouble())
-        dialog.findViewById<TextView>(R.id.txt_confirm_order_name).text = Common.currentUser!!.name
-        dialog.findViewById<TextView>(R.id.txt_confirm_order_phone).text =
-            Common.currentUser!!.phone
+        if (Common.currentUser != null) {
+            dialog.findViewById<TextView>(R.id.txt_confirm_order_name).text =
+                Common.currentUser!!.name
+            dialog.findViewById<TextView>(R.id.txt_confirm_order_phone).text =
+                Common.currentUser!!.phone
+        } else {
+            dialog.findViewById<TextView>(R.id.txt_confirm_order_name).text =
+                FirebaseAuth.getInstance().currentUser?.phoneNumber
+                    ?: FirebaseAuth.getInstance().currentUser?.email
+            dialog.findViewById<TextView>(R.id.txt_confirm_order_phone).text =
+                FirebaseAuth.getInstance().currentUser?.phoneNumber
+        }
+
 
         val addr = dialog.findViewById<EditText>(R.id.txt_confirm_order_address)
 
@@ -92,8 +103,8 @@ class CartActivity : AppCompatActivity() {
         }
         dialog.findViewById<Button>(R.id.btn_confirm).setOnClickListener {
             val request = Request(
-                Common.currentUser!!.phone,
-                Common.currentUser!!.name,
+                dialog.findViewById<TextView>(R.id.txt_confirm_order_phone).text.toString(),
+                dialog.findViewById<TextView>(R.id.txt_confirm_order_name).text.toString(),
                 addr.text.toString(),
                 total_cart_price.text.toString(),
                 carts
@@ -109,6 +120,9 @@ class CartActivity : AppCompatActivity() {
             DatabaseHandler(this).createTable()
             DatabaseHandler(this).cleanCart()
             "Your confirmation is successful.".toast(this)
+
+            val intent = Intent(this@CartActivity, HomeActivity::class.java)
+            startActivity(intent)
             finish()
         }
 

@@ -27,10 +27,10 @@ import com.atlas.orianofood.model.ProductCategory
 import com.atlas.orianofood.utils.Common
 import com.atlas.orianofood.utils.OFFERS_EXTRA
 import com.atlas.orianofood.utils.PRODUCT_CATEGORY_EXTRA
-import com.atlas.orianofood.utils.PRODUCT_EXTRA
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
@@ -40,7 +40,6 @@ import kotlinx.android.synthetic.orderOnline.content_home.*
 import kotlinx.android.synthetic.orderOnline.nav_header_home.view.*
 import java.text.NumberFormat
 import java.util.*
-
 
 class ProductCategoryActivity : AppCompatActivity(),
     NavigationView.OnNavigationItemSelectedListener {
@@ -61,8 +60,6 @@ class ProductCategoryActivity : AppCompatActivity(),
 
         toolbar.title = ""
         setSupportActionBar(toolbar)
-        textView2.text = PRODUCT_EXTRA
-
 
         //firebase init
         database = FirebaseDatabase.getInstance()
@@ -90,7 +87,12 @@ class ProductCategoryActivity : AppCompatActivity(),
 
         //user name
         val view: View = nav_view.getHeaderView(0)
-        view.userLogged.text = Common.currentUser!!.name
+        if (Common.currentUser != null) {
+            view.userLogged.text = Common.currentUser!!.name
+        } else {
+            view.userLogged.text = FirebaseAuth.getInstance().currentUser?.phoneNumber
+                ?: FirebaseAuth.getInstance().currentUser?.email
+        }
 
         val manager = GridLayoutManager(this, 2)
         recyclerview.layoutManager = manager
@@ -168,8 +170,9 @@ class ProductCategoryActivity : AppCompatActivity(),
 
                 Picasso.get()
                     .load(model.image)
-                    .placeholder(R.mipmap.bg_home)
-                    .error(R.mipmap.bg_home)
+                    .resize(300, 300)
+                    .placeholder(R.drawable.ic_menu_gallery)
+                    .error(R.drawable.ic_menu_gallery)
                     .into(holder.img)
 
                 val itemClickListener = object : ItemClickListener {
@@ -239,8 +242,9 @@ class ProductCategoryActivity : AppCompatActivity(),
 
                 Picasso.get()
                     .load(model.image)
-                    .placeholder(R.mipmap.bg_home)
-                    .error(R.mipmap.bg_home)
+                    .resize(300, 300)
+                    .placeholder(R.drawable.ic_menu_gallery)
+                    .error(R.drawable.ic_menu_gallery)
                     .into(holder.img)
 
                 val itemClickListener = object : ItemClickListener {
@@ -285,8 +289,9 @@ class ProductCategoryActivity : AppCompatActivity(),
 
                 Picasso.get()
                     .load(model.image)
-                    .placeholder(R.mipmap.bg_home)
-                    .error(R.mipmap.bg_home)
+                    .resize(300, 300)
+                    .placeholder(R.drawable.ic_menu_gallery)
+                    .error(R.drawable.ic_menu_gallery)
                     .into(holder.img)
 
                 /*val itemClickListener = object : ItemClickListener {
@@ -356,8 +361,9 @@ class ProductCategoryActivity : AppCompatActivity(),
 
                 Picasso.get()
                     .load(model.image)
-                    .placeholder(R.mipmap.bg_home)
-                    .error(R.mipmap.bg_home)
+                    .resize(300, 300)
+                    .placeholder(R.drawable.ic_menu_gallery)
+                    .error(R.drawable.ic_menu_gallery)
                     .into(holder.img)
 
                 val itemClickListener = object : ItemClickListener {
@@ -405,11 +411,23 @@ class ProductCategoryActivity : AppCompatActivity(),
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
+            R.id.nav_home -> {
+                // Handle the camera action
+                val intent = Intent(this@ProductCategoryActivity, HomeActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
             R.id.nav_menu -> {
                 // Handle the camera action
             }
             R.id.nav_cart -> {
                 // Handle the camera action
+            }
+            R.id.nav_gallery -> {
+                // Handle the camera action
+                val intent = Intent(this@ProductCategoryActivity, GalleryActivity::class.java)
+                startActivity(intent)
+                finish()
             }
             R.id.nav_orders -> {
                 // Handle the camera action

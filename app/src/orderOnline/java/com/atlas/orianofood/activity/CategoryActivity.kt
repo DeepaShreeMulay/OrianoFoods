@@ -33,6 +33,7 @@ import com.atlas.orianofood.utils.PRODUCT_CATEGORY_EXTRA
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
@@ -63,7 +64,6 @@ class CategoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
         toolbar.title = ""
         setSupportActionBar(toolbar)
-        textView2.text = CATEGORY_EXTRA
 
 
         //firebase init
@@ -92,9 +92,14 @@ class CategoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
         //user name
         val view: View = nav_view.getHeaderView(0)
-        view.userLogged.text = Common.currentUser!!.name
+        if (Common.currentUser != null) {
+            view.userLogged.text = Common.currentUser!!.name
+        } else {
+            view.userLogged.text = FirebaseAuth.getInstance().currentUser?.phoneNumber
+                ?: FirebaseAuth.getInstance().currentUser?.email
+        }
 
-        val manager = GridLayoutManager(this, 2)
+        val manager = GridLayoutManager(this, 3)
         recyclerview.layoutManager = manager
         recyclerview.setHasFixedSize(true)
         loadCategoryItems()
@@ -170,8 +175,9 @@ class CategoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
                     Picasso.get()
                         .load(model.image)
-                        .placeholder(R.mipmap.bg_home)
-                        .error(R.mipmap.bg_home)
+                        .resize(300, 300)
+                        .placeholder(R.drawable.ic_menu_gallery)
+                        .error(R.drawable.ic_menu_gallery)
                         .into(holder.img)
 
                     val itemClickListener = object : ItemClickListener {
@@ -240,8 +246,9 @@ class CategoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
                 Picasso.get()
                     .load(model.image)
-                    .placeholder(R.mipmap.bg_home)
-                    .error(R.mipmap.bg_home)
+                    .resize(300, 300)
+                    .placeholder(R.drawable.ic_menu_gallery)
+                    .error(R.drawable.ic_menu_gallery)
                     .into(holder.img)
 
                 val itemClickListener = object : ItemClickListener {
@@ -285,8 +292,9 @@ class CategoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
                 Picasso.get()
                     .load(model.image)
-                    .placeholder(R.mipmap.bg_home)
-                    .error(R.mipmap.bg_home)
+                    .resize(300, 300)
+                    .placeholder(R.drawable.ic_menu_gallery)
+                    .error(R.drawable.ic_menu_gallery)
                     .into(holder.img)
 
                 /*val itemClickListener = object : ItemClickListener {
@@ -327,8 +335,9 @@ class CategoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
                 Picasso.get()
                     .load(model.image)
-                    .placeholder(R.mipmap.bg_home)
-                    .error(R.mipmap.bg_home)
+                    .resize(300, 300)
+                    .placeholder(R.drawable.ic_menu_gallery)
+                    .error(R.drawable.ic_menu_gallery)
                     .into(holder.categoryImg)
 
                 val itemClickListener = object : ItemClickListener {
@@ -376,11 +385,23 @@ class CategoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
+            R.id.nav_home -> {
+                // Handle the camera action
+                val intent = Intent(this@CategoryActivity, HomeActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
             R.id.nav_menu -> {
                 // Handle the camera action
             }
             R.id.nav_cart -> {
                 // Handle the camera action
+            }
+            R.id.nav_gallery -> {
+                // Handle the camera action
+                val intent = Intent(this@CategoryActivity, GalleryActivity::class.java)
+                startActivity(intent)
+                finish()
             }
             R.id.nav_orders -> {
                 // Handle the camera action

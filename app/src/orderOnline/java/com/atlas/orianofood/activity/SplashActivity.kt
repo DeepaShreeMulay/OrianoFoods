@@ -27,7 +27,8 @@ class SplashActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             /* Create an Intent that will start the Menu-Activity. */
-            val loginIntent = Intent(this, LoginActivity::class.java)
+            // val loginIntent = Intent(this, LoginActivity::class.java)
+            val loginIntent = Intent(this, AuthActivity::class.java)
             startActivity(loginIntent)
             finish()
         }, 1500)

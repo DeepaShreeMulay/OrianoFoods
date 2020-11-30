@@ -28,6 +28,11 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.atlas.orianofood.activity.AuthActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAppTheme" />
+
+        <activity
             android:name="com.atlas.orianofood.activity.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme" />

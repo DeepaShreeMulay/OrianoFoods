@@ -55,7 +55,8 @@ class ProductActivity : AppCompatActivity() {
                 Picasso.get()
                     .load(product.image)
                     .placeholder(R.mipmap.bg_home)
-                    .error(R.mipmap.bg_home)
+                    .resize(300, 300)
+                    .error(R.drawable.ic_menu_gallery)
                     .into(product_img)
 
                 collapsing.title = product.name

@@ -26,8 +26,9 @@
                 android:id="@+id/textView1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Top selling"
+                android:padding="5dp"
                 android:textSize="18dp"
+                android:text="On demand cooking..."
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"
                 app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
@@ -41,13 +42,13 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:minHeight="150dp"
+                android:minHeight="190dp"
                 android:scrollbars="horizontal" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/adRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="210dp"
                 android:layout_centerVertical="true"
                 android:layout_marginTop="5dp"
                 android:layout_centerHorizontal="true"
@@ -58,8 +59,9 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Menu"
+                android:padding="5dp"
                 android:textSize="18dp"
+                android:text="We are serving..."
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"
                 app:layout_constraintBottom_toBottomOf="@+id/adView1"
@@ -74,17 +76,18 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:foregroundGravity="center_horizontal"
-                android:maxHeight="500dp"
-                android:minHeight="260dp"
+                android:maxHeight="600dp"
+                android:minHeight="300dp"
                 android:scrollbars="vertical" />
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Top Rating"
+                android:padding="5dp"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18dp"
+                android:text="Loved by public..."
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -93,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:minHeight="150dp"
+                android:minHeight="190dp"
                 android:scrollbars="horizontal" />
 
         </LinearLayout>

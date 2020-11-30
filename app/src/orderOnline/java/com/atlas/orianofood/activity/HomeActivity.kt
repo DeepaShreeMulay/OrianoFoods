@@ -29,9 +29,11 @@ import com.atlas.orianofood.model.Menu
 import com.atlas.orianofood.model.Offer
 import com.atlas.orianofood.model.ProductCategory
 import com.atlas.orianofood.utils.*
+import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.orderOnline.activity_home.*
@@ -92,9 +94,14 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         //user name
         val view: View = nav_view.getHeaderView(0)
-        view.userLogged.text = Common.currentUser!!.name
+        if (Common.currentUser != null) {
+            view.userLogged.text = Common.currentUser!!.name
+        } else {
+            view.userLogged.text = FirebaseAuth.getInstance().currentUser?.phoneNumber
+                ?: FirebaseAuth.getInstance().currentUser?.email
+        }
 
-        val manager = GridLayoutManager(this, 2)
+        val manager = GridLayoutManager(this, 3)
         recyclerview.layoutManager = manager
         recyclerview.setHasFixedSize(true)
         loadMenuItems()
@@ -465,7 +472,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     menuTable.child("Deserts").setValue(
                         Menu(
                             "Deserts",
-                            null,
+                            "https://orianofood.online/wp-content/uploads/2020/09/CHOCOLATE-BROWNIES-WITH-HOT-CHOCOLATE-SAUCE-AND-ICE-CREAM-150x150.jpg",
                             CATEGORY_EXTRA
                         )
                     )
@@ -473,7 +480,55 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     menuTable.child("Drinks").setValue(
                         Menu(
                             "Drinks",
-                            null,
+                            "https://orianofood.online/wp-content/uploads/2020/09/tc-chamapagne-brands-1-1544808409-150x150.jpg",
+                            CATEGORY_EXTRA
+                        )
+                    )
+
+                    menuTable.child("Imported Wines").setValue(
+                        Menu(
+                            "Imported Wines",
+                            "https://orianofood.online/wp-content/uploads/2020/09/Imported-Wines..jpg",
+                            CATEGORY_EXTRA
+                        )
+                    )
+
+                    menuTable.child("Soups").setValue(
+                        Menu(
+                            "Soups",
+                            "https://orianofood.online/wp-content/uploads/2020/08/soup-150x150.jpg",
+                            CATEGORY_EXTRA
+                        )
+                    )
+
+                    menuTable.child("Main Course").setValue(
+                        Menu(
+                            "Main Course",
+                            "https://orianofood.online/wp-content/uploads/2020/08/sliced-vegetable-and-cooked-food-on-white-ceramic-plate-1234535-150x150.jpg",
+                            CATEGORY_EXTRA
+                        )
+                    )
+
+                    menuTable.child("Cakes").setValue(
+                        Menu(
+                            "Cakes",
+                            "https://orianofood.online/wp-content/uploads/2020/09/FRESH-FRUIT-AND-CREAM-CAKE-150x150.jpg",
+                            CATEGORY_EXTRA
+                        )
+                    )
+
+                    menuTable.child("Juice").setValue(
+                        Menu(
+                            "Juice",
+                            "https://orianofood.online/wp-content/uploads/2020/09/STRAWBERRY-1-150x150.jpg",
+                            CATEGORY_EXTRA
+                        )
+                    )
+
+                    menuTable.child("Coffee").setValue(
+                        Menu(
+                            "Coffee",
+                            "https://orianofood.online/wp-content/uploads/2020/09/coffee.jpg",
                             CATEGORY_EXTRA
                         )
                     )
@@ -570,8 +625,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                 Picasso.get()
                     .load(model.image)
-                    .placeholder(R.mipmap.bg_home)
-                    .error(R.mipmap.bg_home)
+                    .resize(300, 300)
+                    .placeholder(R.drawable.ic_menu_gallery)
+                    .error(R.drawable.ic_menu_gallery)
                     .into(holder.img)
 
                 val itemClickListener = object : ItemClickListener {
@@ -639,8 +695,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                 Picasso.get()
                     .load(model.image)
-                    .placeholder(R.mipmap.bg_home)
-                    .error(R.mipmap.bg_home)
+                    .resize(300, 300)
+                    .placeholder(R.drawable.ic_menu_gallery)
+                    .error(R.drawable.ic_menu_gallery)
                     .into(holder.img)
 
                 val itemClickListener = object : ItemClickListener {
@@ -683,8 +740,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                 Picasso.get()
                     .load(model.image)
-                    .placeholder(R.mipmap.bg_home)
-                    .error(R.mipmap.bg_home)
+                    .resize(300, 300)
+                    .placeholder(R.drawable.ic_menu_gallery)
+                    .error(R.drawable.ic_menu_gallery)
                     .into(holder.img)
 
                 /*val itemClickListener = object : ItemClickListener {
@@ -724,8 +782,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                 Picasso.get()
                     .load(model.image)
-                    .placeholder(R.mipmap.bg_home)
-                    .error(R.mipmap.bg_home)
+                    .resize(300, 300)
+                    .placeholder(R.drawable.ic_menu_gallery)
+                    .error(R.drawable.ic_menu_gallery)
                     .into(holder.categoryImg)
 
                 val itemClickListener = object : ItemClickListener {
@@ -733,7 +792,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                         val intent = Intent(this@HomeActivity, CategoryActivity::class.java)
                         //intent.putExtra(CATEGORY_EXTRA, viewHolder.getRef(position).key)
-                        intent.putExtra(CATEGORY_EXTRA, holder.categoryName.text)
+                        intent.putExtra(CATEGORY_EXTRA, holder.categoryName.text as String?)
                         startActivity(intent)
                         finish()
                     }
@@ -788,6 +847,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             R.id.nav_log_out -> {
                 // Handle the camera action
+                AuthUI.getInstance().signOut(this)
             }
 
         }

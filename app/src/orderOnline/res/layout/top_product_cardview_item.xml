@@ -2,33 +2,34 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="160dp"
+    android:layout_width="140dp"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
-    android:layout_margin="4dp"
+    android:layout_margin="10dp"
     android:background="@color/colorPrimary"
     android:foregroundGravity="center_horizontal"
     app:cardCornerRadius="5dp">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="10">
 
-        <ImageView
+        <!--<ImageView
             android:id="@+id/sale_tag"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="fitXY"
             android:src="@drawable/ic_sale_tag"
-            android:visibility="gone" />
+            android:visibility="gone" />-->
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="9">
+            android:layout_weight="10">
 
             <ImageView
                 android:id="@+id/productImage"
@@ -43,6 +44,29 @@
                 app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@mipmap/bg_home" />
 
+            <ImageView
+                android:id="@+id/sale_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_sale_tag"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/productImage"
+                app:layout_constraintTop_toBottomOf="@+id/productImage"
+                app:layout_constraintTop_toTopOf="@+id/productImage" />
+
+            <ImageView
+                android:id="@+id/foodmark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_veg"
+                app:layout_constraintEnd_toEndOf="@+id/productImage"
+                app:layout_constraintTop_toBottomOf="@+id/productImage"
+                app:layout_constraintTop_toTopOf="@+id/productImage" />
+
             <TextView
                 android:id="@+id/productName"
                 android:layout_width="0dp"
@@ -53,7 +77,7 @@
                 android:padding="4dp"
                 android:textAlignment="center"
                 android:textColor="@android:color/white"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/llContent"
                 app:layout_constraintEnd_toEndOf="@+id/productImage"
@@ -76,10 +100,10 @@
                     android:layout_weight="0.5"
                     android:background="#90000000"
                     android:gravity="center_horizontal"
-                    android:padding="2dp"
+                    android:padding="1dp"
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     tools:text="0" />
 
                 <TextView
@@ -89,11 +113,40 @@
                     android:layout_weight="0.5"
                     android:background="#90000000"
                     android:gravity="center_horizontal"
-                    android:padding="2dp"
+                    android:padding="1dp"
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     tools:text="100" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llContent">
+
+                <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                    style="@style/Widget.MaterialRatingBar.RatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:numStars="5"
+                    android:rating="3.5"
+                    app:mrb_progressBackgroundTint="@color/colorPrimaryDark"
+                    app:mrb_progressTint="@color/colorPrimary"
+                    app:mrb_secondaryProgressTint="@color/colorPrimaryDark" />
+
+                <TextView
+                    android:id="@+id/votes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="left"
+                    android:text="328 votes"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="10sp" />
+
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
