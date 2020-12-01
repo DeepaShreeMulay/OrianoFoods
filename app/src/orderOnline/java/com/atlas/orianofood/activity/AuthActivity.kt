@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.atlas.orianofood.R
+import com.firebase.ui.auth.AuthMethodPickerLayout
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 
@@ -19,6 +20,7 @@ class AuthActivity : AppCompatActivity() {
             firebaseAuth.currentUser?.let {
                 // the user is logged in
                 startActivity(Intent(this, HomeActivity::class.java))
+                finish()
             } ?: run {
                 // the user is logged out, log him/her in
                 signIn()
@@ -35,6 +37,19 @@ class AuthActivity : AppCompatActivity() {
             AuthUI.IdpConfig.PhoneBuilder().build()
         )
 
+        /* val providers = mutableListOf<AuthUI.IdpConfig>()
+         providers.add(AuthUI.IdpConfig.GoogleBuilder().build())*/
+
+
+        val layout = AuthMethodPickerLayout
+            .Builder(R.layout.activity_auth)
+            .setGoogleButtonId(R.id.iv_google)
+            .setEmailButtonId(R.id.iv_mail)
+            // .setFacebookButtonId(R.id.iv_facebook)
+            .setPhoneButtonId(R.id.iv_phone)
+            .build()
+
+
         val authIntent = AuthUI.getInstance().createSignInIntentBuilder()
             // set a custom logo to be shown on the login screen
             .setLogo(R.mipmap.logo)
@@ -49,9 +64,11 @@ class AuthActivity : AppCompatActivity() {
                 "https://orianofood.online/terms-of-service/",
                 "https://orianofood.online/privacy-policy/"
             )
+            .setAuthMethodPickerLayout(layout)
             .build()
 
         startActivity(authIntent)
+        finish()
 
     }
 

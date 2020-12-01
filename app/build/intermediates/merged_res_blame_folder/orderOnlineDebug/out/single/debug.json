@@ -8,6 +8,22 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v21\\ic_menu_gallery.xml"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable_shape_layout_dark.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable\\shape_layout_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_sale_tag.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxhdpi\\ic_sale_tag.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_google.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xhdpi\\ic_google.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_bowl.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxhdpi\\ic_bowl.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_app_icon_log.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_app_icon_log.png"
     },
@@ -68,12 +84,16 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-hdpi\\ic_phone.png"
     },
     {
-        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_back_arrow.png.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xhdpi\\ic_back_arrow.png"
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_veg.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xhdpi\\ic_veg.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_discount.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_discount.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -88,6 +108,14 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xxhdpi\\ic_person.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_google.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-mdpi\\ic_google.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-anydpi-v21_ic_egg.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v21\\ic_egg.xml"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-anydpi-v21_ic_search.xml.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v21\\ic_search.xml"
     },
@@ -96,20 +124,32 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_search.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_egg.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_egg.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_activity_login.xml.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_default_image_restaurant.png.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-mdpi\\ic_default_image_restaurant.png"
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_product_category_cardview_item.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\product_category_cardview_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_facebook.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-mdpi\\ic_facebook.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_google.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxhdpi\\ic_google.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_app_icon_log.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xhdpi\\ic_app_icon_log.png"
     },
     {
-        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_current_user.png.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_current_user.png"
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_default_image_restaurant.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-mdpi\\ic_default_image_restaurant.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_menu.png.flat",
@@ -124,12 +164,12 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v21\\ic_fav_outline.xml"
     },
     {
-        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_menu.png.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-mdpi\\ic_menu.png"
-    },
-    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_activity_register.xml.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_menu.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-mdpi\\ic_menu.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_favourite.png.flat",
@@ -144,8 +184,16 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xhdpi\\ic_person.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-anydpi-v21_ic_sale_tag.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v21\\ic_sale_tag.xml"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_history.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xxhdpi\\ic_history.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_discount.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_discount.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_app_icon_log.png.flat",
@@ -156,12 +204,24 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v21\\ic_unmark_favourite.xml"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_fragment_gallery_all.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\fragment_gallery_all.xml"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_fav_outline.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-mdpi\\ic_fav_outline.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_access_time_black_24dp.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-mdpi\\ic_access_time_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_nonveg.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-hdpi\\ic_nonveg.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_egg.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-hdpi\\ic_egg.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
@@ -176,8 +236,16 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-hdpi\\ic_faqs.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_content_gallery.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\layout\\content_gallery.xml"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-anydpi-v21_ic_bowl.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v21\\ic_bowl.xml"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_location.png.flat",
@@ -205,7 +273,7 @@
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_activity_splash_screen.xml.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\activity_splash_screen.xml"
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\layout\\activity_splash_screen.xml"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_location.png.flat",
@@ -220,16 +288,20 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_fav_fill.png"
     },
     {
-        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_current_user.png.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xhdpi\\ic_current_user.png"
-    },
-    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_nav_header_home.xml.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\nav_header_home.xml"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_sale_tag.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xhdpi\\ic_sale_tag.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_activity_gallery.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\activity_gallery.xml"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
@@ -240,6 +312,10 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-hdpi\\ic_fav_outline.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_activity_auth.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\activity_auth.xml"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_menu.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_menu.png"
     },
@@ -248,24 +324,40 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v21\\ic_favourite.xml"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_bowl.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-hdpi\\ic_bowl.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_facebook.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xhdpi\\ic_facebook.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_history.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xhdpi\\ic_history.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_google.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-hdpi\\ic_google.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_email.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_email.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_phone_signin.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxhdpi\\ic_phone_signin.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_phone_signin.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-mdpi\\ic_phone_signin.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_home.png.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-mdpi\\ic_home.png"
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-mdpi\\ic_home.png"
     },
     {
-        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_current_user.png.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-hdpi\\ic_current_user.png"
-    },
-    {
-        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_back_arrow.png.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xxhdpi\\ic_back_arrow.png"
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_phone_signin.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_phone_signin.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_mark_favourite.png.flat",
@@ -274,6 +366,10 @@
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_history.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-mdpi\\ic_history.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_veg.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_veg.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_menu.png.flat",
@@ -296,8 +392,16 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\app_bar_home.xml"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\anim_slide_up.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\anim\\slide_up.xml"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_lock.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xhdpi\\ic_lock.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_email_auth.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-hdpi\\ic_email_auth.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_phone.png.flat",
@@ -306,6 +410,10 @@
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_restaurant_menu_black_24dp.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xhdpi\\ic_restaurant_menu_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_egg.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxhdpi\\ic_egg.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_fav_outline.png.flat",
@@ -336,6 +444,10 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-mdpi\\ic_email.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_discount.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-mdpi\\ic_discount.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_rating_star.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xxhdpi\\ic_rating_star.png"
     },
@@ -348,8 +460,8 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_history.png"
     },
     {
-        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\mipmap_bg_home.jpg.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\mipmap\\bg_home.jpg"
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_staggered_cardview_item.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\staggered_cardview_item.xml"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-anydpi-v21_ic_home.xml.flat",
@@ -392,16 +504,24 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\mipmap\\line.png"
     },
     {
-        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_back_arrow.png.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-mdpi\\ic_back_arrow.png"
-    },
-    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_access_time_black_24dp.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxhdpi\\ic_access_time_black_24dp.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_faqs.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-mdpi\\ic_faqs.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-anydpi-v21_ic_nonveg.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v21\\ic_nonveg.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_sale_tag.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_sale_tag.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable_splash_drawable.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable\\splash_drawable.xml"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_default_image_restaurant.png.flat",
@@ -412,12 +532,20 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-hdpi\\ic_history.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_bowl.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_bowl.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_person.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_person.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_exit_to_app_black_24dp.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_exit_to_app_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\raw_ic_bowl.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\raw\\ic_bowl.xml"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_fav_fill.png.flat",
@@ -448,6 +576,14 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v21\\ic_history.xml"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_veg.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-mdpi\\ic_veg.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_nonveg.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-mdpi\\ic_nonveg.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_content_home.xml.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\content_home.xml"
     },
@@ -460,12 +596,24 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_lock.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_sale_tag.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-hdpi\\ic_sale_tag.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_fav_fill.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xhdpi\\ic_fav_fill.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_category_cardview_item.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\category_cardview_item.xml"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-anydpi-v21_ic_default_image_restaurant.xml.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v21\\ic_default_image_restaurant.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-anydpi-v21_ic_discount.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v21\\ic_discount.xml"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_restaurant_menu_black_24dp.png.flat",
@@ -484,6 +632,10 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxhdpi\\ic_launcher_background.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_google.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_google.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_search.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-hdpi\\ic_search.png"
     },
@@ -492,12 +644,20 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xxhdpi\\ic_location.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_discount.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-hdpi\\ic_discount.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_menu.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xxhdpi\\ic_menu.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_app_icon_log.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-mdpi\\ic_app_icon_log.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\mipmap_bg_home.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\mipmap\\bg_home.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_app_icon_log.png.flat",
@@ -510,10 +670,6 @@
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_shopping_cart_black_24dp.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xhdpi\\ic_shopping_cart_black_24dp.png"
-    },
-    {
-        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_menu_item.xml.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\menu_item.xml"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\mipmap_logo.png.flat",
@@ -540,16 +696,20 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-hdpi\\ic_access_time_black_24dp.png"
     },
     {
-        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_product_category_card_view.xml.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\product_category_card_view.xml"
-    },
-    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_sort_filter.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-mdpi\\ic_sort_filter.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_home.png.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-hdpi\\ic_home.png"
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-hdpi\\ic_home.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_egg.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_egg.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_bowl.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xhdpi\\ic_bowl.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-anydpi-v21_ic_menu_slideshow.xml.flat",
@@ -557,7 +717,11 @@
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_home.png.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xxhdpi\\ic_home.png"
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxhdpi\\ic_home.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_discount.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xhdpi\\ic_discount.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-anydpi-v21_ic_location.xml.flat",
@@ -568,16 +732,20 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-mdpi\\ic_shopping_cart_black_24dp.png"
     },
     {
-        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_home.png.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_home.png"
-    },
-    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_email.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-hdpi\\ic_email.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_home.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_home.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_restaurant_menu_black_24dp.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-hdpi\\ic_restaurant_menu_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_activity_gallery_old.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\activity_gallery_old.xml"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_favourite.png.flat",
@@ -620,12 +788,20 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xxhdpi\\ic_favourite.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_mark_favourite.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xxhdpi\\ic_mark_favourite.png"
     },
     {
-        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_launcher_foreground.png"
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\menu_menu_main.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\menu\\menu_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_egg.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xhdpi\\ic_egg.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_exit_to_app_black_24dp.png.flat",
@@ -636,6 +812,10 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v21\\ic_menu_camera.xml"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_veg.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxhdpi\\ic_veg.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_activity_home.xml.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\activity_home.xml"
     },
@@ -644,12 +824,24 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_unmark_favourite.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_email_auth.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xhdpi\\ic_email_auth.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_facebook.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_facebook.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_unmark_favourite.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-hdpi\\ic_unmark_favourite.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_veg.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-hdpi\\ic_veg.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_person.png.flat",
@@ -664,8 +856,20 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v21\\ic_access_time_black_24dp.xml"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_nonveg.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_nonveg.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable_splashimage.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\drawable\\splashimage.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_mark_favourite.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_mark_favourite.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_sale_tag.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_sale_tag.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_rating_star.png.flat",
@@ -704,8 +908,16 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-hdpi\\ic_default_image_restaurant.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_bowl.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_bowl.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_order_placed_now.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-hdpi\\ic_order_placed_now.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\raw_ic_semicircle.svg.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\raw\\ic_semicircle.svg"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_search.png.flat",
@@ -716,8 +928,20 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_phone.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_sale_tag.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-mdpi\\ic_sale_tag.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable_shape_layout.xml.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable\\shape_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_phone_signin.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_phone_signin.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_email_auth.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-mdpi\\ic_email_auth.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_sort_filter.png.flat",
@@ -740,16 +964,24 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-mdpi\\ic_unmark_favourite.png"
     },
     {
-        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_rupee.png.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-hdpi\\ic_rupee.png"
-    },
-    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_search.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xxhdpi\\ic_search.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_rupee.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-hdpi\\ic_rupee.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_phone_signin.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xhdpi\\ic_phone_signin.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_facebook.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxhdpi\\ic_facebook.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_rupee.png.flat",
@@ -760,8 +992,20 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable_semicircle_shape.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable\\semicircle_shape.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_app_bar_gallery.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\app_bar_gallery.xml"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_home.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_home.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_facebook.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_facebook.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_default_image_restaurant.png.flat",
@@ -780,16 +1024,24 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xhdpi\\ic_sort_filter.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-anydpi-v24_ic_google.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v24\\ic_google.xml"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable_side_nav_bar.xml.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\drawable\\side_nav_bar.xml"
     },
     {
-        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_activity_login_register.xml.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\layout\\activity_login_register.xml"
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-anydpi-v24_ic_email_auth.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v24\\ic_email_auth.xml"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_email.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xxhdpi\\ic_email.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_phone_signin.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-hdpi\\ic_phone_signin.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
@@ -804,24 +1056,32 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-mdpi\\ic_exit_to_app_black_24dp.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_bowl.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-mdpi\\ic_bowl.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_default_image_restaurant.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xxhdpi\\ic_default_image_restaurant.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-anydpi-v24_ic_facebook.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v24\\ic_facebook.xml"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_faqs.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_faqs.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_nonveg.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xhdpi\\ic_nonveg.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_menu.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-hdpi\\ic_menu.png"
     },
     {
-        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_current_user.png.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-mdpi\\ic_current_user.png"
-    },
-    {
-        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_current_user.png.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xxhdpi\\ic_current_user.png"
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\raw_ic_imageview.svg.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\raw\\ic_imageview.svg"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_rating_star.png.flat",
@@ -832,12 +1092,36 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_order_placed_now.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_nonveg.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_nonveg.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-mdpi\\ic_launcher_background.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_google.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_google.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_offer_card_view.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\offer_card_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_egg.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-mdpi\\ic_egg.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_discount.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxhdpi\\ic_discount.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-anydpi-v21_ic_exit_to_app_black_24dp.xml.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v21\\ic_exit_to_app_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_veg.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_veg.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_faqs.png.flat",
@@ -852,12 +1136,16 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_lock.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxxhdpi_ic_email_auth.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxxhdpi\\ic_email_auth.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_shopping_cart_black_24dp.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxhdpi\\ic_shopping_cart_black_24dp.png"
     },
     {
-        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_category_card_view.xml.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\category_card_view.xml"
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_top_product_cardview_item.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\orderOnline\\res\\layout\\top_product_cardview_item.xml"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-anydpi-v21_ic_menu.xml.flat",
@@ -868,10 +1156,6 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xxhdpi\\ic_fav_outline.png"
     },
     {
-        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_back_arrow.png.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-hdpi\\ic_back_arrow.png"
-    },
-    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-mdpi\\ic_launcher_foreground.png"
     },
@@ -880,8 +1164,16 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v21\\ic_email.xml"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-ldpi_ic_email_auth.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_email_auth.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-anydpi-v21_ic_shopping_cart_black_24dp.xml.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v21\\ic_shopping_cart_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-anydpi-v24_ic_phone_signin.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v24\\ic_phone_signin.xml"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable_btn_rounded.xml.flat",
@@ -896,12 +1188,24 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xhdpi\\ic_access_time_black_24dp.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_nonveg.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxhdpi\\ic_nonveg.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_facebook.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-hdpi\\ic_facebook.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_favourite.png.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-mdpi\\ic_favourite.png"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-anydpi-v21_ic_person.xml.flat",
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v21\\ic_person.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-anydpi-v21_ic_veg.xml.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-anydpi-v21\\ic_veg.xml"
     },
     {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_phone.png.flat",
@@ -924,7 +1228,15 @@
         "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_favourite.png"
     },
     {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_email_auth.png.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxhdpi\\ic_email_auth.png"
+    },
+    {
         "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xhdpi_ic_home.png.flat",
-        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\drawable-xhdpi\\ic_home.png"
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xhdpi\\ic_home.png"
+    },
+    {
+        "merged": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\mipmap_top_image.jpg.flat",
+        "source": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\src\\main\\res\\mipmap\\top_image.jpg"
     }
 ]

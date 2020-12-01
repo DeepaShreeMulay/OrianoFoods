@@ -44,6 +44,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "225962345643-5ag290fsldveojbkbchdvcnn8oo81cnj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.atlas.orianofood.orderonline",
+            "certificate_hash": "7a5a10033f122eb4b8010c6298f2f1865364d2d1"
+          }
+        },
+        {
           "client_id": "225962345643-rpmgq6a1nonpl9u90lrso5bevvahjhja.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -62,7 +70,8 @@
             }
           ]
         }
-      }
+      },
+      "admob_app_id": "ca-app-pub-1118653966240688~9424351305"
     }
   ],
   "configuration_version": "1"
