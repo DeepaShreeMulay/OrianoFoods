@@ -13,5 +13,5 @@ build
 /captures
 .externalNativeBuild
 .cxx
-app/google-services.json
+/app/google-services.json
 /keystore
