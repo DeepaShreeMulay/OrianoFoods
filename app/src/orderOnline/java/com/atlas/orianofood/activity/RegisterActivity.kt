@@ -24,7 +24,6 @@ class RegisterActivity : AppCompatActivity() {
         btn_signUp.setOnClickListener {
             setLayoutVisibility(View.VISIBLE, View.INVISIBLE)
 
-
             val valueEventListener = object : ValueEventListener {
                 override fun onCancelled(databaseError: DatabaseError) {
 
