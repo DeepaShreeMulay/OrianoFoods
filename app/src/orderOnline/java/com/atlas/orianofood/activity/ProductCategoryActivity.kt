@@ -24,9 +24,10 @@ import com.atlas.orianofood.adapter.ProductViewHolder
 import com.atlas.orianofood.interfaces.ItemClickListener
 import com.atlas.orianofood.model.Offer
 import com.atlas.orianofood.model.ProductCategory
-import com.atlas.orianofood.utils.Common
 import com.atlas.orianofood.utils.OFFERS_EXTRA
 import com.atlas.orianofood.utils.PRODUCT_CATEGORY_EXTRA
+import com.atlas.orianofood.utils.logout
+import com.atlas.orianofood.utils.toast
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.material.navigation.NavigationView
@@ -53,6 +54,9 @@ class ProductCategoryActivity : AppCompatActivity(),
     lateinit var topSellingViewHolder2: FirebaseRecyclerAdapter<ProductCategory, ProductViewHolder>
     lateinit var offersViewHolder: FirebaseRecyclerAdapter<Offer, OffersViewHolder>
     lateinit var viewHolder2: FirebaseRecyclerAdapter<ProductCategory, ProductViewHolder>
+
+    private val currentUser = FirebaseAuth.getInstance().currentUser
+    private val activity = this@ProductCategoryActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,11 +91,19 @@ class ProductCategoryActivity : AppCompatActivity(),
 
         //user name
         val view: View = nav_view.getHeaderView(0)
-        if (Common.currentUser != null) {
-            view.userLogged.text = Common.currentUser!!.name
-        } else {
-            view.userLogged.text = FirebaseAuth.getInstance().currentUser?.phoneNumber
-                ?: FirebaseAuth.getInstance().currentUser?.email
+        if (currentUser != null) {
+            println(currentUser.displayName + "   " + currentUser.phoneNumber + "   " + currentUser.email)
+            when {
+                currentUser.displayName?.isNotEmpty()!! -> {
+                    view.userLogged.text = currentUser.displayName
+                }
+                !currentUser.phoneNumber.isNullOrEmpty() -> {
+                    view.userLogged.text = currentUser.phoneNumber
+                }
+                !currentUser.email.isNullOrEmpty() -> {
+                    view.userLogged.text = currentUser.email
+                }
+            }
         }
 
         val manager = GridLayoutManager(this, 2)
@@ -171,8 +183,8 @@ class ProductCategoryActivity : AppCompatActivity(),
                 Picasso.get()
                     .load(model.image)
                     .resize(300, 300)
-                    .placeholder(R.drawable.ic_menu_gallery)
-                    .error(R.drawable.ic_menu_gallery)
+                    .placeholder(R.drawable.ic_dish)
+                    .error(R.drawable.ic_dish)
                     .into(holder.img)
 
                 val itemClickListener = object : ItemClickListener {
@@ -243,8 +255,8 @@ class ProductCategoryActivity : AppCompatActivity(),
                 Picasso.get()
                     .load(model.image)
                     .resize(300, 300)
-                    .placeholder(R.drawable.ic_menu_gallery)
-                    .error(R.drawable.ic_menu_gallery)
+                    .placeholder(R.drawable.ic_dish)
+                    .error(R.drawable.ic_dish)
                     .into(holder.img)
 
                 val itemClickListener = object : ItemClickListener {
@@ -290,22 +302,23 @@ class ProductCategoryActivity : AppCompatActivity(),
                 Picasso.get()
                     .load(model.image)
                     .resize(300, 300)
-                    .placeholder(R.drawable.ic_menu_gallery)
-                    .error(R.drawable.ic_menu_gallery)
+                    .placeholder(R.drawable.ic_dish)
+                    .error(R.drawable.ic_dish)
                     .into(holder.img)
 
-                /*val itemClickListener = object : ItemClickListener {
+                val itemClickListener = object : ItemClickListener {
                     override fun onClick(view: View, position: Int, isLongClick: Boolean) {
-                        val intent = Intent(this@HomeActivity, ProductActivity::class.java)
+                        toast("Work in Progress. Soon you will see this feature.")
+                        /*val intent = Intent(this@HomeActivity, ProductActivity::class.java)
                         intent.putExtra(
                             PRODUCT_CATEGORY_EXTRA,
                             offersViewHolder.getRef(position).key
                         )
                         startActivity(intent)
-                        finish()
+                        finish()*/
                     }
                 }
-                holder.setitemClickListener(itemClickListener)*/
+                holder.setitemClickListener(itemClickListener)
             }
         }
         adRecyclerView.adapter = offersViewHolder
@@ -362,8 +375,8 @@ class ProductCategoryActivity : AppCompatActivity(),
                 Picasso.get()
                     .load(model.image)
                     .resize(300, 300)
-                    .placeholder(R.drawable.ic_menu_gallery)
-                    .error(R.drawable.ic_menu_gallery)
+                    .placeholder(R.drawable.ic_dish)
+                    .error(R.drawable.ic_dish)
                     .into(holder.img)
 
                 val itemClickListener = object : ItemClickListener {
@@ -413,7 +426,13 @@ class ProductCategoryActivity : AppCompatActivity(),
         when (item.itemId) {
             R.id.nav_home -> {
                 // Handle the camera action
-                val intent = Intent(this@ProductCategoryActivity, HomeActivity::class.java)
+                val intent = Intent(activity, HomeActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.nav_address -> {
+                // Handle the camera action
+                val intent = Intent(activity, MyAddressesActivity::class.java)
                 startActivity(intent)
                 finish()
             }
@@ -422,18 +441,31 @@ class ProductCategoryActivity : AppCompatActivity(),
             }
             R.id.nav_cart -> {
                 // Handle the camera action
+                val intent = Intent(activity, CartActivity::class.java)
+                startActivity(intent)
+                finish()
             }
             R.id.nav_gallery -> {
                 // Handle the camera action
-                val intent = Intent(this@ProductCategoryActivity, GalleryActivity::class.java)
+                val intent = Intent(activity, GalleryActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.nav_profile -> {
+                // Handle the camera action
+                val intent = Intent(activity, ProfileActivity::class.java)
                 startActivity(intent)
                 finish()
             }
             R.id.nav_orders -> {
                 // Handle the camera action
+                val intent = Intent(activity, OrdersActivity::class.java)
+                startActivity(intent)
+                finish()
             }
             R.id.nav_log_out -> {
                 // Handle the camera action
+                logout()
             }
 
         }

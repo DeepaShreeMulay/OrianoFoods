@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.atlas.orianofood.R
+import com.atlas.orianofood.database.DatabaseHandler
 import com.atlas.orianofood.model.User
 import com.atlas.orianofood.utils.Common
 import com.google.firebase.database.*
@@ -49,8 +50,24 @@ class LoginActivity : AppCompatActivity() {
 
                             if (user.password == et_password.text.toString()) {
                                 "Login Successful.".toast(this@LoginActivity)
+                                var intent = Intent(this@LoginActivity, HomeActivity::class.java)
 
-                                val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+                                when {
+                                    user.name.isNullOrEmpty() -> {
+                                        intent =
+                                            Intent(this@LoginActivity, ProfileActivity::class.java)
+                                    }
+                                    user.phone.isNullOrEmpty() -> {
+                                        intent =
+                                            Intent(this@LoginActivity, ProfileActivity::class.java)
+                                    }
+                                    (DatabaseHandler(this@LoginActivity).getDefaultAddress() == "No Default Address Available") -> {
+                                        intent = Intent(
+                                            this@LoginActivity,
+                                            AddAddressActivity::class.java
+                                        )
+                                    }
+                                }
 
                                 Common.currentUser = user
                                 startActivity(intent)

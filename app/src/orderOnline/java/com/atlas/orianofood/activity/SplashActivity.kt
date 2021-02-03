@@ -8,9 +8,11 @@ import android.view.Window
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.atlas.orianofood.R
-import kotlinx.android.synthetic.main.activity_splash_screen.*
+import kotlinx.android.synthetic.orderOnline.activity_splash_screen.*
 
 class SplashActivity : AppCompatActivity() {
+    var activity = this@SplashActivity
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -18,7 +20,7 @@ class SplashActivity : AppCompatActivity() {
 
 
         val animSlideUp = AnimationUtils.loadAnimation(
-            this,
+            activity,
             R.anim.slide_up
         )
         // Slide Up
@@ -28,7 +30,7 @@ class SplashActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             /* Create an Intent that will start the Menu-Activity. */
             // val loginIntent = Intent(this, LoginActivity::class.java)
-            val loginIntent = Intent(this, AuthActivity::class.java)
+            val loginIntent = Intent(activity, SignInActivity::class.java)
             startActivity(loginIntent)
             finish()
         }, 1500)

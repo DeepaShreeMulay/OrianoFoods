@@ -29,7 +29,6 @@ import com.atlas.orianofood.model.Menu
 import com.atlas.orianofood.model.Offer
 import com.atlas.orianofood.model.ProductCategory
 import com.atlas.orianofood.utils.*
-import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.material.navigation.NavigationView
@@ -54,6 +53,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var topRatedViewHolder: FirebaseRecyclerAdapter<ProductCategory, ProductViewHolder>
     lateinit var topSellingViewHolder: FirebaseRecyclerAdapter<ProductCategory, ProductViewHolder>
     lateinit var offersViewHolder: FirebaseRecyclerAdapter<Offer, OffersViewHolder>
+    private val currentUser = FirebaseAuth.getInstance().currentUser
+    private val activity = this@HomeActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,7 +76,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         topSelling = database.getReference(PRODUCT_CATEGORY_EXTRA)
         topRated = database.getReference(PRODUCT_CATEGORY_EXTRA)
         fab.setOnClickListener {
-            val intent = Intent(this, CartActivity::class.java)
+            val intent = Intent(activity, CartActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -94,11 +95,15 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         //user name
         val view: View = nav_view.getHeaderView(0)
-        if (Common.currentUser != null) {
-            view.userLogged.text = Common.currentUser!!.name
-        } else {
-            view.userLogged.text = FirebaseAuth.getInstance().currentUser?.phoneNumber
-                ?: FirebaseAuth.getInstance().currentUser?.email
+        if (currentUser != null) {
+            println(currentUser.displayName + "   " + currentUser.phoneNumber + "   " + currentUser.email)
+            if (!currentUser.displayName.isNullOrEmpty()) {
+                view.userLogged.text = currentUser.displayName
+            } else if (!currentUser.phoneNumber.isNullOrEmpty()) {
+                view.userLogged.text = currentUser.phoneNumber
+            } else if (!currentUser.email.isNullOrEmpty()) {
+                view.userLogged.text = currentUser.email
+            }
         }
 
         val manager = GridLayoutManager(this, 3)
@@ -321,6 +326,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         productCategoryTable.addValueEventListener(valueEventListener)
     }
+
     private fun addDataToFirebaseDBCategory() {
         val database: FirebaseDatabase = FirebaseDatabase.getInstance()
         val categoryTable: DatabaseReference = database.getReference(CATEGORY_EXTRA)
@@ -437,6 +443,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         categoryTable.addValueEventListener(valueEventListener)
     }
+
     private fun addDataToFirebaseDBMenu() {
         val database: FirebaseDatabase = FirebaseDatabase.getInstance()
         val menuTable: DatabaseReference = database.getReference(MENU_EXTRA)
@@ -539,6 +546,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         menuTable.addValueEventListener(valueEventListener)
     }
+
     private fun addDataToFirebaseDBAds() {
         val database: FirebaseDatabase = FirebaseDatabase.getInstance()
         val menuTable: DatabaseReference = database.getReference("Offers")
@@ -626,13 +634,13 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 Picasso.get()
                     .load(model.image)
                     .resize(300, 300)
-                    .placeholder(R.drawable.ic_menu_gallery)
-                    .error(R.drawable.ic_menu_gallery)
+                    .placeholder(R.drawable.ic_dish)
+                    .error(R.drawable.ic_dish)
                     .into(holder.img)
 
                 val itemClickListener = object : ItemClickListener {
                     override fun onClick(view: View, position: Int, isLongClick: Boolean) {
-                        val intent = Intent(this@HomeActivity, ProductActivity::class.java)
+                        val intent = Intent(activity, ProductActivity::class.java)
                         intent.putExtra(
                             PRODUCT_CATEGORY_EXTRA,
                             topSellingViewHolder.getRef(position).key
@@ -646,6 +654,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         topSellingRecyclerview.adapter = topSellingViewHolder
     }
+
     private fun loadTopRatingItems() {
         val productQuery = topRated.orderByKey()
         val productsOption = FirebaseRecyclerOptions.Builder<ProductCategory>()
@@ -696,13 +705,13 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 Picasso.get()
                     .load(model.image)
                     .resize(300, 300)
-                    .placeholder(R.drawable.ic_menu_gallery)
-                    .error(R.drawable.ic_menu_gallery)
+                    .placeholder(R.drawable.ic_dish)
+                    .error(R.drawable.ic_dish)
                     .into(holder.img)
 
                 val itemClickListener = object : ItemClickListener {
                     override fun onClick(view: View, position: Int, isLongClick: Boolean) {
-                        val intent = Intent(this@HomeActivity, ProductActivity::class.java)
+                        val intent = Intent(activity, ProductActivity::class.java)
                         intent.putExtra(
                             PRODUCT_CATEGORY_EXTRA,
                             topRatedViewHolder.getRef(position).key
@@ -716,6 +725,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         topRatingRecyclerview.adapter = topRatedViewHolder
     }
+
     private fun loadOffers() {
         val offerQuery = offer.orderByKey()
         val offerOption = FirebaseRecyclerOptions.Builder<Offer>()
@@ -741,27 +751,29 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 Picasso.get()
                     .load(model.image)
                     .resize(300, 300)
-                    .placeholder(R.drawable.ic_menu_gallery)
-                    .error(R.drawable.ic_menu_gallery)
+                    .placeholder(R.drawable.ic_dish)
+                    .error(R.drawable.ic_dish)
                     .into(holder.img)
 
-                /*val itemClickListener = object : ItemClickListener {
+                val itemClickListener = object : ItemClickListener {
                     override fun onClick(view: View, position: Int, isLongClick: Boolean) {
-                        val intent = Intent(this@HomeActivity, ProductActivity::class.java)
+                        toast("Work in Progress. Soon you will see this feature.")
+                        /*val intent = Intent(activity, ProductActivity::class.java)
                         intent.putExtra(
                             PRODUCT_CATEGORY_EXTRA,
                             offersViewHolder.getRef(position).key
                         )
                         startActivity(intent)
-                        finish()
+                        finish()*/
                     }
                 }
-                holder.setitemClickListener(itemClickListener)*/
+                holder.setitemClickListener(itemClickListener)
             }
         }
         adRecyclerView.adapter = offersViewHolder
         adRecyclerView.smoothScrollToPosition(offersViewHolder.itemCount)
     }
+
     private fun loadMenuItems() {
         val menuQuery = menu.orderByKey()
         val menuOption = FirebaseRecyclerOptions.Builder<Menu>()
@@ -783,14 +795,14 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 Picasso.get()
                     .load(model.image)
                     .resize(300, 300)
-                    .placeholder(R.drawable.ic_menu_gallery)
-                    .error(R.drawable.ic_menu_gallery)
+                    .placeholder(R.drawable.ic_dish)
+                    .error(R.drawable.ic_dish)
                     .into(holder.categoryImg)
 
                 val itemClickListener = object : ItemClickListener {
                     override fun onClick(view: View, position: Int, isLongClick: Boolean) {
 
-                        val intent = Intent(this@HomeActivity, CategoryActivity::class.java)
+                        val intent = Intent(activity, CategoryActivity::class.java)
                         //intent.putExtra(CATEGORY_EXTRA, viewHolder.getRef(position).key)
                         intent.putExtra(CATEGORY_EXTRA, holder.categoryName.text as String?)
                         startActivity(intent)
@@ -830,24 +842,48 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
+            R.id.nav_home -> {
+                // Handle the camera action
+                /*val intent = Intent(activity, HomeActivity::class.java)
+                startActivity(intent)
+                finish()*/
+            }
+            R.id.nav_address -> {
+                // Handle the camera action
+                val intent = Intent(activity, MyAddressesActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
             R.id.nav_menu -> {
                 // Handle the camera action
             }
             R.id.nav_cart -> {
                 // Handle the camera action
+                val intent = Intent(activity, CartActivity::class.java)
+                startActivity(intent)
+                finish()
             }
             R.id.nav_gallery -> {
                 // Handle the camera action
-                val intent = Intent(this@HomeActivity, GalleryActivity::class.java)
+                val intent = Intent(activity, GalleryActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.nav_profile -> {
+                // Handle the camera action
+                val intent = Intent(activity, ProfileActivity::class.java)
                 startActivity(intent)
                 finish()
             }
             R.id.nav_orders -> {
                 // Handle the camera action
+                val intent = Intent(activity, OrdersActivity::class.java)
+                startActivity(intent)
+                finish()
             }
             R.id.nav_log_out -> {
                 // Handle the camera action
-                AuthUI.getInstance().signOut(this)
+                logout()
             }
 
         }

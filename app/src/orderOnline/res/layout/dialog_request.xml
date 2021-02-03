@@ -82,7 +82,7 @@
                         android:layout_weight="3"
                         android:paddingTop="12dp"
                         android:paddingBottom="12dp"
-                        android:textColor="@color/colorText"
+                        android:textColor="@color/black"
                         android:textSize="20sp"
                         tools:text="takeaway" />
                 </LinearLayout>
@@ -109,12 +109,39 @@
                         android:layout_weight="3"
                         android:paddingTop="12dp"
                         android:paddingBottom="12dp"
-                        android:textColor="@color/colorText"
+                        android:textColor="@color/black"
                         android:textSize="20sp"
                         tools:text="+244925213140" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="ADDRESS: "
+                        android:textAlignment="textEnd"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_confirm_order_address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:maxLines="4"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <!--<LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -127,7 +154,7 @@
                         android:gravity="center_horizontal"
                         android:text="Address"
                         android:textAlignment="center"
-                        android:textColor="@color/colorText"
+                        android:textColor="@color/black"
                         android:textSize="20sp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -139,7 +166,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Enter your Address"
                     android:inputType="text"
-                    android:textSize="20sp" />
+                    android:textSize="20sp" />-->
             </LinearLayout>
 
             <View

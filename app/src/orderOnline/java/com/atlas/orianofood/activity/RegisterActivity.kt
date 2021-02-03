@@ -40,7 +40,7 @@ class RegisterActivity : AppCompatActivity() {
                     } else {
                         val user = User(
                             et_signUp_name.text.toString(), et_signUp_password.text.toString(),
-                            et_signUp_phone_number.text.toString()
+                            et_signUp_phone_number.text.toString(), ""
                         )
                         userTable.child(et_signUp_phone_number.text.toString()).setValue(user)
                         "User registered successful.".toast(this@RegisterActivity)

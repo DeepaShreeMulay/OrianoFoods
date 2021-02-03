@@ -1,0 +1,29 @@
+<svg height="32"
+    width="64"
+    xmlns="http://www.w3.org/2000/svg">
+
+    <title />
+    <g>
+        <title>background</title>
+        <rect
+            fill="none"
+            height="34"
+            id="canvas_background"
+            width="66"
+            x="-1"
+            y="-1" />
+    </g>
+    <g>
+        <title>Layer 1</title>
+        <path
+            class="cls-5"
+            d="m63.692,0.300004a1,1 0 0 0 -0.717,-0.3l-61.95,0a1,1 0 0 0 -1,1.032a31.99,31.99 0 0 0 63.948,0a1,1 0 0 0 -0.281,-0.732z"
+            fill="#000000"
+            id="svg_9" />
+        <path
+            class="cls-6"
+            d="m63.692,0.300004a1,1 0 0 0 -0.717,-0.3l-2,0a1,1 0 0 1 1,1.032a31.836,31.836 0 0 1 -30.975,30.944c0.333,0.01 0.665,0.024 1,0.024a31.848,31.848 0 0 0 31.974,-30.968a1,1 0 0 0 -0.282,-0.732z"
+            fill="#ffa505"
+            id="svg_10" />
+    </g>
+</svg>

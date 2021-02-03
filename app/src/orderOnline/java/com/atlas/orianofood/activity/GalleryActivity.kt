@@ -19,7 +19,7 @@ import com.atlas.orianofood.activity.ui.main.SectionsPagerAdapter
 import com.atlas.orianofood.adapter.GalleryViewHolder
 import com.atlas.orianofood.interfaces.ItemClickListener
 import com.atlas.orianofood.model.Gallery
-import com.atlas.orianofood.utils.Common
+import com.atlas.orianofood.utils.logout
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -39,6 +39,9 @@ class GalleryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
     lateinit var database: FirebaseDatabase
     lateinit var menu: DatabaseReference
     lateinit var viewHolder: FirebaseRecyclerAdapter<Gallery, GalleryViewHolder>
+
+    private val currentUser = FirebaseAuth.getInstance().currentUser
+    private val activity = this@GalleryActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,11 +77,19 @@ class GalleryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
 
         //user name
         val view: View = nav_view.getHeaderView(0)
-        if (Common.currentUser != null) {
-            view.userLogged.text = Common.currentUser!!.name
-        } else {
-            view.userLogged.text = FirebaseAuth.getInstance().currentUser?.phoneNumber
-                ?: FirebaseAuth.getInstance().currentUser?.email
+        if (currentUser != null) {
+            println(currentUser.displayName + "   " + currentUser.phoneNumber + "   " + currentUser.email)
+            when {
+                currentUser.displayName?.isNotEmpty()!! -> {
+                    view.userLogged.text = currentUser.displayName
+                }
+                !currentUser.phoneNumber.isNullOrEmpty() -> {
+                    view.userLogged.text = currentUser.phoneNumber
+                }
+                !currentUser.email.isNullOrEmpty() -> {
+                    view.userLogged.text = currentUser.email
+                }
+            }
         }
 
         val manager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
@@ -255,7 +266,13 @@ class GalleryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         when (item.itemId) {
             R.id.nav_home -> {
                 // Handle the camera action
-                val intent = Intent(this@GalleryActivity, HomeActivity::class.java)
+                val intent = Intent(activity, HomeActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.nav_address -> {
+                // Handle the camera action
+                val intent = Intent(activity, MyAddressesActivity::class.java)
                 startActivity(intent)
                 finish()
             }
@@ -264,16 +281,31 @@ class GalleryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
             }
             R.id.nav_cart -> {
                 // Handle the camera action
+                val intent = Intent(activity, CartActivity::class.java)
+                startActivity(intent)
+                finish()
             }
             R.id.nav_gallery -> {
                 // Handle the camera action
-
+                /*val intent = Intent(activity, GalleryActivity::class.java)
+                startActivity(intent)
+                finish()*/
+            }
+            R.id.nav_profile -> {
+                // Handle the camera action
+                val intent = Intent(activity, ProfileActivity::class.java)
+                startActivity(intent)
+                finish()
             }
             R.id.nav_orders -> {
                 // Handle the camera action
+                val intent = Intent(activity, OrdersActivity::class.java)
+                startActivity(intent)
+                finish()
             }
             R.id.nav_log_out -> {
                 // Handle the camera action
+                logout()
             }
 
         }

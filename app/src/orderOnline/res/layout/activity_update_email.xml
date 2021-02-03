@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/layoutHead"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/splash_drawable">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@color/white"
+                android:elevation="2dp"
+                android:innerRadius="0dp"
+                android:shape="ring"
+                app:cardCornerRadius="75dp">
+
+                <ImageView
+                    android:id="@+id/image_view"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/ic_boy" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/edit_text_name"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardview"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:enabled="true"
+                android:gravity="center_horizontal"
+                android:text="Update Email"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <ProgressBar
+                android:id="@+id/progressbar_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layoutPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layoutHead"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="invisible">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:gravity="center_horizontal"
+                android:text="To change email you need to enter your password again"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+
+            <EditText
+                android:id="@+id/edit_text_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="password"
+                android:inputType="textPassword"
+                android:maxLength="10"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/button_authenticate"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/btn_rounded"
+                android:text="Authenticate"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layoutUpdateEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layoutHead"
+            android:animateLayoutChanges="true"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="visible">
+
+
+            <EditText
+                android:id="@+id/edit_text_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:hint="New Email"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+            <Button
+                android:id="@+id/button_update"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/btn_rounded"
+                android:text="Update"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+
+</FrameLayout>

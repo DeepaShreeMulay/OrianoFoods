@@ -10,6 +10,7 @@
 
     <string name="enter_your_name">Enter your name</string>
     <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="enter_your_email">Enter your email</string>
     <string name="enter_your_password">Enter your password</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -22,5 +23,12 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="deliver_to">Deliver to  <font color='#FF0000'>*</font></string>
+    <string name="city">City  <font color='#FF0000'>*</font></string>
+    <string name="area">Area  <font color='#FF0000'>*</font></string>
+    <string name="house_no_building_name">House No., Building Name  <font color='#FF0000'>*</font></string>
+    <string name="street">Street  <font color='#FF0000'>*</font></string>
+    <string name="pincode">Pincode  <font color='#FF0000'>*</font></string>
+    <string name="landmark">Landmark</string>
 
 </resources>

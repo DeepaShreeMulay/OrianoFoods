@@ -11,11 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name="com.atlas.orianofood.activity.GalleryActivity"
-            android:label="@string/title_activity_gallery"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name="com.atlas.orianofood.activity.SplashActivity"
@@ -28,18 +23,57 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.atlas.orianofood.activity.AuthActivity"
+            android:name="com.atlas.orianofood.activity.SignInActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAppTheme" />
+        <activity
+            android:name="com.atlas.orianofood.activity.SignUpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAppTheme" />
+        <activity
+            android:name="com.atlas.orianofood.activity.ResetPasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAppTheme" />
+        <activity
+            android:name="com.atlas.orianofood.activity.ProfileActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme" />
 
         <activity
-            android:name="com.atlas.orianofood.activity.LoginActivity"
+            android:name="com.atlas.orianofood.activity.MyAddressesActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme" />
         <activity
-            android:name="com.atlas.orianofood.activity.RegisterActivity"
+            android:name="com.atlas.orianofood.activity.AddAddressActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme" />
+        <activity
+            android:name="com.atlas.orianofood.activity.OrdersActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAppTheme" />
+
+        <activity
+            android:name="com.atlas.orianofood.activity.ChangePasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAppTheme" />
+        <activity
+            android:name="com.atlas.orianofood.activity.UpdateEmailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAppTheme" />
+        <activity
+            android:name="com.atlas.orianofood.activity.VerifyPhoneAuthActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAppTheme" />
+        <activity
+            android:name="com.atlas.orianofood.activity.VerifyPhoneActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAppTheme" />
+        <activity
+            android:name="com.atlas.orianofood.activity.GalleryActivity"
+            android:label="@string/title_activity_gallery"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAppTheme" />
+
         <activity
             android:name="com.atlas.orianofood.activity.HomeActivity"
             android:screenOrientation="portrait"
@@ -60,6 +94,21 @@
             android:name="com.atlas.orianofood.activity.CartActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme" />
+
+
+        <activity
+            android:name="com.atlas.orianofood.activity.AuthActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAppTheme" />
+        <activity
+            android:name="com.atlas.orianofood.activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAppTheme" />
+        <activity
+            android:name="com.atlas.orianofood.activity.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAppTheme" />
+
 
     </application>
 

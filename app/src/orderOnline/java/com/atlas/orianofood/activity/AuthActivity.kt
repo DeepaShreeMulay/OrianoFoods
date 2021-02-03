@@ -4,8 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.atlas.orianofood.R
-import com.firebase.ui.auth.AuthMethodPickerLayout
-import com.firebase.ui.auth.AuthUI
+
 import com.google.firebase.auth.FirebaseAuth
 
 class AuthActivity : AppCompatActivity() {
@@ -31,14 +30,14 @@ class AuthActivity : AppCompatActivity() {
 
     private fun signIn() {
         // we are using Google, Email-Password, and Phone Number based authentication
-        val providers = listOf(
-            AuthUI.IdpConfig.GoogleBuilder().build(),
+        /*  val providers = listOf(
+             *//* AuthUI.IdpConfig.GoogleBuilder().build(),
             AuthUI.IdpConfig.EmailBuilder().build(),
-            AuthUI.IdpConfig.PhoneBuilder().build()
+            AuthUI.IdpConfig.PhoneBuilder().build()*//*
         )
 
-        /* val providers = mutableListOf<AuthUI.IdpConfig>()
-         providers.add(AuthUI.IdpConfig.GoogleBuilder().build())*/
+        *//* val providers = mutableListOf<AuthUI.IdpConfig>()
+         providers.add(AuthUI.IdpConfig.GoogleBuilder().build())*//*
 
 
         val layout = AuthMethodPickerLayout
@@ -68,12 +67,12 @@ class AuthActivity : AppCompatActivity() {
             .build()
 
         startActivity(authIntent)
-        finish()
+        finish()*/
 
     }
 
     fun signOut() {
-        AuthUI.getInstance().signOut(this)
+        // AuthUI.getInstance().signOut(this)
     }
 
 }

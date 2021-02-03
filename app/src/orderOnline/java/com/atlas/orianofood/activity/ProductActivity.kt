@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.atlas.orianofood.R
 import com.atlas.orianofood.database.DatabaseHandler
-import com.atlas.orianofood.model.Order
+import com.atlas.orianofood.model.Cart
 import com.atlas.orianofood.model.ProductCategory
 import com.atlas.orianofood.utils.PRODUCT_CATEGORY_EXTRA
 import com.google.firebase.database.*
@@ -54,9 +54,9 @@ class ProductActivity : AppCompatActivity() {
 
                 Picasso.get()
                     .load(product.image)
-                    .placeholder(R.mipmap.bg_home)
                     .resize(300, 300)
-                    .error(R.drawable.ic_menu_gallery)
+                    .placeholder(R.drawable.ic_dish)
+                    .error(R.drawable.ic_dish)
                     .into(product_img)
 
                 collapsing.title = product.name
@@ -79,10 +79,10 @@ class ProductActivity : AppCompatActivity() {
     private fun saveToCart() {
         btn_add_cart.setOnClickListener {
             // Database(this)
-            DatabaseHandler(this).createTable()
+            DatabaseHandler(this).createOrderTable()
             DatabaseHandler(this)
                 .getCartItem(
-                    Order(
+                    Cart(
                         productId,
                         product.name!!,
                         btn_number.number,

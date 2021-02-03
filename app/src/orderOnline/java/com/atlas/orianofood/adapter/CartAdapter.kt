@@ -9,12 +9,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.amulyakhare.textdrawable.TextDrawable
 import com.atlas.orianofood.R
-import com.atlas.orianofood.model.Order
+import com.atlas.orianofood.model.Cart
 import java.text.NumberFormat
 import java.util.*
 
 
-class CartAdapter(private val context: Context, private val orders: List<Order>) :
+class CartAdapter(private val context: Context, private val carts: List<Cart>) :
     RecyclerView.Adapter<CartViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
@@ -27,22 +27,22 @@ class CartAdapter(private val context: Context, private val orders: List<Order>)
     }
 
     override fun getItemCount(): Int {
-        return orders.count()
+        return carts.count()
     }
 
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
         val textDrawable = TextDrawable.builder()
-            .buildRound("" + orders[position].quantity, Color.RED)
+            .buildRound("" + carts[position].quantity, Color.RED)
         holder.cartBtnCount.setImageDrawable(textDrawable)
 
-        val price = (Integer.parseInt(orders[position].price)) *
-                (Integer.parseInt(orders[position].quantity))
+        val price = (Integer.parseInt(carts[position].price)) *
+                (Integer.parseInt(carts[position].quantity))
 
         val locale = Locale("en", "IN")
         val nf = NumberFormat.getCurrencyInstance(locale)
 
         holder.cartProductPrice.text = nf.format(price)
-        holder.cartProductName.text = orders[position].productName
+        holder.cartProductName.text = carts[position].productName
     }
 
 }

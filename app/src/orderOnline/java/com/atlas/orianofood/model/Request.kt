@@ -6,14 +6,14 @@ class Request() {
     lateinit var name: String
     lateinit var address: String
     lateinit var total: String
-    lateinit var foods: List<Order>
+    lateinit var foods: List<Cart>
 
     constructor(
         phone: String,
         name: String,
         address: String,
         total: String,
-        foods: List<Order>
+        foods: List<Cart>
     ) : this() {
         this.phone = phone
         this.name = name

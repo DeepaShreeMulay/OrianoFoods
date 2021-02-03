@@ -4,11 +4,25 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
             android:iconTint="@color/colorPrimary"
             android:title="Home" />
+
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_person"
+            android:iconTint="@color/colorPrimary"
+            android:title="Profile" />
+
+        <item
+            android:id="@+id/nav_address"
+            android:icon="@drawable/ic_location"
+            android:iconTint="@color/colorPrimary"
+            android:title="My Addresses" />
+
         <item
             android:id="@+id/nav_menu"
             android:icon="@drawable/ic_restaurant_menu_black_24dp"
@@ -38,7 +52,7 @@
             android:icon="@drawable/ic_exit_to_app_black_24dp"
             android:iconTint="@color/colorPrimary"
             android:title="Log out" />
-    </group>
 
+    </group>
 
 </menu>
