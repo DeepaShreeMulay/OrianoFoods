@@ -94,17 +94,6 @@ class VerifyPhoneAuthActivity : AppCompatActivity() {
         layoutVerification.visibility = View.VISIBLE
     }
 
-    /* private fun signIn (credential: PhoneAuthCredential) {
-         mAuth.signInWithCredential(credential)
-             .addOnCompleteListener {
-                     task: Task<AuthResult> ->
-                 if (task.isSuccessful) {
-                     toast("Logged in Successfully :)")
-                     startActivity(Intent(this, MainActivity::class.java))
-                 }
-             }
-     }*/
-
     private fun authenticate() {
 
         val verifiNo = edit_text_code.text.toString().trim()

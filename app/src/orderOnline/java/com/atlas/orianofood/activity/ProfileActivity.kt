@@ -12,10 +12,7 @@ import com.google.firebase.auth.UserProfileChangeRequest
 import kotlinx.android.synthetic.orderOnline.activity_profile.*
 
 class ProfileActivity : AppCompatActivity() {
-    /*private val DEFAULT_IMAGE_URL = "https://picsum.photos/200"
 
-    private lateinit var imageUri: Uri
-    private val REQUEST_IMAGE_CAPTURE = 100*/
 
     private val currentUser = FirebaseAuth.getInstance().currentUser
     val activity = this@ProfileActivity
@@ -88,7 +85,6 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         text_phone.setOnClickListener {
-
             val intent = Intent(activity, VerifyPhoneAuthActivity::class.java)
             startActivity(intent)
             finish()

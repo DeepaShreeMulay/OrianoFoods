@@ -76,7 +76,7 @@ class CartActivity : AppCompatActivity() {
     }
 
     private fun showDialog() {
-        val dialog = Dialog(this)
+        val dialog = Dialog(this, R.style.MyAlertDialogTheme)
         dialog.setTitle("Checkout")
         dialog.setContentView(R.layout.dialog_request)
         dialog.findViewById<TextView>(R.id.confirm_cart_price).text = nf.format(total.toDouble())
@@ -89,18 +89,24 @@ class CartActivity : AppCompatActivity() {
                         currentUser.displayName
                     dialog.findViewById<TextView>(R.id.txt_confirm_order_phone).text =
                         currentUser.phoneNumber
+                    dialog.findViewById<TextView>(R.id.txt_confirm_order_email).text =
+                        currentUser.email
                 }
                 !currentUser.phoneNumber.isNullOrEmpty() -> {
                     dialog.findViewById<TextView>(R.id.txt_confirm_order_name).text =
                         currentUser.phoneNumber
                     dialog.findViewById<TextView>(R.id.txt_confirm_order_phone).text =
                         currentUser.phoneNumber
+                    dialog.findViewById<TextView>(R.id.txt_confirm_order_email).text =
+                        currentUser.email
                 }
                 !currentUser.email.isNullOrEmpty() -> {
                     dialog.findViewById<TextView>(R.id.txt_confirm_order_name).text =
                         currentUser.email
                     dialog.findViewById<TextView>(R.id.txt_confirm_order_phone).text =
                         currentUser.phoneNumber
+                    dialog.findViewById<TextView>(R.id.txt_confirm_order_email).text =
+                        currentUser.email
                 }
             }
         }
@@ -108,6 +114,10 @@ class CartActivity : AppCompatActivity() {
 
         var addr = dialog.findViewById<TextView>(R.id.txt_confirm_order_address)
         addr.text = DatabaseHandler(this).getDefaultAddress()
+
+        addr.setOnClickListener {
+            toast("Work in Progress. Soon you will see this feature.")
+        }
 
 
 

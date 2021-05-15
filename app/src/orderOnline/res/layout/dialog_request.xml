@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -71,19 +71,20 @@
                         android:layout_weight="1"
                         android:gravity="end"
                         android:text="NAME: "
-                        android:textAlignment="textEnd"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textAlignment="textStart"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlCompat" />
 
                     <TextView
                         android:id="@+id/txt_confirm_order_name"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:paddingTop="12dp"
-                        android:paddingBottom="12dp"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp"
                         android:textColor="@color/black"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         tools:text="takeaway" />
                 </LinearLayout>
 
@@ -97,20 +98,21 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="end"
-                        android:text="TEL: "
-                        android:textAlignment="textEnd"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:text="MOBILE: "
+                        android:textAlignment="textStart"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlCompat" />
 
                     <TextView
                         android:id="@+id/txt_confirm_order_phone"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:paddingTop="12dp"
-                        android:paddingBottom="12dp"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp"
                         android:textColor="@color/black"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         tools:text="+244925213140" />
                 </LinearLayout>
 
@@ -124,10 +126,39 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="end"
+                        android:text="EMAIL: "
+                        android:textAlignment="textStart"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlCompat" />
+
+                    <TextView
+                        android:id="@+id/txt_confirm_order_email"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        tools:text="abc@test.com" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
                         android:text="ADDRESS: "
-                        android:textAlignment="textEnd"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textAlignment="textStart"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlCompat" />
 
                     <TextView
                         android:id="@+id/txt_confirm_order_address"
@@ -135,10 +166,10 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:maxLines="4"
-                        android:paddingTop="12dp"
-                        android:paddingBottom="12dp"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <!--<LinearLayout
@@ -189,7 +220,7 @@
                     android:gravity="end"
                     android:text="Total: "
                     android:textAlignment="textEnd"
-                    android:textSize="18sp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -200,8 +231,12 @@
                     android:layout_weight="3"
                     android:paddingTop="12dp"
                     android:paddingBottom="12dp"
+                    android:gravity="end"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="20sp"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="12dp"
+                    android:textAlignment="textEnd"
+                    android:textSize="18sp"
                     tools:text="$100,00" />
             </LinearLayout>
 
