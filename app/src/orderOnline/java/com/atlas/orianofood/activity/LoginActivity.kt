@@ -3,88 +3,92 @@ package com.atlas.orianofood.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.atlas.orianofood.R
+import com.atlas.orianofood.dao.LoginDataBase
 import com.atlas.orianofood.database.DatabaseHandler
 import com.atlas.orianofood.model.User
+import com.atlas.orianofood.model_Register.LoginInfo
+import com.atlas.orianofood.model_Register.LoginModelFactory
+import com.atlas.orianofood.model_Register.LoginViewModel
+import com.atlas.orianofood.repository.LoginRepository
 import com.atlas.orianofood.utils.Common
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.orderOnline.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
+    private lateinit var loginviewModel: LoginViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val database: FirebaseDatabase = FirebaseDatabase.getInstance()
-        val userTable: DatabaseReference = database.getReference("User")
+        val btnsignin=findViewById<Button>(R.id.btn_signIn)
+        val textmobile=findViewById<EditText>(R.id.et_phone_number)
+        val textpass=findViewById<EditText>(R.id.et_password)
 
         progressBar.visibility = View.GONE
-
         btn_signIn.setOnClickListener {
 
             setLayoutVisibility(View.VISIBLE, View.GONE)
+            val mobile = textmobile.text.toString().trim()
+            val password = textpass.text.toString().trim()
 
-            val valueEventListener = object : ValueEventListener {
-                override fun onCancelled(databaseError: DatabaseError) {
-
-                }
-
-                override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    //Get User Information
-
-                    setLayoutVisibility(View.GONE, View.VISIBLE)
-
-                    if (dataSnapshot.child(et_phone_number.text.toString()).exists()) {
-
-
-                        val user: User? =
-                            dataSnapshot.child(et_phone_number.text.toString()).getValue(
-                                User::class.java
-                            )
-                        user?.phone = et_phone_number.text.toString()
-                        if (user != null) {
-
-                            if (user.password == et_password.text.toString()) {
-                                "Login Successful.".toast(this@LoginActivity)
-                                var intent = Intent(this@LoginActivity, HomeActivity::class.java)
-
-                                when {
-                                    user.name.isNullOrEmpty() -> {
-                                        intent =
-                                            Intent(this@LoginActivity, ProfileActivity::class.java)
-                                    }
-                                    user.phone.isNullOrEmpty() -> {
-                                        intent =
-                                            Intent(this@LoginActivity, ProfileActivity::class.java)
-                                    }
-                                    (DatabaseHandler(this@LoginActivity).getDefaultAddress() == "No Default Address Available") -> {
-                                        intent = Intent(
-                                            this@LoginActivity,
-                                            AddAddressActivity::class.java
-                                        )
-                                    }
-                                }
-
-                                Common.currentUser = user
-                                startActivity(intent)
-                                finish()
-
-                            } else {
-                                "Wrong Password.".toast(this@LoginActivity)
-                            }
-                        }
-                    } else {
-                        "User does not exist.".toast(this@LoginActivity)
-                    }
-                }
+            if (password.isEmpty()) {
+                textpass.error = "password is required"
+               return@setOnClickListener
             }
-            userTable.addValueEventListener(valueEventListener)
+            if (mobile.length < 10) {
+                textmobile.error = "please enter valid mobile no."
+                return@setOnClickListener
+            }
+           loginData(userid = 0,token = 12,mobile,password)
         }
     }
+    private fun loginData(userid:Int,token:Int,mobile:String,password:String){
+        val daoo=LoginDataBase.getInstance(application).loginDao
+
+        val loginrepository= LoginRepository(daoo)
+
+        val viewModelFactory= LoginModelFactory(loginrepository)
+
+        loginviewModel= ViewModelProvider(this, viewModelFactory).get(LoginViewModel::class.java)
+
+       val myLoginInfo= LoginInfo(userid,token.toString(),password,mobile.toLong())
+
+        Thread {
+
+            daoo.insertLogin(myLoginInfo)
+
+            daoo.readuser().forEach {
+                Log.e("TAG", """"Id is : ${it.userId}"""")
+                Log.e("TAG", """"Token is : ${it.token}"""")
+                Log.e("TAG", """"mobile is : ${it.mobilelogin}"""")
+                Log.e("TAG", """"password is : ${it.passwordlogin}"""")
+            }
+
+        }.start()
+        loginviewModel.authPost(myLoginInfo)
+        loginviewModel.myAuthResponse.observe(this, Observer { response ->
+            if (response.isSuccessful) {
+
+                Log.d("login", response.body().toString())
+                Log.d("login", response.message().toString())
+                Log.d("login", response.code().toString())
+
+            } else {
+                Toast.makeText(this, response.message(), Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
 
 
     fun setLayoutVisibility(progressBarVisibility: Int, otherVisibility: Int) {
