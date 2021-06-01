@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Paint
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -106,175 +107,23 @@ class ProductCategoryActivity : AppCompatActivity(),
             }
         }
 
+        val layoutParams: ViewGroup.LayoutParams = recyclerview.layoutParams
+        layoutParams.height = ViewGroup.LayoutParams.MATCH_PARENT
+        recyclerview.layoutParams = layoutParams
         val manager = GridLayoutManager(this, 2)
         recyclerview.layoutManager = manager
         recyclerview.setHasFixedSize(true)
         loadCategoryItems()
 
-        val offerManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        topSellingRecyclerview.layoutManager = offerManager
-        topSellingRecyclerview.setHasFixedSize(true)
-        loadTopSellingItems()
+        topSellinglayout.visibility = View.GONE
 
         val adsManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         adRecyclerView.layoutManager = adsManager
         adRecyclerView.setHasFixedSize(true)
         loadOffers()
 
-        val topRatingManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        topRatingRecyclerview.layoutManager = topRatingManager
-        topRatingRecyclerview.setHasFixedSize(true)
-        loadTopRatingItems()
+        topRatinglayout.visibility = View.GONE
 
-    }
-
-
-    private fun loadTopSellingItems() {
-        val productQuery = topSelling.orderByChild("offer").equalTo("Top Selling")
-        val productsOption = FirebaseRecyclerOptions.Builder<ProductCategory>()
-            .setQuery(productQuery, ProductCategory::class.java).build()
-
-        topSellingViewHolder2 =
-            object : FirebaseRecyclerAdapter<ProductCategory, ProductViewHolder>(
-                productsOption
-            ) {
-                override fun onCreateViewHolder(
-                    parent: ViewGroup,
-                    viewType: Int
-                ): ProductViewHolder {
-                    val view = LayoutInflater.from(parent.context)
-                        .inflate(R.layout.top_product_cardview_item, parent, false)
-
-                    val name = view.findViewById<TextView>(R.id.productName)
-                    val img = view.findViewById<ImageView>(R.id.productImage)
-                    val rate = view.findViewById<TextView>(R.id.productRate)
-                    val sellingPrice = view.findViewById<TextView>(R.id.productSellingprice)
-                    val saleTag = view.findViewById<ImageView>(R.id.sale_tag)
-                    val layout = view.findViewById<ConstraintLayout>(R.id.constraintLayout)
-                    return ProductViewHolder(view, img, name, rate, sellingPrice, saleTag, layout)
-                }
-
-            override fun onBindViewHolder(
-                holder: ProductViewHolder,
-                position: Int,
-                model: ProductCategory
-            ) {
-
-                val locale = Locale("en", "IN")
-                val nf = NumberFormat.getCurrencyInstance(locale)
-
-                holder.name.text = model.name
-
-                holder.rate.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
-                holder.rate.text = "${nf.format(model.rate?.toDouble())}"
-                holder.sellingPrice.text = "${nf.format(model.sellingprice?.toDouble())}"
-
-                if (model.isSale != null && model.isSale.equals("yes")) {
-                    holder.saleTag.visibility = View.VISIBLE
-                } else {
-                    val lp: LinearLayout.LayoutParams =
-                        LinearLayout.LayoutParams(
-                            LinearLayout.LayoutParams.MATCH_PARENT,
-                            LinearLayout.LayoutParams.WRAP_CONTENT
-                        )
-                    holder.layout.layoutParams = lp
-                }
-
-                Picasso.get()
-                    .load(model.image)
-                    .resize(300, 300)
-                    .placeholder(R.drawable.ic_dish)
-                    .error(R.drawable.ic_dish)
-                    .into(holder.img)
-
-                val itemClickListener = object : ItemClickListener {
-                    override fun onClick(view: View, position: Int, isLongClick: Boolean) {
-                        val intent =
-                            Intent(this@ProductCategoryActivity, ProductActivity::class.java)
-                        intent.putExtra(
-                            PRODUCT_CATEGORY_EXTRA,
-                            topSellingViewHolder2.getRef(position).key
-                        )
-                        startActivity(intent)
-                        finish()
-                    }
-                }
-                holder.setitemClickListener(itemClickListener)
-            }
-            }
-        topSellingRecyclerview.adapter = topSellingViewHolder2
-    }
-
-    private fun loadTopRatingItems() {
-        val productQuery = topRated.orderByKey()
-        val productsOption = FirebaseRecyclerOptions.Builder<ProductCategory>()
-            .setQuery(topRated, ProductCategory::class.java).build()
-
-        topRatedViewHolder2 = object : FirebaseRecyclerAdapter<ProductCategory, ProductViewHolder>(
-            productsOption
-        ) {
-            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
-                val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.top_product_cardview_item, parent, false)
-
-                val name = view.findViewById<TextView>(R.id.productName)
-                val img = view.findViewById<ImageView>(R.id.productImage)
-                val rate = view.findViewById<TextView>(R.id.productRate)
-                val sellingPrice = view.findViewById<TextView>(R.id.productSellingprice)
-                val saleTag = view.findViewById<ImageView>(R.id.sale_tag)
-                val layout = view.findViewById<ConstraintLayout>(R.id.constraintLayout)
-                return ProductViewHolder(view, img, name, rate, sellingPrice, saleTag, layout)
-            }
-
-            override fun onBindViewHolder(
-                holder: ProductViewHolder,
-                position: Int,
-                model: ProductCategory
-            ) {
-
-                val locale = Locale("en", "IN")
-                val nf = NumberFormat.getCurrencyInstance(locale)
-
-                holder.name.text = model.name
-
-                holder.rate.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
-                holder.rate.text = "${nf.format(model.rate?.toDouble())}"
-                holder.sellingPrice.text = "${nf.format(model.sellingprice?.toDouble())}"
-
-                if (model.isSale != null && model.isSale.equals("yes")) {
-                    holder.saleTag.visibility = View.VISIBLE
-                } else {
-                    val lp: LinearLayout.LayoutParams =
-                        LinearLayout.LayoutParams(
-                            LinearLayout.LayoutParams.MATCH_PARENT,
-                            LinearLayout.LayoutParams.WRAP_CONTENT
-                        )
-                    holder.layout.layoutParams = lp
-                }
-
-                Picasso.get()
-                    .load(model.image)
-                    .resize(300, 300)
-                    .placeholder(R.drawable.ic_dish)
-                    .error(R.drawable.ic_dish)
-                    .into(holder.img)
-
-                val itemClickListener = object : ItemClickListener {
-                    override fun onClick(view: View, position: Int, isLongClick: Boolean) {
-                        val intent =
-                            Intent(this@ProductCategoryActivity, ProductActivity::class.java)
-                        intent.putExtra(
-                            PRODUCT_CATEGORY_EXTRA,
-                            topRatedViewHolder2.getRef(position).key
-                        )
-                        startActivity(intent)
-                        finish()
-                    }
-                }
-                holder.setitemClickListener(itemClickListener)
-            }
-        }
-        topRatingRecyclerview.adapter = topRatedViewHolder2
     }
 
     private fun loadOffers() {
@@ -323,6 +172,7 @@ class ProductCategoryActivity : AppCompatActivity(),
         }
         adRecyclerView.adapter = offersViewHolder
         adRecyclerView.smoothScrollToPosition(offersViewHolder.itemCount)
+        autoScroll()
     }
 
     private fun loadCategoryItems() {
@@ -394,6 +244,27 @@ class ProductCategoryActivity : AppCompatActivity(),
         recyclerview.adapter = viewHolder2
     }
 
+    private fun autoScroll() {
+        val speedScroll: Long = 7000
+        val handler = Handler()
+        val runnable: Runnable = object : Runnable {
+            var count = 0
+            override fun run() {
+                adRecyclerView.adapter?.itemCount.let {
+                    if (count == it) {
+                        adRecyclerView.smoothScrollToPosition(0)
+                        count = 0
+                    } else if (count < it!!) {
+                        adRecyclerView.smoothScrollToPosition(++count)
+                    }
+                    adRecyclerView.adapter?.notifyDataSetChanged()
+                    handler.postDelayed(this, speedScroll)
+                }
+            }
+        }
+        handler.postDelayed(runnable, speedScroll)
+    }
+
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
@@ -404,22 +275,6 @@ class ProductCategoryActivity : AppCompatActivity(),
             finish()
         }
     }
-
-    /*override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.home, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        when (item.itemId) {
-            R.id.action_settings -> return true
-            else -> return super.onOptionsItemSelected(item)
-        }
-    }*/
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
@@ -477,36 +332,26 @@ class ProductCategoryActivity : AppCompatActivity(),
     override fun onResume() {
         super.onResume()
         loadCategoryItems()
-        loadTopSellingItems()
-        loadTopRatingItems()
         loadOffers()
         viewHolder2.startListening()
-        topRatedViewHolder2.startListening()
-        topSellingViewHolder2.startListening()
         offersViewHolder.startListening()
     }
 
     override fun onPause() {
         super.onPause()
         viewHolder2.stopListening()
-        topSellingViewHolder2.stopListening()
-        topRatedViewHolder2.stopListening()
         offersViewHolder.stopListening()
     }
 
     override fun onStart() {
         super.onStart()
         viewHolder2.startListening()
-        topRatedViewHolder2.startListening()
-        topSellingViewHolder2.startListening()
         offersViewHolder.startListening()
     }
 
     override fun onStop() {
         super.onStop()
         viewHolder2.stopListening()
-        topRatedViewHolder2.stopListening()
-        topSellingViewHolder2.stopListening()
         offersViewHolder.stopListening()
     }
 

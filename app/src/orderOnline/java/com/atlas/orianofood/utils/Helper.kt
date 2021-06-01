@@ -3,11 +3,8 @@ package com.atlas.orianofood.utils
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
-import com.atlas.orianofood.activity.AddAddressActivity
 import com.atlas.orianofood.activity.HomeActivity
-import com.atlas.orianofood.activity.ProfileActivity
 import com.atlas.orianofood.activity.SignInActivity
-import com.atlas.orianofood.database.DatabaseHandler
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -20,7 +17,7 @@ fun Context.login() {
         flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
     }
     if (currentUser != null) {
-        when {
+       /* when {
             currentUser.displayName.isNullOrEmpty() -> {
                 intent = Intent(this, ProfileActivity::class.java).apply {
                     flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
@@ -36,7 +33,7 @@ fun Context.login() {
                     flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 }
             }
-        }
+        }*/
     }
 
     startActivity(intent)

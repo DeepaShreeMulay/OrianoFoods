@@ -24,6 +24,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/topSellinglayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
@@ -60,7 +61,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:background="@color/white"
                 android:orientation="vertical"
@@ -115,6 +116,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/topRatinglayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"

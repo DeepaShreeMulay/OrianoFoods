@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Paint
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -770,8 +771,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 holder.setitemClickListener(itemClickListener)
             }
         }
+
         adRecyclerView.adapter = offersViewHolder
         adRecyclerView.smoothScrollToPosition(offersViewHolder.itemCount)
+        autoScroll()
     }
 
     private fun loadMenuItems() {
@@ -813,6 +816,32 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
         }
         recyclerview.adapter = viewHolder
+    }
+
+    private fun autoScroll() {
+        val speedScroll: Long = 7000
+        val handler = Handler()
+        val runnable: Runnable = object : Runnable {
+            var count = 0
+            override fun run() {
+                adRecyclerView.adapter?.itemCount.let {
+                    if (count == it) {
+                        adRecyclerView.smoothScrollToPosition(0)
+                        count = 0
+                    } else if (count < it!!) {
+                        adRecyclerView.smoothScrollToPosition(++count)
+                    }
+                    adRecyclerView.adapter?.notifyDataSetChanged()
+                    handler.postDelayed(this, speedScroll)
+                }
+            }
+        }
+        handler.postDelayed(runnable, speedScroll)
+    }
+
+    private fun scroll(cnt: Int) {
+        var count = cnt
+
     }
 
     override fun onBackPressed() {
