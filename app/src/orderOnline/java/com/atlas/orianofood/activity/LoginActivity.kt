@@ -1,16 +1,17 @@
 package com.atlas.orianofood.activity
 
+
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.atlas.orianofood.HomeSPActivity
 import com.atlas.orianofood.R
 import com.atlas.orianofood.SplashScreenActivity
 import com.atlas.orianofood.dao.LoginDataBase
@@ -18,6 +19,7 @@ import com.atlas.orianofood.model_Register.LoginInfo
 import com.atlas.orianofood.model_Register.LoginModelFactory
 import com.atlas.orianofood.model_Register.LoginViewModel
 import com.atlas.orianofood.repository.LoginRepository
+import com.atlas.orianofood.utils.SharedpreferencesUtil.addToken
 import com.google.gson.JsonObject
 import kotlinx.android.synthetic.orderOnline.activity_login.*
 
@@ -25,11 +27,12 @@ import kotlinx.android.synthetic.orderOnline.activity_login.*
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var loginviewModel: LoginViewModel
+    private val activity: Context = this@LoginActivity
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val btnsignin=findViewById<Button>(R.id.btn_signIn)
         val textmobile=findViewById<EditText>(R.id.et_phone_number)
         val textpass=findViewById<EditText>(R.id.et_password)
 
@@ -74,11 +77,12 @@ class LoginActivity : AppCompatActivity() {
                 Log.d("login", response.code().toString())
 
                 val myLoginInfo = LoginInfo(
-                    userId = response.body()?.userId,
-                    token = response.body()?.token,
-                    mobilelogin = mobile.toLong(),
-                    passwordlogin = password
+                        userId = response.body()?.userId,
+                        token = response.body()?.token,
+                        mobilelogin = mobile.toLong(),
+                        passwordlogin = password
                 )
+                response.body()?.token?.substringAfter("|")?.let { addToken(activity, "Bearer $it") }
 
                 Thread {
 
@@ -93,6 +97,7 @@ class LoginActivity : AppCompatActivity() {
 
                 }.start()
                 setLayoutVisibility(View.GONE, View.VISIBLE)
+                intentProceed()
 
             } else {
                 Toast.makeText(this, response.message(), Toast.LENGTH_SHORT).show()
@@ -111,6 +116,11 @@ class LoginActivity : AppCompatActivity() {
 
     fun Any.toast(context: Context, duration: Int = Toast.LENGTH_SHORT): Toast {
         return Toast.makeText(context, this.toString(), duration).apply { show() }
+    }
+
+    fun intentProceed(){
+        startActivity(Intent(this, HomeSPActivity::class.java))
+        finish()
     }
 
     fun intentSignUp(view: View) {

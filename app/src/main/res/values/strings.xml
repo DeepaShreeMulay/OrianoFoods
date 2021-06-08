@@ -30,5 +30,6 @@
     <string name="street">Street  <font color='#FF0000'>*</font></string>
     <string name="pincode">Pincode  <font color='#FF0000'>*</font></string>
     <string name="landmark">Landmark</string>
+    <string name="preference_file_key">oriano_sharedpref</string>
 
 </resources>

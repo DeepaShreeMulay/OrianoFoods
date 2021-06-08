@@ -18,6 +18,7 @@ import com.atlas.orianofood.dao.UserDataBase
 import com.atlas.orianofood.model_Register.*
 import com.atlas.orianofood.repository.LoginRepository
 import com.atlas.orianofood.repository.Repository
+import com.atlas.orianofood.utils.SharedpreferencesUtil
 import com.google.gson.JsonObject
 import kotlinx.android.synthetic.orderOnline.activity_register.*
 
@@ -25,6 +26,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainViewModel
     private lateinit var loginviewModel: LoginViewModel
+    private val activity: Context = this@RegisterActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -118,6 +120,8 @@ class RegisterActivity : AppCompatActivity() {
                     mobilelogin = mobile.toLong(),
                     passwordlogin = password
                 )
+                response.body()?.token?.substringAfter("|")?.let { SharedpreferencesUtil.addToken(activity, "Bearer $it") }
+
 
                 Thread {
 

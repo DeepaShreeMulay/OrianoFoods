@@ -5,13 +5,26 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name="com.atlas.orianofood.core.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.atlas.orianofood.SplashScreenActivity"
+        <activity android:name="com.atlas.orianofood.HomeSPActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAppTheme">
+
+        </activity>//Splash Screen kaha he
+        <activity
+            android:name="com.atlas.orianofood.activity.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAppTheme">
+        </activity>
+
+        <activity
+            android:name="com.atlas.orianofood.SplashScreenActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme">
             <intent-filter>
@@ -20,12 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.atlas.orianofood.activity.SplashActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarAppTheme">
 
-        </activity>
         <activity
             android:name="com.atlas.orianofood.activity.SignInActivity"
             android:screenOrientation="portrait"
@@ -72,6 +80,11 @@
             android:theme="@style/NoActionBarAppTheme" />
         <activity
             android:name="com.atlas.orianofood.activity.GalleryActivity"
+            android:label="@string/title_activity_gallery"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAppTheme" />
+        <activity
+            android:name="com.atlas.orianofood.GallerySPActivity"
             android:label="@string/title_activity_gallery"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme" />

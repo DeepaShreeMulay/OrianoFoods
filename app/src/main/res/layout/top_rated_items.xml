@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+    <variable
+        name="item"
+        type="com.atlas.orianofood.topRatedProduct.model.TopRatedItem"/>
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:background="@color/colorPrimary"
+        android:foregroundGravity="center_horizontal"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <!--<ImageView
+                android:id="@+id/sale_tag"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_sale_tag"
+                android:visibility="gone" />-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10">
+
+                <ImageView
+                    android:id="@+id/productImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@mipmap/bg_home"
+                    app:image_url="@{item.imageUrl}"/>
+
+                <ImageView
+                    android:id="@+id/sale_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_sale_tag"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@+id/productImage"
+                    app:layout_constraintTop_toBottomOf="@+id/productImage"
+                    app:layout_constraintTop_toTopOf="@+id/productImage" />
+
+                <ImageView
+                    android:id="@+id/foodmark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_veg"
+                    app:layout_constraintEnd_toEndOf="@+id/productImage"
+                    app:layout_constraintTop_toBottomOf="@+id/productImage"
+                    app:layout_constraintTop_toTopOf="@+id/productImage" />
+
+                <TextView
+                    android:id="@+id/productName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#90000000"
+                    android:maxLines="2"
+                    android:padding="4dp"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/llContent"
+                    app:layout_constraintEnd_toEndOf="@+id/productImage"
+                    app:layout_constraintStart_toStartOf="@+id/productImage"
+                    tools:text="PIZZA 01"
+                    app:text="@{item.productName}"/>
+
+                <LinearLayout
+                    android:id="@+id/llContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    app:layout_constraintBottom_toBottomOf="@+id/productImage"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:id="@+id/productRate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="#90000000"
+                        android:gravity="center_horizontal"
+                        android:padding="1dp"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        tools:text="0"
+                        app:text="@{item.price}"/>
+
+                    <TextView
+                        android:id="@+id/productSellingprice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="#90000000"
+                        android:gravity="center_horizontal"
+                        android:padding="1dp"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        tools:text="100"
+                        app:text="@{item.sellingPrice}"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llContent">
+
+                    <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                        style="@style/Widget.MaterialRatingBar.RatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="15dp"
+                        android:numStars="5"
+                        android:rating="3.5"
+                        app:mrb_progressBackgroundTint="@color/colorPrimaryDark"
+                        app:mrb_progressTint="@color/colorPrimary"
+                        app:mrb_secondaryProgressTint="@color/colorPrimaryDark" />
+
+                    <TextView
+                        android:id="@+id/votes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="left"
+                        android:text="328 votes"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="10sp"
+                        app:text="@{item.rating}"/>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</layout>
