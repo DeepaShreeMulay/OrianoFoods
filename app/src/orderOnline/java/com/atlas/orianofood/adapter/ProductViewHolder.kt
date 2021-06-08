@@ -14,7 +14,7 @@ class ProductViewHolder : RecyclerView.ViewHolder, View.OnClickListener {
     var name: TextView
     var rate: TextView
     var sellingPrice: TextView
-    var layout: ConstraintLayout
+    var layout: ConstraintLayout?
 
     lateinit var itemClickListener: ItemClickListener
 
@@ -25,7 +25,7 @@ class ProductViewHolder : RecyclerView.ViewHolder, View.OnClickListener {
         rate: TextView,
         sellingPrice: TextView,
         saleTag: ImageView,
-        layout: ConstraintLayout
+        layout: ConstraintLayout?
     ) : super(itemView) {
         this.img = img
         this.name = name

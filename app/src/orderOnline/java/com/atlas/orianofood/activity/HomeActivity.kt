@@ -15,7 +15,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -595,15 +594,15 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         ) {
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
                 val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.top_product_cardview_item, parent, false)
+                    .inflate(R.layout.recommended_product_cardview_item, parent, false)
 
                 val name = view.findViewById<TextView>(R.id.productName)
-                val img = view.findViewById<ImageView>(R.id.productImage)
+                val img = view.findViewById<ImageView>(R.id.categoryImage)
                 val rate = view.findViewById<TextView>(R.id.productRate)
                 val sellingPrice = view.findViewById<TextView>(R.id.productSellingprice)
                 val saleTag = view.findViewById<ImageView>(R.id.sale_tag)
-                val layout = view.findViewById<ConstraintLayout>(R.id.constraintLayout)
-                return ProductViewHolder(view, img, name, rate, sellingPrice, saleTag, layout)
+                //val layout = view.findViewById<RelativeLayout>(R.id.rl_icon)
+                return ProductViewHolder(view, img, name, rate, sellingPrice, saleTag, null)
             }
 
             override fun onBindViewHolder(
@@ -624,17 +623,20 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 if (model.isSale != null && model.isSale.equals("yes")) {
                     holder.saleTag.visibility = View.VISIBLE
                 } else {
-                    val lp: LinearLayout.LayoutParams =
-                        LinearLayout.LayoutParams(
-                            LinearLayout.LayoutParams.MATCH_PARENT,
-                            LinearLayout.LayoutParams.WRAP_CONTENT
-                        )
-                    holder.layout.layoutParams = lp
+                    holder.layout?.let {
+                        val lp: LinearLayout.LayoutParams =
+                            LinearLayout.LayoutParams(
+                                LinearLayout.LayoutParams.MATCH_PARENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT
+                            )
+                        it.layoutParams = lp
+                    }
+
                 }
 
                 Picasso.get()
                     .load(model.image)
-                    .resize(300, 300)
+                    // .resize(300, 300)
                     .placeholder(R.drawable.ic_dish)
                     .error(R.drawable.ic_dish)
                     .into(holder.img)
@@ -666,15 +668,15 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         ) {
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
                 val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.top_product_cardview_item, parent, false)
+                    .inflate(R.layout.top_rated_product_cardview_item, parent, false)
 
                 val name = view.findViewById<TextView>(R.id.productName)
-                val img = view.findViewById<ImageView>(R.id.productImage)
+                val img = view.findViewById<ImageView>(R.id.categoryImage)
                 val rate = view.findViewById<TextView>(R.id.productRate)
                 val sellingPrice = view.findViewById<TextView>(R.id.productSellingprice)
                 val saleTag = view.findViewById<ImageView>(R.id.sale_tag)
-                val layout = view.findViewById<ConstraintLayout>(R.id.constraintLayout)
-                return ProductViewHolder(view, img, name, rate, sellingPrice, saleTag, layout)
+                //val layout = view.findViewById<ConstraintLayout>(R.id.constraintLayout)
+                return ProductViewHolder(view, img, name, rate, sellingPrice, saleTag, null)
             }
 
             override fun onBindViewHolder(
@@ -695,17 +697,19 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 if (model.isSale != null && model.isSale.equals("yes")) {
                     holder.saleTag.visibility = View.VISIBLE
                 } else {
-                    val lp: LinearLayout.LayoutParams =
-                        LinearLayout.LayoutParams(
-                            LinearLayout.LayoutParams.MATCH_PARENT,
-                            LinearLayout.LayoutParams.WRAP_CONTENT
-                        )
-                    holder.layout.layoutParams = lp
+                    holder.layout?.let {
+                        val lp: LinearLayout.LayoutParams =
+                            LinearLayout.LayoutParams(
+                                LinearLayout.LayoutParams.MATCH_PARENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT
+                            )
+                        it.layoutParams = lp
+                    }
                 }
 
                 Picasso.get()
                     .load(model.image)
-                    .resize(300, 300)
+                    //.resize(300, 300)
                     .placeholder(R.drawable.ic_dish)
                     .error(R.drawable.ic_dish)
                     .into(holder.img)
@@ -785,7 +789,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         viewHolder = object : FirebaseRecyclerAdapter<Menu, MenuViewHolder>(menuOption) {
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
                 val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.category_cardview_item, parent, false)
+                    .inflate(R.layout.category_item_view, parent, false)
 
                 val name = view.findViewById<TextView>(R.id.categoryName)
                 val img = view.findViewById<ImageView>(R.id.categoryImage)

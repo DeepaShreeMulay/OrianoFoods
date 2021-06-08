@@ -13,6 +13,7 @@
 
     <color name="primary">#FFC107</color>
     <color name="primary_dark">#FFA000</color>
+    <color name="primary_dark_trans">#A0FFA000</color>
     <color name="primary_light">#FFECB3</color>
     <color name="accent">#607D8B</color>
     <color name="primary_text">#212121</color>

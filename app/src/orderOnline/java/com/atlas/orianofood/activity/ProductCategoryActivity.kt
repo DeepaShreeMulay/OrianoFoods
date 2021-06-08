@@ -188,7 +188,7 @@ class ProductCategoryActivity : AppCompatActivity(),
                     .inflate(R.layout.product_category_cardview_item, parent, false)
 
                 val name = view.findViewById<TextView>(R.id.productName)
-                val img = view.findViewById<ImageView>(R.id.productImage)
+                val img = view.findViewById<ImageView>(R.id.categoryImage)
                 val rate = view.findViewById<TextView>(R.id.productRate)
                 val sellingPrice = view.findViewById<TextView>(R.id.productSellingprice)
                 val saleTag = view.findViewById<ImageView>(R.id.sale_tag)
@@ -214,12 +214,14 @@ class ProductCategoryActivity : AppCompatActivity(),
                 if (model.isSale != null && model.isSale.equals("yes")) {
                     holder.saleTag.visibility = View.VISIBLE
                 } else {
-                    val lp: LinearLayout.LayoutParams =
-                        LinearLayout.LayoutParams(
-                            LinearLayout.LayoutParams.MATCH_PARENT,
-                            LinearLayout.LayoutParams.WRAP_CONTENT
-                        )
-                    holder.layout.layoutParams = lp
+                    holder.layout?.let {
+                        val lp: LinearLayout.LayoutParams =
+                            LinearLayout.LayoutParams(
+                                LinearLayout.LayoutParams.MATCH_PARENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT
+                            )
+                        it.layoutParams = lp
+                    }
                 }
 
                 Picasso.get()

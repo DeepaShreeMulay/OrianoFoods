@@ -8,7 +8,8 @@ import android.view.Window
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.atlas.orianofood.R
-import kotlinx.android.synthetic.orderOnline.activity_splash_screen.*
+import kotlinx.android.synthetic.main.activity_splash.*
+
 
 class SplashActivity : AppCompatActivity() {
     var activity = this@SplashActivity
@@ -16,12 +17,12 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
-        setContentView(R.layout.activity_splash_screen)
+        setContentView(R.layout.activity_splash)
 
 
         val animSlideUp = AnimationUtils.loadAnimation(
             activity,
-            R.anim.slide_up
+            R.anim.zoom_in
         )
         // Slide Up
 
