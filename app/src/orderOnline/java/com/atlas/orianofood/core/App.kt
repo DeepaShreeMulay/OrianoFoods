@@ -3,13 +3,7 @@ package com.atlas.orianofood.core
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
-import com.atlas.orianofood.category.ApiService
-import com.atlas.orianofood.constants.Constants.Companion.base_url
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import java.util.concurrent.TimeUnit
+import com.atlas.orianofood.mvvm.retrofit.ApiService
 import kotlin.properties.Delegates
 
 class App : Application(){
