@@ -15,7 +15,7 @@
         android:usesCleartextTraffic="true">
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.SplashActivity"
+            android:name="com.atlas.orianofood.firebaseRT.activity.SplashActivity"
             android:theme="@style/NoActionBarAppTheme" />
 
 

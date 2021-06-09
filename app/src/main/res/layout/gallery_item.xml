@@ -5,7 +5,7 @@
     <data>
         <variable
             name="item"
-            type="com.atlas.orianofood.gallery.model.GalleryItem"/>
+            type="com.atlas.orianofood.mvvm.gallery.model.GalleryItem" />
     </data>
     <androidx.cardview.widget.CardView
         android:layout_width="fill_parent"
