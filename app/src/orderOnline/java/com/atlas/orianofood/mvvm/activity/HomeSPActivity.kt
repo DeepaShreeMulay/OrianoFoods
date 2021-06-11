@@ -246,6 +246,10 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         return true
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+    }
 }
 
 
