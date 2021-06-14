@@ -3,7 +3,6 @@ package com.atlas.orianofood.mvvm.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -39,10 +38,10 @@ class RegisterActivity : AppCompatActivity() {
         val textmobile = findViewById<EditText>(R.id.et_signUp_phone_number)
         val textpass = findViewById<EditText>(R.id.et_signUp_password)
 
-        progressBarSignUp.visibility = View.INVISIBLE
+        progressBar.visibility = View.GONE
 
         btn.setOnClickListener {
-            setLayoutVisibility(View.VISIBLE, View.INVISIBLE)
+            setLayoutVisibility(View.VISIBLE, View.GONE)
 
             val name = textname.text.toString().trim()
             val password = textpass.text.toString().trim()
@@ -77,19 +76,22 @@ class RegisterActivity : AppCompatActivity() {
 
         var jsonObject = JsonObject()
         jsonObject.addProperty("name", name)
-        jsonObject.addProperty("mobile", mobile.toLong())
+        jsonObject.addProperty("mobile", mobile)
         jsonObject.addProperty("pwd", password)
 
 
         viewModel.pushPost(jsonObject)
         viewModel.myResponse.observe(this, Observer { response ->
             if (response.isSuccessful) {
-                Log.d("main", response.body().toString())
-                loginData(mobile, password)
-                Toast.makeText(this, response.body().toString(), Toast.LENGTH_SHORT).show()
-
+                if (response.body()?.status?.toInt() == 200) {
+                    loginData(mobile, password)
+                } else {
+                    Toast.makeText(this, response.body()?.msg, Toast.LENGTH_SHORT).show()
+                    setLayoutVisibility(View.GONE, View.VISIBLE)
+                }
             } else {
                 Toast.makeText(this, response.message(), Toast.LENGTH_SHORT).show()
+                setLayoutVisibility(View.GONE, View.VISIBLE)
             }
         })
 
@@ -111,49 +113,57 @@ class RegisterActivity : AppCompatActivity() {
         loginviewModel.authPost(jsonObject)
         loginviewModel.myAuthResponse.observe(this, Observer { response ->
             if (response.isSuccessful) {
+                if (response.body()?.userId.toString()
+                                .isEmpty() || response.body()?.token.isNullOrEmpty()
+                ) {
+                    Toast.makeText(this, "Please enter valid credentials", Toast.LENGTH_SHORT)
+                            .show()
+                    intentBack()
+                } else {
+                    val myLoginData = LoginData(
+                            userId = response.body()?.userId,
+                            token = response.body()?.token,
+                            mobilelogin = mobile.toLong(),
+                            passwordlogin = password
+                    )
+                    SharedpreferencesUtil.addToken(
+                            activity,
+                            "Bearer ${response.body()?.token?.substringAfter("|")}"
+                    )
 
-                Log.d("login", response.body().toString())
-                Log.d("login", response.message().toString())
-                Log.d("login", response.code().toString())
-
-                val myLoginInfo = LoginData(
-                    userId = response.body()?.userId,
-                    token = response.body()?.token,
-                    mobilelogin = mobile.toLong(),
-                    passwordlogin = password
-                )
-                SharedpreferencesUtil.addToken(
-                    activity,
-                    "Bearer ${response.body()?.token?.substringAfter("|")}"
-                )
-
-
-                Thread {
-                    daoo.insertLogin(myLoginInfo)
-                }.start()
-                setLayoutVisibility(View.GONE, View.VISIBLE)
+                    Thread {
+                        daoo.insertLogin(myLoginData)
+                    }.start()
+                    intentProceed()
+                }
 
             } else {
                 Toast.makeText(this, response.message(), Toast.LENGTH_SHORT).show()
+                intentBack()
             }
         })
     }
 
-    fun setLayoutVisibility(progressBarVisibility: Int, otherVisibility: Int) {
-        progressBarSignUp.visibility = progressBarVisibility
+    private fun setLayoutVisibility(progressBarVisibility: Int, otherVisibility: Int) {
+        progressBar.visibility = progressBarVisibility
         et_signUp_name.visibility = otherVisibility
         et_signUp_phone_number.visibility = otherVisibility
         et_signUp_password.visibility = otherVisibility
         btn_signUp.visibility = otherVisibility
     }
 
-    fun intentSignIn(view: View) {
+    private fun intentProceed() {
+        startActivity(Intent(this, HomeSPActivity::class.java))
+        finish()
+    }
+
+    private fun intentBack() {
         startActivity(Intent(this, LoginActivity::class.java))
         finish()
     }
 
-    fun Any.toast(context: Context, duration: Int = Toast.LENGTH_SHORT): Toast {
-        return Toast.makeText(context, this.toString(), duration).apply { show() }
+    fun intentSignIn(view: View) {
+        intentBack()
     }
 
     override fun onBackPressed() {

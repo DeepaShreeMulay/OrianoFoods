@@ -18,11 +18,15 @@ import com.atlas.orianofood.firebaseRT.activity.*
 import com.atlas.orianofood.firebaseRT.utils.*
 import com.atlas.orianofood.mvvm.category.adapter.CategoryAdapter
 import com.atlas.orianofood.mvvm.category.model.CategoryViewModel
+import com.atlas.orianofood.mvvm.getProfile.model.ProfileViewModel
+import com.atlas.orianofood.mvvm.topCategory.adapter.TopCategoryAdapter
+import com.atlas.orianofood.mvvm.topCategory.model.TopCategoryViewModel
 import com.atlas.orianofood.mvvm.topRatedProduct.adapter.TopAdapter
 import com.atlas.orianofood.mvvm.topRatedProduct.model.TopRatedViewModel
 import com.atlas.orianofood.mvvm.topRatedSelling.adapter.SellingAdapter
 import com.atlas.orianofood.mvvm.topRatedSelling.model.SellingViewModel
 import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.gallery_item.view.*
 import kotlinx.android.synthetic.orderOnline.activity_home.*
 import kotlinx.android.synthetic.orderOnline.app_bar_home.*
 import kotlinx.android.synthetic.orderOnline.content_home.*
@@ -31,6 +35,7 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     private val activity = this
     private val viewModel: SellingViewModel by lazy { ViewModelProvider(this).get(SellingViewModel::class.java) }
     private lateinit var sellingAdapter: SellingAdapter
+
 
 
 
@@ -101,33 +106,34 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     private val cviewModel: CategoryViewModel by lazy{ViewModelProvider(this).get(CategoryViewModel::class.java)}
     private lateinit var categoryadapter: CategoryAdapter
 
+    private val tcviewModel: TopCategoryViewModel by lazy { ViewModelProvider(this).get(TopCategoryViewModel::class.java) }
+    private lateinit var topCategoryAdapter: TopCategoryAdapter
+
     private fun loadMenuItems() {
+       topCategoryAdapter = TopCategoryAdapter(mutableListOf())
+        recyclerview.adapter = topCategoryAdapter
 
-        categoryadapter= CategoryAdapter(mutableListOf())
-        recyclerview.adapter = categoryadapter
+        with(tcviewModel) {
+            topCategoryData.observe(this@HomeSPActivity, Observer {
+                Toast.makeText(this@HomeSPActivity, "Productdata  run", Toast.LENGTH_SHORT).show()
+                if (it!!.tclist.isNotEmpty()) {
 
-        with(cviewModel) {
-            homeData.observe(this@HomeSPActivity, Observer {
-                Toast.makeText(this@HomeSPActivity,"homedata  run",Toast.LENGTH_SHORT).show()
-                if (it!!.list.isNotEmpty()) {
+                    topCategoryAdapter.clear()
+                    topCategoryAdapter.add(it.tclist)
 
-                    categoryadapter.clear()
-                    categoryadapter.add(it.list)
-
-                }else{
-                    Log.e("error","error in connect with adapter")
+                } else {
+                    Log.e("error", "error in connect with adapter")
                 }
             })
+            tcshowToast.observe(this@HomeSPActivity, Observer {
 
-
-            showToast.observe(this@HomeSPActivity, Observer {
-                // Toast.makeText(applicationContext, "$it", Toast.LENGTH_LONG).show()
-                Toast.makeText(this@HomeSPActivity,"$it",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@HomeSPActivity, "$it", Toast.LENGTH_SHORT).show()
             })
             error.observe(this@HomeSPActivity, Observer {
 
-                Toast.makeText(this@HomeSPActivity,"$it",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@HomeSPActivity, "$it", Toast.LENGTH_SHORT).show()
             })
+
         }
 
     }
@@ -194,6 +200,31 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
             }
 
+    private val profileviewModel:ProfileViewModel by lazy { ViewModelProvider(this).get(ProfileViewModel::class.java) }
+
+    private fun loadProfileActivity(){
+        with(profileviewModel) {
+            profileData.observe(this@HomeSPActivity, Observer {
+                Toast.makeText(this@HomeSPActivity, "Productdata  run", Toast.LENGTH_SHORT).show()
+               /* if (it!!.userLogin.isNotEmpty()) {
+                    Log.e("PTAG","${it.userLogin}")
+                } else {
+                    Log.e("error", "error in connect with adapter")
+                }*/
+            })
+            profileshowToast.observe(this@HomeSPActivity, Observer {
+
+                Toast.makeText(this@HomeSPActivity ,"$it", Toast.LENGTH_SHORT).show()
+            })
+            error.observe(this@HomeSPActivity, Observer {
+
+                Toast.makeText(this@HomeSPActivity, "$it", Toast.LENGTH_SHORT).show()
+            })
+
+        }
+    }
+
+
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_home -> {
@@ -210,6 +241,12 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             }
             R.id.nav_menu -> {
                 // Handle the camera action
+            }
+            R.id.nav_category -> {
+                // Handle the camera action
+                val intent = Intent(activity,CategorySPActivity::class.java)
+                startActivity(intent)
+                finish()
             }
             R.id.nav_cart -> {
                 // Handle the camera action

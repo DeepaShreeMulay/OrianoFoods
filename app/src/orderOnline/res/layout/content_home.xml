@@ -24,9 +24,9 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/topSellinglayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
                 android:background="@color/white"
                 android:orientation="vertical"
                 android:paddingLeft="10dp"
@@ -37,12 +37,12 @@
                     android:id="@+id/textView1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="cursive"
-                    android:padding="4dp"
+                    android:fontFamily="sans-serif"
                     android:text="On demand cooking..."
-                    android:textColor="@color/colorAccent"
-                    android:textSize="20sp"
-                    android:textStyle="bold|italic"
+                    android:padding="2dp"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
                     app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
                     app:layout_constraintStart_toStartOf="@+id/constraintLayout"
                     app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
@@ -52,16 +52,13 @@
                     android:id="@+id/topSellingRecyclerview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:minHeight="180dp"
+                    android:minHeight="130dp"
                     android:scrollbars="none" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
+                android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:orientation="vertical"
                 android:paddingLeft="10dp"
@@ -80,29 +77,56 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
                 android:background="@color/white"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
                 android:paddingRight="10dp">
 
                 <TextView
                     android:id="@+id/textView2"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="cursive"
-                    android:padding="4dp"
+                    android:fontFamily="sans-serif"
                     android:text="We are serving..."
-                    android:textColor="@color/colorAccent"
-                    android:textSize="20sp"
-                    android:textStyle="bold|italic"
+                    android:padding="2dp"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
                     app:layout_constraintBottom_toBottomOf="@+id/adView1"
                     app:layout_constraintEnd_toEndOf="@+id/adView1"
                     app:layout_constraintStart_toStartOf="@+id/adView1"
-                    app:layout_constraintTop_toTopOf="@+id/recyclerview" />
+                    app:layout_constraintTop_toTopOf="@+id/recyclerview" ></TextView>
 
-                <androidx.recyclerview.widget.RecyclerView
+                <TextView
+                    android:id="@+id/showAll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:gravity="right"
+                    android:padding="2dp"
+                    android:text="Show all..."
+                    android:textColor="@color/primary_dark"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="@+id/adView1"
+                    app:layout_constraintEnd_toEndOf="@+id/adView1"
+                    app:layout_constraintStart_toStartOf="@+id/adView1"
+                    app:layout_constraintTop_toTopOf="@+id/recyclerview"></TextView>
+
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp">
+
+               <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -110,14 +134,15 @@
                     android:layout_centerVertical="true"
                     android:foregroundGravity="center_horizontal"
                     android:maxHeight="600dp"
-                    android:minHeight="300dp"
+                    android:minHeight="250dp"
                     android:scrollbars="none" />
-            </LinearLayout>
+                </LinearLayout>
+
 
             <LinearLayout
+                android:id="@+id/topRatinglayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
                 android:background="@color/white"
                 android:orientation="vertical"
                 android:paddingLeft="10dp"
@@ -128,12 +153,12 @@
                     android:id="@+id/textView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="cursive"
-                    android:padding="4dp"
+                    android:fontFamily="sans-serif"
                     android:text="Loved by public..."
-                    android:textColor="@color/colorAccent"
-                    android:textSize="20sp"
-                    android:textStyle="bold|italic" />
+                    android:padding="2dp"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="16sp"
+                    android:textStyle="italic" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/topRatingRecyclerview"
@@ -141,7 +166,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:minHeight="180dp"
+                    android:minHeight="200dp"
                     android:scrollbars="none" />
             </LinearLayout>
 

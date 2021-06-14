@@ -14,14 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="ExtraText">
-
-        <!--MVVM-->
+        <activity android:name="com.atlas.orianofood.mvvm.activity.CategorySPActivity"></activity>
+        <!-- MVVM -->
         <activity
             android:name="com.atlas.orianofood.mvvm.activity.SplashScreenActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -41,17 +42,18 @@
         <activity
             android:name="com.atlas.orianofood.mvvm.activity.RegisterActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarAppTheme" />
-
-        <!--FireBase RT-->
+            android:theme="@style/NoActionBarAppTheme" /> <!-- FireBase RT -->
         <activity
             android:name="com.atlas.orianofood.firebaseRT.activity.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme">
-            <!-- <intent-filter>
+
+            <!--
+             <intent-filter>
                  <action android:name="android.intent.action.MAIN" />
                  <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>-->
+             </intent-filter>
+            -->
         </activity>
         <activity
             android:name="com.atlas.orianofood.firebaseRT.activity.SignInActivity"
@@ -126,7 +128,6 @@
             android:name="com.atlas.orianofood.firebaseRT.activity.AuthActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme" />
-
     </application>
 
 </manifest>

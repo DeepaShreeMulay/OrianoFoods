@@ -3,7 +3,6 @@ package com.atlas.orianofood.mvvm.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
@@ -68,27 +67,31 @@ class LoginActivity : AppCompatActivity() {
         loginviewModel.authPost(jsonObject)
         loginviewModel.myAuthResponse.observe(this, Observer { response ->
             if (response.isSuccessful) {
+                if (response.body()?.userId.toString()
+                                .isEmpty() || response.body()?.token.isNullOrEmpty()
+                ) {
+                    Toast.makeText(this, "Please enter valid credentials", Toast.LENGTH_SHORT)
+                            .show()
+                    setLayoutVisibility(View.GONE, View.VISIBLE)
+                } else {
+                    val myLoginData = LoginData(
+                            userId = response.body()?.userId,
+                            token = response.body()?.token,
+                            mobilelogin = mobile.toLong(),
+                            passwordlogin = password
+                    )
+                    addToken(activity, "Bearer ${response.body()?.token?.substringAfter("|")}")
 
-                Log.d("login", response.body().toString())
-                Log.d("login", response.message().toString())
-                Log.d("login", response.code().toString())
+                    Thread {
+                        daoo.insertLogin(myLoginData)
+                    }.start()
 
-                val myLoginData = LoginData(
-                    userId = response.body()?.userId,
-                    token = response.body()?.token,
-                    mobilelogin = mobile.toLong(),
-                    passwordlogin = password
-                )
-                addToken(activity, "Bearer ${response.body()?.token?.substringAfter("|")}")
-
-                Thread {
-                    daoo.insertLogin(myLoginData)
-                }.start()
-                setLayoutVisibility(View.GONE, View.VISIBLE)
-                intentProceed()
+                    intentProceed()
+                }
 
             } else {
                 Toast.makeText(this, response.message(), Toast.LENGTH_SHORT).show()
+                setLayoutVisibility(View.GONE, View.VISIBLE)
             }
         })
     }

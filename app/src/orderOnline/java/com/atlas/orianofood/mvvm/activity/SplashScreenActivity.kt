@@ -15,19 +15,16 @@ class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
-        setContentView(R.layout.activity_splash_screen2)
+        setContentView(R.layout.activity_splash)
 
-        val animSlideUp = AnimationUtils.loadAnimation(
-            activity,
-            R.anim.slide_up
+        val anim = AnimationUtils.loadAnimation(
+                activity,
+                R.anim.zoom_in
         )
-        // Slide Up
 
-        iv_oriano.startAnimation(animSlideUp)
+        iv_oriano.startAnimation(anim)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            /* Create an Intent that will start the Menu-Activity. */
-            // val loginIntent = Intent(this, LoginActivity::class.java)
             val loginIntent = Intent(activity, LoginActivity::class.java)
             startActivity(loginIntent)
             finish()
