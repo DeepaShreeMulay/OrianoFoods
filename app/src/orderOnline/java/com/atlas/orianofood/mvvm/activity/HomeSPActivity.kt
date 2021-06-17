@@ -272,6 +272,16 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
                 startActivity(intent)
                 finish()
             }
+            R.id.nav_privacy_policy -> {
+                val intent = Intent(activity, PrivacyPolicyActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.nav_terms -> {
+                val intent = Intent(activity, TermsAndCondition::class.java)
+                startActivity(intent)
+                finish()
+            }
             R.id.nav_log_out -> {
                 // Handle the camera action
                 logout()

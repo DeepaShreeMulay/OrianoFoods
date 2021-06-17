@@ -14,10 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="ExtraText">
-        <activity android:name="com.atlas.orianofood.mvvm.activity.CategorySPActivity"></activity>
-        <!-- MVVM -->
+        <activity android:name="com.atlas.orianofood.mvvm.activity.TermsAndCondition"></activity>
+        <activity android:name="com.atlas.orianofood.mvvm.activity.PrivacyPolicyActivity" />
+        <activity android:name="com.atlas.orianofood.mvvm.activity.CategorySPActivity" /> <!-- MVVM -->
         <activity
             android:name="com.atlas.orianofood.mvvm.activity.SplashScreenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAppTheme"></activity>
+        <activity
+            android:name="com.atlas.orianofood.mvvm.activity.HomeSPActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme">
             <intent-filter>
@@ -26,10 +31,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.atlas.orianofood.mvvm.activity.HomeSPActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarAppTheme" />
         <activity
             android:name="com.atlas.orianofood.mvvm.activity.GallerySPActivity"
             android:label="@string/title_activity_gallery"

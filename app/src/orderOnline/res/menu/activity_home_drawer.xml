@@ -54,6 +54,17 @@
             android:title="Orders" />
 
         <item
+            android:id="@+id/nav_privacy_policy"
+            android:icon="@drawable/ic_access_time_black_24dp"
+            android:iconTint="@color/colorPrimary"
+            android:title="Privacy Policy" />
+        <item
+            android:id="@+id/nav_terms"
+            android:icon="@drawable/ic_access_time_black_24dp"
+            android:iconTint="@color/colorPrimary"
+            android:title="Terms and Conditions" />
+
+        <item
             android:id="@+id/nav_log_out"
             android:icon="@drawable/ic_exit_to_app_black_24dp"
             android:iconTint="@color/colorPrimary"
