@@ -38,10 +38,10 @@ class RegisterActivity : AppCompatActivity() {
         val textmobile = findViewById<EditText>(R.id.et_signUp_phone_number)
         val textpass = findViewById<EditText>(R.id.et_signUp_password)
 
-        progressBarSignUp.visibility = View.INVISIBLE
+        progressBar.visibility = View.GONE
 
         btn.setOnClickListener {
-            setLayoutVisibility(View.VISIBLE, View.INVISIBLE)
+            setLayoutVisibility(View.VISIBLE, View.GONE)
 
             val name = textname.text.toString().trim()
             val password = textpass.text.toString().trim()
@@ -87,11 +87,11 @@ class RegisterActivity : AppCompatActivity() {
                     loginData(mobile, password)
                 } else {
                     Toast.makeText(this, response.body()?.msg, Toast.LENGTH_SHORT).show()
-                    setLayoutVisibility(View.INVISIBLE, View.VISIBLE)
+                    setLayoutVisibility(View.GONE, View.VISIBLE)
                 }
             } else {
                 Toast.makeText(this, response.message(), Toast.LENGTH_SHORT).show()
-                setLayoutVisibility(View.INVISIBLE, View.VISIBLE)
+                setLayoutVisibility(View.GONE, View.VISIBLE)
             }
         })
 
@@ -145,7 +145,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun setLayoutVisibility(progressBarVisibility: Int, otherVisibility: Int) {
-        progressBarSignUp.visibility = progressBarVisibility
+        progressBar.visibility = progressBarVisibility
         et_signUp_name.visibility = otherVisibility
         et_signUp_phone_number.visibility = otherVisibility
         et_signUp_password.visibility = otherVisibility
