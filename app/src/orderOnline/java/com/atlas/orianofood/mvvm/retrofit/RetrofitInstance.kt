@@ -1,6 +1,6 @@
 package com.atlas.orianofood.mvvm.retrofit
 
-import com.atlas.orianofood.firebaseRT.utils.SharedpreferencesUtil.getToken
+import com.atlas.orianofood.mvvm.utils.SharedpreferencesUtil.getToken
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

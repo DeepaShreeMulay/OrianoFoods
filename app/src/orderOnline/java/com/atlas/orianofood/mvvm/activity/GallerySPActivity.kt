@@ -16,16 +16,16 @@ import androidx.viewpager.widget.ViewPager
 import com.atlas.orianofood.R
 import com.atlas.orianofood.firebaseRT.activity.*
 import com.atlas.orianofood.firebaseRT.activity.ui.main.SectionsPagerAdapter
-import com.atlas.orianofood.firebaseRT.utils.logout
 import com.atlas.orianofood.mvvm.gallery.adapter.GalleryAdapter
 import com.atlas.orianofood.mvvm.gallery.model.GalleryViewModel
+import com.atlas.orianofood.mvvm.utils.logout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.orderOnline.activity_home.*
-import kotlinx.android.synthetic.orderOnline.app_bar_home.*
-import kotlinx.android.synthetic.orderOnline.content_home.*
+import kotlinx.android.synthetic.orderOnline.activity_gallery.*
+import kotlinx.android.synthetic.orderOnline.app_bar_gallery.*
+import kotlinx.android.synthetic.orderOnline.content_gallery.*
 
 class GallerySPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -123,7 +123,7 @@ override fun onBackPressed() {
         drawer_layout.closeDrawer(GravityCompat.START)
     } else {
         super.onBackPressed()
-        val intent = Intent(this, HomeActivity::class.java)
+        val intent = Intent(this, HomeSPActivity::class.java)
         startActivity(intent)
         finish()
     }
@@ -155,7 +155,7 @@ override fun onStop() {
     when (item.itemId) {
         R.id.nav_home -> {
             // Handle the camera action
-            val intent = Intent(activity, HomeActivity::class.java)
+            val intent = Intent(activity, HomeSPActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -189,6 +189,16 @@ override fun onStop() {
         R.id.nav_orders -> {
             // Handle the camera action
             val intent = Intent(activity, OrdersActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        R.id.nav_privacy_policy -> {
+            val intent = Intent(activity, PrivacyPolicyActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        R.id.nav_terms -> {
+            val intent = Intent(activity, TermsAndCondition::class.java)
             startActivity(intent)
             finish()
         }

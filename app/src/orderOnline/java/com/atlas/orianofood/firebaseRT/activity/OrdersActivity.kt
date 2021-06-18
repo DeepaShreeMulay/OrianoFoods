@@ -12,7 +12,8 @@ import com.atlas.orianofood.R
 import com.atlas.orianofood.firebaseRT.adapter.OrdersAdapter
 import com.atlas.orianofood.firebaseRT.database.DatabaseHandler
 import com.atlas.orianofood.firebaseRT.model.Order
-import com.atlas.orianofood.firebaseRT.utils.logout
+import com.atlas.orianofood.mvvm.activity.HomeSPActivity
+import com.atlas.orianofood.mvvm.utils.logout
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.orderOnline.activity_cart.toolbar
@@ -37,7 +38,7 @@ class OrdersActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener {
-            val intent = Intent(activity, HomeActivity::class.java)
+            val intent = Intent(activity, HomeSPActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -97,7 +98,7 @@ class OrdersActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             drawer_layout.closeDrawer(GravityCompat.START)
         } else {
             super.onBackPressed()
-            val intent = Intent(this@OrdersActivity, HomeActivity::class.java)
+            val intent = Intent(this@OrdersActivity, HomeSPActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -108,7 +109,7 @@ class OrdersActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         when (item.itemId) {
             R.id.nav_home -> {
                 // Handle the camera action
-                val intent = Intent(activity, HomeActivity::class.java)
+                val intent = Intent(activity, HomeSPActivity::class.java)
                 startActivity(intent)
                 finish()
             }

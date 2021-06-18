@@ -27,6 +27,8 @@ import com.atlas.orianofood.firebaseRT.model.Category
 import com.atlas.orianofood.firebaseRT.model.Offer
 import com.atlas.orianofood.firebaseRT.model.ProductCategory
 import com.atlas.orianofood.firebaseRT.utils.*
+import com.atlas.orianofood.mvvm.activity.HomeSPActivity
+import com.atlas.orianofood.mvvm.utils.logout
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.material.navigation.NavigationView
@@ -369,7 +371,7 @@ class CategoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
             drawer_layout.closeDrawer(GravityCompat.START)
         } else {
             super.onBackPressed()
-            val intent = Intent(this@CategoryActivity, HomeActivity::class.java)
+            val intent = Intent(this@CategoryActivity, HomeSPActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -396,7 +398,7 @@ class CategoryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         when (item.itemId) {
             R.id.nav_home -> {
                 // Handle the camera action
-                val intent = Intent(activity, HomeActivity::class.java)
+                val intent = Intent(activity, HomeSPActivity::class.java)
                 startActivity(intent)
                 finish()
             }

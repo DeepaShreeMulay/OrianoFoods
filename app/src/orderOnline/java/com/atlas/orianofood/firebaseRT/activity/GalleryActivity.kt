@@ -19,7 +19,8 @@ import com.atlas.orianofood.firebaseRT.activity.ui.main.SectionsPagerAdapter
 import com.atlas.orianofood.firebaseRT.adapter.GalleryViewHolder
 import com.atlas.orianofood.firebaseRT.interfaces.ItemClickListener
 import com.atlas.orianofood.firebaseRT.model.Gallery
-import com.atlas.orianofood.firebaseRT.utils.logout
+import com.atlas.orianofood.mvvm.activity.HomeSPActivity
+import com.atlas.orianofood.mvvm.utils.logout
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -266,7 +267,7 @@ class GalleryActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         when (item.itemId) {
             R.id.nav_home -> {
                 // Handle the camera action
-                val intent = Intent(activity, HomeActivity::class.java)
+                val intent = Intent(activity, HomeSPActivity::class.java)
                 startActivity(intent)
                 finish()
             }

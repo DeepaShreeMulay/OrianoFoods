@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.atlas.orianofood.R
 import com.atlas.orianofood.firebaseRT.database.DatabaseHandler
 import com.atlas.orianofood.firebaseRT.utils.toast
+import com.atlas.orianofood.mvvm.activity.HomeSPActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import kotlinx.android.synthetic.orderOnline.activity_profile.*
@@ -112,7 +113,7 @@ class ProfileActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        val intent = Intent(activity, HomeActivity::class.java)
+        val intent = Intent(activity, HomeSPActivity::class.java)
         startActivity(intent)
         finish()
     }

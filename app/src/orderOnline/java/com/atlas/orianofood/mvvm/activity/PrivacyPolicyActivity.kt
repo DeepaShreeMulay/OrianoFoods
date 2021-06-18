@@ -1,5 +1,6 @@
 package com.atlas.orianofood.mvvm.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +22,17 @@ class PrivacyPolicyActivity : AppCompatActivity() {
             loadUrl("https://orianofood.online/privacy-policy/")
             settings.javaScriptEnabled = true
         }
+    }
+
+    override fun onBackPressed() {
+        /* if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+             drawer_layout.closeDrawer(GravityCompat.START)
+         } else {*/
+        super.onBackPressed()
+        val intent = Intent(this, HomeSPActivity::class.java)
+        startActivity(intent)
+        finish()
+        //}
     }
 
 }

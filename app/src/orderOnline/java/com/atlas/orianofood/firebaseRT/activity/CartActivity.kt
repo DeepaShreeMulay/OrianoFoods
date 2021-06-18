@@ -17,6 +17,7 @@ import com.atlas.orianofood.firebaseRT.model.Cart
 import com.atlas.orianofood.firebaseRT.model.Order
 import com.atlas.orianofood.firebaseRT.model.Request
 import com.atlas.orianofood.firebaseRT.utils.toast
+import com.atlas.orianofood.mvvm.activity.HomeSPActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -160,7 +161,7 @@ class CartActivity : AppCompatActivity() {
             //delete cart
             //Database(this).cleanCart()
 
-            val intent = Intent(this@CartActivity, HomeActivity::class.java)
+            val intent = Intent(this@CartActivity, HomeSPActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -175,7 +176,7 @@ class CartActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        val intent = Intent(this@CartActivity, HomeActivity::class.java)
+        val intent = Intent(this@CartActivity, HomeSPActivity::class.java)
         startActivity(intent)
         finish()
     }

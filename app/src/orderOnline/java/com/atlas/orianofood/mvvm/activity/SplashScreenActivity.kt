@@ -8,6 +8,7 @@ import android.view.Window
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.atlas.orianofood.R
+import com.atlas.orianofood.mvvm.utils.SharedpreferencesUtil.getToken
 import kotlinx.android.synthetic.orderOnline.activity_splash_screen.*
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -25,10 +26,16 @@ class SplashScreenActivity : AppCompatActivity() {
         iv_oriano.startAnimation(anim)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val loginIntent = Intent(activity, LoginActivity::class.java)
-            startActivity(loginIntent)
-            finish()
-        }, 1500)
+            if (getToken() != "") {
+                val homeIntent = Intent(activity, HomeSPActivity::class.java)
+                startActivity(homeIntent)
+                finish()
+            } else {
+                val loginIntent = Intent(activity, LoginActivity::class.java)
+                startActivity(loginIntent)
+                finish()
+            }
+        }, 3500)
 
     }
 

@@ -9,7 +9,7 @@ import retrofit2.Response
 
 class LoginRepository(private val dao: LoginDao) {
     //auth api
-    suspend fun authPost(jsonObject: JsonObject): Response<LoginData> {
-        return RetrofitInstance.api.authPost(jsonObject)
+    suspend fun loginByMobile(jsonObject: JsonObject): Response<LoginData> {
+        return RetrofitInstance.api.loginByMobile(jsonObject)
     }
 }

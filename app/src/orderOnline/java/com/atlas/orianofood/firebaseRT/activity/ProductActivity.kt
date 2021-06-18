@@ -10,6 +10,7 @@ import com.atlas.orianofood.firebaseRT.database.DatabaseHandler
 import com.atlas.orianofood.firebaseRT.model.Cart
 import com.atlas.orianofood.firebaseRT.model.ProductCategory
 import com.atlas.orianofood.firebaseRT.utils.PRODUCT_CATEGORY_EXTRA
+import com.atlas.orianofood.mvvm.activity.HomeSPActivity
 import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.orderOnline.activity_product_detail.*
@@ -101,7 +102,7 @@ class ProductActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        val intent = Intent(this@ProductActivity, HomeActivity::class.java)
+        val intent = Intent(this@ProductActivity, HomeSPActivity::class.java)
         startActivity(intent)
         finish()
     }

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:layout_marginTop="?attr/actionBarSize"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/app_bar_gallery">
+    tools:showIn="@layout/app_bar_category">
 
 
     <!--  set Banner ad position in UI layout design
@@ -16,29 +16,13 @@
          android:layout_height="match_parent"
          android:fillViewport="true">-->
 
-    <LinearLayout
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoryRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:foregroundGravity="center_horizontal"
+        android:scrollbars="vertical" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-
-            android:foregroundGravity="center_horizontal"
-            android:scrollbars="vertical" />
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/view_pager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-
-    </LinearLayout>
     <!-- </ScrollView>-->
 </androidx.constraintlayout.widget.ConstraintLayout>

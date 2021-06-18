@@ -11,9 +11,9 @@ import retrofit2.Response
 class LoginViewModel(private val loginRepository: LoginRepository):ViewModel() {
     var myAuthResponse: MutableLiveData<Response<LoginData>> = MutableLiveData()
 
-    fun authPost(jsonObject: JsonObject) {
+    fun loginByMobile(jsonObject: JsonObject) {
         viewModelScope.launch {
-            val authreponse: Response<LoginData> = loginRepository.authPost(jsonObject)
+            val authreponse: Response<LoginData> = loginRepository.loginByMobile(jsonObject)
             myAuthResponse.value = authreponse
         }
     }

@@ -883,7 +883,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             R.id.nav_log_out -> {
                 // Handle the camera action
-                logout()
+                signOut()
             }
 
         }

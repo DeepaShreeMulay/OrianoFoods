@@ -10,14 +10,26 @@ import retrofit2.http.POST
 
 interface AuthApiService {
     @Headers("Content-Type: application/json")
-    @POST("Auth")
-    suspend fun authPost(
+    @POST("mobile_Auth")
+    suspend fun loginByMobile(
         @Body jsonObject: JsonObject
     ): Response<LoginData>
 
     @Headers("Content-Type: application/json")
-    @POST("register")
-    suspend fun pushPost(
+    @POST("mobile_register")
+    suspend fun registerByMobile(
+        @Body jsonObject: JsonObject
+    ): Response<RegisterResponse>
+
+    @Headers("Content-Type: application/json")
+    @POST("email_Auth")
+    suspend fun loginByEmail(
+        @Body jsonObject: JsonObject
+    ): Response<LoginData>
+
+    @Headers("Content-Type: application/json")
+    @POST("email_register")
+    suspend fun registerByEmail(
         @Body jsonObject: JsonObject
     ): Response<RegisterResponse>
 }

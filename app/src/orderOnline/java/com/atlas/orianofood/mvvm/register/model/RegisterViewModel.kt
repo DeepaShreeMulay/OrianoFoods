@@ -11,9 +11,9 @@ import retrofit2.Response
 class RegisterViewModel(private val repository: RegisterRepository) : ViewModel() {
     var myResponse: MutableLiveData<Response<RegisterResponse>> = MutableLiveData()
 
-    fun pushPost(jsonObject: JsonObject) {
+    fun registerByMobile(jsonObject: JsonObject) {
         viewModelScope.launch {
-            val response: Response<RegisterResponse> = repository.pushPost(jsonObject)
+            val response: Response<RegisterResponse> = repository.registerByMobile(jsonObject)
             myResponse.value = response
         }
     }

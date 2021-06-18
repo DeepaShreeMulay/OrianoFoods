@@ -9,6 +9,7 @@ import com.atlas.orianofood.R
 import com.atlas.orianofood.firebaseRT.database.DatabaseHandler
 import com.atlas.orianofood.firebaseRT.model.Address
 import com.atlas.orianofood.firebaseRT.utils.toast
+import com.atlas.orianofood.mvvm.activity.HomeSPActivity
 import kotlinx.android.synthetic.orderOnline.activity_add_address.*
 import java.util.*
 
@@ -135,7 +136,7 @@ class AddAddressActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        val intent = Intent(activity, HomeActivity::class.java)
+        val intent = Intent(activity, HomeSPActivity::class.java)
         startActivity(intent)
         finish()
     }

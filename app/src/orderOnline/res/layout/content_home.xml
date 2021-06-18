@@ -59,7 +59,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+                android:background="@color/transparent_yellow"
                 android:orientation="vertical"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp">
@@ -67,7 +67,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/adRecyclerView"
                     android:layout_width="match_parent"
-                    android:layout_height="175dp"
+                    android:layout_height="140dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:scrollbars="none" />
@@ -96,23 +96,25 @@
                     app:layout_constraintBottom_toBottomOf="@+id/adView1"
                     app:layout_constraintEnd_toEndOf="@+id/adView1"
                     app:layout_constraintStart_toStartOf="@+id/adView1"
-                    app:layout_constraintTop_toTopOf="@+id/recyclerview" ></TextView>
+                    app:layout_constraintTop_toTopOf="@+id/recyclerview" />
 
                 <TextView
-                    android:id="@+id/showAll"
+                    android:id="@+id/showAllCategory"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
                     android:gravity="right"
                     android:padding="2dp"
-                    android:text="Show all..."
-                    android:textColor="@color/primary_dark"
-                    android:textSize="16sp"
+                    android:onClick="intentCategory"
+                    android:text="See All >"
+                    android:textColor="@color/colorAccent"
                     android:textStyle="italic"
+                    android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="@+id/adView1"
                     app:layout_constraintEnd_toEndOf="@+id/adView1"
                     app:layout_constraintStart_toStartOf="@+id/adView1"
-                    app:layout_constraintTop_toTopOf="@+id/recyclerview"></TextView>
+                    app:layout_constraintTop_toTopOf="@+id/recyclerview"
+                    tools:ignore="RtlHardcoded" />
 
 
             </LinearLayout>

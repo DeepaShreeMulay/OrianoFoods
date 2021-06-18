@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.atlas.orianofood.R
 import com.atlas.orianofood.firebaseRT.activity.*
+import com.atlas.orianofood.firebaseRT.adapter.MyListAdapter
 import com.atlas.orianofood.firebaseRT.utils.*
 import com.atlas.orianofood.mvvm.category.adapter.CategoryAdapter
 import com.atlas.orianofood.mvvm.category.model.CategoryViewModel
@@ -25,16 +27,20 @@ import com.atlas.orianofood.mvvm.topRatedProduct.adapter.TopAdapter
 import com.atlas.orianofood.mvvm.topRatedProduct.model.TopRatedViewModel
 import com.atlas.orianofood.mvvm.topRatedSelling.adapter.SellingAdapter
 import com.atlas.orianofood.mvvm.topRatedSelling.model.SellingViewModel
+import com.atlas.orianofood.mvvm.utils.logout
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.gallery_item.view.*
 import kotlinx.android.synthetic.orderOnline.activity_home.*
 import kotlinx.android.synthetic.orderOnline.app_bar_home.*
+import kotlinx.android.synthetic.orderOnline.content_addresses.*
 import kotlinx.android.synthetic.orderOnline.content_home.*
+import kotlinx.android.synthetic.orderOnline.content_home.recyclerview
 
 class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private val activity = this
     private val viewModel: SellingViewModel by lazy { ViewModelProvider(this).get(SellingViewModel::class.java) }
     private lateinit var sellingAdapter: SellingAdapter
+    lateinit var adapter: MyListAdapter
 
 
 
@@ -44,6 +50,8 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+
 
         toolbar.title = ""
         setSupportActionBar(toolbar)
@@ -92,10 +100,10 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         topSellingRecyclerview.setHasFixedSize(true)
         loadTopSellingItems()
 
-        val adsManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        /*val adsManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         adRecyclerView.layoutManager = adsManager
-        adRecyclerView.setHasFixedSize(true)
-        //loadOffers()
+        adRecyclerView.setHasFixedSize(true)*/
+        loadOffers()
 
         val topRatingManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         topRatingRecyclerview.layoutManager = topRatingManager
@@ -103,14 +111,22 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         loadTopRatingItems()  // Ads chodo Gallary
     }
 
-    private val cviewModel: CategoryViewModel by lazy{ViewModelProvider(this).get(CategoryViewModel::class.java)}
+    private val cviewModel: CategoryViewModel by lazy {
+        ViewModelProvider(this).get(
+            CategoryViewModel::class.java
+        )
+    }
     private lateinit var categoryadapter: CategoryAdapter
 
-    private val tcviewModel: TopCategoryViewModel by lazy { ViewModelProvider(this).get(TopCategoryViewModel::class.java) }
+    private val tcviewModel: TopCategoryViewModel by lazy {
+        ViewModelProvider(this).get(
+            TopCategoryViewModel::class.java
+        )
+    }
     private lateinit var topCategoryAdapter: TopCategoryAdapter
 
     private fun loadMenuItems() {
-       topCategoryAdapter = TopCategoryAdapter(mutableListOf())
+        topCategoryAdapter = TopCategoryAdapter(mutableListOf())
         recyclerview.adapter = topCategoryAdapter
 
         with(tcviewModel) {
@@ -165,7 +181,12 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
         }
     }
-    private val tviewModel: TopRatedViewModel by lazy { ViewModelProvider(this).get(TopRatedViewModel::class.java) }
+
+    private val tviewModel: TopRatedViewModel by lazy {
+        ViewModelProvider(this).get(
+            TopRatedViewModel::class.java
+        )
+    }
     private lateinit var topAdapter: TopAdapter
     private fun loadTopRatingItems() {
         topAdapter = TopAdapter(mutableListOf())
@@ -184,7 +205,7 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             })
             topshowToast.observe(this@HomeSPActivity, Observer {
 
-                Toast.makeText(this@HomeSPActivity ,"$it", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@HomeSPActivity, "$it", Toast.LENGTH_SHORT).show()
             })
             error.observe(this@HomeSPActivity, Observer {
 
@@ -197,16 +218,32 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
 
     private fun loadOffers() {
+        val myListData: Array<String> = arrayOf<String>(
+            "https://i.pinimg.com/564x/1f/e9/a4/1fe9a4401d9ad3b63ee0b4edc9d8ef79.jpg",
+            "https://i.pinimg.com/originals/51/7b/51/517b51dd5d406bccba321863e4eab807.jpg",
+            "https://i.pinimg.com/236x/54/26/2e/54262e075cadfd959fa18e7fc7eb973d.jpg"
+        )
 
-            }
+        adapter = MyListAdapter(myListData)
+        val adsManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        adRecyclerView.layoutManager = adsManager
+        adRecyclerView.setHasFixedSize(true)
+        adRecyclerView.adapter = adapter
+        adapter.notifyDataSetChanged()
 
-    private val profileviewModel:ProfileViewModel by lazy { ViewModelProvider(this).get(ProfileViewModel::class.java) }
+    }
 
-    private fun loadProfileActivity(){
+    private val profileviewModel: ProfileViewModel by lazy {
+        ViewModelProvider(this).get(
+            ProfileViewModel::class.java
+        )
+    }
+
+    private fun loadProfileActivity() {
         with(profileviewModel) {
             profileData.observe(this@HomeSPActivity, Observer {
                 Toast.makeText(this@HomeSPActivity, "Productdata  run", Toast.LENGTH_SHORT).show()
-               /* if (it!!.userLogin.isNotEmpty()) {
+                /* if (it!!.userLogin.isNotEmpty()) {
                     Log.e("PTAG","${it.userLogin}")
                 } else {
                     Log.e("error", "error in connect with adapter")
@@ -214,7 +251,7 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             })
             profileshowToast.observe(this@HomeSPActivity, Observer {
 
-                Toast.makeText(this@HomeSPActivity ,"$it", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@HomeSPActivity, "$it", Toast.LENGTH_SHORT).show()
             })
             error.observe(this@HomeSPActivity, Observer {
 
@@ -244,7 +281,7 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             }
             R.id.nav_category -> {
                 // Handle the camera action
-                val intent = Intent(activity,CategorySPActivity::class.java)
+                val intent = Intent(activity, CategorySPActivity::class.java)
                 startActivity(intent)
                 finish()
             }
@@ -291,6 +328,11 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    fun intentCategory(view: View) {
+        startActivity(Intent(this, CategorySPActivity::class.java))
+        finish()
     }
 
 }

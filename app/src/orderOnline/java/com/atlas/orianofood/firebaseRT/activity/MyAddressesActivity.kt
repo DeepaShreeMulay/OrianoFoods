@@ -12,7 +12,8 @@ import com.atlas.orianofood.R
 import com.atlas.orianofood.firebaseRT.adapter.AddressAdapter
 import com.atlas.orianofood.firebaseRT.database.DatabaseHandler
 import com.atlas.orianofood.firebaseRT.model.Address
-import com.atlas.orianofood.firebaseRT.utils.logout
+import com.atlas.orianofood.mvvm.activity.HomeSPActivity
+import com.atlas.orianofood.mvvm.utils.logout
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.orderOnline.activity_addresses.*
@@ -95,7 +96,7 @@ class MyAddressesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
             drawer_layout.closeDrawer(GravityCompat.START)
         } else {
             super.onBackPressed()
-            val intent = Intent(this@MyAddressesActivity, HomeActivity::class.java)
+            val intent = Intent(this@MyAddressesActivity, HomeSPActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -106,7 +107,7 @@ class MyAddressesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         when (item.itemId) {
             R.id.nav_home -> {
                 // Handle the camera action
-                val intent = Intent(activity, HomeActivity::class.java)
+                val intent = Intent(activity, HomeSPActivity::class.java)
                 startActivity(intent)
                 finish()
             }

@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.atlas.orianofood.R
-import com.atlas.orianofood.firebaseRT.utils.SharedpreferencesUtil
 import com.atlas.orianofood.mvvm.database.AppDatabase
 import com.atlas.orianofood.mvvm.login.model.LoginData
 import com.atlas.orianofood.mvvm.login.model.LoginModelFactory
@@ -20,6 +19,7 @@ import com.atlas.orianofood.mvvm.login.repository.LoginRepository
 import com.atlas.orianofood.mvvm.register.model.RegisterViewModel
 import com.atlas.orianofood.mvvm.register.model.RegisterViewModelFactory
 import com.atlas.orianofood.mvvm.register.repository.RegisterRepository
+import com.atlas.orianofood.mvvm.utils.SharedpreferencesUtil
 import com.google.gson.JsonObject
 import kotlinx.android.synthetic.orderOnline.activity_register.*
 
@@ -80,7 +80,7 @@ class RegisterActivity : AppCompatActivity() {
         jsonObject.addProperty("pwd", password)
 
 
-        viewModel.pushPost(jsonObject)
+        viewModel.registerByMobile(jsonObject)
         viewModel.myResponse.observe(this, Observer { response ->
             if (response.isSuccessful) {
                 if (response.body()?.status?.toInt() == 200) {
@@ -110,25 +110,25 @@ class RegisterActivity : AppCompatActivity() {
         jsonObject.addProperty("mobile", mobile)
         jsonObject.addProperty("pwd", password)
 
-        loginviewModel.authPost(jsonObject)
+        loginviewModel.loginByMobile(jsonObject)
         loginviewModel.myAuthResponse.observe(this, Observer { response ->
             if (response.isSuccessful) {
                 if (response.body()?.userId.toString()
-                                .isEmpty() || response.body()?.token.isNullOrEmpty()
+                        .isEmpty() || response.body()?.token.isNullOrEmpty()
                 ) {
                     Toast.makeText(this, "Please enter valid credentials", Toast.LENGTH_SHORT)
-                            .show()
+                        .show()
                     intentBack()
                 } else {
                     val myLoginData = LoginData(
-                            userId = response.body()?.userId,
-                            token = response.body()?.token,
-                            mobilelogin = mobile.toLong(),
-                            passwordlogin = password
+                        userId = response.body()?.userId,
+                        token = response.body()?.token,
+                        mobilelogin = mobile.toLong(),
+                        passwordlogin = password
                     )
                     SharedpreferencesUtil.addToken(
-                            activity,
-                            "Bearer ${response.body()?.token?.substringAfter("|")}"
+                        activity,
+                        "Bearer ${response.body()?.token?.substringAfter("|")}"
                     )
 
                     Thread {
