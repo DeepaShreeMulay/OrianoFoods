@@ -126,12 +126,12 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     private lateinit var topCategoryAdapter: TopCategoryAdapter
 
     private fun loadMenuItems() {
-        topCategoryAdapter = TopCategoryAdapter(mutableListOf())
+        topCategoryAdapter = TopCategoryAdapter(activity, mutableListOf())
         recyclerview.adapter = topCategoryAdapter
 
         with(tcviewModel) {
-            topCategoryData.observe(this@HomeSPActivity, Observer {
-                Toast.makeText(this@HomeSPActivity, "Productdata  run", Toast.LENGTH_SHORT).show()
+            topCategoryData.observe(activity, Observer {
+                Toast.makeText(activity, "Productdata  run", Toast.LENGTH_SHORT).show()
                 if (it!!.tclist.isNotEmpty()) {
 
                     topCategoryAdapter.clear()
@@ -141,7 +141,7 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
                     Log.e("error", "error in connect with adapter")
                 }
             })
-            tcshowToast.observe(this@HomeSPActivity, Observer {
+            tcshowToast.observe(activity, Observer {
 
                 Toast.makeText(this@HomeSPActivity, "$it", Toast.LENGTH_SHORT).show()
             })

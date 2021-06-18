@@ -3,6 +3,7 @@ package com.atlas.orianofood.mvvm.retrofit
 import com.atlas.orianofood.mvvm.category.model.CategoryData
 import com.atlas.orianofood.mvvm.gallery.model.GalleryData
 import com.atlas.orianofood.mvvm.getProfile.model.ProfileItems
+import com.atlas.orianofood.mvvm.product.model.ProductData
 import com.atlas.orianofood.mvvm.topCategory.model.TopCategoryData
 import com.atlas.orianofood.mvvm.topRatedProduct.model.TopRatedData
 import com.atlas.orianofood.mvvm.topRatedSelling.model.SellingData
@@ -28,5 +29,8 @@ interface ApiService {
 
     @GET("v1/get-profile/40")
     fun getProfileData(): Call<ProfileItems>
+
+    @GET("v1/products")
+    fun getProductData(): Call<ProductData>
 
 }

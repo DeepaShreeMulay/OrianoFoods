@@ -12,6 +12,8 @@ import com.atlas.orianofood.mvvm.getProfile.model.ProfileItems
 import com.atlas.orianofood.mvvm.getProfile.model.dao.ProfileDao
 import com.atlas.orianofood.mvvm.login.dao.LoginDao
 import com.atlas.orianofood.mvvm.login.model.LoginData
+import com.atlas.orianofood.mvvm.product.dao.ProductDao
+import com.atlas.orianofood.mvvm.product.model.ProductItems
 import com.atlas.orianofood.mvvm.register.dao.UserDao
 import com.atlas.orianofood.mvvm.register.model.UserData
 import com.atlas.orianofood.mvvm.topCategory.dao.TopCategoryDao
@@ -23,9 +25,9 @@ import com.atlas.orianofood.mvvm.topRatedSelling.model.SellingItem
 
 // We need to have single DB for all tables
 @Database(
-    entities = [LoginData::class, UserData::class, CategoryItem::class, TopRatedItem::class, SellingItem::class, GalleryItem::class,TopCategoryItem::class,ProfileItems::class],
-    version = 2,
-    exportSchema = false
+        entities = [LoginData::class, UserData::class, CategoryItem::class, TopRatedItem::class, SellingItem::class, GalleryItem::class, TopCategoryItem::class, ProfileItems::class, ProductItems::class],
+        version = 3,
+        exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract val loginDao: LoginDao
@@ -35,7 +37,8 @@ abstract class AppDatabase : RoomDatabase() {
     abstract val topSellingDao: SellingDao
     abstract val galleryDao: GalleryDao
     abstract val topCategoryDao:TopCategoryDao
-    abstract val profileDao:ProfileDao
+    abstract val profileDao: ProfileDao
+    abstract val productDao: ProductDao
 
 
     companion object {

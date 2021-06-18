@@ -123,8 +123,23 @@
                         android:textSize="12sp"
                         tools:text="100"
                         android:layout_marginLeft="5dp"
-                       app:text="@{item.sellingPrice}"
-                        />
+                        app:text="@{item.sellingPrice}" />
+
+                    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                        android:id="@+id/btn_number"
+                        android:layout_width="50dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        app:backGroundColor="@color/colorPrimary"
+                        app:backgroundDrawable="@color/colorPrimary"
+                        app:finalNumber="10"
+                        app:initialNumber="1"
+                        app:textColor="@android:color/white"
+                        app:textSize="4sp">
+
+                    </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
                 </RelativeLayout>
 
                 <LinearLayout

@@ -3,7 +3,6 @@ package com.atlas.orianofood.mvvm.utils
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.atlas.orianofood.R
-import com.squareup.picasso.NetworkPolicy
 import com.squareup.picasso.Picasso
 
 object CustomImageBindingAdapter {
@@ -14,7 +13,6 @@ object CustomImageBindingAdapter {
         try {
             Picasso.get()
                 .load(url)
-                .networkPolicy(NetworkPolicy.OFFLINE)
                 .placeholder(R.drawable.ic_img_placeholder)
                 .into(imageView)
 
