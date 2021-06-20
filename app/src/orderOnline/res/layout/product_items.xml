@@ -11,7 +11,7 @@
     </data>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="150dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="5dp"
@@ -28,7 +28,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/img_cardView"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
@@ -40,8 +40,8 @@
 
                 <ImageView
                     android:id="@+id/categoryImage"
-                    android:layout_width="140dp"
-                    android:layout_height="80dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
                     android:scaleType="centerCrop"
                     app:image_url="@{item.imageUrl}"
                     app:srcCompat="@mipmap/bg_home" />
@@ -49,9 +49,10 @@
 
             <RelativeLayout
                 android:id="@+id/rl_icon"
-                android:layout_width="140dp"
+                android:layout_width="match_parent"
                 android:layout_height="15dp"
-                android:layout_marginLeft="5dp">
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
 
                 <ImageView
                     android:id="@+id/sale_tag"
@@ -127,7 +128,7 @@
 
                     <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
                         android:id="@+id/btn_number"
-                        android:layout_width="50dp"
+                        android:layout_width="60dp"
                         android:layout_height="20dp"
                         android:layout_alignParentRight="true"
                         android:layout_marginStart="5dp"
@@ -137,7 +138,7 @@
                         app:finalNumber="10"
                         app:initialNumber="1"
                         app:textColor="@android:color/white"
-                        app:textSize="4sp">
+                        app:textSize="8sp">
 
                     </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
                 </RelativeLayout>

@@ -91,7 +91,7 @@
                     app:finalNumber="10"
                     app:initialNumber="1"
                     app:textColor="@android:color/white"
-                    app:textSize="4sp">
+                    app:textSize="8sp">
 
                 </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
 

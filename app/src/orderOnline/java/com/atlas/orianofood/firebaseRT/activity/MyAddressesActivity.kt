@@ -13,6 +13,8 @@ import com.atlas.orianofood.firebaseRT.adapter.AddressAdapter
 import com.atlas.orianofood.firebaseRT.database.DatabaseHandler
 import com.atlas.orianofood.firebaseRT.model.Address
 import com.atlas.orianofood.mvvm.activity.HomeSPActivity
+import com.atlas.orianofood.mvvm.activity.PrivacyPolicyActivity
+import com.atlas.orianofood.mvvm.activity.TermsAndCondition
 import com.atlas.orianofood.mvvm.utils.logout
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -141,6 +143,22 @@ class MyAddressesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
             R.id.nav_orders -> {
                 // Handle the camera action
                 val intent = Intent(activity, OrdersActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.nav_plans -> {
+                // Handle the camera action
+                val intent = Intent(activity, SubscriptionActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.nav_privacy_policy -> {
+                val intent = Intent(activity, PrivacyPolicyActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.nav_terms -> {
+                val intent = Intent(activity, TermsAndCondition::class.java)
                 startActivity(intent)
                 finish()
             }

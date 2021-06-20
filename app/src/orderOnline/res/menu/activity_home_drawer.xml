@@ -54,6 +54,12 @@
             android:title="Orders" />
 
         <item
+            android:id="@+id/nav_plans"
+            android:icon="@drawable/ic_access_time_black_24dp"
+            android:iconTint="@color/colorPrimary"
+            android:title="Subscription" />
+
+        <item
             android:id="@+id/nav_privacy_policy"
             android:icon="@drawable/ic_access_time_black_24dp"
             android:iconTint="@color/colorPrimary"
