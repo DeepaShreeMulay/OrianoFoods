@@ -38,8 +38,8 @@ class ProductSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product)
 
-        toolbar.title = ""
-        setSupportActionBar(toolbar)
+        //toolbar.title = ""
+        // setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)

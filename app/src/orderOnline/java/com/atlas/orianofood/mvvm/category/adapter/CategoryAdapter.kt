@@ -1,15 +1,18 @@
 package com.atlas.orianofood.mvvm.category.adapter
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.atlas.orianofood.BR.item
 import com.atlas.orianofood.databinding.CategoryItemBinding
+import com.atlas.orianofood.mvvm.activity.ProductSPActivity
 import com.atlas.orianofood.mvvm.category.model.CategoryItem
 
-class CategoryAdapter(private var items: MutableList<CategoryItem> = arrayListOf<CategoryItem>()) :
-    RecyclerView.Adapter<CategoryAdapter.CategoryHolder>() {
+class CategoryAdapter(private val context: Context, private var items: MutableList<CategoryItem> = arrayListOf<CategoryItem>()) :
+        RecyclerView.Adapter<CategoryAdapter.CategoryHolder>() {
 
     override fun getItemCount(): Int {
         return items.size
@@ -17,6 +20,13 @@ class CategoryAdapter(private var items: MutableList<CategoryItem> = arrayListOf
 
     override fun onBindViewHolder(holder: CategoryHolder, position: Int) {
         holder.onBind(items[position])
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, ProductSPActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
+            intent.putExtra("CategoryID", items[position].categoryId)
+            context.startActivity(intent)
+        }
     }
 
 

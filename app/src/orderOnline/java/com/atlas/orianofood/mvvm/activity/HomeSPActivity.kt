@@ -131,7 +131,7 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
         with(tcviewModel) {
             topCategoryData.observe(activity, Observer {
-                Toast.makeText(activity, "Productdata  run", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(activity, "Productdata  run", Toast.LENGTH_SHORT).show()
                 if (it!!.tclist.isNotEmpty()) {
 
                     topCategoryAdapter.clear()
@@ -145,7 +145,7 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
                 Toast.makeText(this@HomeSPActivity, "$it", Toast.LENGTH_SHORT).show()
             })
-            error.observe(this@HomeSPActivity, Observer {
+            error.observe(activity, Observer {
 
                 Toast.makeText(this@HomeSPActivity, "$it", Toast.LENGTH_SHORT).show()
             })
@@ -160,7 +160,7 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
         with(viewModel) {
             sellingData.observe(this@HomeSPActivity, Observer {
-                Toast.makeText(this@HomeSPActivity, "Productdata  run", Toast.LENGTH_SHORT).show()
+                //  Toast.makeText(this@HomeSPActivity, "Productdata  run", Toast.LENGTH_SHORT).show()
                 if (it!!.slist.isNotEmpty()) {
 
                     sellingAdapter.clear()
@@ -193,7 +193,7 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         topRatingRecyclerview.adapter = topAdapter
         with(tviewModel) {
             topRatedData.observe(this@HomeSPActivity, Observer {
-                Toast.makeText(this@HomeSPActivity, "Productdata  run", Toast.LENGTH_SHORT).show()
+                // Toast.makeText(this@HomeSPActivity, "Productdata  run", Toast.LENGTH_SHORT).show()
                 if (it!!.rlist.isNotEmpty()) {
 
                     topAdapter.clear()
@@ -242,7 +242,7 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     private fun loadProfileActivity() {
         with(profileviewModel) {
             profileData.observe(this@HomeSPActivity, Observer {
-                Toast.makeText(this@HomeSPActivity, "Productdata  run", Toast.LENGTH_SHORT).show()
+                // Toast.makeText(this@HomeSPActivity, "Productdata  run", Toast.LENGTH_SHORT).show()
                 /* if (it!!.userLogin.isNotEmpty()) {
                     Log.e("PTAG","${it.userLogin}")
                 } else {

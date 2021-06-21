@@ -63,12 +63,12 @@ class CategorySPActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
     }
 
     private fun loadCategoryItems() {
-        categoryadapter = CategoryAdapter(mutableListOf())
+        categoryadapter = CategoryAdapter(activity, mutableListOf())
         categoryRecyclerView.adapter = categoryadapter
 
         with(cviewModel) {
-            homeData.observe(this@CategorySPActivity, Observer {
-                Toast.makeText(this@CategorySPActivity, "homedata  run", Toast.LENGTH_SHORT).show()
+            homeData.observe(activity, Observer {
+
                 if (it!!.list.isNotEmpty()) {
 
                     categoryadapter.clear()
@@ -80,10 +80,10 @@ class CategorySPActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
             })
 
 
-            showToast.observe(this@CategorySPActivity, Observer {
+            showToast.observe(activity, Observer {
                 Toast.makeText(this@CategorySPActivity, "$it", Toast.LENGTH_SHORT).show()
             })
-            error.observe(this@CategorySPActivity, Observer {
+            error.observe(activity, Observer {
 
                 Toast.makeText(this@CategorySPActivity, "$it", Toast.LENGTH_SHORT).show()
             })

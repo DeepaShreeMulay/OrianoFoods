@@ -39,7 +39,7 @@ class ProductViewModel(
                     if (response.isSuccessful) {
                         productData.postValue(response.body())
 
-                        pshowToast.postValue("data received ")
+                        // pshowToast.postValue("data received ")
 
                         if (response.body()!!.plist.size > 0) {
                             saveInDB(response.body()!!.plist)
