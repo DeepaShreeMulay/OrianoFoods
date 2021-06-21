@@ -1,43 +1,45 @@
-package com.atlas.orianofood.mvvm.activity
+package com.atlas.orianofood.firebaseRT.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.viewpager.widget.ViewPager
 import com.atlas.orianofood.R
 import com.atlas.orianofood.firebaseRT.activity.*
-import com.atlas.orianofood.mvvm.category.adapter.CategoryAdapter
-import com.atlas.orianofood.mvvm.category.model.CategoryViewModel
+import com.atlas.orianofood.firebaseRT.activity.ui.main.SectionsPagerAdapter
+import com.atlas.orianofood.firebaseRT.adapter.SubscriptionAdapter
+import com.atlas.orianofood.firebaseRT.model.Subscription
+import com.atlas.orianofood.mvvm.activity.HomeSPActivity
+import com.atlas.orianofood.mvvm.activity.PrivacyPolicyActivity
+import com.atlas.orianofood.mvvm.activity.TermsAndCondition
 import com.atlas.orianofood.mvvm.utils.logout
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.orderOnline.activity_category.*
-import kotlinx.android.synthetic.orderOnline.app_bar_category.*
-import kotlinx.android.synthetic.orderOnline.content_category.*
+import com.google.android.material.tabs.TabLayout
+import kotlinx.android.synthetic.main.activity_subscription.*
+import kotlinx.android.synthetic.main.app_bar_subscription.*
+import kotlinx.android.synthetic.main.content_subscription.*
 
-class CategorySPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-    private val cviewModel: CategoryViewModel by lazy {
-        ViewModelProvider(this).get(
-            CategoryViewModel::class.java
-        )
-    }
-    private lateinit var categoryadapter: CategoryAdapter
-    private val activity = this@CategorySPActivity
+class SubscriptionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    private val activity = this@SubscriptionActivity
+
+    private lateinit var adapter: SubscriptionAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_category)
-
-        toolbar.title = ""
-        setSupportActionBar(toolbar)
-
+        setContentView(R.layout.activity_subscription)
+        val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
+        val viewPager: ViewPager = findViewById(R.id.view_pager)
+        viewPager.adapter = sectionsPagerAdapter
+        val tabs: TabLayout = findViewById(R.id.tabs)
+        tabs.setupWithViewPager(viewPager)
+        val fab: FloatingActionButton = findViewById(R.id.fab)
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -56,41 +58,38 @@ class CategorySPActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
 
         nav_view.setNavigationItemSelectedListener(this)
 
-        val manager = GridLayoutManager(this@CategorySPActivity, 3)
-        categoryRecyclerView.layoutManager = manager
-        categoryRecyclerView.setHasFixedSize(true)
-        loadCategoryItems()
+        loadMenuItems()
     }
 
-    private fun loadCategoryItems() {
-        categoryadapter = CategoryAdapter(activity, mutableListOf())
-        categoryRecyclerView.adapter = categoryadapter
+    private fun loadMenuItems() {
+        val myListData: Array<Subscription> = arrayOf<Subscription>(
+            Subscription(
+                0, "Basic Plan", "Free", "1 month", "Basic Plan",
+                "#01A5E1", "1. 5% discount on first order\n 2. First 3 free deliveries"
+            ),
+            Subscription(
+                1, "Silver Plan", "₹299", "3 month", "Silver Plan",
+                "#85838D", "1. 5% discount on orders above ₹800\n2. First 10 free deliveries"
+            ),
+            Subscription(
+                2,
+                "Gold Plan",
+                "₹499",
+                "6 month",
+                "Gold Plan",
+                "#AF9500",
+                "1. 10% discount on orders above ₹800\n2. Get cashback and rewards on each order\n3. Unlimited free deliveries"
+            )
+        )
 
-        with(cviewModel) {
-            homeData.observe(activity, Observer {
-
-                if (it!!.list.isNotEmpty()) {
-
-                    categoryadapter.clear()
-                    categoryadapter.add(it.list)
-
-                } else {
-                    Log.e("error", "error in connect with adapter")
-                }
-            })
-
-
-            showToast.observe(activity, Observer {
-                Toast.makeText(this@CategorySPActivity, "$it", Toast.LENGTH_SHORT).show()
-            })
-            error.observe(activity, Observer {
-
-                Toast.makeText(this@CategorySPActivity, "$it", Toast.LENGTH_SHORT).show()
-            })
-        }
-
-
+        adapter = SubscriptionAdapter(myListData)
+        val adsManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        recyclerview.layoutManager = adsManager
+        recyclerview.setHasFixedSize(true)
+        recyclerview.adapter = adapter
+        adapter.notifyDataSetChanged()
     }
+
 
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
@@ -102,6 +101,7 @@ class CategorySPActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
             finish()
         }
     }
+
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
@@ -129,9 +129,9 @@ class CategorySPActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
             }
             R.id.nav_gallery -> {
                 // Handle the camera action
-                val intent = Intent(activity, GallerySPActivity::class.java)
+                /*val intent = Intent(activity, GalleryActivity::class.java)
                 startActivity(intent)
-                finish()
+                finish()*/
             }
             R.id.nav_profile -> {
                 // Handle the camera action
@@ -142,12 +142,6 @@ class CategorySPActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
             R.id.nav_orders -> {
                 // Handle the camera action
                 val intent = Intent(activity, OrdersActivity::class.java)
-                startActivity(intent)
-                finish()
-            }
-            R.id.nav_plans -> {
-                // Handle the camera action
-                val intent = Intent(activity, SubscriptionActivity::class.java)
                 startActivity(intent)
                 finish()
             }

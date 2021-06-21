@@ -309,6 +309,12 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
                 startActivity(intent)
                 finish()
             }
+            R.id.nav_plans -> {
+                // Handle the camera action
+                val intent = Intent(activity, SubscriptionActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
             R.id.nav_privacy_policy -> {
                 val intent = Intent(activity, PrivacyPolicyActivity::class.java)
                 startActivity(intent)
