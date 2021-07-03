@@ -65,6 +65,10 @@
             android:name="com.atlas.orianofood.mvvm.activity.ProductSPActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme" />
+        <activity
+            android:name="com.atlas.orianofood.mvvm.activity.MyCartSpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAppTheme" />
 
         <!-- FireBase RT -->
         <activity

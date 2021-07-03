@@ -41,9 +41,7 @@ class CategoryViewModel(
                     if (response.isSuccessful) {
                         homeData.postValue(response.body())
 
-                        showToast.postValue("data received (Toast shows one times)")
-
-
+                        //showToast.postValue("data received (Toast shows one times)")
 
 
                         if (response.body()!!.list.size > 0) {

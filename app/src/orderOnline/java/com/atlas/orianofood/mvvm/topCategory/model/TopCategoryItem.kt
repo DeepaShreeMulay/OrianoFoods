@@ -5,12 +5,13 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity
-data class TopCategoryItem (
+data class TopCategoryItem(
         @PrimaryKey(autoGenerate = true)
-        @SerializedName("category_id")
-        var categoryId: Int,
         @SerializedName("category_code")
         var categoryCode: Int?,
+        @SerializedName("category_id")
+        var categoryId: String,
+
         @SerializedName("category_desc")
         var categoryDesc: String?,
         @SerializedName("category_name")
@@ -19,4 +20,4 @@ data class TopCategoryItem (
         var imageUrl: String?,
         @SerializedName("parent")
         var parent: Int?
-        )
+)

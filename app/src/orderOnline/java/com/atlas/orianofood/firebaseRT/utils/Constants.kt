@@ -7,3 +7,4 @@ const val MENU_EXTRA = "Menu"
 const val OFFERS_EXTRA = "Offers"
 const val PRODUCT_EXTRA = "Product"
 const val TOP_SELLING = "Top Selling"
+val selectedProductIDsList: HashMap<Int, Int> = HashMap<Int, Int>() // HashMap<Id,Qty>

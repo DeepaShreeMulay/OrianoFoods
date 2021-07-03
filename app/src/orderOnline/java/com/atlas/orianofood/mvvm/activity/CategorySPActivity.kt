@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.atlas.orianofood.R
 import com.atlas.orianofood.firebaseRT.activity.*
+import com.atlas.orianofood.mvvm.category.ShowCategoryData
 import com.atlas.orianofood.mvvm.category.adapter.CategoryAdapter
 import com.atlas.orianofood.mvvm.category.model.CategoryViewModel
 import com.atlas.orianofood.mvvm.utils.logout
@@ -22,10 +23,10 @@ import kotlinx.android.synthetic.orderOnline.activity_category.*
 import kotlinx.android.synthetic.orderOnline.app_bar_category.*
 import kotlinx.android.synthetic.orderOnline.content_category.*
 
-class CategorySPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class CategorySPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnNavigationItemSelectedListener {
     private val cviewModel: CategoryViewModel by lazy {
         ViewModelProvider(this).get(
-            CategoryViewModel::class.java
+                CategoryViewModel::class.java
         )
     }
     private lateinit var categoryadapter: CategoryAdapter
@@ -63,12 +64,12 @@ class CategorySPActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
     }
 
     private fun loadCategoryItems() {
-        categoryadapter = CategoryAdapter(mutableListOf())
+        categoryadapter = CategoryAdapter(activity, mutableListOf())
         categoryRecyclerView.adapter = categoryadapter
 
         with(cviewModel) {
-            homeData.observe(this@CategorySPActivity, Observer {
-                Toast.makeText(this@CategorySPActivity, "homedata  run", Toast.LENGTH_SHORT).show()
+            homeData.observe(activity, Observer {
+
                 if (it!!.list.isNotEmpty()) {
 
                     categoryadapter.clear()
@@ -80,10 +81,10 @@ class CategorySPActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
             })
 
 
-            showToast.observe(this@CategorySPActivity, Observer {
+            showToast.observe(activity, Observer {
                 Toast.makeText(this@CategorySPActivity, "$it", Toast.LENGTH_SHORT).show()
             })
-            error.observe(this@CategorySPActivity, Observer {
+            error.observe(activity, Observer {
 
                 Toast.makeText(this@CategorySPActivity, "$it", Toast.LENGTH_SHORT).show()
             })
@@ -172,6 +173,12 @@ class CategorySPActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         return true
 
 
+    }
+
+    override fun transferCategoryData(data: String) {
+        val intent = Intent(this, ProductSPActivity::class.java)
+        intent.putExtra("CategoryID", data)
+        startActivity(intent)
     }
 
 }

@@ -39,7 +39,7 @@ class TopCategoryViewModel (
                     if (response.isSuccessful) {
                         topCategoryData.postValue(response.body())
 
-                        tcshowToast.postValue("data received")
+                        // tcshowToast.postValue("data received")
 
                         if (response.body()!!.tclist.size > 0) {
                             saveInDB(response.body()!!.tclist)
@@ -50,6 +50,7 @@ class TopCategoryViewModel (
                     }
                 }
             }
+
             override fun onFailure(call: Call<TopCategoryData?>?, t: Throwable?) {
                 Log.e("ptag", t?.message.toString())
                 error.postValue("error happened")

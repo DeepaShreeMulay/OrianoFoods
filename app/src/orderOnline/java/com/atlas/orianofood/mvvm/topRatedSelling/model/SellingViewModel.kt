@@ -28,8 +28,8 @@ class SellingViewModel(
     private fun getSellingData() {
         apiService.getSellingData().enqueue(object : Callback<SellingData?> {
             override fun onResponse(
-                call: Call<SellingData?>?,
-                response: Response<SellingData?>?
+                    call: Call<SellingData?>?,
+                    response: Response<SellingData?>?
             ) {
                 Log.d(TAG, "onResponse() called with: call = [$call], response = [$response]")
 
@@ -39,7 +39,7 @@ class SellingViewModel(
                     if (response.isSuccessful) {
                         sellingData.postValue(response.body())
 
-                        tshowToast.postValue("data received (Toast shows one times)")
+                        // tshowToast.postValue("data received (Toast shows one times)")
 
                         if (response.body()!!.slist.size > 0) {
                             saveInDB(response.body()!!.slist)
@@ -50,6 +50,7 @@ class SellingViewModel(
                     }
                 }
             }
+
             override fun onFailure(call: Call<SellingData?>?, t: Throwable?) {
                 Log.e("ptag", t?.message.toString())
                 error.postValue("error happened")

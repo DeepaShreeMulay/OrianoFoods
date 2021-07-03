@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_veg"
+            android:drawablePadding="2dp"
+            android:maxWidth="130dp"
+            android:text="Sabudana Khichdi"
+            android:textColor="@color/black"
+
+            android:textSize="12sp"></TextView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/decrement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/quantity_deco"
+        android:paddingHorizontal="14dp"
+        android:text="-"
+        android:textSize="12sp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="-2dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/decrement"
+        android:layout_toRightOf="@id/decrement"
+        android:background="@drawable/quantity_deco"
+        android:paddingHorizontal="14dp"
+        android:text="1"
+        android:textColor="#4CAF50"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/incremnet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="-2dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/quantity"
+        android:layout_toRightOf="@id/quantity"
+        android:background="@drawable/quantity_deco"
+        android:paddingHorizontal="14dp"
+        android:text="+"
+        android:textColor="#4CAF50"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+        android:gravity="right"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/removeCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/remove_deco"
+            android:padding="4dp"
+            android:text="Remove"
+            android:textColor="#FF0000"
+            android:textSize="10sp"></TextView>
+
+
+        <TextView
+            android:id="@+id/originalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:padding="4dp"
+            android:text="50"
+            android:textSize="10sp"
+            app:drawableLeftCompat="@drawable/rupee_gray" />
+
+        <TextView
+            android:id="@+id/finalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:padding="4dp"
+            android:text="42"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:drawableLeftCompat="@drawable/rupee_black" />
+    </LinearLayout>
+
+
+</RelativeLayout>

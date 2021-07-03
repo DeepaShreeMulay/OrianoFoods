@@ -39,7 +39,7 @@ class GalleryViewModel(
                     if (response.isSuccessful) {
                         galleryData.postValue(response.body())
 
-                        gshowToast.postValue("data received (Toast shows one times)")
+                        // gshowToast.postValue("data received (Toast shows one times)")
 
                         if (response.body()!!.glist.size > 0) {
                             saveInDB(response.body()!!.glist)
@@ -50,6 +50,7 @@ class GalleryViewModel(
                     }
                 }
             }
+
             override fun onFailure(call: Call<GalleryData?>?, t: Throwable?) {
                 Log.e("ptag", t?.message.toString())
                 error.postValue("error happened")
