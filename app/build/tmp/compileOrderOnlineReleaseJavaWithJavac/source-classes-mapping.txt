@@ -1,2 +1,0 @@
-com/atlas/orianofood/BuildConfig.java
- com.atlas.orianofood.BuildConfig

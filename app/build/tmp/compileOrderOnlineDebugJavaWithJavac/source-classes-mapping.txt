@@ -1,2 +1,170 @@
+com/atlas/orianofood/databinding/ActivitySignupBinding.java
+ com.atlas.orianofood.databinding.ActivitySignupBinding
+com/atlas/orianofood/databinding/CategoryItemBindingImpl.java
+ com.atlas.orianofood.databinding.CategoryItemBindingImpl
+com/atlas/orianofood/databinding/ActivityAddressesBinding.java
+ com.atlas.orianofood.databinding.ActivityAddressesBinding
+com/atlas/orianofood/databinding/AppBarAddressesBinding.java
+ com.atlas.orianofood.databinding.AppBarAddressesBinding
+com/atlas/orianofood/databinding/ActivityCartBinding.java
+ com.atlas.orianofood.databinding.ActivityCartBinding
+androidx/databinding/DataBinderMapperImpl.java
+ androidx.databinding.DataBinderMapperImpl
+com/atlas/orianofood/databinding/AddressItemBinding.java
+ com.atlas.orianofood.databinding.AddressItemBinding
+androidx/databinding/library/baseAdapters/BR.java
+ androidx.databinding.library.baseAdapters.BR
+com/atlas/orianofood/databinding/ProductItemsBindingImpl.java
+ com.atlas.orianofood.databinding.ProductItemsBindingImpl
+com/atlas/orianofood/databinding/ActivityProductBinding.java
+ com.atlas.orianofood.databinding.ActivityProductBinding
+com/atlas/orianofood/databinding/TopCategoryItemBinding.java
+ com.atlas.orianofood.databinding.TopCategoryItemBinding
+com/atlas/orianofood/databinding/ContentGalleryBinding.java
+ com.atlas.orianofood.databinding.ContentGalleryBinding
+com/atlas/orianofood/databinding/ContentAddressesBinding.java
+ com.atlas.orianofood.databinding.ContentAddressesBinding
+com/atlas/orianofood/databinding/ActivitySplashScreenBinding.java
+ com.atlas.orianofood.databinding.ActivitySplashScreenBinding
+com/atlas/orianofood/databinding/CartItemBinding.java
+ com.atlas.orianofood.databinding.CartItemBinding
+com/atlas/orianofood/mvvm/category/dao/CategoryDao_Impl.java
+ com.atlas.orianofood.mvvm.category.dao.CategoryDao_Impl
+ com.atlas.orianofood.mvvm.category.dao.CategoryDao_Impl$1
+com/atlas/orianofood/databinding/GalleryItemBindingImpl.java
+ com.atlas.orianofood.databinding.GalleryItemBindingImpl
+com/atlas/orianofood/databinding/ActivityGalleryOldBinding.java
+ com.atlas.orianofood.databinding.ActivityGalleryOldBinding
 com/atlas/orianofood/BuildConfig.java
  com.atlas.orianofood.BuildConfig
+com/atlas/orianofood/databinding/TopSellingItemBinding.java
+ com.atlas.orianofood.databinding.TopSellingItemBinding
+com/atlas/orianofood/databinding/CategoryItemBinding.java
+ com.atlas.orianofood.databinding.CategoryItemBinding
+com/atlas/orianofood/mvvm/database/AppDatabase_Impl.java
+ com.atlas.orianofood.mvvm.database.AppDatabase_Impl
+ com.atlas.orianofood.mvvm.database.AppDatabase_Impl$1
+com/atlas/orianofood/mvvm/topRatedProduct/dao/TopRatedDao_Impl.java
+ com.atlas.orianofood.mvvm.topRatedProduct.dao.TopRatedDao_Impl
+ com.atlas.orianofood.mvvm.topRatedProduct.dao.TopRatedDao_Impl$1
+com/atlas/orianofood/databinding/FragmentGalleryAllBinding.java
+ com.atlas.orianofood.databinding.FragmentGalleryAllBinding
+com/atlas/orianofood/databinding/GalleryItemBinding.java
+ com.atlas.orianofood.databinding.GalleryItemBinding
+com/atlas/orianofood/databinding/ActivityResetPasswordBinding.java
+ com.atlas.orianofood.databinding.ActivityResetPasswordBinding
+com/atlas/orianofood/databinding/ActivityVerifyPhoneBinding.java
+ com.atlas.orianofood.databinding.ActivityVerifyPhoneBinding
+com/atlas/orianofood/databinding/ActivityCategoryBinding.java
+ com.atlas.orianofood.databinding.ActivityCategoryBinding
+com/atlas/orianofood/databinding/ContentSubscriptionBinding.java
+ com.atlas.orianofood.databinding.ContentSubscriptionBinding
+com/atlas/orianofood/DataBindingTriggerClass.java
+ com.atlas.orianofood.DataBindingTriggerClass
+com/atlas/orianofood/databinding/ActivityProductSPBinding.java
+ com.atlas.orianofood.databinding.ActivityProductSPBinding
+com/atlas/orianofood/databinding/ContentProductBinding.java
+ com.atlas.orianofood.databinding.ContentProductBinding
+com/atlas/orianofood/databinding/OrderItemBinding.java
+ com.atlas.orianofood.databinding.OrderItemBinding
+com/atlas/orianofood/databinding/ProductCategoryCardviewItemBinding.java
+ com.atlas.orianofood.databinding.ProductCategoryCardviewItemBinding
+com/atlas/orianofood/databinding/AppBarProductBinding.java
+ com.atlas.orianofood.databinding.AppBarProductBinding
+com/atlas/orianofood/databinding/AppBarSubscriptionBinding.java
+ com.atlas.orianofood.databinding.AppBarSubscriptionBinding
+com/atlas/orianofood/databinding/TopRatedItemsBinding.java
+ com.atlas.orianofood.databinding.TopRatedItemsBinding
+com/atlas/orianofood/mvvm/topRatedSelling/dao/SellingDao_Impl.java
+ com.atlas.orianofood.mvvm.topRatedSelling.dao.SellingDao_Impl
+ com.atlas.orianofood.mvvm.topRatedSelling.dao.SellingDao_Impl$1
+com/atlas/orianofood/databinding/TopCategoryItemBindingImpl.java
+ com.atlas.orianofood.databinding.TopCategoryItemBindingImpl
+com/atlas/orianofood/databinding/ActivityTermsAndConditionBinding.java
+ com.atlas.orianofood.databinding.ActivityTermsAndConditionBinding
+com/atlas/orianofood/databinding/NavHeaderHomeBinding.java
+ com.atlas.orianofood.databinding.NavHeaderHomeBinding
+com/atlas/orianofood/databinding/ActivityCategorySPBinding.java
+ com.atlas.orianofood.databinding.ActivityCategorySPBinding
+com/atlas/orianofood/databinding/ActivitySplashBinding.java
+ com.atlas.orianofood.databinding.ActivitySplashBinding
+com/atlas/orianofood/databinding/ActivityChangePasswordBinding.java
+ com.atlas.orianofood.databinding.ActivityChangePasswordBinding
+com/atlas/orianofood/mvvm/product/dao/ProductDao_Impl.java
+ com.atlas.orianofood.mvvm.product.dao.ProductDao_Impl
+ com.atlas.orianofood.mvvm.product.dao.ProductDao_Impl$1
+com/atlas/orianofood/databinding/TopProductCardviewItemBinding.java
+ com.atlas.orianofood.databinding.TopProductCardviewItemBinding
+com/atlas/orianofood/databinding/ProductItemsBinding.java
+ com.atlas.orianofood.databinding.ProductItemsBinding
+com/atlas/orianofood/mvvm/topCategory/dao/TopCategoryDao_Impl.java
+ com.atlas.orianofood.mvvm.topCategory.dao.TopCategoryDao_Impl
+ com.atlas.orianofood.mvvm.topCategory.dao.TopCategoryDao_Impl$1
+com/atlas/orianofood/databinding/OfferCardViewBinding.java
+ com.atlas.orianofood.databinding.OfferCardViewBinding
+com/atlas/orianofood/databinding/StaggeredCardviewItemBinding.java
+ com.atlas.orianofood.databinding.StaggeredCardviewItemBinding
+com/atlas/orianofood/databinding/ActivityProfileBinding.java
+ com.atlas.orianofood.databinding.ActivityProfileBinding
+com/atlas/orianofood/databinding/AppBarGalleryBinding.java
+ com.atlas.orianofood.databinding.AppBarGalleryBinding
+com/atlas/orianofood/databinding/TopSellingItemBindingImpl.java
+ com.atlas.orianofood.databinding.TopSellingItemBindingImpl
+com/atlas/orianofood/databinding/ActivityHomeBinding.java
+ com.atlas.orianofood.databinding.ActivityHomeBinding
+com/atlas/orianofood/databinding/DialogRequestBinding.java
+ com.atlas.orianofood.databinding.DialogRequestBinding
+com/atlas/orianofood/databinding/ActivityGalleryBinding.java
+ com.atlas.orianofood.databinding.ActivityGalleryBinding
+com/atlas/orianofood/mvvm/register/dao/UserDao_Impl.java
+ com.atlas.orianofood.mvvm.register.dao.UserDao_Impl
+ com.atlas.orianofood.mvvm.register.dao.UserDao_Impl$1
+com/atlas/orianofood/databinding/ActivityAuthBinding.java
+ com.atlas.orianofood.databinding.ActivityAuthBinding
+com/atlas/orianofood/databinding/ActivitySubscriptionBinding.java
+ com.atlas.orianofood.databinding.ActivitySubscriptionBinding
+com/atlas/orianofood/databinding/ActivityAddAddressBinding.java
+ com.atlas.orianofood.databinding.ActivityAddAddressBinding
+com/atlas/orianofood/databinding/ActivityProductDetailBinding.java
+ com.atlas.orianofood.databinding.ActivityProductDetailBinding
+com/atlas/orianofood/databinding/SubscriptionCardviewItemBinding.java
+ com.atlas.orianofood.databinding.SubscriptionCardviewItemBinding
+com/atlas/orianofood/mvvm/gallery/dao/GalleryDao_Impl.java
+ com.atlas.orianofood.mvvm.gallery.dao.GalleryDao_Impl
+ com.atlas.orianofood.mvvm.gallery.dao.GalleryDao_Impl$1
+com/atlas/orianofood/mvvm/login/dao/LoginDao_Impl.java
+ com.atlas.orianofood.mvvm.login.dao.LoginDao_Impl
+ com.atlas.orianofood.mvvm.login.dao.LoginDao_Impl$1
+com/atlas/orianofood/databinding/ContentHomeBinding.java
+ com.atlas.orianofood.databinding.ContentHomeBinding
+com/atlas/orianofood/DataBinderMapperImpl.java
+ com.atlas.orianofood.DataBinderMapperImpl
+ com.atlas.orianofood.DataBinderMapperImpl$InnerBrLookup
+ com.atlas.orianofood.DataBinderMapperImpl$InnerLayoutIdLookup
+com/atlas/orianofood/databinding/ContentCategoryBinding.java
+ com.atlas.orianofood.databinding.ContentCategoryBinding
+com/atlas/orianofood/databinding/AppBarHomeBinding.java
+ com.atlas.orianofood.databinding.AppBarHomeBinding
+com/atlas/orianofood/databinding/CategoryCardviewItemBinding.java
+ com.atlas.orianofood.databinding.CategoryCardviewItemBinding
+com/atlas/orianofood/databinding/ActivitySigninBinding.java
+ com.atlas.orianofood.databinding.ActivitySigninBinding
+com/atlas/orianofood/databinding/TopRatedItemsBindingImpl.java
+ com.atlas.orianofood.databinding.TopRatedItemsBindingImpl
+com/atlas/orianofood/databinding/ActivityUpdateEmailBinding.java
+ com.atlas.orianofood.databinding.ActivityUpdateEmailBinding
+com/atlas/orianofood/databinding/AppBarCategoryBinding.java
+ com.atlas.orianofood.databinding.AppBarCategoryBinding
+com/atlas/orianofood/databinding/ActivityLoginBinding.java
+ com.atlas.orianofood.databinding.ActivityLoginBinding
+com/atlas/orianofood/databinding/ActivityPrivacyPolicyBinding.java
+ com.atlas.orianofood.databinding.ActivityPrivacyPolicyBinding
+com/atlas/orianofood/databinding/ActivityRegisterBinding.java
+ com.atlas.orianofood.databinding.ActivityRegisterBinding
+com/atlas/orianofood/mvvm/getProfile/model/dao/ProfileDao_Impl.java
+ com.atlas.orianofood.mvvm.getProfile.model.dao.ProfileDao_Impl
+ com.atlas.orianofood.mvvm.getProfile.model.dao.ProfileDao_Impl$1
+com/atlas/orianofood/BR.java
+ com.atlas.orianofood.BR
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
