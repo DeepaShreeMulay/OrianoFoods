@@ -41,10 +41,10 @@ class ProfileViewModel  (
                     if (response.isSuccessful) {
                         profileData.postValue(response.body())
 
-                        profileshowToast.postValue("ProfileData received")
+                        //  profileshowToast.postValue("ProfileData received")
 
-                        if (response.body()!!.id> 0) {
-                            saveInDB(ProfileItems(1,"","","",""))
+                        if (response.body()!!.id > 0) {
+                            saveInDB(ProfileItems(1, "", "", "", ""))
                         }
                     } else {
                         error.postValue(response.errorBody()!!.string())
@@ -52,6 +52,7 @@ class ProfileViewModel  (
                     }
                 }
             }
+
             override fun onFailure(call: Call<ProfileItems?>?, t: Throwable?) {
                 Log.e("profiletag", t?.message.toString())
                 error.postValue("error happened")

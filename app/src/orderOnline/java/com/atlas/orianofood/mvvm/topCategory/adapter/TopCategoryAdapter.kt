@@ -24,8 +24,10 @@ class TopCategoryAdapter(private val context: Context, private var tcitems: Muta
             val intent = Intent(context, ProductSPActivity::class.java).apply {
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             }
-            intent.putExtra("CategoryID", tcitems[position].categoryId)
+            intent.putExtra("CategoryID", tcitems[position].categoryId.toString())
+
             context.startActivity(intent)
+
         }
 
     }

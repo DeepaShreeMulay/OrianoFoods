@@ -11,8 +11,8 @@ apply plugin:'kotlin-kapt'
 android {
     signingConfigs {
         release {
-            //storeFile file('C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\keystore\\keystore.jks')//For Shraddha
-            storeFile file('C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\keystore\\keystore.jks')// For Deepashree
+            storeFile file('C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\keystore\\keystore.jks')//For Shraddha
+           // storeFile file('C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\keystore\\keystore.jks')// For Deepashree
             storePassword 'oriano'
             keyAlias 'oriano'
             keyPassword 'oriano'

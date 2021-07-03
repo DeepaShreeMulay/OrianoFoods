@@ -15,34 +15,44 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.atlas.orianofood.R
+import com.atlas.orianofood.core.App
 import com.atlas.orianofood.firebaseRT.activity.*
 import com.atlas.orianofood.firebaseRT.adapter.MyListAdapter
 import com.atlas.orianofood.firebaseRT.utils.*
+import com.atlas.orianofood.mvvm.category.ShowCategoryData
 import com.atlas.orianofood.mvvm.category.adapter.CategoryAdapter
 import com.atlas.orianofood.mvvm.category.model.CategoryViewModel
+import com.atlas.orianofood.mvvm.database.AppDatabase
 import com.atlas.orianofood.mvvm.getProfile.model.ProfileViewModel
+import com.atlas.orianofood.mvvm.product.model.ProductViewModel
 import com.atlas.orianofood.mvvm.topCategory.adapter.TopCategoryAdapter
 import com.atlas.orianofood.mvvm.topCategory.model.TopCategoryViewModel
 import com.atlas.orianofood.mvvm.topRatedProduct.adapter.TopAdapter
+import com.atlas.orianofood.mvvm.topRatedProduct.model.TopRatedItem
 import com.atlas.orianofood.mvvm.topRatedProduct.model.TopRatedViewModel
 import com.atlas.orianofood.mvvm.topRatedSelling.adapter.SellingAdapter
 import com.atlas.orianofood.mvvm.topRatedSelling.model.SellingViewModel
 import com.atlas.orianofood.mvvm.utils.logout
 import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.activity_my_cart.*
 import kotlinx.android.synthetic.main.gallery_item.view.*
 import kotlinx.android.synthetic.orderOnline.activity_home.*
 import kotlinx.android.synthetic.orderOnline.app_bar_home.*
+import kotlinx.android.synthetic.orderOnline.app_bar_home.toolbar
 import kotlinx.android.synthetic.orderOnline.content_addresses.*
 import kotlinx.android.synthetic.orderOnline.content_home.*
 import kotlinx.android.synthetic.orderOnline.content_home.recyclerview
+import kotlinx.android.synthetic.orderOnline.content_product.*
 
-class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnNavigationItemSelectedListener {
     private val activity = this
     private val viewModel: SellingViewModel by lazy { ViewModelProvider(this).get(SellingViewModel::class.java) }
+
     private lateinit var sellingAdapter: SellingAdapter
     lateinit var adapter: MyListAdapter
 
-
+    val orderDao = AppDatabase.getInstance(App.appContext)?.orderDao!!
+    val productDao = AppDatabase.getInstance(App.appContext)?.productDao!!
 
 
     // private val currentUser = LoginDataBase.getInstance(this).loginDao
@@ -56,13 +66,21 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         toolbar.title = ""
         setSupportActionBar(toolbar)
 
+        loadProductItems()
 
 
 
         fab.setOnClickListener {
-            val intent = Intent(activity, CartActivity::class.java)
-            startActivity(intent)
-            finish()
+            if (selectedProductIDsList.isEmpty()) {
+                Toast.makeText(this, "Please Add items in the cart", Toast.LENGTH_SHORT).show()
+            } else {
+                val intent = Intent(activity, MyCartSpActivity::class.java)
+                startActivity(intent)
+
+
+            }
+
+
         }
 
         val toggle = ActionBarDrawerToggle(
@@ -154,8 +172,38 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
     }
 
+    private val pviewModel: ProductViewModel by lazy { ViewModelProvider(this).get(ProductViewModel::class.java) }
+
+    private fun loadProductItems() {
+
+
+        with(pviewModel) {
+            productData.observe(activity, Observer {
+                if (it!!.plist.isNotEmpty()) {
+                    //appDatabase.productDao.selectDataByCategoryId(selectedCategoryId!!)
+                    Log.e("TAG", "${it.plist}")
+
+                } else {
+                    Log.e("error", "error in connect with adapter")
+                }
+            })
+
+
+            pshowToast.observe(activity, Observer {
+                Toast.makeText(activity, "$it", Toast.LENGTH_SHORT).show()
+            })
+            error.observe(activity, Observer {
+
+                Toast.makeText(activity, "$it", Toast.LENGTH_SHORT).show()
+            })
+        }
+
+
+    }
+
+
     private fun loadTopSellingItems() {
-        sellingAdapter = SellingAdapter(mutableListOf())
+        sellingAdapter = SellingAdapter(this, mutableListOf())
         topSellingRecyclerview.adapter = sellingAdapter
 
         with(viewModel) {
@@ -183,13 +231,15 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     }
 
     private val tviewModel: TopRatedViewModel by lazy {
-        ViewModelProvider(this).get(
-            TopRatedViewModel::class.java
-        )
+        ViewModelProvider(this).get(TopRatedViewModel::class.java)
     }
+    private lateinit var topRatedItem: List<TopRatedItem>
     private lateinit var topAdapter: TopAdapter
+    private var productIds = ArrayList<Int>()
     private fun loadTopRatingItems() {
-        topAdapter = TopAdapter(mutableListOf())
+
+        topAdapter = TopAdapter(
+                orderDao, this, mutableListOf())
         topRatingRecyclerview.adapter = topAdapter
         with(tviewModel) {
             topRatedData.observe(this@HomeSPActivity, Observer {
@@ -197,6 +247,10 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
                 if (it!!.rlist.isNotEmpty()) {
 
                     topAdapter.clear()
+                    // topRatedItem=it.rlist
+                    //topRatedItem.forEach { item -> productIds.add(item.productId) }
+                    //val products = productDao.selectDataByProductIdList(productIds)
+                    // topAdapter.add(it.rlist)
                     topAdapter.add(it.rlist)
 
                 } else {
@@ -287,9 +341,14 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             }
             R.id.nav_cart -> {
                 // Handle the camera action
-                val intent = Intent(activity, CartActivity::class.java)
-                startActivity(intent)
-                finish()
+                if (selectedProductIDsList.isEmpty()) {
+                    Toast.makeText(this, "Please Add items in the cart", Toast.LENGTH_SHORT).show()
+                } else {
+                    val intent = Intent(activity, MyCartSpActivity::class.java)
+                    startActivity(intent)
+
+
+                }
             }
             R.id.nav_gallery -> {
                 // Handle the camera action
@@ -339,6 +398,12 @@ class HomeSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     fun intentCategory(view: View) {
         startActivity(Intent(this, CategorySPActivity::class.java))
         finish()
+    }
+
+    override fun transferCategoryData(data: String) {
+        val intent = Intent(this, ProductSPActivity::class.java)
+        intent.putExtra("CategoryID", data)
+        startActivity(intent)
     }
 
 }

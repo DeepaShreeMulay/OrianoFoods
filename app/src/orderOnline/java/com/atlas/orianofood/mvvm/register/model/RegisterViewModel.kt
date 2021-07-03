@@ -17,4 +17,5 @@ class RegisterViewModel(private val repository: RegisterRepository) : ViewModel(
             myResponse.value = response
         }
     }
+
 }

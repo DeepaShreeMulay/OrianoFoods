@@ -1,9 +1,6 @@
 package com.atlas.orianofood.mvvm.product.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.atlas.orianofood.mvvm.product.model.ProductItems
 
 @Dao
@@ -13,4 +10,14 @@ interface ProductDao {
 
     @Query("SELECT * from ProductItems")
     fun selectAllData(): MutableList<ProductItems>
+
+    @Query("SELECT * from ProductItems where categoryId = :categoryID")
+    fun selectDataByCategoryId(categoryID: String): MutableList<ProductItems>
+
+    @Update
+    fun updateProduct(product: ProductItems)
+
+    @Query("SELECT * from ProductItems where productId in (:ids)")
+    fun selectDataByProductIdList(ids: List<Int>): MutableList<ProductItems>
+
 }

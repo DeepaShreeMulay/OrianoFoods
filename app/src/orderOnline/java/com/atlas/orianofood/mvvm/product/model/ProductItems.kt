@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 
 @Entity
 data class ProductItems(
-        @PrimaryKey(autoGenerate = true)
+        @PrimaryKey(autoGenerate = false)
         @SerializedName("product_id")
         var productId: Int,
         @SerializedName("addons")
@@ -42,4 +42,9 @@ data class ProductItems(
         var rating: String?,
         @SerializedName("selling_price")
         var sellingPrice: String?
-)
+) {
+
+        override fun toString(): String {
+                return "ProductItems(productId=$productId, addons=$addons, category=$category, categoryId=$categoryId, coupon=$coupon, discount=$discount, discountedSelling=$discountedSelling, feedback=$feedback, imageUrl=$imageUrl, ingredient=$ingredient, offer=$offer, price=$price, productDesc=$productDesc, productName=$productName, rating=$rating, sellingPrice=$sellingPrice)"
+        }
+}

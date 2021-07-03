@@ -16,31 +16,43 @@ import com.atlas.orianofood.firebaseRT.activity.CartActivity
 import com.atlas.orianofood.firebaseRT.activity.MyAddressesActivity
 import com.atlas.orianofood.firebaseRT.activity.OrdersActivity
 import com.atlas.orianofood.firebaseRT.activity.ProfileActivity
+import com.atlas.orianofood.firebaseRT.utils.selectedProductIDsList
 import com.atlas.orianofood.mvvm.product.adapter.ProductAdapter
+import com.atlas.orianofood.mvvm.product.model.ProductItems
 import com.atlas.orianofood.mvvm.product.model.ProductViewModel
 import com.atlas.orianofood.mvvm.utils.logout
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.orderOnline.activity_product.*
 import kotlinx.android.synthetic.orderOnline.app_bar_product.*
 import kotlinx.android.synthetic.orderOnline.content_product.*
 
 class ProductSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private val cviewModel: ProductViewModel by lazy {
-        ViewModelProvider(this).get(
-                ProductViewModel::class.java
-        )
+        ViewModelProvider(this).get(ProductViewModel::class.java)
     }
     private lateinit var productAdapter: ProductAdapter
     private val activity = this@ProductSPActivity
+    private var selectedCategoryId: String? = null
+    private lateinit var productList: MutableList<ProductItems>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product)
 
+        selectedCategoryId = intent.getStringExtra("CategoryID").toString()
+
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+            /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                     .setAction("Action", null).show()*/
+            if (selectedProductIDsList.isEmpty()) {
+                Toast.makeText(this, "Please Add items in the cart", Toast.LENGTH_SHORT).show()
+            } else {
+                val intent = Intent(activity, MyCartSpActivity::class.java)
+                startActivity(intent)
+
+
+            }
+
         }
 
         val toggle = ActionBarDrawerToggle(
@@ -62,15 +74,18 @@ class ProductSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     }
 
     private fun loadProductItems() {
-        productAdapter = ProductAdapter(mutableListOf())
+        productAdapter = ProductAdapter(this, mutableListOf())
         productRecyclerView.adapter = productAdapter
+
+        var catagoryList = ArrayList<ProductItems>()
 
         with(cviewModel) {
             productData.observe(activity, Observer {
                 if (it!!.plist.isNotEmpty()) {
-
+                    catagoryList = appDatabase.productDao.selectDataByCategoryId(selectedCategoryId!!) as ArrayList<ProductItems>
                     productAdapter.clear()
-                    productAdapter.add(it.plist)
+                    Log.e("ProductSPActivity", "Category List : " + it.plist)
+                    productAdapter.add(catagoryList)
 
                 } else {
                     Log.e("error", "error in connect with adapter")

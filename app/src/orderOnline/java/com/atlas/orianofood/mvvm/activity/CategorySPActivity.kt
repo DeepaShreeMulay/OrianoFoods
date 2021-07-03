@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.atlas.orianofood.R
 import com.atlas.orianofood.firebaseRT.activity.*
+import com.atlas.orianofood.mvvm.category.ShowCategoryData
 import com.atlas.orianofood.mvvm.category.adapter.CategoryAdapter
 import com.atlas.orianofood.mvvm.category.model.CategoryViewModel
 import com.atlas.orianofood.mvvm.utils.logout
@@ -22,10 +23,10 @@ import kotlinx.android.synthetic.orderOnline.activity_category.*
 import kotlinx.android.synthetic.orderOnline.app_bar_category.*
 import kotlinx.android.synthetic.orderOnline.content_category.*
 
-class CategorySPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class CategorySPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnNavigationItemSelectedListener {
     private val cviewModel: CategoryViewModel by lazy {
         ViewModelProvider(this).get(
-            CategoryViewModel::class.java
+                CategoryViewModel::class.java
         )
     }
     private lateinit var categoryadapter: CategoryAdapter
@@ -172,6 +173,12 @@ class CategorySPActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         return true
 
 
+    }
+
+    override fun transferCategoryData(data: String) {
+        val intent = Intent(this, ProductSPActivity::class.java)
+        intent.putExtra("CategoryID", data)
+        startActivity(intent)
     }
 
 }

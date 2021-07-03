@@ -39,7 +39,7 @@ class TopRatedViewModel(
                     if (response.isSuccessful) {
                         topRatedData.postValue(response.body())
 
-                        topshowToast.postValue("data received (Toast shows one times)")
+                        // topshowToast.postValue("data received (Toast shows one times)")
 
                         if (response.body()!!.rlist.size > 0) {
                             saveInDB(response.body()!!.rlist)
@@ -50,6 +50,7 @@ class TopRatedViewModel(
                     }
                 }
             }
+
             override fun onFailure(call: Call<TopRatedData?>?, t: Throwable?) {
                 Log.e("ptag", t?.message.toString())
                 error.postValue("error happened")

@@ -81,6 +81,7 @@ class RegisterActivity : AppCompatActivity() {
 
 
         viewModel.registerByMobile(jsonObject)
+
         viewModel.myResponse.observe(this, Observer { response ->
             if (response.isSuccessful) {
                 if (response.body()?.status?.toInt() == 200) {
