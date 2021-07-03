@@ -31,7 +31,7 @@ import com.atlas.orianofood.mvvm.topRatedSelling.model.SellingItem
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract val loginDao: LoginDao
-    abstract val userDao: UserDao
+    abstract val registerDao: UserDao
     abstract val categoryDao: CategoryDao
     abstract val topRatedDao: TopRatedDao
     abstract val topSellingDao: SellingDao

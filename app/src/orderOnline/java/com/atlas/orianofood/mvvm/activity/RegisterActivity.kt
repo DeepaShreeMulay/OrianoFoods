@@ -55,7 +55,7 @@ class RegisterActivity : AppCompatActivity() {
                 textpass.error = "Please enter password"
                 return@setOnClickListener
             }
-            if (mobile.isEmpty() || mobile.length < 10) {
+            if (mobile.isEmpty() || mobile.length < 10 || mobile.length > 10) {
                 textmobile.error = "please enter valid mobile no."
                 return@setOnClickListener
             }
@@ -66,7 +66,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun data(name: String, password: String, mobile: String) {
 
-        val dao = AppDatabase.getInstance(application)?.userDao!!
+        val dao = AppDatabase.getInstance(application)?.registerDao!!
 
         val repository = RegisterRepository(dao)
 
@@ -84,6 +84,7 @@ class RegisterActivity : AppCompatActivity() {
         viewModel.myResponse.observe(this, Observer { response ->
             if (response.isSuccessful) {
                 if (response.body()?.status?.toInt() == 200) {
+                    Toast.makeText(this, "Register:${response.body()}", Toast.LENGTH_SHORT).show()
                     loginData(mobile, password)
                 } else {
                     Toast.makeText(this, response.body()?.msg, Toast.LENGTH_SHORT).show()

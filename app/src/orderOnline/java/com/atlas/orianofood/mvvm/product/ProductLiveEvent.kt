@@ -38,7 +38,6 @@ class ProductLiveEvent<T> : MutableLiveData<T>() {
     }
 
     companion object {
-
         private val TAG = "ProductLiveEvent"
     }
 }

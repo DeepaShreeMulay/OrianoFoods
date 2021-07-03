@@ -19,7 +19,9 @@
 
         <uses-library
             android:name="org.apache.http.legacy"
-            android:required="false" /> <!-- MVVM -->
+            android:required="false" />
+
+        <!-- MVVM -->
         <activity
             android:name="com.atlas.orianofood.mvvm.activity.SplashScreenActivity"
             android:screenOrientation="portrait"
