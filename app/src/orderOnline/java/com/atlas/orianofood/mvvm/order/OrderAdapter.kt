@@ -74,16 +74,18 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
             notifyItemRemoved(position)
             notifyItemRangeChanged(position, itemCount)
 
-            val tx: Double = (context as MyCartSpActivity).subtotal.text.toString().trim().replace("", "").toDouble()
+            val tx: Double =
+                (context as MyCartSpActivity).subtotal.text.toString().trim().replace("", "")
+                    .toDouble()
             val totalPrice: Double = tx - coast.toString().replace("", "").toDouble()
             val deliveryFee: Double = (context).deliveryFees.toString().replace("", "").toDouble()
-            val taxFee: Double = (context).taxFees.toString().replace("", "").toDouble()
-            val stotalprice = String.format("%.2f", totalPrice).toDouble() - String.format("%.2f", deliveryFee).toDouble()
+            // val taxFee: Double = (context).taxFees.toString().replace("", "").toDouble()
+            // val stotalprice = String.format("%.2f", totalPrice).toDouble() - String.format("%.2f", deliveryFee).toDouble()
 
         }
-        holder.orderSubTotal.text = "" + finalCoast
+        /*holder.orderSubTotal.text = "" + finalCoast
         holder.taxAndFees.text = ""
-        holder.discount.text = ""
+        holder.discount.text = ""*/
 
     }
 
@@ -105,9 +107,10 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
 
         var orderRemove: TextView = item.findViewById(R.id.removeCart)
         var orderProductName: TextView = item.findViewById(R.id.product_name)
-        var taxAndFees: TextView = item.findViewById(R.id.taxFees)
-        var discount: TextView = item.findViewById(R.id.deliveryFees)
-        var orderSubTotal: TextView = item.findViewById(R.id.pricetv)
+
+        /* var taxAndFees: TextView = item.findViewById(R.id.taxFees)
+         var discount: TextView = item.findViewById(R.id.deliveryFees)
+         var orderSubTotal: TextView = item.findViewById(R.id.pricetv)*/
         var orderDecrement: TextView = item.findViewById(R.id.decrement)
         var orderQuantity: TextView = item.findViewById(R.id.quantity)
         var orderIncrement: TextView = item.findViewById(R.id.incremnet)

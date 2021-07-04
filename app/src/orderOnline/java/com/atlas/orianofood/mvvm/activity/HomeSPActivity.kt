@@ -76,11 +76,7 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnN
             } else {
                 val intent = Intent(activity, MyCartSpActivity::class.java)
                 startActivity(intent)
-
-
             }
-
-
         }
 
         val toggle = ActionBarDrawerToggle(
@@ -108,7 +104,7 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnN
             }
         }*/
 
-        val manager = GridLayoutManager(this, 3)
+        val manager = GridLayoutManager(this, 4)
         recyclerview.layoutManager = manager
         recyclerview.setHasFixedSize(true)
         loadMenuItems()
@@ -126,7 +122,7 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnN
         val topRatingManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         topRatingRecyclerview.layoutManager = topRatingManager
         topRatingRecyclerview.setHasFixedSize(true)
-        loadTopRatingItems()  // Ads chodo Gallary
+        loadTopRatingItems()
     }
 
     private val cviewModel: CategoryViewModel by lazy {
