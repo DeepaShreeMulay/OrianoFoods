@@ -28,7 +28,7 @@ import com.atlas.orianofood.mvvm.topRatedSelling.model.SellingItem
 // We need to have single DB for all tables
 @Database(
         entities = [LoginData::class, UserData::class, CategoryItem::class, TopRatedItem::class, SellingItem::class, GalleryItem::class, TopCategoryItem::class, ProfileItems::class, ProductItems::class, OrderItem::class],
-        version = 10,
+        version = 11,
         exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {

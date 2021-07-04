@@ -18,6 +18,7 @@ data class ProductItems(
         @SerializedName("coupon")
 
         var coupon: String?,
+
         @SerializedName("discount")
 
         var discount: String?,
@@ -41,7 +42,9 @@ data class ProductItems(
         @SerializedName("rating")
         var rating: String?,
         @SerializedName("selling_price")
-        var sellingPrice: String?
+        var sellingPrice: String?,
+
+        var quantity: Int
 ) {
 
         override fun toString(): String {
