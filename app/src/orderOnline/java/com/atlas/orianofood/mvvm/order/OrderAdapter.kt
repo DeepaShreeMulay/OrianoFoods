@@ -55,8 +55,8 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
     }
 
     fun updatePriceAtView() {
-        (context as MyCartSpActivity).stotalTv?.text = String.format("%.2f", totalPrice)
-        context.allTotalPriceTv?.text = String.format("%.2f", String.format("%.2f", totalPrice + deliveryFee).toDouble())
+        (context as MyCartSpActivity).stotalTv.text = String.format("%.2f", totalPrice)
+        context.allTotalPriceTv.text = String.format("%.2f", String.format("%.2f", totalPrice + deliveryFee).toDouble())
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
@@ -130,6 +130,11 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
         selectedProductIDsList.remove(item[index].productId)
         item.removeAt(index)
 
+    }
+
+
+    override fun getItemViewType(position: Int): Int {
+        return position
     }
 
     override fun getItemCount(): Int {

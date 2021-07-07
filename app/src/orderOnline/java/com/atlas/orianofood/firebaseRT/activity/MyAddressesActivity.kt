@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.atlas.orianofood.R
 import com.atlas.orianofood.firebaseRT.adapter.AddressAdapter
 import com.atlas.orianofood.firebaseRT.database.DatabaseHandler
+import com.atlas.orianofood.firebaseRT.interfaces.SendData
 import com.atlas.orianofood.firebaseRT.model.Address
 import com.atlas.orianofood.mvvm.activity.HomeSPActivity
 import com.atlas.orianofood.mvvm.activity.PrivacyPolicyActivity
@@ -19,12 +20,13 @@ import com.atlas.orianofood.mvvm.utils.logout
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.orderOnline.activity_addresses.*
+import kotlinx.android.synthetic.orderOnline.address_item.*
 import kotlinx.android.synthetic.orderOnline.app_bar_addresses.*
 import kotlinx.android.synthetic.orderOnline.content_addresses.*
 import kotlinx.android.synthetic.orderOnline.nav_header_home.view.*
 
 
-class MyAddressesActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MyAddressesActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, SendData {
 
     lateinit var adapter: AddressAdapter
     lateinit var addresslist: List<Address>
@@ -43,6 +45,7 @@ class MyAddressesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
             startActivity(intent)
             finish()
         }
+
 
         val toggle = ActionBarDrawerToggle(
             this,
@@ -79,8 +82,8 @@ class MyAddressesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         DatabaseHandler(this).createAddressTable()
         addresslist = DatabaseHandler(this).getAddresses()
         if (addresslist.isEmpty()) {
-
-            tvNoAddress.visibility = View.VISIBLE
+            startActivity(Intent(this, AddAddressActivity::class.java))
+            //tvNoAddress.visibility = View.VISIBLE
             recyclerview.visibility = View.INVISIBLE
         } else {
             tvNoAddress.visibility = View.INVISIBLE
@@ -93,16 +96,6 @@ class MyAddressesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         }
     }
 
-    override fun onBackPressed() {
-        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
-            drawer_layout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-            val intent = Intent(this@MyAddressesActivity, HomeSPActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-    }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
@@ -172,5 +165,27 @@ class MyAddressesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+
+    override fun address(address: String) {
+        // val address: String =tv_addressline1.text.toString()
+
+        val intent = Intent()
+        intent.putExtra("Address", address)
+
+
+        setResult(2, intent)
+        finishActivity(2)
+    }
+    /*override fun onBackPressed() {
+        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+            drawer_layout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+            val intent = Intent(this@MyAddressesActivity, HomeSPActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
+*/
 
 }

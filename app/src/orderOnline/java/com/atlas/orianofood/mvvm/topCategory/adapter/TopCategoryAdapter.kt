@@ -14,6 +14,10 @@ import com.atlas.orianofood.mvvm.topCategory.model.TopCategoryItem
 class TopCategoryAdapter(private val context: Context, private var tcitems: MutableList<TopCategoryItem> = arrayListOf<TopCategoryItem>())
     : RecyclerView.Adapter<TopCategoryAdapter.TopCategoryHolder>() {
 
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
+
     override fun getItemCount(): Int {
         return tcitems.size
     }

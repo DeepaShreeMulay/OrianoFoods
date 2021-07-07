@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -37,12 +38,15 @@ import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_my_cart.*
 import kotlinx.android.synthetic.main.gallery_item.view.*
 import kotlinx.android.synthetic.orderOnline.activity_home.*
+import kotlinx.android.synthetic.orderOnline.activity_profile.*
 import kotlinx.android.synthetic.orderOnline.app_bar_home.*
 import kotlinx.android.synthetic.orderOnline.app_bar_home.toolbar
 import kotlinx.android.synthetic.orderOnline.content_addresses.*
 import kotlinx.android.synthetic.orderOnline.content_home.*
 import kotlinx.android.synthetic.orderOnline.content_home.recyclerview
 import kotlinx.android.synthetic.orderOnline.content_product.*
+import kotlinx.android.synthetic.orderOnline.dialog_request.*
+import kotlinx.android.synthetic.orderOnline.nav_header_home.*
 
 class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnNavigationItemSelectedListener {
     private val activity = this
@@ -52,7 +56,9 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnN
     lateinit var adapter: MyListAdapter
 
     val orderDao = AppDatabase.getInstance(App.appContext)?.orderDao!!
+
     val productDao = AppDatabase.getInstance(App.appContext)?.productDao!!
+
 
 
     // private val currentUser = LoginDataBase.getInstance(this).loginDao
@@ -67,14 +73,23 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnN
         setSupportActionBar(toolbar)
 
         loadProductItems()
-
+        loadProfileActivity()
 
 
         fab.setOnClickListener {
+            var username: String
+            var userMobile: String
+
+
             if (selectedProductIDsList.isEmpty()) {
                 Toast.makeText(this, "Please Add items in the cart", Toast.LENGTH_SHORT).show()
             } else {
-                val intent = Intent(activity, MyCartSpActivity::class.java)
+                val intent = Intent(activity, MyCartSpActivity::class.java)//ye karne ki jarrurat nhi thi database mese lena bhi chalta ok
+                username = userLogged.text.toString()
+                userMobile = userLoggedMobile.text.toString()
+
+                intent.putExtra("UserName", username)
+                intent.putExtra("UserMobile", userMobile)
                 startActivity(intent)
 
 
@@ -108,7 +123,7 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnN
             }
         }*/
 
-        val manager = GridLayoutManager(this, 3)
+        val manager = GridLayoutManager(this, 4)
         recyclerview.layoutManager = manager
         recyclerview.setHasFixedSize(true)
         loadMenuItems()
@@ -171,7 +186,6 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnN
         }
 
     }
-
     private val pviewModel: ProductViewModel by lazy { ViewModelProvider(this).get(ProductViewModel::class.java) }
 
     private fun loadProductItems() {
@@ -297,11 +311,19 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnN
         with(profileviewModel) {
             profileData.observe(this@HomeSPActivity, Observer {
                 // Toast.makeText(this@HomeSPActivity, "Productdata  run", Toast.LENGTH_SHORT).show()
-                /* if (it!!.userLogin.isNotEmpty()) {
-                    Log.e("PTAG","${it.userLogin}")
+                if (it!!.userLogin.isNotEmpty()) {
+                    Log.e("PTAG", "${it.userLogin}")
+                    userLogged.text = "" + it.userLogin
+
+
+                }
+                if (it.userEmail.isNotEmpty()) {
+                    userLoggedMobile.text = "${it.userEmail}"
                 } else {
-                    Log.e("error", "error in connect with adapter")
-                }*/
+                    userLoggedMobile.setVisible(false)
+                }
+
+
             })
             profileshowToast.observe(this@HomeSPActivity, Observer {
 
@@ -359,8 +381,9 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnN
             R.id.nav_profile -> {
                 // Handle the camera action
                 val intent = Intent(activity, ProfileActivity::class.java)
+
                 startActivity(intent)
-                finish()
+                //finish()
             }
             R.id.nav_orders -> {
                 // Handle the camera action
@@ -406,6 +429,22 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnN
         startActivity(intent)
     }
 
+    /* override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+         super.onActivityResult(requestCode, resultCode, data)
+         if (requestCode == 2) {
+             profileName = data?.getStringExtra("display_mobile").toString()
+             text_phone.setText(profileName)
+             //  Toast.makeText(this,"select Address",Toast.LENGTH_SHORT).show()
+
+         }
+     }*/
+    fun View.setVisible(visible: Boolean) {
+        visibility = if (visible) {
+            Button.VISIBLE
+        } else {
+            Button.GONE
+        }
+    }
 }
 
 

@@ -22,3 +22,8 @@ data class ProfileItems (
         @SerializedName("user_nicename")
         var userNicename: String
         )
+{
+    override fun toString(): String {
+        return "ProfileItems(id=$id, displayName=$displayName, userEmail=$userEmail, userLogin=$userLogin, userNicename=$userNicename)"
+    }
+}

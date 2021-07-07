@@ -16,23 +16,24 @@ class ProfileActivity : AppCompatActivity() {
 
 
     private val currentUser = FirebaseAuth.getInstance().currentUser
+
     val activity = this@ProfileActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        currentUser?.let { user ->
+             currentUser?.let { user ->
 
 
-            edit_text_name.setText(user.displayName)
-            text_email.text = if (user.email.isNullOrEmpty()) "Add Email" else user.email
+                 edit_text_name.setText(user.displayName)
+                 text_email.text = if (user.email.isNullOrEmpty()) "Add Email" else user.email
 
-            text_phone.text =
-                if (user.phoneNumber.isNullOrEmpty()) "Add Number" else user.phoneNumber
+                 text_phone.text =
+                         if (user.phoneNumber.isNullOrEmpty()) "Add Number" else user.phoneNumber
 
-            DatabaseHandler(this).createAddressTable()
-            text_address.text = DatabaseHandler(this).getDefaultAddress()
+                 DatabaseHandler(this).createAddressTable()
+                 text_address.text = DatabaseHandler(this).getDefaultAddress()
 
             if (user.isEmailVerified) {
                 text_not_verified.visibility = View.INVISIBLE
@@ -42,7 +43,6 @@ class ProfileActivity : AppCompatActivity() {
 
 
         }
-
         button_save.setOnClickListener {
 
             val name = edit_text_name.text.toString().trim()
@@ -59,7 +59,7 @@ class ProfileActivity : AppCompatActivity() {
 
             progressbar.visibility = View.VISIBLE
 
-            currentUser?.updateProfile(updates)
+            /*currentUser?.updateProfile(updates)
                 ?.addOnCompleteListener { task ->
                     progressbar.visibility = View.INVISIBLE
                     if (task.isSuccessful) {
@@ -68,7 +68,7 @@ class ProfileActivity : AppCompatActivity() {
                         toast(task.exception?.message!!)
                     }
                 }
-
+*/
         }
 
 
@@ -86,7 +86,7 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         text_phone.setOnClickListener {
-            val intent = Intent(activity, VerifyPhoneAuthActivity::class.java)
+            val intent = Intent(this, VerifyPhoneAuthActivity::class.java)
             startActivity(intent)
             finish()
         }

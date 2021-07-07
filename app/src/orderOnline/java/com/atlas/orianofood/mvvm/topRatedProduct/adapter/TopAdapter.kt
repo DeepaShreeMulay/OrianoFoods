@@ -20,6 +20,10 @@ import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
 class TopAdapter(val orderDao: OrderDao, val context: Context, private var titems: MutableList<TopRatedItem> = arrayListOf<TopRatedItem>())
     : RecyclerView.Adapter<TopAdapter.TopHolder>() {
 
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
+
     override fun getItemCount(): Int {
         return titems.size
     }

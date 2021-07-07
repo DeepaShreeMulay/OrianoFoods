@@ -20,15 +20,19 @@ import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
 class SellingAdapter(val context: Context, private var sitems: MutableList<SellingItem> = arrayListOf<SellingItem>())
    : RecyclerView.Adapter<SellingAdapter.SellingHolder>() {
 
-   override fun getItemCount(): Int {
-      return sitems.size
-   }
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
 
-   override fun onBindViewHolder(holder: SellingHolder, position: Int) {
-      holder.onBind(sitems[position])
-      val productId = sitems[position].productId
-      if (selectedProductIDsList.containsKey(productId)) {
-         holder.add_btn.setVisible(false)
+    override fun getItemCount(): Int {
+        return sitems.size
+    }
+
+    override fun onBindViewHolder(holder: SellingHolder, position: Int) {
+        holder.onBind(sitems[position])
+        val productId = sitems[position].productId
+        if (selectedProductIDsList.containsKey(productId)) {
+            holder.add_btn.setVisible(false)
          holder.btn_number.setVisible(true)
          holder.btn_number.number = selectedProductIDsList.get(productId).toString()
       }

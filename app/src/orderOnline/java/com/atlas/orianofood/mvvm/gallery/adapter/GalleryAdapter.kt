@@ -11,12 +11,17 @@ import com.atlas.orianofood.mvvm.gallery.model.GalleryItem
 class GalleryAdapter (private var gitems: MutableList<GalleryItem> = arrayListOf<GalleryItem>())
     : RecyclerView.Adapter<GalleryAdapter.GalleryHolder>()  {
 
+
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
+
     override fun getItemCount(): Int {
         return gitems.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GalleryHolder {
-        val binding  = GalleryItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = GalleryItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return GalleryHolder(binding)
     }
 

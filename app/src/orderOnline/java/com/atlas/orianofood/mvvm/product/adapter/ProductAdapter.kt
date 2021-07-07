@@ -93,6 +93,10 @@ class ProductAdapter(val context: Context, private var pitems: MutableList<Produ
     }
 
 
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
+
     override fun getItemCount(): Int {
         return pitems.size
     }
