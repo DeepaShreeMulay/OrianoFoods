@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.atlas.orianofood.BR.item
 import com.atlas.orianofood.R
 import com.atlas.orianofood.databinding.TopSellingItemBinding
+import com.atlas.orianofood.firebaseRT.utils.Common.sendStateChangedBroadCast
 import com.atlas.orianofood.firebaseRT.utils.UpdateItemToProductIdMap
 import com.atlas.orianofood.firebaseRT.utils.selectedProductIDsList
 import com.atlas.orianofood.mvvm.topRatedSelling.model.SellingItem
@@ -28,14 +29,18 @@ class SellingAdapter(val context: Context, private var sitems: MutableList<Selli
         return sitems.size
     }
 
+    fun updateElegentButton(position: Int) {
+        notifyItemChanged(position)
+    }
+
     override fun onBindViewHolder(holder: SellingHolder, position: Int) {
         holder.onBind(sitems[position])
         val productId = sitems[position].productId
         if (selectedProductIDsList.containsKey(productId)) {
             holder.add_btn.setVisible(false)
-         holder.btn_number.setVisible(true)
-         holder.btn_number.number = selectedProductIDsList.get(productId).toString()
-      }
+            holder.btn_number.setVisible(true)
+            holder.btn_number.number = selectedProductIDsList.get(productId).toString()
+        }
 
       holder.add_btn.setOnClickListener {
          /* if (selectedProductIDsList.containsKey(productId)) {
@@ -70,24 +75,32 @@ class SellingAdapter(val context: Context, private var sitems: MutableList<Selli
          if (selectedProductIDsList.containsKey(productId)) {
             if (newValue == 0) {
                selectedProductIDsList.remove(productId)
+                sendStateChangedBroadCast(context, "UPDATED")
                holder.add_btn.setVisible(true)
                view.setVisible(false)
             } else {
 
-               /*if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                   selectedProductIDsList.replace(productId, newValue)
-               } else {
-                   selectedProductIDsList.remove(productId)
-                   selectedProductIDsList.put(productId, newValue)
-               }*/
+                /*if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                    selectedProductIDsList.replace(productId, newValue)
+                } else {
+                    selectedProductIDsList.remove(productId)
+                    selectedProductIDsList.put(productId, newValue)
+                }*/
 
-               if (oldValue != newValue)
-                  UpdateItemToProductIdMap(productId, newValue)
+                if (oldValue != newValue) {
+                    UpdateItemToProductIdMap(productId, newValue)
+                    // changedQuantity[productId] = selectedProductIDsList[productId]!!
+                    //sendStateChangedBroadCast(context,"UPDATED")
+                }
 
-               Toast.makeText(context, "${selectedProductIDsList.get(productId) ?: 1}", Toast.LENGTH_SHORT).show()
-               holder.add_btn.setVisible(false)
-               view.setVisible(true)
-               view.number = (selectedProductIDsList.get(productId) ?: 1).toString()
+                Toast.makeText(
+                    context,
+                    "${selectedProductIDsList.get(productId) ?: 1}",
+                    Toast.LENGTH_SHORT
+                ).show()
+                holder.add_btn.setVisible(false)
+                view.setVisible(true)
+                view.number = (selectedProductIDsList.get(productId) ?: 1).toString()
             }
          }
       }
@@ -140,5 +153,6 @@ class SellingAdapter(val context: Context, private var sitems: MutableList<Selli
          Button.GONE
       }
    }
+
 
 }

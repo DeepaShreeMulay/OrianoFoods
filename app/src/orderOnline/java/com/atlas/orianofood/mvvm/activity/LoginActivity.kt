@@ -69,18 +69,19 @@ class LoginActivity : AppCompatActivity() {
         loginviewModel.myAuthResponse.observe(this, Observer { response ->
             if (response.isSuccessful) {
                 if (response.body()?.userId.toString()
-                                .isEmpty() || response.body()?.token.isNullOrEmpty()
+                        .isEmpty() || response.body()?.token.isNullOrEmpty()
                 ) {
                     Toast.makeText(this, "Please enter valid credentials", Toast.LENGTH_SHORT)
-                            .show()
+                        .show()
                     setLayoutVisibility(View.GONE, View.VISIBLE)
                 } else {
                     val myLoginData = LoginData(
-                            userId = response.body()?.userId,
-                            token = response.body()?.token,
-                            mobilelogin = mobile.toLong(),
-                            passwordlogin = password
+                        userId = response.body()?.userId,
+                        token = response.body()?.token,
+                        mobilelogin = mobile.toLong(),
+                        passwordlogin = password
                     )
+
                     addToken(activity, "Bearer ${response.body()?.token?.substringAfter("|")}")
 
                     Thread {

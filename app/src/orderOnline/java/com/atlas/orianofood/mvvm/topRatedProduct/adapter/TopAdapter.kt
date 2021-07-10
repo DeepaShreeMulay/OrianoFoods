@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.atlas.orianofood.BR.item
 import com.atlas.orianofood.R
 import com.atlas.orianofood.databinding.TopRatedItemsBinding
+import com.atlas.orianofood.firebaseRT.utils.Common.sendStateChangedBroadCast
 import com.atlas.orianofood.firebaseRT.utils.UpdateItemToProductIdMap
 import com.atlas.orianofood.firebaseRT.utils.selectedProductIDsList
 import com.atlas.orianofood.mvvm.order.OrderDao
@@ -28,8 +29,8 @@ class TopAdapter(val orderDao: OrderDao, val context: Context, private var titem
         return titems.size
     }
 
-    fun updateElegentButton() {
-
+    fun updateElegentButton(position: Int) {
+        notifyItemChanged(position)
     }
 
     override fun onBindViewHolder(holder: TopHolder, position: Int) {
@@ -43,22 +44,6 @@ class TopAdapter(val orderDao: OrderDao, val context: Context, private var titem
         }
 
         holder.add_btn.setOnClickListener {
-            /*   if (selectedProductIDsList.containsKey(productId)) {
-                   if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                       selectedProductIDsList.replace(productId, selectedProductIDsList.get(productId)?.plus(1)
-                               ?: 1)
-                   } else {
-                       val qty = selectedProductIDsList.get(productId)?.plus(1) ?: 1
-                       selectedProductIDsList.remove(productId)
-                       selectedProductIDsList.put(productId, qty)
-                   }
-                   Toast.makeText(context, "${selectedProductIDsList.get(productId) ?: 1}", Toast.LENGTH_SHORT).show()
-
-               } else {
-                   selectedProductIDsList.put(productId, 1)
-                   Toast.makeText(context, "Added to cart", Toast.LENGTH_SHORT).show()
-               }*/
-
             if (UpdateItemToProductIdMap(productId, true))
                 Toast.makeText(context, "Added to cart", Toast.LENGTH_SHORT).show()
             else
@@ -74,25 +59,22 @@ class TopAdapter(val orderDao: OrderDao, val context: Context, private var titem
             if (selectedProductIDsList.containsKey(productId)) {
                 if (newValue == 0) {
                     selectedProductIDsList.remove(productId)
+                    sendStateChangedBroadCast(context, "UPDATED")
                     holder.add_btn.setVisible(true)
                     view.setVisible(false)
                 } else {
 
-                    /*if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                        selectedProductIDsList.replace(productId, newValue)
-                    } else {
-                        selectedProductIDsList.remove(productId)
-                        selectedProductIDsList.put(productId, newValue)
-                    }*/
-
-                    if (oldValue != newValue)
+                    if (oldValue != newValue) {
                         UpdateItemToProductIdMap(productId, newValue)
-
+                        //changedQuantity[productId] = selectedProductIDsList[productId]!!
+                        //  sendStateChangedBroadCast(context,"UPDATED")
+                    }
 
                     Toast.makeText(context, "${selectedProductIDsList.get(productId) ?: 1}", Toast.LENGTH_SHORT).show()
                     holder.add_btn.setVisible(false)
                     view.setVisible(true)
                     view.number = (selectedProductIDsList.get(productId) ?: 1).toString()
+
                 }
             }
         }
@@ -158,5 +140,6 @@ class TopAdapter(val orderDao: OrderDao, val context: Context, private var titem
             Button.GONE
         }
     }
+
 
 }

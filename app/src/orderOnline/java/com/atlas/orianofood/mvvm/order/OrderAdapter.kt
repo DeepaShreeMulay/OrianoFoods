@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.atlas.orianofood.R
 import com.atlas.orianofood.core.App
+import com.atlas.orianofood.firebaseRT.utils.Common.sendStateChangedBroadCast
 import com.atlas.orianofood.firebaseRT.utils.UpdateItemToProductIdMap
 import com.atlas.orianofood.firebaseRT.utils.selectedProductIDsList
 import com.atlas.orianofood.mvvm.activity.MyCartSpActivity
@@ -34,7 +35,9 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
         totalPrice = 0.00
 
         item = productdao.selectDataByProductIdList(orderList.keys.toList()) as ArrayList<ProductItems>
+
         updateQuantityAndPrice()
+        //  sendStateChangedBroadCast(context, "UPDATED")
         updatePriceAtView()
 
     }//btn change nhi hue add krne p elegent btn nhi aara product me se add karo home pe code nhi he
@@ -81,29 +84,40 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
             item[position].quantity += 1
             totalPrice += item[position].price?.toDouble()!!
             updatePriceAtView()
-            holder.orderfinalPrice.text = finalCoast.toString()
+            holder.orderfinalPrice.text =
+                (item[position].price?.toDouble()!! * item[position].quantity).toString()
             holder.orderQuantity.text = item[position].quantity.toString()
             UpdateItemToProductIdMap(item[position].productId, true)
+            // changedQuantity.put(item[position].productId,item[position].quantity)
+            //  sendStateChangedBroadCast(context,"UPDATED")
+
         }
 
         holder.orderDecrement.setOnClickListener {
-            if (quantity > 1) {
+            if (item[position].quantity > 1) {
                 finalCoast -= coast
                 item[position].quantity -= 1
                 totalPrice -= item[position].price?.toDouble()!!
                 updatePriceAtView()
-                holder.orderfinalPrice.text = "" + finalCoast
-                holder.orderQuantity.text = "" + quantity
+                holder.orderfinalPrice.text =
+                    (item[position].price?.toDouble()!! * item[position].quantity).toString()
+                holder.orderQuantity.text = item[position].quantity.toString()
                 UpdateItemToProductIdMap(item[position].productId, false)
+                //changedQuantity.put(item[position].productId,item[position].quantity)
+                //sendStateChangedBroadCast(context,"UPDATED")
             }
         }
         holder.orderRemove.setOnClickListener {
 
             selectedProductIDsList.remove(item[position].productId)
+            //changedQuantity.put(item[position].productId,item[position].quantity)
+            sendStateChangedBroadCast(context, "UPDATED")
             remove(position)
             notifyItemRemoved(position)
             updatePrice()
+            updatePriceAtView()
             notifyItemRangeChanged(position, itemCount)
+
 
             /*     val tx: Double = (context as MyCartSpActivity).allTotalPriceTv?.text.toString().trim().replace("", "").toDouble()
                  val totalPrice: Double = tx - coast.toString().replace("", "").toDouble()

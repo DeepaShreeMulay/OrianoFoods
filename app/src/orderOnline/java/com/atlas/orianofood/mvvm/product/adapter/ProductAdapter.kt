@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.atlas.orianofood.BR.item
 import com.atlas.orianofood.R
 import com.atlas.orianofood.databinding.ProductItemsBinding
+import com.atlas.orianofood.firebaseRT.utils.Common.sendStateChangedBroadCast
 import com.atlas.orianofood.firebaseRT.utils.UpdateItemToProductIdMap
 import com.atlas.orianofood.firebaseRT.utils.selectedProductIDsList
 import com.atlas.orianofood.mvvm.product.model.ProductItems
@@ -67,21 +68,22 @@ class ProductAdapter(val context: Context, private var pitems: MutableList<Produ
             if (selectedProductIDsList.containsKey(productId)) {
                 if (newValue == 0) {
                     selectedProductIDsList.remove(productId)
+                    sendStateChangedBroadCast(context, "UPDATED")
                     holder.add_btn.setVisible(true)
                     view.setVisible(false)
                 } else {
 
-                    /*if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                        selectedProductIDsList.replace(productId, newValue)
-                    } else {
-                        selectedProductIDsList.remove(productId)
-                        selectedProductIDsList.put(productId, newValue)
-                    }*/
 
-                    if (oldValue != newValue)
+                    if (oldValue != newValue) {
                         UpdateItemToProductIdMap(productId, newValue)
-
-                    Toast.makeText(context, "${selectedProductIDsList.get(productId) ?: 1}", Toast.LENGTH_SHORT).show()
+                        //changedQuantity[productId] = selectedProductIDsList[productId]!!
+                        //  sendStateChangedBroadCast(context,"UPDATED")
+                    }
+                    Toast.makeText(
+                        context,
+                        "${selectedProductIDsList.get(productId) ?: 1}",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     holder.add_btn.setVisible(false)
                     view.setVisible(true)
                     view.number = (selectedProductIDsList.get(productId) ?: 1).toString()
@@ -101,8 +103,12 @@ class ProductAdapter(val context: Context, private var pitems: MutableList<Produ
         return pitems.size
     }
 
-    inner class ProductHolder(productdataBinding: ViewDataBinding)
-        : ProductBindingViewHolder<ProductItems>(productdataBinding) {
+    fun updateElegentButton(position: Int) {
+        notifyItemChanged(position)
+    }
+
+    inner class ProductHolder(productdataBinding: ViewDataBinding) :
+        ProductBindingViewHolder<ProductItems>(productdataBinding) {
         lateinit var add_btn: Button
         lateinit var btn_number: ElegantNumberButton
         override fun onBind(productItem: ProductItems): Unit = with(productItem) {
@@ -149,5 +155,6 @@ class ProductAdapter(val context: Context, private var pitems: MutableList<Produ
             Button.GONE
         }
     }
+
 
 }

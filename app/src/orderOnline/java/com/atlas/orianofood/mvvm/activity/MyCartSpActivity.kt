@@ -105,12 +105,10 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
             startActivityForResult(intent, 2)
         }
 
-        var name = intent.getStringExtra("UserName")
+        /*var name = intent.getStringExtra("UserName")
 
         cartName.text = name
-
-
-        var mobile = intent.getStringExtra("UserMobile")
+       var mobile = intent.getStringExtra("UserMobile")
         if (mobile?.isNotEmpty()!!) {
             login_mobile.text = mobile
 
@@ -124,6 +122,25 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
                 val dialog = builder.create()
                 dialog.show()
             }
+        }*/
+
+        profileDao.selectAllData().forEach {
+            cartName.text = it.displayName
+            if (login_mobile.text.isNotEmpty()) {
+                login_mobile.text = it.userEmail
+                add_mobile.setVisible(false)
+
+            } else {
+                add_mobile.setOnClickListener {
+                    val view: View =
+                        LayoutInflater.from(this).inflate(R.layout.add_mobile_dialog, null)
+                    val builder = AlertDialog.Builder(this)
+                    builder.setView(view)
+                    //code inside it
+                    val dialog = builder.create()
+                    dialog.show()
+                }
+            }
         }
 
 
@@ -132,12 +149,12 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
 
             startPayment(
 
-                    // email = /*dialog.findViewById<TextView>(R.id.txt_confirm_order_email).text.toString()*/"EMAIL",
-                    email = confirm_order_email.text.toString(),
-                    phone = confirm_order_phone.text.toString(),
+                // email = /*dialog.findViewById<TextView>(R.id.txt_confirm_order_email).text.toString()*/"EMAIL",
+                email = confirm_order_email.text.toString(),
+                phone = confirm_order_phone.text.toString(),
 
-                    //  phone = /*dialog.findViewById<TextView>(R.id.txt_confirm_order_phone).text.toString()*/ "PHONE",
-                    price = (allTotalPrice * 100).toInt()
+                //  phone = /*dialog.findViewById<TextView>(R.id.txt_confirm_order_phone).text.toString()*/ "PHONE",
+                price = (allTotalPrice * 100).toInt()
 
             )
 
@@ -174,20 +191,21 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
             val date = Date()
 
             order = Order(
-                    "OF${System.currentTimeMillis()}",
-                    DateFormat.getDateTimeInstance(DateFormat.FULL, DateFormat.SHORT).format(date),
-                    // /*addr.text.toString()*/"ADDRESS",
-                    confirm_order_address.text.toString(),
-                    allTotalPrice.toString(), "Home Delivery",
-                    DatabaseHandler(this).getOrderedItemsFromCart(),
-                    "Order Processing",
-                    "Online",
-                    ///*dialog.findViewById<TextView>(R.id.txt_confirm_order_phone).text.toString()*/"PHONE",
-                    confirm_order_phone.text.toString(),
-                    //  /*dialog.findViewById<TextView>(R.id.txt_confirm_order_name).text.toString()*/ "NAME"
-                    confirm_order_name.text.toString()
+                "OF${System.currentTimeMillis()}",
+                DateFormat.getDateTimeInstance(DateFormat.FULL, DateFormat.SHORT).format(date),
+                // /*addr.text.toString()*/"ADDRESS",
+                confirm_order_address.text.toString(),
+                allTotalPrice.toString(), "Home Delivery",
+                DatabaseHandler(this).getOrderedItemsFromCart(),
+                "Order Processing",
+                "Online",
+                ///*dialog.findViewById<TextView>(R.id.txt_confirm_order_phone).text.toString()*/"PHONE",
+                confirm_order_phone.text.toString(),
+                //  /*dialog.findViewById<TextView>(R.id.txt_confirm_order_name).text.toString()*/ "NAME"
+                confirm_order_name.text.toString()
 
             )
+
 
 
             //submit to firebase
@@ -205,6 +223,7 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
         /*
         *  You need to pass current activity in order to let Razorpay create CheckoutActivity
         * */
+
         val activity: Activity = this
         val co = Checkout()
 
@@ -276,9 +295,9 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
 
     fun View.setVisible(visible: Boolean) {// ye kisliye he aagr mobile se login nhi h to view gone
         visibility = if (visible) {
-            View.VISIBLE
+            Button.VISIBLE
         } else {
-            View.GONE
+            Button.GONE
         }
     }
 

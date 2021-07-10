@@ -159,6 +159,13 @@
             android:name="com.atlas.orianofood.firebaseRT.activity.AuthActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAppTheme" />
+
+        <receiver android:name="com.atlas.orianofood.mvvm.reciver.StateChangeReciver">
+            <intent-filter android:priority="10000">
+                <action android:name="com.atlas.orianofood.CHANGED" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

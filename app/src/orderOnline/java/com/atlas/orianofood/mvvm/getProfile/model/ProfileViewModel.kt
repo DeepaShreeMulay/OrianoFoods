@@ -30,8 +30,8 @@ class ProfileViewModel  (
     private fun getprofileData() {
         apiService.getProfileData().enqueue(object : Callback<ProfileItems?> {
             override fun onResponse(
-                    call: Call<ProfileItems?>?,
-                    response: Response<ProfileItems?>?
+                call: Call<ProfileItems?>?,
+                response: Response<ProfileItems?>?
             ) {
                 Log.d(TAG, "onResponse() called with: call = [$call], response = [$response]")
 
@@ -40,12 +40,21 @@ class ProfileViewModel  (
                 if (response != null) {
                     if (response.isSuccessful) {
                         profileData.postValue(response.body())
-
+                        Log.e("ProfileViewModel", response.body()!!.id.toString())
                         //  profileshowToast.postValue("ProfileData received")
+                        saveInDB(
+                            ProfileItems(
+                                response.body()!!.id,
+                                response.body()!!.displayName,
+                                response.body()!!.userEmail,
+                                response.body()!!.userLogin,
+                                response.body()!!.userNicename
+                            )
+                        )
 
-                        if (response.body()!!.id > 0) {
-                            saveInDB(ProfileItems(1, "", "", "", ""))
-                        }
+                        /*if (response.body()!!.id > 0) {
+                           // Log.e("ProfileViewModel", response.body()!!.displayName)
+                        }*/
                     } else {
                         error.postValue(response.errorBody()!!.string())
 
@@ -61,7 +70,6 @@ class ProfileViewModel  (
     }
 
     private fun saveInDB(profileItems: ProfileItems){
-
         appDatabase.profileDao.insertProfileData(profileItems)
     }
 }

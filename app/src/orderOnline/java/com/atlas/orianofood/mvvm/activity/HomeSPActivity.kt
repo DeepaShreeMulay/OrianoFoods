@@ -26,12 +26,14 @@ import com.atlas.orianofood.mvvm.category.model.CategoryViewModel
 import com.atlas.orianofood.mvvm.database.AppDatabase
 import com.atlas.orianofood.mvvm.getProfile.model.ProfileViewModel
 import com.atlas.orianofood.mvvm.product.model.ProductViewModel
+import com.atlas.orianofood.mvvm.reciver.StateChangeReciver
 import com.atlas.orianofood.mvvm.topCategory.adapter.TopCategoryAdapter
 import com.atlas.orianofood.mvvm.topCategory.model.TopCategoryViewModel
 import com.atlas.orianofood.mvvm.topRatedProduct.adapter.TopAdapter
 import com.atlas.orianofood.mvvm.topRatedProduct.model.TopRatedItem
 import com.atlas.orianofood.mvvm.topRatedProduct.model.TopRatedViewModel
 import com.atlas.orianofood.mvvm.topRatedSelling.adapter.SellingAdapter
+import com.atlas.orianofood.mvvm.topRatedSelling.model.SellingItem
 import com.atlas.orianofood.mvvm.topRatedSelling.model.SellingViewModel
 import com.atlas.orianofood.mvvm.utils.logout
 import com.google.android.material.navigation.NavigationView
@@ -48,17 +50,18 @@ import kotlinx.android.synthetic.orderOnline.content_product.*
 import kotlinx.android.synthetic.orderOnline.dialog_request.*
 import kotlinx.android.synthetic.orderOnline.nav_header_home.*
 
-class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnNavigationItemSelectedListener {
-    private val activity = this
-    private val viewModel: SellingViewModel by lazy { ViewModelProvider(this).get(SellingViewModel::class.java) }
+class HomeSPActivity : AppCompatActivity(), ShowCategoryData,
+    NavigationView.OnNavigationItemSelectedListener, StateChangeReciver.StateChangeListener {
 
+    private val activity = this@HomeSPActivity
+    private val viewModel: SellingViewModel by lazy { ViewModelProvider(this).get(SellingViewModel::class.java) }
+    private lateinit var sellingItems: List<SellingItem>
     private lateinit var sellingAdapter: SellingAdapter
     lateinit var adapter: MyListAdapter
 
     val orderDao = AppDatabase.getInstance(App.appContext)?.orderDao!!
 
     val productDao = AppDatabase.getInstance(App.appContext)?.productDao!!
-
 
 
     // private val currentUser = LoginDataBase.getInstance(this).loginDao
@@ -77,19 +80,22 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnN
 
 
         fab.setOnClickListener {
-            var username: String
-            var userMobile: String
-
+            /* var username: String
+             var userMobile: String
+ */
 
             if (selectedProductIDsList.isEmpty()) {
                 Toast.makeText(this, "Please Add items in the cart", Toast.LENGTH_SHORT).show()
             } else {
-                val intent = Intent(activity, MyCartSpActivity::class.java)//ye karne ki jarrurat nhi thi database mese lena bhi chalta ok
-                username = userLogged.text.toString()
-                userMobile = userLoggedMobile.text.toString()
+                val intent = Intent(
+                    activity,
+                    MyCartSpActivity::class.java
+                )//ye karne ki jarrurat nhi thi database mese lena bhi chalta ok
+                /* username = userLogged.text.toString()
+                 userMobile = userLoggedMobile.text.toString()
 
-                intent.putExtra("UserName", username)
-                intent.putExtra("UserMobile", userMobile)
+                 intent.putExtra("UserName", username)
+                 intent.putExtra("UserMobile", userMobile)*/
                 startActivity(intent)
 
 
@@ -111,17 +117,17 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnN
         nav_view.setNavigationItemSelectedListener(this)
 
         //user name
-       /* val view: View = nav_view.getHeaderView(0)
-        if (currentUser != null) {
-            println(currentUser.displayName + "   " + currentUser.phoneNumber + "   " + currentUser.email)
-            if (!currentUser.displayName.isNullOrEmpty()) {
-                view.userLogged.text = currentUser.displayName
-            } else if (!currentUser.phoneNumber.isNullOrEmpty()) {
-                view.userLogged.text = currentUser.phoneNumber
-            } else if (!currentUser.email.isNullOrEmpty()) {
-                view.userLogged.text = currentUser.email
-            }
-        }*/
+        /* val view: View = nav_view.getHeaderView(0)
+         if (currentUser != null) {
+             println(currentUser.displayName + "   " + currentUser.phoneNumber + "   " + currentUser.email)
+             if (!currentUser.displayName.isNullOrEmpty()) {
+                 view.userLogged.text = currentUser.displayName
+             } else if (!currentUser.phoneNumber.isNullOrEmpty()) {
+                 view.userLogged.text = currentUser.phoneNumber
+             } else if (!currentUser.email.isNullOrEmpty()) {
+                 view.userLogged.text = currentUser.email
+             }
+         }*/
 
         val manager = GridLayoutManager(this, 4)
         recyclerview.layoutManager = manager
@@ -186,6 +192,7 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnN
         }
 
     }
+
     private val pviewModel: ProductViewModel by lazy { ViewModelProvider(this).get(ProductViewModel::class.java) }
 
     private fun loadProductItems() {
@@ -217,7 +224,7 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnN
 
 
     private fun loadTopSellingItems() {
-        sellingAdapter = SellingAdapter(this, mutableListOf())
+        sellingAdapter = SellingAdapter(this@HomeSPActivity, mutableListOf())
         topSellingRecyclerview.adapter = sellingAdapter
 
         with(viewModel) {
@@ -253,7 +260,8 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnN
     private fun loadTopRatingItems() {
 
         topAdapter = TopAdapter(
-                orderDao, this, mutableListOf())
+            orderDao, this@HomeSPActivity, mutableListOf()
+        )
         topRatingRecyclerview.adapter = topAdapter
         with(tviewModel) {
             topRatedData.observe(this@HomeSPActivity, Observer {
@@ -282,7 +290,6 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnN
 
         }
     }
-
 
 
     private fun loadOffers() {
@@ -322,7 +329,6 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnN
                 } else {
                     userLoggedMobile.setVisible(false)
                 }
-
 
             })
             profileshowToast.observe(this@HomeSPActivity, Observer {
@@ -445,6 +451,23 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData, NavigationView.OnN
             Button.GONE
         }
     }
+
+    override fun onStateChanged(sessionStates: String?) {
+        /*   for (i in 0 until topRatedItem.size) {
+               if (changedQuantity.containsKey(topRatedItem[i])) {
+                   topAdapter.updateElegentButton(i)
+               }
+           }
+           for (i in 0 until sellingItems.size) {
+               if (changedQuantity.containsKey(sellingItems[i])) {
+                   sellingAdapter.updateElegentButton(i)
+               }
+           }*/
+        topAdapter.notifyDataSetChanged()
+        sellingAdapter.notifyDataSetChanged()
+
+    }
 }
+
 
 

@@ -20,20 +20,27 @@ import com.atlas.orianofood.firebaseRT.utils.selectedProductIDsList
 import com.atlas.orianofood.mvvm.product.adapter.ProductAdapter
 import com.atlas.orianofood.mvvm.product.model.ProductItems
 import com.atlas.orianofood.mvvm.product.model.ProductViewModel
+import com.atlas.orianofood.mvvm.reciver.StateChangeReciver
 import com.atlas.orianofood.mvvm.utils.logout
 import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.activity_my_cart.*
 import kotlinx.android.synthetic.orderOnline.activity_product.*
 import kotlinx.android.synthetic.orderOnline.app_bar_product.*
+import kotlinx.android.synthetic.orderOnline.app_bar_product.toolbar
 import kotlinx.android.synthetic.orderOnline.content_product.*
+import kotlinx.android.synthetic.orderOnline.nav_header_home.*
 
-class ProductSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class ProductSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
+    StateChangeReciver.StateChangeListener {
     private val cviewModel: ProductViewModel by lazy {
         ViewModelProvider(this).get(ProductViewModel::class.java)
     }
+
     private lateinit var productAdapter: ProductAdapter
     private val activity = this@ProductSPActivity
     private var selectedCategoryId: String? = null
-    private lateinit var productList: MutableList<ProductItems>
+    private lateinit var productItems: MutableList<ProductItems>
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +49,7 @@ class ProductSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         selectedCategoryId = intent.getStringExtra("CategoryID").toString()
 
         fab.setOnClickListener { view ->
+
             /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                      .setAction("Action", null).show()*/
             if (selectedProductIDsList.isEmpty()) {
@@ -49,7 +57,6 @@ class ProductSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             } else {
                 val intent = Intent(activity, MyCartSpActivity::class.java)
                 startActivity(intent)
-
 
             }
 
@@ -179,6 +186,15 @@ class ProductSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         return true
 
 
+    }
+
+    override fun onStateChanged(sessionStates: String?) {
+        /*    for (i in 0 until productItems.size) {
+                if (changedQuantity.containsKey(productItems[i])) {
+                    productAdapter.updateElegentButton(i)
+                }
+            }*/
+        productAdapter.notifyDataSetChanged()
     }
 
 }
