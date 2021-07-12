@@ -12,6 +12,8 @@ import com.atlas.orianofood.BR.item
 import com.atlas.orianofood.R
 import com.atlas.orianofood.databinding.TopRatedItemsBinding
 import com.atlas.orianofood.firebaseRT.utils.Common.sendStateChangedBroadCast
+import com.atlas.orianofood.firebaseRT.utils.HOMESPACTIVITYCONTEXT
+
 import com.atlas.orianofood.firebaseRT.utils.UpdateItemToProductIdMap
 import com.atlas.orianofood.firebaseRT.utils.selectedProductIDsList
 import com.atlas.orianofood.mvvm.order.OrderDao
@@ -44,10 +46,14 @@ class TopAdapter(val orderDao: OrderDao, val context: Context, private var titem
         }
 
         holder.add_btn.setOnClickListener {
-            if (UpdateItemToProductIdMap(productId, true))
+            if (UpdateItemToProductIdMap(context, productId, true))
                 Toast.makeText(context, "Added to cart", Toast.LENGTH_SHORT).show()
             else
-                Toast.makeText(context, "${selectedProductIDsList.get(productId) ?: 1}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    context,
+                    "${selectedProductIDsList.get(productId) ?: 1}",
+                    Toast.LENGTH_SHORT
+                ).show()
 
             holder.add_btn.setVisible(false)
             holder.btn_number.setVisible(true)
@@ -59,13 +65,14 @@ class TopAdapter(val orderDao: OrderDao, val context: Context, private var titem
             if (selectedProductIDsList.containsKey(productId)) {
                 if (newValue == 0) {
                     selectedProductIDsList.remove(productId)
+                    HOMESPACTIVITYCONTEXT = context
                     sendStateChangedBroadCast(context, "UPDATED")
                     holder.add_btn.setVisible(true)
                     view.setVisible(false)
                 } else {
 
                     if (oldValue != newValue) {
-                        UpdateItemToProductIdMap(productId, newValue)
+                        UpdateItemToProductIdMap(context, productId, newValue)
                         //changedQuantity[productId] = selectedProductIDsList[productId]!!
                         //  sendStateChangedBroadCast(context,"UPDATED")
                     }

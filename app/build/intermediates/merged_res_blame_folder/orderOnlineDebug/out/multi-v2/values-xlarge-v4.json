@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\incremental\\mergeOrderOnlineDebugResources\\merged.dir\\values-xlarge-v4\\values-xlarge-v4.xml",
+            "outputFile": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\intermediates\\incremental\\mergeOrderOnlineDebugResources\\merged.dir\\values-xlarge-v4\\values-xlarge-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\hp\\.gradle\\caches\\transforms-2\\files-2.1\\3737986c1fdb89ca9a62289a00c190e3\\appcompat-1.2.0\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
+                    "source": "C:\\Users\\abc\\.gradle\\caches\\transforms-2\\files-2.1\\8df5a57652a46496280403b25347cd28\\appcompat-1.2.0\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",

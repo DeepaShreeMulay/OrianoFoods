@@ -87,7 +87,7 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
             holder.orderfinalPrice.text =
                 (item[position].price?.toDouble()!! * item[position].quantity).toString()
             holder.orderQuantity.text = item[position].quantity.toString()
-            UpdateItemToProductIdMap(item[position].productId, true)
+            UpdateItemToProductIdMap(context, item[position].productId, true)
             // changedQuantity.put(item[position].productId,item[position].quantity)
             //  sendStateChangedBroadCast(context,"UPDATED")
 
@@ -102,7 +102,7 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
                 holder.orderfinalPrice.text =
                     (item[position].price?.toDouble()!! * item[position].quantity).toString()
                 holder.orderQuantity.text = item[position].quantity.toString()
-                UpdateItemToProductIdMap(item[position].productId, false)
+                UpdateItemToProductIdMap(context, item[position].productId, false)
                 //changedQuantity.put(item[position].productId,item[position].quantity)
                 //sendStateChangedBroadCast(context,"UPDATED")
             }

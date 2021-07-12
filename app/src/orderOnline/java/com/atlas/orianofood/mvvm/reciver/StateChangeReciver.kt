@@ -4,9 +4,13 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
+import com.atlas.orianofood.firebaseRT.utils.HOMESPACTIVITYCONTEXT
 
 class StateChangeReciver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
+        if (stateChangeListener == null) {
+            stateChangeListener = HOMESPACTIVITYCONTEXT as StateChangeListener
+        }
         if (stateChangeListener != null) {
             Toast.makeText(
                 context,

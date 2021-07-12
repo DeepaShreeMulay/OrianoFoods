@@ -52,10 +52,14 @@ class ProductAdapter(val context: Context, private var pitems: MutableList<Produ
                  selectedProductIDsList.put(productId, 1)
                  Toast.makeText(context, "Added to cart", Toast.LENGTH_SHORT).show()
              }*/
-            if (UpdateItemToProductIdMap(productId, true))
+            if (UpdateItemToProductIdMap(context, productId, true))
                 Toast.makeText(context, "Added to cart", Toast.LENGTH_SHORT).show()
             else
-                Toast.makeText(context, "${selectedProductIDsList.get(productId) ?: 1}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    context,
+                    "${selectedProductIDsList.get(productId) ?: 1}",
+                    Toast.LENGTH_SHORT
+                ).show()
 
             holder.add_btn.setVisible(false)
             holder.btn_number.setVisible(true)
@@ -68,6 +72,7 @@ class ProductAdapter(val context: Context, private var pitems: MutableList<Produ
             if (selectedProductIDsList.containsKey(productId)) {
                 if (newValue == 0) {
                     selectedProductIDsList.remove(productId)
+
                     sendStateChangedBroadCast(context, "UPDATED")
                     holder.add_btn.setVisible(true)
                     view.setVisible(false)
@@ -75,7 +80,7 @@ class ProductAdapter(val context: Context, private var pitems: MutableList<Produ
 
 
                     if (oldValue != newValue) {
-                        UpdateItemToProductIdMap(productId, newValue)
+                        UpdateItemToProductIdMap(context, productId, newValue)
                         //changedQuantity[productId] = selectedProductIDsList[productId]!!
                         //  sendStateChangedBroadCast(context,"UPDATED")
                     }

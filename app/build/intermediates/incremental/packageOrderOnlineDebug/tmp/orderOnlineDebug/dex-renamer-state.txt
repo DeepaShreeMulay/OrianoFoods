@@ -1,10 +1,10 @@
-#Tue Dec 01 09:57:45 IST 2020
+#Sun Jul 11 22:46:52 EDT 2021
 path.2=classes2.dex
 path.1=classes.dex
 path.0=classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.2=C\:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\dex\\orderOnlineDebug\\mergeExtDexOrderOnlineDebug\\classes2.dex
-base.1=C\:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\dex\\orderOnlineDebug\\mergeProjectDexOrderOnlineDebug\\classes.dex
-base.0=C\:\\Users\\hp\\AndroidStudioProjects\\OrianoFood\\app\\build\\intermediates\\dex\\orderOnlineDebug\\mergeExtDexOrderOnlineDebug\\classes.dex
+base.2=C\:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\intermediates\\dex\\orderOnlineDebug\\mergeExtDexOrderOnlineDebug\\classes2.dex
+base.1=C\:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\intermediates\\dex\\orderOnlineDebug\\mergeProjectDexOrderOnlineDebug\\classes.dex
+base.0=C\:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\intermediates\\dex\\orderOnlineDebug\\mergeExtDexOrderOnlineDebug\\classes.dex

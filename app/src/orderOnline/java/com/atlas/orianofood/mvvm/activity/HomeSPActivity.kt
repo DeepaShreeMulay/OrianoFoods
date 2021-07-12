@@ -70,7 +70,7 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData,
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-
+        HOMESPACTIVITYCONTEXT = this
 
         toolbar.title = ""
         setSupportActionBar(toolbar)
