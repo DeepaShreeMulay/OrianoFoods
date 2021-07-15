@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +26,7 @@ import com.atlas.orianofood.mvvm.order.OrderAdapter
 import com.razorpay.Checkout
 import com.razorpay.PaymentResultListener
 import kotlinx.android.synthetic.main.activity_my_cart.*
+import kotlinx.android.synthetic.main.add_mobile_dialog.*
 import kotlinx.android.synthetic.orderOnline.dialog_request.*
 import kotlinx.android.synthetic.orderOnline.nav_header_home.*
 import org.json.JSONObject
@@ -44,7 +46,7 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
     private lateinit var dFeetv: TextView
     lateinit var allTotalPriceTv: TextView
     private lateinit var btnConfirm: Button
-    var deliveryFees = 50
+    var deliveryFees = 50.00
     lateinit var address: String
     val profileDao = AppDatabase.getInstance(App.appContext)?.profileDao!!
     val TAG: String = MyCartSpActivity::class.toString()
@@ -52,6 +54,9 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
     private lateinit var confirm_order_phone: TextView
     private lateinit var confirm_order_name: TextView
     private lateinit var confirm_order_address: TextView
+    private lateinit var addMobile: Button
+    private lateinit var editMobile: EditText
+    private lateinit var mobile: String
 
     /* init {
 
@@ -78,6 +83,7 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
         confirm_order_name = findViewById(R.id.cartName)
         confirm_order_address = findViewById(R.id.selectAddress)
 
+
         // val orderDao=AppDatabase.getInstance(application)?.orderDao!!
         profileDao.selectAllData().forEach {
             Log.e("CART", it.userEmail)
@@ -93,7 +99,7 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
         orderAdapter = OrderAdapter(this, selectedProductIDsList)
 
 
-        allTotalPrice += 120
+
 
         itemRecyclerview.adapter = orderAdapter
         dFeetv.text = deliveryFees.toString()
@@ -124,23 +130,37 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
             }
         }*/
 
+
+
         profileDao.selectAllData().forEach {
             cartName.text = it.displayName
-            if (login_mobile.text.isNotEmpty()) {
+            if (it.userEmail.matches(Regex("\\d+"))) {
                 login_mobile.text = it.userEmail
                 add_mobile.setVisible(false)
 
             } else {
-                add_mobile.setOnClickListener {
-                    val view: View =
-                        LayoutInflater.from(this).inflate(R.layout.add_mobile_dialog, null)
-                    val builder = AlertDialog.Builder(this)
-                    builder.setView(view)
-                    //code inside it
-                    val dialog = builder.create()
-                    dialog.show()
+                if (login_mobile.text.isEmpty()) {
+                    addMobile.setVisible(true)
+                    add_mobile.setOnClickListener {
+                        val view: View =
+                            LayoutInflater.from(this).inflate(R.layout.add_mobile_dialog, null)
+                        val builder = AlertDialog.Builder(this)
+                        builder.setView(view)
+                        addMobile = view.findViewById(R.id.btn_add_mobile)
+                        val dialog = builder.create()
+                        dialog.show()
+
+                        addMobile.setOnClickListener {
+                            editMobile = view.findViewById(R.id.et_add_phone)
+                            mobile = editMobile.text.toString().trim()
+                            dialog.dismiss()
+                            login_mobile.text = mobile
+                            add_mobile.setVisible(false)
+                        }
+                    }
                 }
             }
+
         }
 
 
@@ -172,20 +192,19 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
                      selectedProductIDsList
              )*/
             val request = RequestHashMap(
-                    if (confirm_order_phone.text.isNotEmpty()) {
-                        // dialog.findViewById<TextView>(R.id.txt_confirm_order_phone).text.toString()
-                        confirm_order_phone.text.toString()
-                    } else {
-                        // dialog.findViewById<TextView>(R.id.txt_confirm_order_email).text.toString()
-                        confirm_order_email.text.toString()
-                    },
-                    /* dialog.findViewById<TextView>(R.id.txt_confirm_order_name).text.toString()*/
-                    confirm_order_name.text.toString(),
+                if (confirm_order_phone.text.isNotEmpty()) {
 
-                    // txt_confirm_order_name.text.toString()?:"NAME",
-                    confirm_order_address.text.toString(),
-                    allTotalPrice.toString(),
-                    selectedProductIDsList
+                    confirm_order_phone.text.toString()
+                } else {
+
+                    confirm_order_email.text.toString()
+                },
+                confirm_order_name.text.toString(),
+
+
+                confirm_order_address.text.toString(),
+                allTotalPrice.toString(),
+                selectedProductIDsList
             )
 
             val date = Date()
@@ -237,14 +256,17 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
             options.put("amount", price)
             options.put("send_sms_hash", true)
 
+
             val prefill = JSONObject()
-            prefill.put("email", email /*?: "test@razorpay.com"*/)
-            prefill.put("contact", phone  /*"9021066696"*/)
+            prefill.put("email", email/*?: "test@razorpay.com"*/)
+            prefill.put("contact", phone)// /*"9021066696"*/)
+
 
             options.put("prefill", prefill)
             co.open(activity, options)
         } catch (e: Exception) {
             Toast.makeText(activity, "Error in payment: " + e.message, Toast.LENGTH_LONG).show()
+            Log.e("PAYMENT", e.message.toString())
             e.printStackTrace()
         }
     }
@@ -287,13 +309,13 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode === 2) {
+        if (requestCode == 2) {
             address = data?.getStringExtra("Address")!!
             selectAddress.text = address
         }
     }
 
-    fun View.setVisible(visible: Boolean) {// ye kisliye he aagr mobile se login nhi h to view gone
+    fun View.setVisible(visible: Boolean) {
         visibility = if (visible) {
             Button.VISIBLE
         } else {

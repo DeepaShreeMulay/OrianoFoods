@@ -82,6 +82,8 @@
                 android:drawablePadding="16dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textSize="14sp"
+                android:hint="Add Email Address"
+                android:textColor="@color/black"
                 tools:text="probelalkhan@gmail.com" />
 
             <TextView
@@ -110,6 +112,8 @@
                 android:gravity="center_vertical"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textSize="14sp"
+                android:hint="Add Mobile Number"
+                android:textColor="@color/black"
                 tools:text="+917549161079" />
 
             <TextView
@@ -140,6 +144,8 @@
                 android:gravity="center_vertical"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textSize="14sp"
+                android:hint="Select Address"
+                android:textColor="@color/black"
                 tools:text="" />
 
 

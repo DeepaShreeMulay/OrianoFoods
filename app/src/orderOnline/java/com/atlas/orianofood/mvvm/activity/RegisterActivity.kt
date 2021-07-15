@@ -131,6 +131,9 @@ class RegisterActivity : AppCompatActivity() {
                         activity,
                         "Bearer ${response.body()?.token?.substringAfter("|")}"
                     )
+                    SharedpreferencesUtil.addUserId(activity, "${response.body()?.userId}")
+                    SharedpreferencesUtil.addMobile(activity, mobile)
+
 
                     Thread {
                         daoo.insertLogin(myLoginData)

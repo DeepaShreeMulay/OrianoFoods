@@ -28,6 +28,28 @@ object SharedpreferencesUtil {
         return sharedPreferences.getString("Token", "") ?: ""
     }
 
+    fun addUserId(context: Context, userId: String) {
+        val sharedPreferences: SharedPreferences = context.getSharedPreferences(
+            appContext.getString(R.string.preference_file_key),
+            Context.MODE_PRIVATE
+        )
+        val editor: SharedPreferences.Editor = sharedPreferences.edit()
+        editor.putString("userId", userId)
+        editor.apply()
+        editor.commit()
+    }
+
+    fun addMobile(context: Context, userMobile: String) {
+        val sharedPreferences: SharedPreferences = context.getSharedPreferences(
+            appContext.getString(R.string.preference_file_key),
+            Context.MODE_PRIVATE
+        )
+        val editor: SharedPreferences.Editor = sharedPreferences.edit()
+        editor.putString("userMobile", userMobile)
+        editor.apply()
+        editor.commit()
+    }
+
     fun clearedSharedPref() {
         val sharedPreferences: SharedPreferences =
             appContext.getSharedPreferences(

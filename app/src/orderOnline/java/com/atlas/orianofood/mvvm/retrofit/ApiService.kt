@@ -9,6 +9,7 @@ import com.atlas.orianofood.mvvm.topRatedProduct.model.TopRatedData
 import com.atlas.orianofood.mvvm.topRatedSelling.model.SellingData
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface ApiService {
 
@@ -27,8 +28,8 @@ interface ApiService {
     @GET("v1/top-category")
     fun getTopCategoryData(): Call<TopCategoryData>
 
-    @GET("v1/get-profile/40")
-    fun getProfileData(): Call<ProfileItems>
+    @GET("v1/get-profile/{user_id}")
+    fun getProfileData(@Path("user_id") userId: String): Call<ProfileItems>
 
     @GET("v1/products")
     fun getProductData(): Call<ProductData>

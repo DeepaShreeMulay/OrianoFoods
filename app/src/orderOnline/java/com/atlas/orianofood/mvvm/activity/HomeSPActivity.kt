@@ -356,7 +356,7 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData,
                 // Handle the camera action
                 val intent = Intent(activity, MyAddressesActivity::class.java)
                 startActivity(intent)
-                finish()
+
             }
             R.id.nav_menu -> {
                 // Handle the camera action

@@ -15,8 +15,11 @@ import com.atlas.orianofood.mvvm.login.model.LoginData
 import com.atlas.orianofood.mvvm.login.model.LoginModelFactory
 import com.atlas.orianofood.mvvm.login.model.LoginViewModel
 import com.atlas.orianofood.mvvm.login.repository.LoginRepository
+import com.atlas.orianofood.mvvm.utils.SharedpreferencesUtil.addMobile
 import com.atlas.orianofood.mvvm.utils.SharedpreferencesUtil.addToken
+import com.atlas.orianofood.mvvm.utils.SharedpreferencesUtil.addUserId
 import com.google.gson.JsonObject
+import kotlinx.android.synthetic.main.activity_my_cart.*
 import kotlinx.android.synthetic.orderOnline.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -83,10 +86,16 @@ class LoginActivity : AppCompatActivity() {
                     )
 
                     addToken(activity, "Bearer ${response.body()?.token?.substringAfter("|")}")
+                    addUserId(activity, "${response.body()?.userId}")
+                    addMobile(activity, mobile)
+
+
 
                     Thread {
                         daoo.insertLogin(myLoginData)
                     }.start()
+
+
 
 
 

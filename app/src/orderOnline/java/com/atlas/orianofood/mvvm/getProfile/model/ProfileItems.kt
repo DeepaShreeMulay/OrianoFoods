@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity
-data class ProfileItems (
+data class ProfileItems(
         @PrimaryKey(autoGenerate = true)
         @SerializedName("id")
         var id: Int,
@@ -20,8 +20,11 @@ data class ProfileItems (
         @SerializedName("user_login")
         var userLogin: String,
         @SerializedName("user_nicename")
-        var userNicename: String
-        )
+        var userNicename: String,
+        @SerializedName("user_alt_email")
+        var userAltEmail: String
+
+)
 {
     override fun toString(): String {
         return "ProfileItems(id=$id, displayName=$displayName, userEmail=$userEmail, userLogin=$userLogin, userNicename=$userNicename)"

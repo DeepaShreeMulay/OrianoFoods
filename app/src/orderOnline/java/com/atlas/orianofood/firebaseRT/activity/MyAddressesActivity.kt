@@ -174,6 +174,7 @@ class MyAddressesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
 
 
         setResult(2, intent)
+
         finishActivity(2)
     }
     /*override fun onBackPressed() {

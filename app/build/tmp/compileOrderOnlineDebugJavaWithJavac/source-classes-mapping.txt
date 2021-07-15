@@ -31,6 +31,8 @@ com/atlas/orianofood/databinding/CartItemBinding.java
 com/atlas/orianofood/mvvm/category/dao/CategoryDao_Impl.java
  com.atlas.orianofood.mvvm.category.dao.CategoryDao_Impl
  com.atlas.orianofood.mvvm.category.dao.CategoryDao_Impl$1
+com/atlas/orianofood/BR.java
+ com.atlas.orianofood.BR
 com/atlas/orianofood/databinding/GalleryItemBindingImpl.java
  com.atlas.orianofood.databinding.GalleryItemBindingImpl
 com/atlas/orianofood/databinding/ActivityGalleryOldBinding.java
@@ -41,9 +43,8 @@ com/atlas/orianofood/databinding/TopSellingItemBinding.java
  com.atlas.orianofood.databinding.TopSellingItemBinding
 com/atlas/orianofood/databinding/CategoryItemBinding.java
  com.atlas.orianofood.databinding.CategoryItemBinding
-com/atlas/orianofood/mvvm/database/AppDatabase_Impl.java
- com.atlas.orianofood.mvvm.database.AppDatabase_Impl
- com.atlas.orianofood.mvvm.database.AppDatabase_Impl$1
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
 com/atlas/orianofood/mvvm/topRatedProduct/dao/TopRatedDao_Impl.java
  com.atlas.orianofood.mvvm.topRatedProduct.dao.TopRatedDao_Impl
  com.atlas.orianofood.mvvm.topRatedProduct.dao.TopRatedDao_Impl$1
@@ -147,6 +148,7 @@ com/atlas/orianofood/mvvm/gallery/dao/GalleryDao_Impl.java
 com/atlas/orianofood/mvvm/login/dao/LoginDao_Impl.java
  com.atlas.orianofood.mvvm.login.dao.LoginDao_Impl
  com.atlas.orianofood.mvvm.login.dao.LoginDao_Impl$1
+ com.atlas.orianofood.mvvm.login.dao.LoginDao_Impl$2
 com/atlas/orianofood/databinding/ContentHomeBinding.java
  com.atlas.orianofood.databinding.ContentHomeBinding
 com/atlas/orianofood/DataBinderMapperImpl.java
@@ -176,7 +178,11 @@ com/atlas/orianofood/databinding/ActivityRegisterBinding.java
 com/atlas/orianofood/mvvm/getProfile/model/dao/ProfileDao_Impl.java
  com.atlas.orianofood.mvvm.getProfile.model.dao.ProfileDao_Impl
  com.atlas.orianofood.mvvm.getProfile.model.dao.ProfileDao_Impl$1
-com/atlas/orianofood/BR.java
- com.atlas.orianofood.BR
-androidx/databinding/DataBindingComponent.java
- androidx.databinding.DataBindingComponent
+ com.atlas.orianofood.mvvm.getProfile.model.dao.ProfileDao_Impl$2
+ com.atlas.orianofood.mvvm.getProfile.model.dao.ProfileDao_Impl$3
+com/atlas/orianofood/mvvm/database/AppDatabase_Impl.java
+ com.atlas.orianofood.mvvm.database.AppDatabase_Impl
+ com.atlas.orianofood.mvvm.database.AppDatabase_Impl$1
+com/atlas/orianofood/mvvm/setProfile/SetProfileDao_Impl.java
+ com.atlas.orianofood.mvvm.setProfile.SetProfileDao_Impl
+ com.atlas.orianofood.mvvm.setProfile.SetProfileDao_Impl$1
