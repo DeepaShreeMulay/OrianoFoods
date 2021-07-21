@@ -13,6 +13,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.atlas.orianofood.R
 import com.atlas.orianofood.core.App
@@ -23,6 +24,13 @@ import com.atlas.orianofood.firebaseRT.model.RequestHashMap
 import com.atlas.orianofood.firebaseRT.utils.selectedProductIDsList
 import com.atlas.orianofood.mvvm.database.AppDatabase
 import com.atlas.orianofood.mvvm.order.OrderAdapter
+import com.atlas.orianofood.mvvm.order.OrderItem
+import com.atlas.orianofood.mvvm.order.myOrdrerPost.MyOrderModelFactory
+import com.atlas.orianofood.mvvm.order.myOrdrerPost.MyOrderRepository
+import com.atlas.orianofood.mvvm.order.myOrdrerPost.MyOrderViewModel
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.google.gson.JsonObject
 import com.razorpay.Checkout
 import com.razorpay.PaymentResultListener
 import kotlinx.android.synthetic.main.activity_my_cart.*
@@ -39,6 +47,7 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
 
 
     private lateinit var orderAdapter: OrderAdapter
+    private lateinit var myOrderViewModel: MyOrderViewModel
     val productIds = HashMap<Int, Int>()
     var allTotalPrice = 0.0
     lateinit var order: Order
@@ -167,6 +176,7 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
 
         btnConfirm.setOnClickListener {
 
+            myOrder()
             startPayment(
 
                 // email = /*dialog.findViewById<TextView>(R.id.txt_confirm_order_email).text.toString()*/"EMAIL",
@@ -224,7 +234,6 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
                 confirm_order_name.text.toString()
 
             )
-
 
 
             //submit to firebase
@@ -322,6 +331,36 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
             Button.GONE
         }
     }
+
+    private fun myOrder() {
+        val orderDao = AppDatabase.getInstance(App.appContext)?.orderDao!!
+        val order_repository = MyOrderRepository(orderDao)
+        val viewModelFactory = MyOrderModelFactory(order_repository)
+
+        myOrderViewModel =
+            ViewModelProvider(this, viewModelFactory).get(MyOrderViewModel::class.java)
+        var gsonBuilder: GsonBuilder = GsonBuilder()
+
+        var gson: Gson = gsonBuilder.create()
+
+        var values: String = gson.toJson(selectedProductIDsList)
+
+        var jsonObject = JsonObject()
+        jsonObject.addProperty("selectedProductIDsList", values)
+        myOrderViewModel.myOrder(jsonObject)
+
+        Toast.makeText(this, "Json Object is :$jsonObject", Toast.LENGTH_LONG).show()
+
+        // orderDao.insertOrder(OrderItem(0, selectedProductList = arrayListOf(selectedProductIDsList.toString())))
+        orderDao.insertOrder(
+            OrderItem(
+                0,
+                selectedProductList = arrayListOf(selectedProductIDsList.toString())
+            )
+        )
+
+    }
+
 
 }
 

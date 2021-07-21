@@ -17,6 +17,6 @@ data class SetProfileItem(
     var user_mobile: String?,
     @ColumnInfo(name = "user_address")
     var user_address: String,
-    /* @ColumnInfo(name = "change_password")
-     var user_password:String*/
+    @ColumnInfo(name = "change_password")
+    var user_password: String
 )

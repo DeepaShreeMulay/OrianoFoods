@@ -95,7 +95,7 @@ class GallerySPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
         with(viewModel) {
             galleryData.observe(this@GallerySPActivity, Observer {
-                Toast.makeText(this@GallerySPActivity, "Productdata  run", Toast.LENGTH_SHORT).show()
+                //  Toast.makeText(this@GallerySPActivity, "Productdata  run", Toast.LENGTH_SHORT).show()
                 if (it!!.glist.isNotEmpty()) {
 
                     galleryAdapter.clear()

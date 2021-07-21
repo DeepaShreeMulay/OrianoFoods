@@ -102,11 +102,11 @@ class SellingAdapter(
                         //sendStateChangedBroadCast(context,"UPDATED")
                     }
 
-                    Toast.makeText(
+                   /* Toast.makeText(
                         context,
                         "${selectedProductIDsList.get(productId) ?: 1}",
                         Toast.LENGTH_SHORT
-                    ).show()
+                    ).show()*/
                     holder.add_btn.setVisible(false)
                     view.setVisible(true)
                     view.number = (selectedProductIDsList.get(productId) ?: 1).toString()

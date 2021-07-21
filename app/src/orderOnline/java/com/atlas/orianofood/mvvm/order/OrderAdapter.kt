@@ -40,7 +40,7 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
         //  sendStateChangedBroadCast(context, "UPDATED")
         updatePriceAtView()
 
-    }//btn change nhi hue add krne p elegent btn nhi aara product me se add karo home pe code nhi he
+    }
 
     private fun updateQuantityAndPrice() {
         item.forEach {
@@ -48,7 +48,6 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
             totalPrice += (it.price)?.toDouble()!! * it.quantity
         }
     }
-    //haan aaya pr elegent p click krne p product cart me quantity me change nhi aaya wo code karna he
 
 
     fun updatePrice() {

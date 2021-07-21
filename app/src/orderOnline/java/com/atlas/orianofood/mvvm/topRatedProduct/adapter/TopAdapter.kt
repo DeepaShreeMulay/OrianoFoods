@@ -54,7 +54,6 @@ class TopAdapter(val orderDao: OrderDao, val context: Context, private var titem
                     "${selectedProductIDsList.get(productId) ?: 1}",
                     Toast.LENGTH_SHORT
                 ).show()
-
             holder.add_btn.setVisible(false)
             holder.btn_number.setVisible(true)
             holder.btn_number.number = selectedProductIDsList.get(productId).toString()

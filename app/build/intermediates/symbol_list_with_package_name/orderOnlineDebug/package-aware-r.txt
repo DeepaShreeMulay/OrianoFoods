@@ -2099,6 +2099,7 @@ drawable ic_person
 drawable ic_phone
 drawable ic_phone_edit
 drawable ic_phone_signin
+drawable ic_privecy_policy
 drawable ic_rating_star
 drawable ic_restaurant_menu_black_24dp
 drawable ic_round_phone
@@ -2109,6 +2110,8 @@ drawable ic_search
 drawable ic_shopping_cart_black_24dp
 drawable ic_sort_filter
 drawable ic_star
+drawable ic_subscriptions
+drawable ic_terms_condition
 drawable ic_unmark_favourite
 drawable ic_veg
 drawable ic_wave

@@ -1,4 +1,4 @@
-#Sun Jul 04 01:43:56 EDT 2021
+#Mon Jul 19 01:32:37 EDT 2021
 base.0=C\:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\intermediates\\dex\\orderOnlineRelease\\mergeDexOrderOnlineRelease\\classes.dex
 path.1=classes2.dex
 renamed.1=classes2.dex

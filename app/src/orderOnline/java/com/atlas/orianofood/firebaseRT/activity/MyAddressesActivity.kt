@@ -167,15 +167,10 @@ class MyAddressesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
     }
 
     override fun address(address: String) {
-        // val address: String =tv_addressline1.text.toString()
-
         val intent = Intent()
         intent.putExtra("Address", address)
-
-
         setResult(2, intent)
-
-        finishActivity(2)
+        this.finishActivity(2)
     }
     /*override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
@@ -184,9 +179,8 @@ class MyAddressesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
             super.onBackPressed()
             val intent = Intent(this@MyAddressesActivity, HomeSPActivity::class.java)
             startActivity(intent)
-            finish()
+
         }
-    }
-*/
+    }*/
 
 }

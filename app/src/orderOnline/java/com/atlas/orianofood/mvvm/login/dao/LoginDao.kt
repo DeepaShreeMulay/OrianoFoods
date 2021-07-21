@@ -14,8 +14,8 @@ interface LoginDao {
     @Query(" SELECT * FROM login_data")
     fun readuser(): List<LoginData>
 
-    @Query("UPDATE login_data set login_password = :newPassword where login_mobile = :oldPassword")
-    fun updatePassword(oldPassword: String, newPassword: String)
+    @Query("UPDATE login_data set login_password = :newPassword where login_mobile = :mobile")
+    fun updatePassword(newPassword: String, mobile: String)
 
 
     /*@Query("SELECT * from login_data WHERE userId= :userId")

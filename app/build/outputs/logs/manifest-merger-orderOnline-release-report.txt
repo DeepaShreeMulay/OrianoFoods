@@ -25,6 +25,7 @@ MERGED from [androidx.browser:browser:1.3.0] C:\Users\abc\.gradle\caches\transfo
 MERGED from [com.google.firebase:firebase-database-ktx:19.5.1] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\b8db9a8036ef378bf44578be69ac2f6a\jetified-firebase-database-ktx-19.5.1\AndroidManifest.xml:2:1-21:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\13527c14a6f81aa322265abd000c13a6\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:17:1-32:12
 MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\3f3371437a3719950b07c4ef9ed9b9f2\jetified-lifecycle-service-2.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:2:1-32:12
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\de86eb506aa3903b574671e132ddd6b9\jetified-play-services-auth-19.0.0\AndroidManifest.xml:17:1-40:12
 MERGED from [com.firebaseui:firebase-ui-database:7.1.1] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\5756b35e7f22505daeb0e3c04077fa6a\jetified-firebase-ui-database-7.1.1\AndroidManifest.xml:2:1-13:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\55868a9882154f3ad3c1e61816c73506\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -90,9 +91,9 @@ MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\abc\.gradle\caches\trans
 MERGED from [com.amulyakhare:com.amulyakhare.textdrawable:1.0.1] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\2e154a5efeb45e1ebc453482e1a2fd2f\jetified-com.amulyakhare.textdrawable-1.0.1\AndroidManifest.xml:2:1-14:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\191975e043a2687d90b391695022239d\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [io.michaelrocks:libphonenumber-android:8.12.6] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\1951751ec25b9a82621c1f35a67ea1db\jetified-libphonenumber-android-8.12.6\AndroidManifest.xml:2:1-11:12
-INJECTED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:2:1-164:12
-INJECTED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:2:1-164:12
-INJECTED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:2:1-164:12
+INJECTED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:2:1-171:12
+INJECTED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:2:1-171:12
+INJECTED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:2:1-171:12
 	package
 		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\main\AndroidManifest.xml:3:5-35
 		INJECTED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\main\AndroidManifest.xml
@@ -114,6 +115,8 @@ uses-permission#android.permission.INTERNET
 ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\main\AndroidManifest.xml:5:5-67
 MERGED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\main\AndroidManifest.xml:5:5-67
 MERGED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\main\AndroidManifest.xml:5:5-67
+MERGED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:9:5-67
+MERGED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:9:5-67
 MERGED from [com.firebaseui:firebase-ui-database:7.1.1] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\5756b35e7f22505daeb0e3c04077fa6a\jetified-firebase-ui-database-7.1.1\AndroidManifest.xml:11:5-67
 MERGED from [com.firebaseui:firebase-ui-database:7.1.1] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\5756b35e7f22505daeb0e3c04077fa6a\jetified-firebase-ui-database-7.1.1\AndroidManifest.xml:11:5-67
 MERGED from [com.google.firebase:firebase-database:19.5.1] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\8b369af8de7dbe373ea99d19d467a3ba\jetified-firebase-database-19.5.1\AndroidManifest.xml:26:5-67
@@ -152,6 +155,8 @@ MERGED from [com.google.firebase:firebase-database-ktx:19.5.1] C:\Users\abc\.gra
 MERGED from [com.google.firebase:firebase-database-ktx:19.5.1] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\b8db9a8036ef378bf44578be69ac2f6a\jetified-firebase-database-ktx-19.5.1\AndroidManifest.xml:11:5-19:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\13527c14a6f81aa322265abd000c13a6\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:24:5-30:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\13527c14a6f81aa322265abd000c13a6\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:24:5-30:19
+MERGED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:11:5-30:19
+MERGED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:11:5-30:19
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\de86eb506aa3903b574671e132ddd6b9\jetified-play-services-auth-19.0.0\AndroidManifest.xml:22:5-38:19
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\de86eb506aa3903b574671e132ddd6b9\jetified-play-services-auth-19.0.0\AndroidManifest.xml:22:5-38:19
 MERGED from [com.google.firebase:firebase-database:19.5.1] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\8b369af8de7dbe373ea99d19d467a3ba\jetified-firebase-database-19.5.1\AndroidManifest.xml:28:5-36:19
@@ -262,6 +267,8 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\abc\.gradle\ca
 MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\13527c14a6f81aa322265abd000c13a6\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\3f3371437a3719950b07c4ef9ed9b9f2\jetified-lifecycle-service-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\3f3371437a3719950b07c4ef9ed9b9f2\jetified-lifecycle-service-2.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:5:5-7:41
+MERGED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\de86eb506aa3903b574671e132ddd6b9\jetified-play-services-auth-19.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\de86eb506aa3903b574671e132ddd6b9\jetified-play-services-auth-19.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.firebaseui:firebase-ui-database:7.1.1] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\5756b35e7f22505daeb0e3c04077fa6a\jetified-firebase-ui-database-7.1.1\AndroidManifest.xml:7:5-9:41
@@ -652,6 +659,18 @@ ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\Android
 		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:161:13-55
 	android:name
 		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:159:13-81
+receiver#com.atlas.orianofood.mvvm.reciver.StateChangeReciver
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:163:9-167:20
+	android:name
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:163:19-86
+intent-filter#action:name:com.atlas.orianofood.CHANGED
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:164:13-166:29
+	android:priority
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:164:28-52
+action#com.atlas.orianofood.CHANGED
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:165:17-71
+	android:name
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:165:25-68
 provider#com.squareup.picasso.PicassoProvider
 ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\c34b7517974b6f8a65656648b8ddfd8e\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
 	android:authorities
@@ -696,6 +715,32 @@ ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\abc\.gradle\cac
 		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\13527c14a6f81aa322265abd000c13a6\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
 	android:name
 		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\13527c14a6f81aa322265abd000c13a6\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+receiver#com.razorpay.RzpTokenReceiver
+ADDED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:12:9-16:20
+	android:name
+		ADDED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:12:19-63
+intent-filter#action:name:rzp.device_token.share
+ADDED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:13:13-15:29
+action#rzp.device_token.share
+ADDED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:14:17-65
+	android:name
+		ADDED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:14:25-62
+activity#com.razorpay.CheckoutActivity
+ADDED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:18:9-29:20
+	android:configChanges
+		ADDED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:20:13-83
+	android:theme
+		ADDED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:21:13-49
+	android:name
+		ADDED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:19:13-57
+intent-filter#action:name:android.intent.action.MAIN+data:host:rzp.io+data:scheme:io.rzp
+ADDED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:22:13-28:29
+data
+ADDED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:25:17-27:47
+	android:host
+		ADDED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:26:21-42
+	android:scheme
+		ADDED from [com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:27:21-44
 activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
 ADDED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\de86eb506aa3903b574671e132ddd6b9\jetified-play-services-auth-19.0.0\AndroidManifest.xml:23:9-27:75
 	android:excludeFromRecents
@@ -754,14 +799,6 @@ category#android.intent.category.BROWSABLE
 ADDED from [com.google.firebase:firebase-auth:20.0.1] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\be0a4c31fe907e4b28919001d4ed2171\jetified-firebase-auth-20.0.1\AndroidManifest.xml:37:17-78
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:20.0.1] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\be0a4c31fe907e4b28919001d4ed2171\jetified-firebase-auth-20.0.1\AndroidManifest.xml:37:27-75
-data
-ADDED from [com.google.firebase:firebase-auth:20.0.1] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\be0a4c31fe907e4b28919001d4ed2171\jetified-firebase-auth-20.0.1\AndroidManifest.xml:39:17-42:51
-	android:path
-		ADDED from [com.google.firebase:firebase-auth:20.0.1] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\be0a4c31fe907e4b28919001d4ed2171\jetified-firebase-auth-20.0.1\AndroidManifest.xml:41:21-37
-	android:host
-		ADDED from [com.google.firebase:firebase-auth:20.0.1] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\be0a4c31fe907e4b28919001d4ed2171\jetified-firebase-auth-20.0.1\AndroidManifest.xml:40:21-49
-	android:scheme
-		ADDED from [com.google.firebase:firebase-auth:20.0.1] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\be0a4c31fe907e4b28919001d4ed2171\jetified-firebase-auth-20.0.1\AndroidManifest.xml:42:21-48
 activity#com.google.firebase.auth.internal.RecaptchaActivity
 ADDED from [com.google.firebase:firebase-auth:20.0.1] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\be0a4c31fe907e4b28919001d4ed2171\jetified-firebase-auth-20.0.1\AndroidManifest.xml:45:9-62:20
 	android:excludeFromRecents

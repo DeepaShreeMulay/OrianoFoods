@@ -27,10 +27,11 @@ class ChangePasswordActivity : AppCompatActivity() {
     private val activity = this@ChangePasswordActivity
     private lateinit var loginviewModel: LoginViewModel
     val profileDao = AppDatabase.getInstance(App.appContext)?.profileDao!!
-    val loginDao = AppDatabase.getInstance(App.appContext)?.loginDao!!
+    val setProfileDao = AppDatabase.getInstance(App.appContext)?.setProfileDao!!
     val daoo = AppDatabase.getInstance(App.appContext)?.loginDao!!
     private lateinit var mobile: String
     private lateinit var passwordUpdated: String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -95,9 +96,15 @@ class ChangePasswordActivity : AppCompatActivity() {
                 return@setOnClickListener
             } else {
 
-                loginDao.updatePassword(mobile, password)
-                Toast.makeText(this, "Password Updated$password", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, ProfileActivity::class.java))
+                //loginDao.updatePassword(mobile, password)
+                Toast.makeText(this, "Password Changes Successfully", Toast.LENGTH_SHORT).show()
+                val intent = Intent(activity, ProfileActivity::class.java)
+                intent.putExtra("password", password)
+                startActivity(intent)
+
+                //startActivity(Intent(this, ProfileActivity::class.java))
+
+
             }
 
             /* currentUser?.let { user ->
@@ -152,6 +159,5 @@ class ChangePasswordActivity : AppCompatActivity() {
             }
         })
     }
-
 
 }

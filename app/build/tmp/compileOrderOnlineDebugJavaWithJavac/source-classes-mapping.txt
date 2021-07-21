@@ -31,8 +31,9 @@ com/atlas/orianofood/databinding/CartItemBinding.java
 com/atlas/orianofood/mvvm/category/dao/CategoryDao_Impl.java
  com.atlas.orianofood.mvvm.category.dao.CategoryDao_Impl
  com.atlas.orianofood.mvvm.category.dao.CategoryDao_Impl$1
-com/atlas/orianofood/BR.java
- com.atlas.orianofood.BR
+com/atlas/orianofood/mvvm/setProfile/SetProfileDao_Impl.java
+ com.atlas.orianofood.mvvm.setProfile.SetProfileDao_Impl
+ com.atlas.orianofood.mvvm.setProfile.SetProfileDao_Impl$1
 com/atlas/orianofood/databinding/GalleryItemBindingImpl.java
  com.atlas.orianofood.databinding.GalleryItemBindingImpl
 com/atlas/orianofood/databinding/ActivityGalleryOldBinding.java
@@ -124,11 +125,8 @@ com/atlas/orianofood/databinding/DialogRequestBinding.java
  com.atlas.orianofood.databinding.DialogRequestBinding
 com/atlas/orianofood/databinding/ActivityGalleryBinding.java
  com.atlas.orianofood.databinding.ActivityGalleryBinding
-com/atlas/orianofood/mvvm/order/OrderDao_Impl.java
- com.atlas.orianofood.mvvm.order.OrderDao_Impl
- com.atlas.orianofood.mvvm.order.OrderDao_Impl$1
- com.atlas.orianofood.mvvm.order.OrderDao_Impl$2
- com.atlas.orianofood.mvvm.order.OrderDao_Impl$3
+com/atlas/orianofood/BR.java
+ com.atlas.orianofood.BR
 com/atlas/orianofood/mvvm/register/dao/UserDao_Impl.java
  com.atlas.orianofood.mvvm.register.dao.UserDao_Impl
  com.atlas.orianofood.mvvm.register.dao.UserDao_Impl$1
@@ -183,6 +181,6 @@ com/atlas/orianofood/mvvm/getProfile/model/dao/ProfileDao_Impl.java
 com/atlas/orianofood/mvvm/database/AppDatabase_Impl.java
  com.atlas.orianofood.mvvm.database.AppDatabase_Impl
  com.atlas.orianofood.mvvm.database.AppDatabase_Impl$1
-com/atlas/orianofood/mvvm/setProfile/SetProfileDao_Impl.java
- com.atlas.orianofood.mvvm.setProfile.SetProfileDao_Impl
- com.atlas.orianofood.mvvm.setProfile.SetProfileDao_Impl$1
+com/atlas/orianofood/mvvm/order/OrderDao_Impl.java
+ com.atlas.orianofood.mvvm.order.OrderDao_Impl
+ com.atlas.orianofood.mvvm.order.OrderDao_Impl$1

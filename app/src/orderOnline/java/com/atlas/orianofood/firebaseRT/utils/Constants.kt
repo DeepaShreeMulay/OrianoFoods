@@ -2,6 +2,8 @@ package com.atlas.orianofood.firebaseRT.utils
 
 import android.content.Context
 import com.atlas.orianofood.core.App.Companion.appContext
+import com.google.gson.annotations.SerializedName
+import java.util.*
 
 const val CATEGORY_EXTRA = "Category"
 const val SUB_CATEGORY_EXTRA = "SubCategory"
@@ -10,6 +12,8 @@ const val MENU_EXTRA = "Menu"
 const val OFFERS_EXTRA = "Offers"
 const val PRODUCT_EXTRA = "Product"
 const val TOP_SELLING = "Top Selling"
+
+@SerializedName("selectedProductIDsList")
 val selectedProductIDsList: HashMap<Int, Int> = HashMap<Int, Int>() // HashMap<Id,Qty>
 lateinit var HOMESPACTIVITYCONTEXT: Context
 val changedQuantity: HashMap<Int, Int> = HashMap<Int, Int>()

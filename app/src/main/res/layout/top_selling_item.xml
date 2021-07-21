@@ -103,6 +103,7 @@
                     app:initialNumber="1"
                     app:textColor="@android:color/white"
 
+
                     />
 
                 <!--&lt;!&ndash;<com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
