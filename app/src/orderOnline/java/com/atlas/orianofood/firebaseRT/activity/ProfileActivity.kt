@@ -3,23 +3,15 @@ package com.atlas.orianofood.firebaseRT.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.atlas.orianofood.R
 import com.atlas.orianofood.core.App
 import com.atlas.orianofood.mvvm.activity.HomeSPActivity
 import com.atlas.orianofood.mvvm.database.AppDatabase
-import com.atlas.orianofood.mvvm.login.model.LoginModelFactory
 import com.atlas.orianofood.mvvm.login.model.LoginViewModel
-import com.atlas.orianofood.mvvm.login.repository.LoginRepository
 import com.atlas.orianofood.mvvm.setProfile.SetProfileItem
 import com.atlas.orianofood.mvvm.setProfile.model.SetProfileViewModel
-import com.atlas.orianofood.mvvm.setProfile.model.SetProfileViewModelFactory
-import com.atlas.orianofood.mvvm.setProfile.repository.SetProfileRepository
 import com.google.firebase.auth.UserProfileChangeRequest
-import com.google.gson.JsonObject
 import kotlinx.android.synthetic.main.activity_my_cart.*
 import kotlinx.android.synthetic.orderOnline.activity_change_password.*
 import kotlinx.android.synthetic.orderOnline.activity_profile.*
@@ -97,6 +89,8 @@ class ProfileActivity : AppCompatActivity() {
             val email = text_email.text.toString().trim()
             val phone = text_phone.text.toString().trim()
             val address = text_address.text.toString().trim()
+            password = intent.getStringExtra("password")!!
+            val password = password
 
             if (name.isEmpty()) {
                 edit_text_name.error = "name required"
@@ -109,9 +103,12 @@ class ProfileActivity : AppCompatActivity() {
                 .build()
 
             progressbar.visibility = View.VISIBLE
-            password = intent.getStringExtra("password")!!
+
             setProfileDao.insertSetProfile(SetProfileItem(0, name, email, phone, address, password))
+
+            // setProfileData(name,email,phone,address, password)
             startActivity(Intent(this, HomeSPActivity::class.java))
+            finish()
 
         }
 
@@ -191,86 +188,81 @@ class ProfileActivity : AppCompatActivity() {
          startActivity(intent)
          finish()
      }*/
-    private fun setProfileData(
-        name: String,
-        email: String,
-        mobile: String,
-        address: String,
-        password: String
-    ) {
-        val dao = AppDatabase.getInstance(application)?.setProfileDao!!
-        val repository = SetProfileRepository(dao)
-        val viewModelFactory = SetProfileViewModelFactory(repository)
-        viewModel = ViewModelProvider(this, viewModelFactory).get(SetProfileViewModel::class.java)
+    /* private fun setProfileData(
+         name: String,
+         email: String,
+         mobile: String,
+         address: String,
+         password: String
+     ) {
 
-        var jsonObject = JsonObject()
-        jsonObject.addProperty("name", name)
-        jsonObject.addProperty("email", email)
-        jsonObject.addProperty("mobile", mobile)
-        jsonObject.addProperty("address", address)
-        jsonObject.addProperty("password", password)
+         val repository = SetProfileRepository(setProfileDao)
+         val viewModelFactory = SetProfileViewModelFactory(repository)
+         viewModel = ViewModelProvider(this, viewModelFactory).get(SetProfileViewModel::class.java)
 
-        viewModel.changePassword(jsonObject)
-        viewModel.myResponse.observe(this, Observer { response ->
-            if (response.isSuccessful) {
-
-                loginData(mobile, password)
-
-                loginDao.updatePassword(password, mobile)
-                //  Toast.makeText(this, "Password Changes Successfully", Toast.LENGTH_SHORT).show()
-                Toast.makeText(this, "" + response.body(), Toast.LENGTH_LONG).show()
-                //startActivity(Intent(this, ProfileActivity::class.java))
-
-            } else {
-                Toast.makeText(this, response.message(), Toast.LENGTH_SHORT).show()
-
-            }
-            /*  val setData=SetProfileItem(
-                  0,
-                  user_name =name,user_email = email,user_mobile = mobile,user_address = address,user_password = intent.getStringExtra("password")!!
-              )
+         var jsonObject = JsonObject()
+         jsonObject.addProperty("name", name)
+         jsonObject.addProperty("email", email)
+         jsonObject.addProperty("mobile", mobile)
+         jsonObject.addProperty("address", address)
+         jsonObject.addProperty("password", password)
+         Toast.makeText(this, "input is$jsonObject",Toast.LENGTH_LONG).show()
+         viewModel.changePassword(jsonObject)
 
 
-               startActivity(Intent(this, HomeSPActivity::class.java))
-   */
-        })
+             viewModel.myResponse.observe(this, Observer { response ->
+                 Toast.makeText(this, "response"+viewModel.myResponse, Toast.LENGTH_LONG).show()
+                 if (response.isSuccessful) {
+
+                     loginData(mobile, password)
+
+                     loginDao.updatePassword(password, mobile)
+
+                     Toast.makeText(this, "" + response.body(), Toast.LENGTH_LONG).show()
 
 
-    }
+                 } else {
+                     Toast.makeText(this, response.message(), Toast.LENGTH_SHORT).show()
 
-    private fun loginData(mobile: String, password: String) {
+                 }
+
+             })
+
+     }
+
+     private fun loginData(mobile: String, password: String) {
 
 
-        val loginrepository = LoginRepository(loginDao)
+         val loginrepository = LoginRepository(loginDao)
 
-        val viewModelFactory = LoginModelFactory(loginrepository)
+         val viewModelFactory = LoginModelFactory(loginrepository)
 
-        loginviewModel = ViewModelProvider(this, viewModelFactory).get(LoginViewModel::class.java)
+         loginviewModel = ViewModelProvider(this, viewModelFactory).get(LoginViewModel::class.java)
 
-        var jsonObject = JsonObject()
-        jsonObject.addProperty("mobile", mobile)
-        jsonObject.addProperty("pwd", password)
+         var jsonObject = JsonObject()
+         jsonObject.addProperty("mobile", mobile)
+         jsonObject.addProperty("pwd", password)
 
-        loginviewModel.loginByMobile(jsonObject)
-        loginviewModel.myAuthResponse.observe(this, Observer { response ->
-            if (response.isSuccessful) {
-                if (response.body()?.userId.toString()
-                        .isEmpty() || response.body()?.token.isNullOrEmpty()
-                ) {
-                    Toast.makeText(this, "Please Enter valid Password", Toast.LENGTH_SHORT)
-                        .show()
-                } else {
-                    Toast.makeText(this, "Authentication Successful", Toast.LENGTH_SHORT)
-                        .show()
+         loginviewModel.loginByMobile(jsonObject)
+         loginviewModel.myAuthResponse.observe(this, Observer { response ->
+             if (response.isSuccessful) {
+                 if (response.body()?.userId.toString()
+                         .isEmpty() || response.body()?.token.isNullOrEmpty()
+                 ) {
+                     Toast.makeText(this, "Please Enter valid Password", Toast.LENGTH_SHORT)
+                         .show()
+                 } else {
+                     Toast.makeText(this, "Authentication Successful", Toast.LENGTH_SHORT)
+                         .show()
 
-                }
+                 }
 
-            } else {
-                Toast.makeText(this, response.message(), Toast.LENGTH_SHORT).show()
+             } else {
+                 Toast.makeText(this, response.message(), Toast.LENGTH_SHORT).show()
 
-            }
-        })
-    }
+             }
+         })
+     }*/
 
 
 }

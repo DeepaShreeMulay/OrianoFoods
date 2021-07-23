@@ -44,8 +44,9 @@ com/atlas/orianofood/databinding/TopSellingItemBinding.java
  com.atlas.orianofood.databinding.TopSellingItemBinding
 com/atlas/orianofood/databinding/CategoryItemBinding.java
  com.atlas.orianofood.databinding.CategoryItemBinding
-androidx/databinding/DataBindingComponent.java
- androidx.databinding.DataBindingComponent
+com/atlas/orianofood/mvvm/database/AppDatabase_Impl.java
+ com.atlas.orianofood.mvvm.database.AppDatabase_Impl
+ com.atlas.orianofood.mvvm.database.AppDatabase_Impl$1
 com/atlas/orianofood/mvvm/topRatedProduct/dao/TopRatedDao_Impl.java
  com.atlas.orianofood.mvvm.topRatedProduct.dao.TopRatedDao_Impl
  com.atlas.orianofood.mvvm.topRatedProduct.dao.TopRatedDao_Impl$1
@@ -125,8 +126,9 @@ com/atlas/orianofood/databinding/DialogRequestBinding.java
  com.atlas.orianofood.databinding.DialogRequestBinding
 com/atlas/orianofood/databinding/ActivityGalleryBinding.java
  com.atlas.orianofood.databinding.ActivityGalleryBinding
-com/atlas/orianofood/BR.java
- com.atlas.orianofood.BR
+com/atlas/orianofood/mvvm/order/OrderDao_Impl.java
+ com.atlas.orianofood.mvvm.order.OrderDao_Impl
+ com.atlas.orianofood.mvvm.order.OrderDao_Impl$1
 com/atlas/orianofood/mvvm/register/dao/UserDao_Impl.java
  com.atlas.orianofood.mvvm.register.dao.UserDao_Impl
  com.atlas.orianofood.mvvm.register.dao.UserDao_Impl$1
@@ -178,9 +180,7 @@ com/atlas/orianofood/mvvm/getProfile/model/dao/ProfileDao_Impl.java
  com.atlas.orianofood.mvvm.getProfile.model.dao.ProfileDao_Impl$1
  com.atlas.orianofood.mvvm.getProfile.model.dao.ProfileDao_Impl$2
  com.atlas.orianofood.mvvm.getProfile.model.dao.ProfileDao_Impl$3
-com/atlas/orianofood/mvvm/database/AppDatabase_Impl.java
- com.atlas.orianofood.mvvm.database.AppDatabase_Impl
- com.atlas.orianofood.mvvm.database.AppDatabase_Impl$1
-com/atlas/orianofood/mvvm/order/OrderDao_Impl.java
- com.atlas.orianofood.mvvm.order.OrderDao_Impl
- com.atlas.orianofood.mvvm.order.OrderDao_Impl$1
+com/atlas/orianofood/BR.java
+ com.atlas.orianofood.BR
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
