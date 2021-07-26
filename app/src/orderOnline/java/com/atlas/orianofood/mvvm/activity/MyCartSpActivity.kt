@@ -58,6 +58,7 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
     var deliveryFees = 50.00
     lateinit var address: String
     val profileDao = AppDatabase.getInstance(App.appContext)?.profileDao!!
+    val setprofileDao = AppDatabase.getInstance(App.appContext)?.setProfileDao!!
     val TAG: String = MyCartSpActivity::class.toString()
     private lateinit var confirm_order_email: TextView
     private lateinit var confirm_order_phone: TextView
@@ -113,7 +114,9 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
         itemRecyclerview.adapter = orderAdapter
         dFeetv.text = deliveryFees.toString()
 
+
         selectAddress.setOnClickListener {
+
 
             val intent = Intent(this, MyAddressesActivity::class.java)
 
@@ -321,7 +324,14 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
         if (requestCode == 2) {
             address = data?.getStringExtra("Address")!!
             selectAddress.text = address
+        } else {
+            setprofileDao.getAllProfiles().forEach {
+                if (it.user_address.isNotEmpty()) {
+                    selectAddress.text = it.user_address
+                }
+            }
         }
+
     }
 
     fun View.setVisible(visible: Boolean) {

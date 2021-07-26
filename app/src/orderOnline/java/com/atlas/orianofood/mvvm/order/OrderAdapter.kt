@@ -47,6 +47,7 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
             it.quantity = selectedProductIDsList[it.productId]!!
             totalPrice += (it.price)?.toDouble()!! * it.quantity
         }
+
     }
 
 
@@ -110,6 +111,15 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
 
             selectedProductIDsList.remove(item[position].productId)
             //changedQuantity.put(item[position].productId,item[position].quantity)
+            item.forEach {
+                totalPrice -= (it.price)?.toDouble()!! * it.quantity
+            }
+            if (selectedProductIDsList.isEmpty()) {
+                Toast.makeText(context, "please add items in cart", Toast.LENGTH_LONG).show()
+
+
+            }
+
             sendStateChangedBroadCast(context, "UPDATED")
             remove(position)
             notifyItemRemoved(position)
