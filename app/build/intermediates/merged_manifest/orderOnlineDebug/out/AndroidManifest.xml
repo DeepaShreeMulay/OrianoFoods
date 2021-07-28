@@ -24,6 +24,8 @@
         android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
+        <activity android:name="com.atlas.orianofood.mvvm.activity.EmptyCart" />
+
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" /> <!-- MVVM -->
@@ -73,9 +75,7 @@
         <activity
             android:name="com.atlas.orianofood.mvvm.activity.MyCartSpActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarAppTheme" />
-
-        <!-- FireBase RT -->
+            android:theme="@style/NoActionBarAppTheme" /> <!-- FireBase RT -->
         <activity
             android:name="com.atlas.orianofood.firebaseRT.activity.SplashActivity"
             android:screenOrientation="portrait"

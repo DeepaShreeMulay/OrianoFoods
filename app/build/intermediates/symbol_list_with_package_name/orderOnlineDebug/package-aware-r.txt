@@ -2066,6 +2066,7 @@ drawable ic_dish
 drawable ic_egg
 drawable ic_email
 drawable ic_email_auth
+drawable ic_empty_cart
 drawable ic_exit_to_app_black_24dp
 drawable ic_facebook
 drawable ic_faqs
@@ -2108,6 +2109,7 @@ drawable ic_rupee__acent
 drawable ic_sale_tag
 drawable ic_search
 drawable ic_shopping_cart_black_24dp
+drawable ic_show_password
 drawable ic_sort_filter
 drawable ic_star
 drawable ic_subscriptions
@@ -2340,6 +2342,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id back_to_menu
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -2380,6 +2383,7 @@ id cardOrder
 id card_view
 id cardview
 id cartName
+id cart_img
 id categoryImage
 id categoryName
 id categoryRecyclerView
@@ -2816,6 +2820,7 @@ id test_checkbox_app_button_tint
 id test_radiobutton_android_button_tint
 id test_radiobutton_app_button_tint
 id text
+id text1
 id text2
 id textEnd
 id textSpacerNoButtons
@@ -2833,8 +2838,10 @@ id textView_title
 id textWatcher
 id text_address
 id text_email
+id text_empty_cart
 id text_input_end_icon
 id text_input_error_icon
+id text_input_layout
 id text_input_start_icon
 id text_not_verified
 id text_password
@@ -2977,6 +2984,7 @@ layout activity_cart
 layout activity_category
 layout activity_category_s_p
 layout activity_change_password
+layout activity_empty_cart
 layout activity_gallery
 layout activity_gallery_old
 layout activity_home

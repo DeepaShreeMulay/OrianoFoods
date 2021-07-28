@@ -69,6 +69,8 @@ fun UpdateItemToProductIdMap(context: Context, productId: Int, quantity: Int) {
 
     } else {
         selectedProductIDsList.remove(productId)
+
+
         selectedProductIDsList.put(productId, quantity)
 
     }

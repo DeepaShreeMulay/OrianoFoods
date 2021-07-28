@@ -16,6 +16,8 @@ androidx/databinding/library/baseAdapters/BR.java
  androidx.databinding.library.baseAdapters.BR
 com/atlas/orianofood/databinding/ProductItemsBindingImpl.java
  com.atlas.orianofood.databinding.ProductItemsBindingImpl
+com/atlas/orianofood/databinding/ActivityEmptyCartBinding.java
+ com.atlas.orianofood.databinding.ActivityEmptyCartBinding
 com/atlas/orianofood/databinding/ActivityProductBinding.java
  com.atlas.orianofood.databinding.ActivityProductBinding
 com/atlas/orianofood/databinding/TopCategoryItemBinding.java

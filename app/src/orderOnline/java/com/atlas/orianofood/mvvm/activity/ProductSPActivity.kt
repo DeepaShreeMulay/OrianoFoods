@@ -53,7 +53,9 @@ class ProductSPActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                      .setAction("Action", null).show()*/
             if (selectedProductIDsList.isEmpty()) {
-                Toast.makeText(this, "Please Add items in the cart", Toast.LENGTH_SHORT).show()
+                // Toast.makeText(this, "Please Add items in the cart", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, EmptyCart::class.java))
+                finish()
             } else {
                 val intent = Intent(activity, MyCartSpActivity::class.java)
                 startActivity(intent)

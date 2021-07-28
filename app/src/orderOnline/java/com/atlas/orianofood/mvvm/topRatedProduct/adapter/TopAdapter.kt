@@ -68,6 +68,7 @@ class TopAdapter(val orderDao: OrderDao, val context: Context, private var titem
                     sendStateChangedBroadCast(context, "UPDATED")
                     holder.add_btn.setVisible(true)
                     view.setVisible(false)
+
                 } else {
 
                     if (oldValue != newValue) {

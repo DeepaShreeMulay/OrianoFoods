@@ -1,6 +1,7 @@
 package com.atlas.orianofood.mvvm.order
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import com.atlas.orianofood.core.App
 import com.atlas.orianofood.firebaseRT.utils.Common.sendStateChangedBroadCast
 import com.atlas.orianofood.firebaseRT.utils.UpdateItemToProductIdMap
 import com.atlas.orianofood.firebaseRT.utils.selectedProductIDsList
+import com.atlas.orianofood.mvvm.activity.EmptyCart
 import com.atlas.orianofood.mvvm.activity.MyCartSpActivity
 import com.atlas.orianofood.mvvm.database.AppDatabase
 import com.atlas.orianofood.mvvm.product.model.ProductItems
@@ -111,14 +113,20 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
 
             selectedProductIDsList.remove(item[position].productId)
             //changedQuantity.put(item[position].productId,item[position].quantity)
+
             item.forEach {
                 totalPrice -= (it.price)?.toDouble()!! * it.quantity
             }
             if (selectedProductIDsList.isEmpty()) {
+                val intent = Intent(context, EmptyCart::class.java).apply {
+                    flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                }
+                context.startActivity(intent)
                 Toast.makeText(context, "please add items in cart", Toast.LENGTH_LONG).show()
 
 
             }
+
 
             sendStateChangedBroadCast(context, "UPDATED")
             remove(position)
@@ -151,7 +159,9 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
             Toast.makeText(context, "remove at :" + item, Toast.LENGTH_LONG).show()
         }
         selectedProductIDsList.remove(item[index].productId)
+
         item.removeAt(index)
+
 
     }
 
@@ -181,6 +191,7 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
         var orderIncrement: TextView = item.findViewById(R.id.incremnet)
         var orderPrice: TextView = item.findViewById(R.id.originalPrice)
         var orderfinalPrice: TextView = item.findViewById(R.id.finalPrice)
+
         // var delivery:TextView=item.findViewById(R.id.deliveryFees)
 
     }

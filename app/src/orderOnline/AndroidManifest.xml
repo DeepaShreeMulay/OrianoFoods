@@ -16,6 +16,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="ExtraText">
+        <activity android:name="com.atlas.orianofood.mvvm.activity.EmptyCart"></activity>
 
         <uses-library
             android:name="org.apache.http.legacy"
@@ -33,7 +34,7 @@
         <activity
             android:name="com.atlas.orianofood.mvvm.activity.HomeSPActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarAppTheme"></activity>
+            android:theme="@style/NoActionBarAppTheme" />
         <activity
             android:name="com.atlas.orianofood.mvvm.activity.GallerySPActivity"
             android:label="@string/title_activity_gallery"
@@ -66,9 +67,7 @@
         <activity
             android:name="com.atlas.orianofood.mvvm.activity.MyCartSpActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarAppTheme" />
-
-        <!-- FireBase RT -->
+            android:theme="@style/NoActionBarAppTheme" /> <!-- FireBase RT -->
         <activity
             android:name="com.atlas.orianofood.firebaseRT.activity.SplashActivity"
             android:screenOrientation="portrait"
@@ -81,7 +80,6 @@
              </intent-filter>
             -->
         </activity>
-
         <activity
             android:name="com.atlas.orianofood.firebaseRT.activity.SubscriptionActivity"
             android:screenOrientation="portrait"
@@ -165,7 +163,6 @@
                 <action android:name="com.atlas.orianofood.CHANGED" />
             </intent-filter>
         </receiver>
-
     </application>
 
 </manifest>

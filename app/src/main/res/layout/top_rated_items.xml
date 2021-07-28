@@ -129,34 +129,42 @@
 
                 </RelativeLayout>
 
-                <Button
-                    android:id="@+id/btn_add"
-                    android:layout_width="60dp"
-                    android:layout_height="20dp"
-                    android:layout_above="@+id/llrating"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="5dp"
-                    android:background="@color/primary"
-                    android:text="ADD"
-                    android:textColor="@color/white"
-                    android:textSize="12sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/llContent"
+                    android:orientation="vertical">
 
-                <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-                    android:id="@+id/btn_number"
-                    android:layout_width="50dp"
-                    android:layout_height="20dp"
-                    android:layout_above="@+id/llrating"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:visibility="gone"
-                    app:backGroundColor="@color/colorPrimary"
-                    app:backgroundDrawable="@color/colorPrimary"
-                    app:finalNumber="10"
-                    app:initialNumber="1"
-                    app:textColor="@android:color/white"
-                    />
+                    <Button
+                        android:id="@+id/btn_add"
+                        android:layout_width="60dp"
+                        android:layout_height="20dp"
+                        android:layout_above="@+id/llrating"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@color/primary"
+                        android:text="ADD"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+
+                    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                        android:id="@+id/btn_number"
+                        android:layout_width="50dp"
+                        android:layout_height="20dp"
+                        android:layout_above="@+id/llrating"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:visibility="gone"
+                        app:backGroundColor="@color/colorPrimary"
+                        app:backgroundDrawable="@color/colorPrimary"
+                        app:finalNumber="10"
+                        app:initialNumber="1"
+                        app:textColor="@android:color/white" />
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/llrating"
