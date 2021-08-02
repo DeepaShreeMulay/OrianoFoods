@@ -78,11 +78,13 @@ class OrdersActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         DatabaseHandler(this).createOrderDetailsTable()
         orderlist = DatabaseHandler(this).getOrderDetails()
         if (orderlist.isEmpty()) {
-            tvNoAddress.visibility = View.VISIBLE
-            tvNoAddress.text = "No Order Placed"
+            /*tvNoAddress.visibility = View.VISIBLE
+            tvNoAddress.text = "No Order Placed"*/
+            empty_order_layout.visibility = View.VISIBLE
             recyclerview.visibility = View.INVISIBLE
         } else {
-            tvNoAddress.visibility = View.INVISIBLE
+            // tvNoAddress.visibility = View.INVISIBLE
+            empty_order_layout.visibility = View.INVISIBLE
             recyclerview.visibility = View.VISIBLE
             adapter = OrdersAdapter(this, orderlist)
             val manager = LinearLayoutManager(this)
