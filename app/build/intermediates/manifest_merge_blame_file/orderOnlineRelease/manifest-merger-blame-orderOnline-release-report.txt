@@ -37,113 +37,115 @@
 23-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\main\AndroidManifest.xml:16:9-40
 24        android:usesCleartextTraffic="true" >
 24-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\main\AndroidManifest.xml:15:9-44
-25        <uses-library
-25-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:20:9-22:40
-26            android:name="org.apache.http.legacy"
-26-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:21:13-50
-27            android:required="false" /> <!-- MVVM -->
-27-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:22:13-37
-28        <activity
-28-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:23:9-32:20
-29            android:name="com.atlas.orianofood.mvvm.activity.SplashScreenActivity"
-29-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:24:13-83
-30            android:screenOrientation="portrait"
-30-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:25:13-49
-31            android:theme="@style/NoActionBarAppTheme" >
-31-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:26:13-55
-32            <intent-filter>
-32-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:27:13-31:29
-33                <action android:name="android.intent.action.MAIN" />
-33-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:28:17-69
-33-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:28:25-66
-34
-35                <category android:name="android.intent.category.LAUNCHER" />
-35-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:30:17-77
-35-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:30:27-74
-36            </intent-filter>
-37        </activity>
-38        <activity
-38-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:33:9-36:67
-39            android:name="com.atlas.orianofood.mvvm.activity.HomeSPActivity"
-39-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:34:13-77
-40            android:screenOrientation="portrait"
-40-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:35:13-49
-41            android:theme="@style/NoActionBarAppTheme" />
-41-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:36:13-55
-42        <activity
-42-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:37:9-41:58
-43            android:name="com.atlas.orianofood.mvvm.activity.GallerySPActivity"
-43-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:38:13-80
-44            android:label="@string/title_activity_gallery"
-44-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:39:13-59
-45            android:screenOrientation="portrait"
-45-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:40:13-49
-46            android:theme="@style/NoActionBarAppTheme" />
-46-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:41:13-55
-47        <activity
-47-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:42:9-45:58
-48            android:name="com.atlas.orianofood.mvvm.activity.LoginActivity"
-48-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:43:13-76
-49            android:screenOrientation="portrait"
-49-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:44:13-49
-50            android:theme="@style/NoActionBarAppTheme" />
-50-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:45:13-55
-51        <activity
-51-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:46:9-49:58
-52            android:name="com.atlas.orianofood.mvvm.activity.RegisterActivity"
-52-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:47:13-79
-53            android:screenOrientation="portrait"
-53-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:48:13-49
-54            android:theme="@style/NoActionBarAppTheme" />
-54-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:49:13-55
-55        <activity
-55-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:50:9-53:58
-56            android:name="com.atlas.orianofood.mvvm.activity.TermsAndCondition"
-56-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:51:13-80
-57            android:screenOrientation="portrait"
-57-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:52:13-49
-58            android:theme="@style/NoActionBarAppTheme" />
-58-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:53:13-55
-59        <activity
-59-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:54:9-57:58
-60            android:name="com.atlas.orianofood.mvvm.activity.PrivacyPolicyActivity"
-60-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:55:13-84
-61            android:screenOrientation="portrait"
-61-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:56:13-49
-62            android:theme="@style/NoActionBarAppTheme" />
-62-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:57:13-55
-63        <activity
-63-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:58:9-61:58
-64            android:name="com.atlas.orianofood.mvvm.activity.CategorySPActivity"
-64-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:59:13-81
-65            android:screenOrientation="portrait"
-65-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:60:13-49
-66            android:theme="@style/NoActionBarAppTheme" />
-66-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:61:13-55
-67        <activity
-67-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:62:9-65:58
-68            android:name="com.atlas.orianofood.mvvm.activity.ProductSPActivity"
-68-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:63:13-80
-69            android:screenOrientation="portrait"
-69-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:64:13-49
-70            android:theme="@style/NoActionBarAppTheme" />
-70-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:65:13-55
-71        <activity
-71-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:66:9-69:58
-72            android:name="com.atlas.orianofood.mvvm.activity.MyCartSpActivity"
-72-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:67:13-79
-73            android:screenOrientation="portrait"
-73-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:68:13-49
-74            android:theme="@style/NoActionBarAppTheme" />
-74-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:69:13-55
-75
-76        <!-- FireBase RT -->
+25        <activity android:name="com.atlas.orianofood.mvvm.activity.EmptyCart" />
+25-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:19:9-90
+25-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:19:19-78
+26
+27        <uses-library
+27-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:21:9-23:40
+28            android:name="org.apache.http.legacy"
+28-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:22:13-50
+29            android:required="false" /> <!-- MVVM -->
+29-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:23:13-37
+30        <activity
+30-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:24:9-33:20
+31            android:name="com.atlas.orianofood.mvvm.activity.SplashScreenActivity"
+31-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:25:13-83
+32            android:screenOrientation="portrait"
+32-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:26:13-49
+33            android:theme="@style/NoActionBarAppTheme" >
+33-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:27:13-55
+34            <intent-filter>
+34-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:28:13-32:29
+35                <action android:name="android.intent.action.MAIN" />
+35-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:29:17-69
+35-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:29:25-66
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:31:17-77
+37-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:31:27-74
+38            </intent-filter>
+39        </activity>
+40        <activity
+40-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:34:9-37:58
+41            android:name="com.atlas.orianofood.mvvm.activity.HomeSPActivity"
+41-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:35:13-77
+42            android:screenOrientation="portrait"
+42-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:36:13-49
+43            android:theme="@style/NoActionBarAppTheme" />
+43-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:37:13-55
+44        <activity
+44-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:38:9-42:58
+45            android:name="com.atlas.orianofood.mvvm.activity.GallerySPActivity"
+45-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:39:13-80
+46            android:label="@string/title_activity_gallery"
+46-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:40:13-59
+47            android:screenOrientation="portrait"
+47-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:41:13-49
+48            android:theme="@style/NoActionBarAppTheme" />
+48-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:42:13-55
+49        <activity
+49-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:43:9-46:58
+50            android:name="com.atlas.orianofood.mvvm.activity.LoginActivity"
+50-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:44:13-76
+51            android:screenOrientation="portrait"
+51-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:45:13-49
+52            android:theme="@style/NoActionBarAppTheme" />
+52-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:46:13-55
+53        <activity
+53-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:47:9-50:58
+54            android:name="com.atlas.orianofood.mvvm.activity.RegisterActivity"
+54-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:48:13-79
+55            android:screenOrientation="portrait"
+55-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:49:13-49
+56            android:theme="@style/NoActionBarAppTheme" />
+56-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:50:13-55
+57        <activity
+57-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:51:9-54:58
+58            android:name="com.atlas.orianofood.mvvm.activity.TermsAndCondition"
+58-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:52:13-80
+59            android:screenOrientation="portrait"
+59-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:53:13-49
+60            android:theme="@style/NoActionBarAppTheme" />
+60-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:54:13-55
+61        <activity
+61-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:55:9-58:58
+62            android:name="com.atlas.orianofood.mvvm.activity.PrivacyPolicyActivity"
+62-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:56:13-84
+63            android:screenOrientation="portrait"
+63-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:57:13-49
+64            android:theme="@style/NoActionBarAppTheme" />
+64-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:58:13-55
+65        <activity
+65-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:59:9-62:58
+66            android:name="com.atlas.orianofood.mvvm.activity.CategorySPActivity"
+66-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:60:13-81
+67            android:screenOrientation="portrait"
+67-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:61:13-49
+68            android:theme="@style/NoActionBarAppTheme" />
+68-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:62:13-55
+69        <activity
+69-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:63:9-66:58
+70            android:name="com.atlas.orianofood.mvvm.activity.ProductSPActivity"
+70-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:64:13-80
+71            android:screenOrientation="portrait"
+71-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:65:13-49
+72            android:theme="@style/NoActionBarAppTheme" />
+72-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:66:13-55
+73        <activity
+73-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:67:9-70:58
+74            android:name="com.atlas.orianofood.mvvm.activity.MyCartSpActivity"
+74-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:68:13-79
+75            android:screenOrientation="portrait"
+75-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:69:13-49
+76            android:theme="@style/NoActionBarAppTheme" /> <!-- FireBase RT -->
+76-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:70:13-55
 77        <activity
 77-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\main\AndroidManifest.xml:17:9-19:58
 78            android:name="com.atlas.orianofood.firebaseRT.activity.SplashActivity"
 78-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\main\AndroidManifest.xml:18:13-83
 79            android:screenOrientation="portrait"
-79-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:74:13-49
+79-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:73:13-49
 80            android:theme="@style/NoActionBarAppTheme" >
 80-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\main\AndroidManifest.xml:19:13-55
 81
@@ -155,169 +157,169 @@
 87            -->
 88        </activity>
 89        <activity
-89-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:85:9-88:58
+89-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:83:9-86:58
 90            android:name="com.atlas.orianofood.firebaseRT.activity.SubscriptionActivity"
-90-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:86:13-89
+90-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:84:13-89
 91            android:screenOrientation="portrait"
-91-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:87:13-49
+91-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:85:13-49
 92            android:theme="@style/NoActionBarAppTheme" />
-92-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:88:13-55
+92-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:86:13-55
 93        <activity
-93-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:89:9-92:58
+93-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:87:9-90:58
 94            android:name="com.atlas.orianofood.firebaseRT.activity.SignInActivity"
-94-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:90:13-83
+94-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:88:13-83
 95            android:screenOrientation="portrait"
-95-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:91:13-49
+95-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:89:13-49
 96            android:theme="@style/NoActionBarAppTheme" />
-96-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:92:13-55
+96-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:90:13-55
 97        <activity
-97-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:93:9-96:58
+97-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:91:9-94:58
 98            android:name="com.atlas.orianofood.firebaseRT.activity.SignUpActivity"
-98-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:94:13-83
+98-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:92:13-83
 99            android:screenOrientation="portrait"
-99-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:95:13-49
+99-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:93:13-49
 100            android:theme="@style/NoActionBarAppTheme" />
-100-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:96:13-55
+100-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:94:13-55
 101        <activity
-101-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:97:9-100:58
+101-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:95:9-98:58
 102            android:name="com.atlas.orianofood.firebaseRT.activity.ResetPasswordActivity"
-102-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:98:13-90
+102-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:96:13-90
 103            android:screenOrientation="portrait"
-103-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:99:13-49
+103-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:97:13-49
 104            android:theme="@style/NoActionBarAppTheme" />
-104-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:100:13-55
+104-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:98:13-55
 105        <activity
-105-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:101:9-104:58
+105-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:99:9-102:58
 106            android:name="com.atlas.orianofood.firebaseRT.activity.ProfileActivity"
-106-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:102:13-84
+106-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:100:13-84
 107            android:screenOrientation="portrait"
-107-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:103:13-49
+107-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:101:13-49
 108            android:theme="@style/NoActionBarAppTheme" />
-108-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:104:13-55
+108-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:102:13-55
 109        <activity
-109-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:105:9-108:58
+109-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:103:9-106:58
 110            android:name="com.atlas.orianofood.firebaseRT.activity.MyAddressesActivity"
-110-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:106:13-88
+110-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:104:13-88
 111            android:screenOrientation="portrait"
-111-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:107:13-49
+111-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:105:13-49
 112            android:theme="@style/NoActionBarAppTheme" />
-112-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:108:13-55
+112-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:106:13-55
 113        <activity
-113-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:109:9-112:58
+113-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:107:9-110:58
 114            android:name="com.atlas.orianofood.firebaseRT.activity.AddAddressActivity"
-114-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:110:13-87
+114-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:108:13-87
 115            android:screenOrientation="portrait"
-115-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:111:13-49
+115-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:109:13-49
 116            android:theme="@style/NoActionBarAppTheme" />
-116-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:112:13-55
+116-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:110:13-55
 117        <activity
-117-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:113:9-116:58
+117-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:111:9-114:58
 118            android:name="com.atlas.orianofood.firebaseRT.activity.OrdersActivity"
-118-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:114:13-83
+118-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:112:13-83
 119            android:screenOrientation="portrait"
-119-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:115:13-49
+119-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:113:13-49
 120            android:theme="@style/NoActionBarAppTheme" />
-120-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:116:13-55
+120-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:114:13-55
 121        <activity
-121-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:117:9-120:58
+121-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:115:9-118:58
 122            android:name="com.atlas.orianofood.firebaseRT.activity.ChangePasswordActivity"
-122-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:118:13-91
+122-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:116:13-91
 123            android:screenOrientation="portrait"
-123-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:119:13-49
+123-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:117:13-49
 124            android:theme="@style/NoActionBarAppTheme" />
-124-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:120:13-55
+124-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:118:13-55
 125        <activity
-125-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:121:9-124:58
+125-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:119:9-122:58
 126            android:name="com.atlas.orianofood.firebaseRT.activity.UpdateEmailActivity"
-126-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:122:13-88
+126-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:120:13-88
 127            android:screenOrientation="portrait"
-127-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:123:13-49
+127-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:121:13-49
 128            android:theme="@style/NoActionBarAppTheme" />
-128-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:124:13-55
+128-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:122:13-55
 129        <activity
-129-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:125:9-128:58
+129-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:123:9-126:58
 130            android:name="com.atlas.orianofood.firebaseRT.activity.VerifyPhoneAuthActivity"
-130-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:126:13-92
+130-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:124:13-92
 131            android:screenOrientation="portrait"
-131-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:127:13-49
+131-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:125:13-49
 132            android:theme="@style/NoActionBarAppTheme" />
-132-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:128:13-55
+132-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:126:13-55
 133        <activity
-133-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:129:9-132:58
+133-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:127:9-130:58
 134            android:name="com.atlas.orianofood.firebaseRT.activity.VerifyPhoneActivity"
-134-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:130:13-88
+134-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:128:13-88
 135            android:screenOrientation="portrait"
-135-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:131:13-49
+135-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:129:13-49
 136            android:theme="@style/NoActionBarAppTheme" />
-136-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:132:13-55
+136-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:130:13-55
 137        <activity
-137-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:133:9-137:58
+137-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:131:9-135:58
 138            android:name="com.atlas.orianofood.firebaseRT.activity.GalleryActivity"
-138-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:134:13-84
+138-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:132:13-84
 139            android:label="@string/title_activity_gallery"
-139-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:135:13-59
+139-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:133:13-59
 140            android:screenOrientation="portrait"
-140-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:136:13-49
+140-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:134:13-49
 141            android:theme="@style/NoActionBarAppTheme" />
-141-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:137:13-55
+141-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:135:13-55
 142        <activity
-142-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:138:9-141:58
+142-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:136:9-139:58
 143            android:name="com.atlas.orianofood.firebaseRT.activity.HomeActivity"
-143-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:139:13-81
+143-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:137:13-81
 144            android:screenOrientation="portrait"
-144-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:140:13-49
+144-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:138:13-49
 145            android:theme="@style/NoActionBarAppTheme" />
-145-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:141:13-55
+145-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:139:13-55
 146        <activity
-146-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:142:9-145:58
+146-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:140:9-143:58
 147            android:name="com.atlas.orianofood.firebaseRT.activity.CategoryActivity"
-147-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:143:13-85
+147-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:141:13-85
 148            android:screenOrientation="portrait"
-148-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:144:13-49
+148-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:142:13-49
 149            android:theme="@style/NoActionBarAppTheme" />
-149-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:145:13-55
+149-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:143:13-55
 150        <activity
-150-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:146:9-149:58
+150-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:144:9-147:58
 151            android:name="com.atlas.orianofood.firebaseRT.activity.ProductCategoryActivity"
-151-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:147:13-92
+151-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:145:13-92
 152            android:screenOrientation="portrait"
-152-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:148:13-49
+152-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:146:13-49
 153            android:theme="@style/NoActionBarAppTheme" />
-153-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:149:13-55
+153-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:147:13-55
 154        <activity
-154-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:150:9-153:58
+154-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:148:9-151:58
 155            android:name="com.atlas.orianofood.firebaseRT.activity.ProductActivity"
-155-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:151:13-84
+155-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:149:13-84
 156            android:screenOrientation="portrait"
-156-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:152:13-49
+156-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:150:13-49
 157            android:theme="@style/NoActionBarAppTheme" />
-157-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:153:13-55
+157-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:151:13-55
 158        <activity
-158-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:154:9-157:58
+158-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:152:9-155:58
 159            android:name="com.atlas.orianofood.firebaseRT.activity.CartActivity"
-159-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:155:13-81
+159-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:153:13-81
 160            android:screenOrientation="portrait"
-160-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:156:13-49
+160-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:154:13-49
 161            android:theme="@style/NoActionBarAppTheme" />
-161-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:157:13-55
+161-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:155:13-55
 162        <activity
-162-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:158:9-161:58
+162-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:156:9-159:58
 163            android:name="com.atlas.orianofood.firebaseRT.activity.AuthActivity"
-163-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:159:13-81
+163-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:157:13-81
 164            android:screenOrientation="portrait"
-164-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:160:13-49
+164-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:158:13-49
 165            android:theme="@style/NoActionBarAppTheme" />
-165-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:161:13-55
+165-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:159:13-55
 166
 167        <receiver android:name="com.atlas.orianofood.mvvm.reciver.StateChangeReciver" >
-167-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:163:9-167:20
-167-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:163:19-86
+167-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:161:9-165:20
+167-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:161:19-86
 168            <intent-filter android:priority="10000" >
-168-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:164:13-166:29
-168-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:164:28-52
+168-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:162:13-164:29
+168-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:162:28-52
 169                <action android:name="com.atlas.orianofood.CHANGED" />
-169-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:165:17-71
-169-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:165:25-68
+169-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:163:17-71
+169-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:163:25-68
 170            </intent-filter>
 171        </receiver>
 172
@@ -403,8 +405,8 @@
 215            <intent-filter>
 215-->[com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:22:13-28:29
 216                <action android:name="android.intent.action.MAIN" />
-216-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:28:17-69
-216-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:28:25-66
+216-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:29:17-69
+216-->C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:29:25-66
 217
 218                <data
 218-->[com.razorpay:checkout:1.6.7] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\48954c8b1a4a17ea528886602d308f3e\jetified-checkout-1.6.7\AndroidManifest.xml:25:17-27:47

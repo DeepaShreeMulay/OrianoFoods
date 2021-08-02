@@ -11,9 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.atlas.orianofood.BR.item
 import com.atlas.orianofood.R
 import com.atlas.orianofood.databinding.TopSellingItemBinding
-import com.atlas.orianofood.firebaseRT.utils.Common.sendStateChangedBroadCast
 import com.atlas.orianofood.firebaseRT.utils.HOMESPACTIVITYCONTEXT
-
 import com.atlas.orianofood.firebaseRT.utils.UpdateItemToProductIdMap
 import com.atlas.orianofood.firebaseRT.utils.selectedProductIDsList
 import com.atlas.orianofood.mvvm.topRatedSelling.model.SellingItem
@@ -44,6 +42,9 @@ class SellingAdapter(
             holder.add_btn.setVisible(false)
             holder.btn_number.setVisible(true)
             holder.btn_number.number = selectedProductIDsList.get(productId).toString()
+        } else {
+            holder.add_btn.setVisible(true)
+            holder.btn_number.setVisible(false)
         }
 
         holder.add_btn.setOnClickListener {
@@ -84,7 +85,7 @@ class SellingAdapter(
                 if (newValue == 0) {
                     HOMESPACTIVITYCONTEXT = context
                     selectedProductIDsList.remove(productId)
-                    sendStateChangedBroadCast(context, "UPDATED")
+//                    sendStateChangedBroadCast(context, "UPDATED")
                     holder.add_btn.setVisible(true)
                     view.setVisible(false)
                 } else {

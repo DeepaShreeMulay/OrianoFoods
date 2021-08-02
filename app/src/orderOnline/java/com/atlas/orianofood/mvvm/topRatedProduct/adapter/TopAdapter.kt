@@ -11,9 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.atlas.orianofood.BR.item
 import com.atlas.orianofood.R
 import com.atlas.orianofood.databinding.TopRatedItemsBinding
-import com.atlas.orianofood.firebaseRT.utils.Common.sendStateChangedBroadCast
 import com.atlas.orianofood.firebaseRT.utils.HOMESPACTIVITYCONTEXT
-
 import com.atlas.orianofood.firebaseRT.utils.UpdateItemToProductIdMap
 import com.atlas.orianofood.firebaseRT.utils.selectedProductIDsList
 import com.atlas.orianofood.mvvm.order.OrderDao
@@ -22,6 +20,9 @@ import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
 
 class TopAdapter(val orderDao: OrderDao, val context: Context, private var titems: MutableList<TopRatedItem> = arrayListOf<TopRatedItem>())
     : RecyclerView.Adapter<TopAdapter.TopHolder>() {
+    /* private val addbtn: ButtonVisible = context as ButtonVisible*/
+    //var actions: Actions=context as Actions
+
 
     override fun getItemViewType(position: Int): Int {
         return position
@@ -43,6 +44,9 @@ class TopAdapter(val orderDao: OrderDao, val context: Context, private var titem
             holder.add_btn.setVisible(false)
             holder.btn_number.setVisible(true)
             holder.btn_number.number = selectedProductIDsList.get(productId).toString()
+        } else {
+            holder.add_btn.setVisible(true)
+            holder.btn_number.setVisible(false)
         }
 
         holder.add_btn.setOnClickListener {
@@ -61,11 +65,14 @@ class TopAdapter(val orderDao: OrderDao, val context: Context, private var titem
         }
 
         holder.btn_number.setOnValueChangeListener { view, oldValue, newValue ->
+
             if (selectedProductIDsList.containsKey(productId)) {
+
                 if (newValue == 0) {
+
                     selectedProductIDsList.remove(productId)
                     HOMESPACTIVITYCONTEXT = context
-                    sendStateChangedBroadCast(context, "UPDATED")
+                    //sendStateChangedBroadCast(context, "UPDATED")
                     holder.add_btn.setVisible(true)
                     view.setVisible(false)
 
@@ -73,18 +80,36 @@ class TopAdapter(val orderDao: OrderDao, val context: Context, private var titem
 
                     if (oldValue != newValue) {
                         UpdateItemToProductIdMap(context, productId, newValue)
-                        //changedQuantity[productId] = selectedProductIDsList[productId]!!
-                        //  sendStateChangedBroadCast(context,"UPDATED")
+
+
                     }
 
-                    Toast.makeText(context, "${selectedProductIDsList.get(productId) ?: 1}", Toast.LENGTH_SHORT).show()
-                    holder.add_btn.setVisible(false)
-                    view.setVisible(true)
+
+                    Toast.makeText(
+                        context,
+                        "or:${selectedProductIDsList.get(productId) ?: 1}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
+                    //Toast.makeText(context,"actions $actions",Toast.LENGTH_LONG).show()
+                    // holder.add_btn.setVisible(false)
+                    view.setVisible(false)
                     view.number = (selectedProductIDsList.get(productId) ?: 1).toString()
+
 
                 }
             }
         }
+//        if (actions!!.hideButton(productId).equals(selectedProductIDsList.remove(productId))){
+//            selectedProductIDsList.remove(productId)
+//
+//            HOMESPACTIVITYCONTEXT = context
+//            sendStateChangedBroadCast(context, "UPDATED")
+//            holder.add_btn.setVisible(true)
+//            holder.btn_number.setVisible(false)
+//
+//
+//        }
 
 
         /*val orderItem = OrderItem(0,holder.product.productId.toString(), holder.product.productName

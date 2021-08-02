@@ -21,8 +21,7 @@ import java.util.*
 import kotlin.properties.Delegates
 
 class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
-
-
+   //val actions:Actions=context as Actions
     private var quantity = 0
     var coast = 0.0
     private var finalCoast = 0.0
@@ -32,6 +31,7 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
 
     private var totalPrice by Delegates.notNull<Double>()
     val deliveryFee: Double = (context as MyCartSpActivity).deliveryFees.toString().replace("", "").toDouble()
+
 
     init {
         totalPrice = 0.00
@@ -54,6 +54,7 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
 
 
     fun updatePrice() {
+        totalPrice = 0.0
         item.forEach {
             totalPrice += (it.price)?.toDouble()!! * it.quantity
         }
@@ -111,12 +112,22 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
         }
         holder.orderRemove.setOnClickListener {
 
-            selectedProductIDsList.remove(item[position].productId)
+//           selectedProductIDsList.remove(item[position].productId)
+
+
+//            actions!!.hideButton(selectedProductIDsList.remove(item[position].productId)!!)
+
             //changedQuantity.put(item[position].productId,item[position].quantity)
 
-            item.forEach {
-                totalPrice -= (it.price)?.toDouble()!! * it.quantity
-            }
+//            item.forEach {
+//                totalPrice -= (it.price)?.toDouble()!! * it.quantity
+//            }
+            remove(position)
+
+            sendStateChangedBroadCast(context, "UPDATED")
+            notifyItemRemoved(position)
+            notifyItemRangeChanged(position, itemCount)
+
             if (selectedProductIDsList.isEmpty()) {
                 val intent = Intent(context, EmptyCart::class.java).apply {
                     flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
@@ -124,16 +135,10 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
                 context.startActivity(intent)
                 Toast.makeText(context, "please add items in cart", Toast.LENGTH_LONG).show()
 
-
             }
 
-
-            sendStateChangedBroadCast(context, "UPDATED")
-            remove(position)
-            notifyItemRemoved(position)
             updatePrice()
             updatePriceAtView()
-            notifyItemRangeChanged(position, itemCount)
 
 
             /*     val tx: Double = (context as MyCartSpActivity).allTotalPriceTv?.text.toString().trim().replace("", "").toDouble()
@@ -195,6 +200,7 @@ class OrderAdapter(val context: Context, orderList: HashMap<Int, Int>) : Recycle
         // var delivery:TextView=item.findViewById(R.id.deliveryFees)
 
     }
+
 
 }
 

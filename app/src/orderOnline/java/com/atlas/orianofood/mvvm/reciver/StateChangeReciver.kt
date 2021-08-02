@@ -3,7 +3,6 @@ package com.atlas.orianofood.mvvm.reciver
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.widget.Toast
 import com.atlas.orianofood.firebaseRT.utils.HOMESPACTIVITYCONTEXT
 
 class StateChangeReciver : BroadcastReceiver() {
@@ -12,11 +11,11 @@ class StateChangeReciver : BroadcastReceiver() {
             stateChangeListener = HOMESPACTIVITYCONTEXT as StateChangeListener
         }
         if (stateChangeListener != null) {
-            Toast.makeText(
+            /*Toast.makeText(
                 context,
                 "from : " + context?.applicationInfo?.className,
                 Toast.LENGTH_LONG
-            ).show()
+            ).show()*/
             stateChangeListener!!.onStateChanged(intent?.getStringExtra("myExtra"))
         }
     }

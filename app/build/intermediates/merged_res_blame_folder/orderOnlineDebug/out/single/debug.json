@@ -60,12 +60,12 @@
         "source": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_wave.png"
     },
     {
-        "merged": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_empty_cart.png.flat",
-        "source": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-mdpi\\ic_empty_cart.png"
-    },
-    {
         "merged": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-hdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-mdpi_ic_empty_cart.png.flat",
+        "source": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-mdpi\\ic_empty_cart.png"
     },
     {
         "merged": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable_splash_drawable.xml.flat",
@@ -132,12 +132,12 @@
         "source": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-ldpi\\ic_egg.png"
     },
     {
-        "merged": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_lock.png.flat",
-        "source": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\src\\main\\res\\drawable-xxhdpi\\ic_lock.png"
-    },
-    {
         "merged": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_app_bar_category.xml.flat",
         "source": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\src\\orderOnline\\res\\layout\\app_bar_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-xxhdpi_ic_lock.png.flat",
+        "source": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\src\\main\\res\\drawable-xxhdpi\\ic_lock.png"
     },
     {
         "merged": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable_rounded_corner_search.xml.flat",
@@ -512,12 +512,12 @@
         "source": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\generated\\res\\pngs\\orderOnline\\debug\\drawable-xxhdpi\\ic_google.png"
     },
     {
-        "merged": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_rating_star.png.flat",
-        "source": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\src\\main\\res\\drawable-hdpi\\ic_rating_star.png"
-    },
-    {
         "merged": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\raw_ic_bowl.xml.flat",
         "source": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\src\\main\\res\\raw\\ic_bowl.xml"
+    },
+    {
+        "merged": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\drawable-hdpi_ic_rating_star.png.flat",
+        "source": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\src\\main\\res\\drawable-hdpi\\ic_rating_star.png"
     },
     {
         "merged": "C:\\Users\\abc\\Documents\\GitHub\\OrianoFoods\\app\\build\\intermediates\\res\\merged\\orderOnline\\debug\\layout_gallery_item.xml.flat",

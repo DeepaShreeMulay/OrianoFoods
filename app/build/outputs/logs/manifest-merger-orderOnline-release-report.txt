@@ -91,9 +91,9 @@ MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\abc\.gradle\caches\trans
 MERGED from [com.amulyakhare:com.amulyakhare.textdrawable:1.0.1] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\2e154a5efeb45e1ebc453482e1a2fd2f\jetified-com.amulyakhare.textdrawable-1.0.1\AndroidManifest.xml:2:1-14:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\191975e043a2687d90b391695022239d\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [io.michaelrocks:libphonenumber-android:8.12.6] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\1951751ec25b9a82621c1f35a67ea1db\jetified-libphonenumber-android-8.12.6\AndroidManifest.xml:2:1-11:12
-INJECTED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:2:1-171:12
-INJECTED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:2:1-171:12
-INJECTED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:2:1-171:12
+INJECTED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:2:1-168:12
+INJECTED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:2:1-168:12
+INJECTED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:2:1-168:12
 	package
 		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\main\AndroidManifest.xml:3:5-35
 		INJECTED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\main\AndroidManifest.xml
@@ -218,7 +218,7 @@ ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\main\AndroidManifes
 MERGED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\main\AndroidManifest.xml:17:9-19:58
 MERGED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\main\AndroidManifest.xml:17:9-19:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:74:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:73:13-49
 	android:theme
 		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\main\AndroidManifest.xml:19:13-55
 	android:name
@@ -407,270 +407,274 @@ INJECTED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\Andr
 	android:minSdkVersion
 		INJECTED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml
+activity#com.atlas.orianofood.mvvm.activity.EmptyCart
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:19:9-90
+	android:name
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:19:19-78
 uses-library#org.apache.http.legacy
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:20:9-22:40
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:21:9-23:40
 	android:required
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:22:13-37
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:23:13-37
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:21:13-50
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:22:13-50
 activity#com.atlas.orianofood.mvvm.activity.SplashScreenActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:23:9-32:20
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:24:9-33:20
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:25:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:26:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:26:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:27:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:24:13-83
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:25:13-83
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:27:13-31:29
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:28:13-32:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:28:17-69
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:29:17-69
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:28:25-66
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:29:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:30:17-77
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:31:17-77
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:30:27-74
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:31:27-74
 activity#com.atlas.orianofood.mvvm.activity.HomeSPActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:33:9-36:67
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:34:9-37:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:35:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:36:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:36:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:37:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:34:13-77
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:35:13-77
 activity#com.atlas.orianofood.mvvm.activity.GallerySPActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:37:9-41:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:38:9-42:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:40:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:41:13-49
 	android:label
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:39:13-59
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:40:13-59
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:41:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:42:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:38:13-80
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:39:13-80
 activity#com.atlas.orianofood.mvvm.activity.LoginActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:42:9-45:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:43:9-46:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:44:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:45:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:45:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:46:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:43:13-76
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:44:13-76
 activity#com.atlas.orianofood.mvvm.activity.RegisterActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:46:9-49:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:47:9-50:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:48:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:49:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:49:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:50:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:47:13-79
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:48:13-79
 activity#com.atlas.orianofood.mvvm.activity.TermsAndCondition
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:50:9-53:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:51:9-54:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:52:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:53:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:53:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:54:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:51:13-80
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:52:13-80
 activity#com.atlas.orianofood.mvvm.activity.PrivacyPolicyActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:54:9-57:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:55:9-58:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:56:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:57:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:57:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:58:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:55:13-84
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:56:13-84
 activity#com.atlas.orianofood.mvvm.activity.CategorySPActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:58:9-61:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:59:9-62:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:60:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:61:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:61:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:62:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:59:13-81
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:60:13-81
 activity#com.atlas.orianofood.mvvm.activity.ProductSPActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:62:9-65:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:63:9-66:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:64:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:65:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:65:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:66:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:63:13-80
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:64:13-80
 activity#com.atlas.orianofood.mvvm.activity.MyCartSpActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:66:9-69:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:67:9-70:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:68:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:69:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:69:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:70:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:67:13-79
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:68:13-79
 activity#com.atlas.orianofood.firebaseRT.activity.SubscriptionActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:85:9-88:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:83:9-86:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:87:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:85:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:88:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:86:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:86:13-89
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:84:13-89
 activity#com.atlas.orianofood.firebaseRT.activity.SignInActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:89:9-92:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:87:9-90:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:91:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:89:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:92:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:90:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:90:13-83
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:88:13-83
 activity#com.atlas.orianofood.firebaseRT.activity.SignUpActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:93:9-96:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:91:9-94:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:95:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:93:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:96:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:94:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:94:13-83
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:92:13-83
 activity#com.atlas.orianofood.firebaseRT.activity.ResetPasswordActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:97:9-100:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:95:9-98:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:99:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:97:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:100:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:98:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:98:13-90
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:96:13-90
 activity#com.atlas.orianofood.firebaseRT.activity.ProfileActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:101:9-104:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:99:9-102:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:103:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:101:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:104:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:102:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:102:13-84
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:100:13-84
 activity#com.atlas.orianofood.firebaseRT.activity.MyAddressesActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:105:9-108:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:103:9-106:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:107:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:105:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:108:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:106:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:106:13-88
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:104:13-88
 activity#com.atlas.orianofood.firebaseRT.activity.AddAddressActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:109:9-112:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:107:9-110:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:111:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:109:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:112:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:110:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:110:13-87
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:108:13-87
 activity#com.atlas.orianofood.firebaseRT.activity.OrdersActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:113:9-116:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:111:9-114:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:115:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:113:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:116:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:114:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:114:13-83
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:112:13-83
 activity#com.atlas.orianofood.firebaseRT.activity.ChangePasswordActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:117:9-120:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:115:9-118:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:119:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:117:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:120:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:118:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:118:13-91
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:116:13-91
 activity#com.atlas.orianofood.firebaseRT.activity.UpdateEmailActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:121:9-124:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:119:9-122:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:123:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:121:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:124:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:122:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:122:13-88
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:120:13-88
 activity#com.atlas.orianofood.firebaseRT.activity.VerifyPhoneAuthActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:125:9-128:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:123:9-126:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:127:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:125:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:128:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:126:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:126:13-92
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:124:13-92
 activity#com.atlas.orianofood.firebaseRT.activity.VerifyPhoneActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:129:9-132:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:127:9-130:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:131:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:129:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:132:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:130:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:130:13-88
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:128:13-88
 activity#com.atlas.orianofood.firebaseRT.activity.GalleryActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:133:9-137:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:131:9-135:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:136:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:134:13-49
 	android:label
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:135:13-59
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:133:13-59
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:137:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:135:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:134:13-84
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:132:13-84
 activity#com.atlas.orianofood.firebaseRT.activity.HomeActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:138:9-141:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:136:9-139:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:140:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:138:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:141:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:139:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:139:13-81
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:137:13-81
 activity#com.atlas.orianofood.firebaseRT.activity.CategoryActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:142:9-145:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:140:9-143:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:144:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:142:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:145:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:143:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:143:13-85
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:141:13-85
 activity#com.atlas.orianofood.firebaseRT.activity.ProductCategoryActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:146:9-149:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:144:9-147:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:148:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:146:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:149:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:147:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:147:13-92
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:145:13-92
 activity#com.atlas.orianofood.firebaseRT.activity.ProductActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:150:9-153:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:148:9-151:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:152:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:150:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:153:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:151:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:151:13-84
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:149:13-84
 activity#com.atlas.orianofood.firebaseRT.activity.CartActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:154:9-157:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:152:9-155:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:156:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:154:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:157:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:155:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:155:13-81
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:153:13-81
 activity#com.atlas.orianofood.firebaseRT.activity.AuthActivity
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:158:9-161:58
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:156:9-159:58
 	android:screenOrientation
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:160:13-49
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:158:13-49
 	android:theme
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:161:13-55
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:159:13-55
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:159:13-81
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:157:13-81
 receiver#com.atlas.orianofood.mvvm.reciver.StateChangeReciver
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:163:9-167:20
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:161:9-165:20
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:163:19-86
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:161:19-86
 intent-filter#action:name:com.atlas.orianofood.CHANGED
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:164:13-166:29
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:162:13-164:29
 	android:priority
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:164:28-52
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:162:28-52
 action#com.atlas.orianofood.CHANGED
-ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:165:17-71
+ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:163:17-71
 	android:name
-		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:165:25-68
+		ADDED from C:\Users\abc\Documents\GitHub\OrianoFoods\app\src\orderOnline\AndroidManifest.xml:163:25-68
 provider#com.squareup.picasso.PicassoProvider
 ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\abc\.gradle\caches\transforms-2\files-2.1\c34b7517974b6f8a65656648b8ddfd8e\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
 	android:authorities

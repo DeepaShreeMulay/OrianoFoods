@@ -319,9 +319,18 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
     }
 
 
+    fun View.setVisible(visible: Boolean) {
+        visibility = if (visible) {
+            Button.VISIBLE
+        } else {
+            Button.GONE
+        }
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 2) {
+
             address = data?.getStringExtra("Address")!!
             selectAddress.text = address
         } else {
@@ -332,14 +341,7 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
             }
         }
 
-    }
 
-    fun View.setVisible(visible: Boolean) {
-        visibility = if (visible) {
-            Button.VISIBLE
-        } else {
-            Button.GONE
-        }
     }
 
     private fun myOrder() {
@@ -370,6 +372,12 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
         )
 
     }
+//
+//    override fun hideButton(btn: Int) {
+//
+//        intent.putExtra("btn",btn)
+//
+//    }
 
 
 }

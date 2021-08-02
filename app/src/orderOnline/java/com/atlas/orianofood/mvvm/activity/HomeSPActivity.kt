@@ -25,6 +25,7 @@ import com.atlas.orianofood.mvvm.category.adapter.CategoryAdapter
 import com.atlas.orianofood.mvvm.category.model.CategoryViewModel
 import com.atlas.orianofood.mvvm.database.AppDatabase
 import com.atlas.orianofood.mvvm.getProfile.model.ProfileViewModel
+//import com.atlas.orianofood.mvvm.order.Actions
 import com.atlas.orianofood.mvvm.product.model.ProductViewModel
 import com.atlas.orianofood.mvvm.reciver.StateChangeReciver
 import com.atlas.orianofood.mvvm.topCategory.adapter.TopCategoryAdapter
@@ -468,8 +469,13 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData,
            }*/
         topAdapter.notifyDataSetChanged()
         sellingAdapter.notifyDataSetChanged()
-
     }
+
+//    override fun hideButton(btn: Int) {
+//     intent.getStringExtra("btn")
+//    }
+
+
 }
 
 
