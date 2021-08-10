@@ -372,12 +372,6 @@ class MyCartSpActivity : AppCompatActivity(), PaymentResultListener {
         )
 
     }
-//
-//    override fun hideButton(btn: Int) {
-//
-//        intent.putExtra("btn",btn)
-//
-//    }
 
 
 }

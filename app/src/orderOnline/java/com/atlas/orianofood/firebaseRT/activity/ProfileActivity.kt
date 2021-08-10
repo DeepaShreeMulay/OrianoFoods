@@ -30,11 +30,12 @@ class ProfileActivity : AppCompatActivity() {
     var isPhone: Boolean = true
     val DUMMY_EMAIL: String = "useremail@gmail.com"
     val setProfileDao = AppDatabase.getInstance(App.appContext)?.setProfileDao!!
-    lateinit var password: String
+    var password: Boolean = true
     private lateinit var viewModel: SetProfileViewModel
     val loginDao = AppDatabase.getInstance(App.appContext)?.loginDao!!
     private lateinit var mobilee: String
     private lateinit var loginviewModel: LoginViewModel
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -89,8 +90,8 @@ class ProfileActivity : AppCompatActivity() {
             val email = text_email.text.toString().trim()
             val phone = text_phone.text.toString().trim()
             val address = text_address.text.toString().trim()
-            password = intent.getStringExtra("password")!!
-            val password = password
+            // val  password=text_password.text.toString().trim()
+
 
             if (name.isEmpty()) {
                 edit_text_name.error = "name required"
@@ -103,8 +104,24 @@ class ProfileActivity : AppCompatActivity() {
                 .build()
 
             progressbar.visibility = View.VISIBLE
+/*
+            if (password.isNotEmpty()){
+                text_password.text = "Password Changed"
 
-            setProfileDao.insertSetProfile(SetProfileItem(0, name, email, phone, address, password))
+            }else{
+                text_password.text = "Change password"
+            }*/
+            setProfileDao.insertSetProfile(
+                SetProfileItem(
+                    0,
+                    name,
+                    email,
+                    phone,
+                    address,
+                    password.toString()
+                )
+            )
+
 
             // setProfileData(name,email,phone,address, password)
             startActivity(Intent(this, HomeSPActivity::class.java))
@@ -160,8 +177,9 @@ class ProfileActivity : AppCompatActivity() {
 
         text_password.setOnClickListener {
             val intent = Intent(activity, ChangePasswordActivity::class.java)
+            intent.putExtra("password", password)
             startActivity(intent)
-            finish()
+
         }
 
         text_address.setOnClickListener {

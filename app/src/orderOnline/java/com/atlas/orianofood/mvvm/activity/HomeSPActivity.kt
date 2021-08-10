@@ -471,10 +471,6 @@ class HomeSPActivity : AppCompatActivity(), ShowCategoryData,
         sellingAdapter.notifyDataSetChanged()
     }
 
-//    override fun hideButton(btn: Int) {
-//     intent.getStringExtra("btn")
-//    }
-
 
 }
 

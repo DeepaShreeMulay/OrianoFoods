@@ -31,7 +31,6 @@
 
     </LinearLayout>
 
-
     <TextView
         android:id="@+id/tvNoAddress"
         android:layout_width="match_parent"
@@ -79,6 +78,45 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Looks like you haven't made \n \t your order yet"
+            android:textColor="@color/accent"
+            android:textSize="14sp"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/empty_address_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#60C9C9C9"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintTop_toTopOf="@+id/tvNoAddress">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/deliveryboy"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvNoAddress"
+            app:layout_constraintTop_toTopOf="@+id/tvNoAddress" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="NO ADDRESS"
+            android:textColor="@color/accent"
+            android:textSize="16sp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Looks like you haven't add \n \t your address yet"
             android:textColor="@color/accent"
             android:textSize="14sp"></TextView>
     </LinearLayout>

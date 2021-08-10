@@ -1795,6 +1795,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable deliveryboy
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -2108,6 +2109,7 @@ drawable ic_rupee
 drawable ic_rupee__acent
 drawable ic_sale_tag
 drawable ic_search
+drawable ic_shopping_bag
 drawable ic_shopping_cart_black_24dp
 drawable ic_show_password
 drawable ic_sort_filter
@@ -2172,6 +2174,7 @@ drawable rzp_name_logo
 drawable rzp_poweredby
 drawable rzp_secured_by_bg
 drawable rzp_white_border_black_bg
+drawable scooter
 drawable semicircle_shape
 drawable shape_deco
 drawable shape_layout
@@ -2478,6 +2481,8 @@ id edit_text_new_password_confirm
 id edit_text_password
 id edit_text_phone
 id elastic
+id empty_address_layout
+id empty_order_layout
 id end
 id endToStart
 id end_padder
@@ -2572,6 +2577,7 @@ id line3
 id linear
 id linear2
 id linearLayout
+id linearLayout2
 id linear_flag_border
 id linear_flag_holder
 id listMode

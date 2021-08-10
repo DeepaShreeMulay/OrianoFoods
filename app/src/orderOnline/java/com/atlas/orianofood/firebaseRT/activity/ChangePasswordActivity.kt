@@ -30,13 +30,13 @@ class ChangePasswordActivity : AppCompatActivity() {
     val setProfileDao = AppDatabase.getInstance(App.appContext)?.setProfileDao!!
     val daoo = AppDatabase.getInstance(App.appContext)?.loginDao!!
     private lateinit var mobile: String
-    private lateinit var passwordUpdated: String
+    var password: Boolean = true
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_change_password)
-
+        password = intent.getStringExtra("password").toBoolean()
         layoutPassword.visibility = View.VISIBLE
         layoutUpdatePassword.visibility = View.GONE
 
@@ -99,7 +99,7 @@ class ChangePasswordActivity : AppCompatActivity() {
                 //loginDao.updatePassword(mobile, password)
                 Toast.makeText(this, "Password Changes Successfully", Toast.LENGTH_SHORT).show()
                 val intent = Intent(activity, ProfileActivity::class.java)
-                intent.putExtra("password", password)
+
                 startActivity(intent)
 
                 //startActivity(Intent(this, ProfileActivity::class.java))

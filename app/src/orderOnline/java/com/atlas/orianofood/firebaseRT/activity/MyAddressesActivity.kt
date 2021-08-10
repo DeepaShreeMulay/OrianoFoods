@@ -83,10 +83,12 @@ class MyAddressesActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         addresslist = DatabaseHandler(this).getAddresses()
         if (addresslist.isEmpty()) {
             startActivity(Intent(this, AddAddressActivity::class.java))
+            empty_address_layout.visibility = View.VISIBLE
+
             //tvNoAddress.visibility = View.VISIBLE
             recyclerview.visibility = View.INVISIBLE
         } else {
-            tvNoAddress.visibility = View.INVISIBLE
+            empty_address_layout.visibility = View.INVISIBLE
             recyclerview.visibility = View.VISIBLE
             adapter = AddressAdapter(this, addresslist)
             val manager = LinearLayoutManager(this)

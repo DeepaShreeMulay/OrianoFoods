@@ -24,8 +24,8 @@ com/atlas/orianofood/databinding/TopCategoryItemBinding.java
  com.atlas.orianofood.databinding.TopCategoryItemBinding
 com/atlas/orianofood/databinding/ContentGalleryBinding.java
  com.atlas.orianofood.databinding.ContentGalleryBinding
-com/atlas/orianofood/databinding/ContentAddressesBinding.java
- com.atlas.orianofood.databinding.ContentAddressesBinding
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
 com/atlas/orianofood/databinding/ActivitySplashScreenBinding.java
  com.atlas.orianofood.databinding.ActivitySplashScreenBinding
 com/atlas/orianofood/databinding/CartItemBinding.java
@@ -184,5 +184,5 @@ com/atlas/orianofood/mvvm/getProfile/model/dao/ProfileDao_Impl.java
  com.atlas.orianofood.mvvm.getProfile.model.dao.ProfileDao_Impl$3
 com/atlas/orianofood/BR.java
  com.atlas.orianofood.BR
-androidx/databinding/DataBindingComponent.java
- androidx.databinding.DataBindingComponent
+com/atlas/orianofood/databinding/ContentAddressesBinding.java
+ com.atlas.orianofood.databinding.ContentAddressesBinding
