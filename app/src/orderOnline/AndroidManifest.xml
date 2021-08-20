@@ -163,6 +163,13 @@
                 <action android:name="com.atlas.orianofood.CHANGED" />
             </intent-filter>
         </receiver>
+
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_98xJXUFAC61HRR" />
+        <meta-data
+            android:name="com.google.android.gms.wallet.api.enabled"
+            android:value="true" />
     </application>
 
 </manifest>
